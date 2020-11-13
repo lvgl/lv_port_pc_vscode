@@ -27,7 +27,8 @@ CFLAGS 				:= -O0 -g $(WARNINGS)
 # Add simulator define to allow modification of source
 DEFINES				:= -D SIMULATOR=1
 
-INC 				:= -I./ -I./lvgl/
+# Include simulator inc folder first so lv_conf.h from custom UI can be used instead
+INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/
 LDFLAGS 			:= -lSDL2 -lm
 BIN 				:= $(BIN_DIR)/demo
 
