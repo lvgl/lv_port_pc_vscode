@@ -22,7 +22,7 @@ To allow debugging inside VSCode you will also require the C/C++ Tools extension
 Clone the PC project and the related sub modules:
 
 ```
-git clone --recursive https://github.com/littlevgl/pc_simulator_sdl_eclipse.git
+git clone --recursive https://github.com/microwavesafe/lv_sim_vscode_sdl
 ```
 
 ### Install SDL
