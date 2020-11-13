@@ -11,7 +11,7 @@ Using a PC simulator instead of an embedded hardware has several advantages:
 ## Requirements
 This project is configured for VSCode and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
 
-To allow debugging inside VSCode you will also require the C/C++ Tools extension [Extension](https://code.visualstudio.com/docs/languages/cpp) or other suitable debugger.
+To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger.
 
 * **SDL** a low level driver library to use graphics, handle mouse, keyboard etc.
 
