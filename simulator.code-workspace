@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "./"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cstdio": "cpp",
+			"cstdarg": "cpp"
+		},
+		"search.exclude": {
+			"**/.*": true,
+			"build": true
+		},
+		"search.useIgnoreFiles": false
+	}
+}
