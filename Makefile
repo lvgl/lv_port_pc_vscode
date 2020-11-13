@@ -37,9 +37,6 @@ COMPILE				= $(CC) $(CFLAGS) $(INC) $(DEFINES)
 SRCS 				:= $(shell find $(SRC_DIR) -type f -name '*.c' -not -path '*/\.*')
 OBJECTS    			:= $(patsubst $(SRC_DIR)%,$(BUILD_DIR)/%,$(SRCS:.$(SRC_EXT)=.$(OBJ_EXT)))
 
-$(info    SRCS is $(SRCS))
-$(info    OBJECTS is $(OBJECTS))
-
 all: default
 
 $(BUILD_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT)
