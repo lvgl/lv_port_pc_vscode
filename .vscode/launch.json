@@ -7,7 +7,8 @@
         "name": "Launch Program",
         "target": "${workspaceFolder}/build/bin/demo",
         "cwd": "${workspaceFolder}",
-        "valuesFormatting": "parseText"
+        "valuesFormatting": "parseText",
+        "preLaunchTask": "Build"
       }
     ]
 }
