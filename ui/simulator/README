@@ -1,0 +1,6 @@
+## Simulator
+
+As most projects are targetted at embedded devices, this folder is for simulator specfic code to allow the UI to run on a desktop environment.
+
+lv_conf.h placed in ui/simulator/inc will automatically override the main lv_conf.h, to allow project specific settings without modifying the lv_sim_vscode project
+

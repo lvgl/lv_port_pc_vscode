@@ -34,6 +34,8 @@ sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 ```
 
 ### Setup
-Configure lv_conf.h to suit your project, place your UI code in the UI folder and edit main/src/main.c to call you UI entry function. To build and debug, press F5. You should now have your UI displayed in a new window and can access all the debug features of VSCode through GDB.
+To allow custom UI code an `lv_conf.h` file placed at `ui/simulator/inc` will automatically override this projects lv_conf.h file. By default code under `ui` is ignored so you can reuse this repository for multiple projects. You will need to place a call from `main.c` to your UI's entry function.
+
+To build and debug, press F5. You should now have your UI displayed in a new window and can access all the debug features of VSCode through GDB.
 
 To allow temporary modification between simulator and device code, a SIMULATOR=1 define is added globally.
