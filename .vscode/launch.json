@@ -2,12 +2,23 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "type": "gdb",
+        "name": "g++ build and debug active file",
+        "type": "cppdbg",
         "request": "launch",
-        "name": "Launch Program",
-        "target": "${workspaceFolder}/build/bin/demo",
+        "program": "${workspaceFolder}/build/bin/demo",
+        "args": [],
+        "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
-        "valuesFormatting": "parseText",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
         "preLaunchTask": "Build"
       }
     ]
