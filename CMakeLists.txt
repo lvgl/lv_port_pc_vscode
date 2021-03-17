@@ -8,6 +8,7 @@ set(SDL_LIB_DIR ${LVGL_SIMULATOR_SDL_DIR}/lib)
 set(SDL_BIN_DIR ${LVGL_SIMULATOR_SDL_DIR}/bin)
 
 add_subdirectory(lvgl)
+target_include_directories(lvgl PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 add_subdirectory(lv_examples)
 target_include_directories(lv_examples PUBLIC ${CMAKE_CURRENT_LIST_DIR})
