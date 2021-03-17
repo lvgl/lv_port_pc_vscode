@@ -9,6 +9,7 @@
  *********************/
 #define _DEFAULT_SOURCE /* needed for usleep() */
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #define SDL_MAIN_HANDLED /*To fix SDL's "undefined reference to WinMain" \
                             issue*/
@@ -16,6 +17,7 @@
 #include "lvgl/lvgl.h"
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"
+#include "lv_drivers/indev/keyboard.h"
 #include "lv_examples/lv_examples.h"
 
 /*********************
@@ -110,6 +112,13 @@ static void hal_init(void) {
   lv_obj_t * cursor_obj = lv_img_create(lv_scr_act(), NULL); /*Create an image object for the cursor */
   lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
   lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
+
+  /* Add keyboard as input device */
+  lv_indev_drv_t kb_drv;
+  lv_indev_drv_init(&kb_drv);
+  kb_drv.type = LV_INDEV_TYPE_KEYPAD;
+  kb_drv.read_cb = keyboard_read;
+  lv_indev_t * kb_indev = lv_indev_drv_register(&kb_drv);
 
   /* Tick init.
    * You have to call 'lv_tick_inc()' in periodically to inform LittelvGL about
