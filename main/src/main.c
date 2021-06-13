@@ -17,6 +17,7 @@
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"
 #include "lv_drivers/indev/keyboard.h"
+#include "lv_drivers/indev/mousewheel.h"
 #include "lv_examples/lv_examples.h"
 
 /*********************
@@ -120,11 +121,18 @@ static void hal_init(void) {
   /* Add the keyboard as input device
    * Use the 'keyboard' driver which reads the PC's keyboard*/
   static lv_indev_drv_t keyb_drv;
-  lv_indev_drv_init(&keyb_drv);      /*Basic initialization*/
+  lv_indev_drv_init(&keyb_drv);
   keyb_drv.type = LV_INDEV_TYPE_KEYPAD;
   keyb_drv.read_cb = keyboard_read;
-  /*Register the driver in LVGL and save the created input device object*/
   lv_indev_drv_register(&keyb_drv);
+
+  /* Add the mouse wheel as input device (encoder type)
+   * Use the 'mousewheel' driver which reads the PC's mouse wheel*/
+  static lv_indev_drv_t enc_drv;
+  lv_indev_drv_init(&enc_drv);
+  enc_drv.type = LV_INDEV_TYPE_ENCODER;
+  enc_drv.read_cb = mousewheel_read;
+  lv_indev_drv_register(&enc_drv);
 
   /* Tick init.
    * You have to call 'lv_tick_inc()' in periodically to inform LittelvGL about
