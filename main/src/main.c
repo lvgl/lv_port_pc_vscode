@@ -38,7 +38,12 @@ static void memory_monitor(lv_task_t *param);
 /**********************
  *  STATIC VARIABLES
  **********************/
-lv_indev_t *kb_indev;
+lv_disp_buf_t disp_buf1;
+lv_color_t buf1_1[LV_HOR_RES_MAX * 120];
+lv_disp_drv_t disp_drv;
+lv_indev_drv_t mouse_drv;
+lv_indev_drv_t keyb_drv;
+lv_indev_drv_t enc_drv;
 
 /**********************
  *      MACROS
@@ -90,12 +95,9 @@ static void hal_init(void) {
   monitor_init();
 
   /*Create a display buffer*/
-  static lv_disp_buf_t disp_buf1;
-  static lv_color_t buf1_1[LV_HOR_RES_MAX * 120];
   lv_disp_buf_init(&disp_buf1, buf1_1, NULL, LV_HOR_RES_MAX * 120);
 
   /*Create a display*/
-  static lv_disp_drv_t disp_drv;
   lv_disp_drv_init(&disp_drv); /*Basic initialization*/
   disp_drv.buffer = &disp_buf1;
   disp_drv.flush_cb = monitor_flush;
@@ -104,7 +106,6 @@ static void hal_init(void) {
   /* Add the mouse as input device
    * Use the 'mouse' driver which reads the PC's mouse*/
   mouse_init();
-  static lv_indev_drv_t mouse_drv;
   lv_indev_drv_init(&mouse_drv); /*Basic initialization*/
   mouse_drv.type = LV_INDEV_TYPE_POINTER;
 
@@ -120,7 +121,6 @@ static void hal_init(void) {
 
   /* Add the keyboard as input device
    * Use the 'keyboard' driver which reads the PC's keyboard*/
-  static lv_indev_drv_t keyb_drv;
   lv_indev_drv_init(&keyb_drv);
   keyb_drv.type = LV_INDEV_TYPE_KEYPAD;
   keyb_drv.read_cb = keyboard_read;
@@ -128,7 +128,6 @@ static void hal_init(void) {
 
   /* Add the mouse wheel as input device (encoder type)
    * Use the 'mousewheel' driver which reads the PC's mouse wheel*/
-  static lv_indev_drv_t enc_drv;
   lv_indev_drv_init(&enc_drv);
   enc_drv.type = LV_INDEV_TYPE_ENCODER;
   enc_drv.read_cb = mousewheel_read;
