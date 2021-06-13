@@ -16,6 +16,7 @@
 #include "lvgl/lvgl.h"
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"
+#include "lv_drivers/indev/keyboard.h"
 #include "lv_examples/lv_examples.h"
 
 /*********************
@@ -93,7 +94,7 @@ static void hal_init(void) {
   lv_disp_buf_init(&disp_buf1, buf1_1, NULL, LV_HOR_RES_MAX * 120);
 
   /*Create a display*/
-  lv_disp_drv_t disp_drv;
+  static lv_disp_drv_t disp_drv;
   lv_disp_drv_init(&disp_drv); /*Basic initialization*/
   disp_drv.buffer = &disp_buf1;
   disp_drv.flush_cb = monitor_flush;
@@ -102,19 +103,28 @@ static void hal_init(void) {
   /* Add the mouse as input device
    * Use the 'mouse' driver which reads the PC's mouse*/
   mouse_init();
-  lv_indev_drv_t indev_drv;
-  lv_indev_drv_init(&indev_drv); /*Basic initialization*/
-  indev_drv.type = LV_INDEV_TYPE_POINTER;
+  static lv_indev_drv_t mouse_drv;
+  lv_indev_drv_init(&mouse_drv); /*Basic initialization*/
+  mouse_drv.type = LV_INDEV_TYPE_POINTER;
 
   /*This function will be called periodically (by the library) to get the mouse position and state*/
-  indev_drv.read_cb = mouse_read;
-  lv_indev_t *mouse_indev = lv_indev_drv_register(&indev_drv);
+  mouse_drv.read_cb = mouse_read;
+  lv_indev_t *mouse_indev = lv_indev_drv_register(&mouse_drv);
 
   /*Set a cursor for the mouse*/
   LV_IMG_DECLARE(mouse_cursor_icon); /*Declare the image file.*/
   lv_obj_t * cursor_obj = lv_img_create(lv_scr_act(), NULL); /*Create an image object for the cursor */
   lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
   lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
+
+  /* Add the keyboard as input device
+   * Use the 'keyboard' driver which reads the PC's keyboard*/
+  static lv_indev_drv_t keyb_drv;
+  lv_indev_drv_init(&keyb_drv);      /*Basic initialization*/
+  keyb_drv.type = LV_INDEV_TYPE_KEYPAD;
+  keyb_drv.read_cb = keyboard_read;
+  /*Register the driver in LVGL and save the created input device object*/
+  lv_indev_drv_register(&keyb_drv);
 
   /* Tick init.
    * You have to call 'lv_tick_inc()' in periodically to inform LittelvGL about
