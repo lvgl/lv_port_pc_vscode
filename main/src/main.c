@@ -121,6 +121,7 @@ static void hal_init(void) {
 
   /* Add the keyboard as input device
    * Use the 'keyboard' driver which reads the PC's keyboard*/
+  keyboard_init();
   lv_indev_drv_init(&keyb_drv);
   keyb_drv.type = LV_INDEV_TYPE_KEYPAD;
   keyb_drv.read_cb = keyboard_read;
@@ -128,6 +129,7 @@ static void hal_init(void) {
 
   /* Add the mouse wheel as input device (encoder type)
    * Use the 'mousewheel' driver which reads the PC's mouse wheel*/
+  mousewheel_init();
   lv_indev_drv_init(&enc_drv);
   enc_drv.type = LV_INDEV_TYPE_ENCODER;
   enc_drv.read_cb = mousewheel_read;
