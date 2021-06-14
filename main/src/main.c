@@ -63,13 +63,11 @@ int main(int argc, char **argv)
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
   hal_init();
 
-//  lv_demo_widgets();
-  /* For printer demo set resolution to 800x480 */
-//  lv_demo_printer();
+  lv_demo_widgets();
 //  lv_demo_keypad_encoder();
 //  lv_demo_benchmark();
 //  lv_demo_stress();
-  lv_demo_music();
+//  lv_demo_music();
 
   while (1) {
     /* Periodically call the lv_task handler.
