@@ -25,7 +25,7 @@ WARNINGS 			:= -Wall -Wextra \
 CFLAGS 				:= -O0 -g $(WARNINGS)
 
 # Add simulator define to allow modification of source
-DEFINES				:= -D SIMULATOR=1
+DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0
 
 # Include simulator inc folder first so lv_conf.h from custom UI can be used instead
 INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/
