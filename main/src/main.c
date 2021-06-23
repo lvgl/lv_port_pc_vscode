@@ -10,15 +10,15 @@
 #define _DEFAULT_SOURCE /* needed for usleep() */
 #include <stdlib.h>
 #include <unistd.h>
-#define SDL_MAIN_HANDLED /*To fix SDL's "undefined reference to WinMain" \
-                            issue*/
+#define SDL_MAIN_HANDLED /*To fix SDL's "undefined reference to WinMain" issue*/
 #include <SDL2/SDL.h>
 #include "lvgl/lvgl.h"
+#include "lvgl/examples/lv_examples.h"
+#include "lv_examples/lv_demo.h"
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"
 #include "lv_drivers/indev/keyboard.h"
 #include "lv_drivers/indev/mousewheel.h"
-#include "lv_examples/lv_examples.h"
 
 /*********************
  *      DEFINES
@@ -33,20 +33,33 @@
  **********************/
 static void hal_init(void);
 static int tick_thread(void *data);
-static void memory_monitor(lv_task_t *param);
 
 /**********************
  *  STATIC VARIABLES
  **********************/
-lv_disp_buf_t disp_buf1;
-lv_color_t buf1_1[LV_HOR_RES_MAX * 120];
-lv_disp_drv_t disp_drv;
-lv_indev_drv_t mouse_drv;
-lv_indev_drv_t keyb_drv;
-lv_indev_drv_t enc_drv;
 
 /**********************
  *      MACROS
+ **********************/
+
+/**********************
+ *   GLOBAL FUNCTIONS
+ **********************/
+
+/*********************
+ *      DEFINES
+ *********************/
+
+/**********************
+ *      TYPEDEFS
+ **********************/
+
+/**********************
+ *      VARIABLES
+ **********************/
+
+/**********************
+ *  STATIC PROTOTYPES
  **********************/
 
 /**********************
@@ -64,18 +77,34 @@ int main(int argc, char **argv)
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
   hal_init();
 
+//  lv_example_switch_1();
+//  lv_example_calendar_1();
+//  lv_example_btnmatrix_2();
+//  lv_example_checkbox_1();
+//  lv_example_colorwheel_1();
+//  lv_example_chart_6();
+//  lv_example_table_2();
+//  lv_example_scroll_2();
+//  lv_example_textarea_1();
+//  lv_example_msgbox_1();
+//  lv_example_dropdown_2();
+//  lv_example_btn_1();
+//  lv_example_scroll_1();
+//  lv_example_tabview_1();
+//  lv_example_tabview_1();
+//  lv_example_flex_3();
+//  lv_example_label_1();
+
   lv_demo_widgets();
-  /* For printer demo set resolution to 800x480 */
-//  lv_demo_printer();
 //  lv_demo_keypad_encoder();
 //  lv_demo_benchmark();
 //  lv_demo_stress();
 //  lv_demo_music();
 
-  while (1) {
+  while(1) {
     /* Periodically call the lv_task handler.
      * It could be done in a timer interrupt or an OS task too.*/
-    lv_task_handler();
+    lv_timer_handler();
     usleep(5 * 1000);
   }
 
@@ -87,63 +116,73 @@ int main(int argc, char **argv)
  **********************/
 
 /**
- * Initialize the Hardware Abstraction Layer (HAL) for the Littlev graphics
+ * Initialize the Hardware Abstraction Layer (HAL) for the LVGL graphics
  * library
  */
-static void hal_init(void) {
+static void hal_init(void)
+{
   /* Use the 'monitor' driver which creates window on PC's monitor to simulate a display*/
   monitor_init();
-
-  /*Create a display buffer*/
-  lv_disp_buf_init(&disp_buf1, buf1_1, NULL, LV_HOR_RES_MAX * 120);
-
-  /*Create a display*/
-  lv_disp_drv_init(&disp_drv); /*Basic initialization*/
-  disp_drv.buffer = &disp_buf1;
-  disp_drv.flush_cb = monitor_flush;
-  lv_disp_drv_register(&disp_drv);
-
-  /* Add the mouse as input device
-   * Use the 'mouse' driver which reads the PC's mouse*/
-  mouse_init();
-  lv_indev_drv_init(&mouse_drv); /*Basic initialization*/
-  mouse_drv.type = LV_INDEV_TYPE_POINTER;
-
-  /*This function will be called periodically (by the library) to get the mouse position and state*/
-  mouse_drv.read_cb = mouse_read;
-  lv_indev_t *mouse_indev = lv_indev_drv_register(&mouse_drv);
-
-  /*Set a cursor for the mouse*/
-  LV_IMG_DECLARE(mouse_cursor_icon); /*Declare the image file.*/
-  lv_obj_t * cursor_obj = lv_img_create(lv_scr_act(), NULL); /*Create an image object for the cursor */
-  lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
-  lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
-
-  /* Add the keyboard as input device
-   * Use the 'keyboard' driver which reads the PC's keyboard*/
-  keyboard_init();
-  lv_indev_drv_init(&keyb_drv);
-  keyb_drv.type = LV_INDEV_TYPE_KEYPAD;
-  keyb_drv.read_cb = keyboard_read;
-  lv_indev_drv_register(&keyb_drv);
-
-  /* Add the mouse wheel as input device (encoder type)
-   * Use the 'mousewheel' driver which reads the PC's mouse wheel*/
-  mousewheel_init();
-  lv_indev_drv_init(&enc_drv);
-  enc_drv.type = LV_INDEV_TYPE_ENCODER;
-  enc_drv.read_cb = mousewheel_read;
-  lv_indev_drv_register(&enc_drv);
-
   /* Tick init.
    * You have to call 'lv_tick_inc()' in periodically to inform LittelvGL about
    * how much time were elapsed Create an SDL thread to do this*/
   SDL_CreateThread(tick_thread, "tick", NULL);
 
-  /* Optional:
-   * Create a memory monitor task which prints the memory usage in
-   * periodically.*/
-  lv_task_create(memory_monitor, 5000, LV_TASK_PRIO_MID, NULL);
+  /*Create a display buffer*/
+  static lv_disp_draw_buf_t disp_buf1;
+  static lv_color_t buf1_1[MONITOR_HOR_RES * 100];
+  static lv_color_t buf1_2[MONITOR_HOR_RES * 100];
+  lv_disp_draw_buf_init(&disp_buf1, buf1_1, buf1_2, MONITOR_HOR_RES * 100);
+
+  /*Create a display*/
+  static lv_disp_drv_t disp_drv;
+  lv_disp_drv_init(&disp_drv); /*Basic initialization*/
+  disp_drv.draw_buf = &disp_buf1;
+  disp_drv.flush_cb = monitor_flush;
+  disp_drv.hor_res = MONITOR_HOR_RES;
+  disp_drv.ver_res = MONITOR_VER_RES;
+  disp_drv.antialiasing = 1;
+
+  lv_disp_t * disp = lv_disp_drv_register(&disp_drv);
+
+  lv_theme_t * th = lv_theme_default_init(disp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), LV_THEME_DEFAULT_DARK, LV_FONT_DEFAULT);
+  lv_disp_set_theme(disp, th);
+
+  lv_group_t * g = lv_group_create();
+  lv_group_set_default(g);
+
+  /* Add the mouse as input device
+   * Use the 'mouse' driver which reads the PC's mouse*/
+  mouse_init();
+  static lv_indev_drv_t indev_drv_1;
+  lv_indev_drv_init(&indev_drv_1); /*Basic initialization*/
+  indev_drv_1.type = LV_INDEV_TYPE_POINTER;
+
+  /*This function will be called periodically (by the library) to get the mouse position and state*/
+  indev_drv_1.read_cb = mouse_read;
+  lv_indev_t *mouse_indev = lv_indev_drv_register(&indev_drv_1);
+
+  keyboard_init();
+  static lv_indev_drv_t indev_drv_2;
+  lv_indev_drv_init(&indev_drv_2); /*Basic initialization*/
+  indev_drv_2.type = LV_INDEV_TYPE_KEYPAD;
+  indev_drv_2.read_cb = keyboard_read;
+  lv_indev_t *kb_indev = lv_indev_drv_register(&indev_drv_2);
+  lv_indev_set_group(kb_indev, g);
+  mousewheel_init();
+  static lv_indev_drv_t indev_drv_3;
+  lv_indev_drv_init(&indev_drv_3); /*Basic initialization*/
+  indev_drv_3.type = LV_INDEV_TYPE_ENCODER;
+  indev_drv_3.read_cb = mousewheel_read;
+
+  lv_indev_t * enc_indev = lv_indev_drv_register(&indev_drv_3);
+  lv_indev_set_group(enc_indev, g);
+
+  /*Set a cursor for the mouse*/
+  LV_IMG_DECLARE(mouse_cursor_icon); /*Declare the image file.*/
+  lv_obj_t * cursor_obj = lv_img_create(lv_scr_act()); /*Create an image object for the cursor */
+  lv_img_set_src(cursor_obj, &mouse_cursor_icon);           /*Set the image source*/
+  lv_indev_set_cursor(mouse_indev, cursor_obj);             /*Connect the image  object to the driver*/
 }
 
 /**
@@ -154,24 +193,10 @@ static void hal_init(void) {
 static int tick_thread(void *data) {
   (void)data;
 
-  while (1) {
-    SDL_Delay(5);   /*Sleep for 5 millisecond*/
+  while(1) {
+    SDL_Delay(5);
     lv_tick_inc(5); /*Tell LittelvGL that 5 milliseconds were elapsed*/
   }
 
   return 0;
-}
-
-/**
- * Print the memory usage periodically
- * @param param
- */
-static void memory_monitor(lv_task_t *param) {
-  (void)param; /*Unused*/
-
-  lv_mem_monitor_t mon;
-  lv_mem_monitor(&mon);
-  printf("used: %6d (%3d %%), frag: %3d %%, biggest free: %6d\n",
-         (int)mon.total_size - mon.free_size, mon.used_pct, mon.frag_pct,
-         (int)mon.free_biggest_size);
 }
