@@ -3,6 +3,7 @@
 # WARNING: relies on invocation setting current working directory to Makefile location
 # This is done in .vscode/task.json
 #
+PROJECT 			?= lvgl-sdl
 MAKEFLAGS 			:= -j $(shell nproc)
 SRC_EXT      		:= c
 OBJ_EXT				:= o
@@ -51,3 +52,7 @@ default: $(OBJECTS)
 
 clean:
 	rm -rf $(WORKING_DIR)
+
+install: ${BIN}
+	install -d ${DESTDIR}/usr/lib/${PROJECT}/bin
+	install $< ${DESTDIR}/usr/lib/${PROJECT}/bin/
