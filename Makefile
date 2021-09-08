@@ -1,3 +1,9 @@
+#! /usr/bin/make -f
+# -*- makefile -*-
+# ex: set tabstop=4 noexpandtab:
+
+default: all
+
 #
 # Makefile
 # WARNING: relies on invocation setting current working directory to Makefile location
@@ -7,6 +13,7 @@ PROJECT 			?= lvgl-sdl
 MAKEFLAGS 			:= -j $(shell nproc)
 SRC_EXT      		:= c
 OBJ_EXT				:= o
+LIB_EXT				:= a
 CC 					?= gcc
 
 SRC_DIR				:= ./
@@ -32,27 +39,52 @@ DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0
 INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/
 LDLIBS	 			:= -lSDL2 -lm
 BIN 				:= $(BIN_DIR)/demo
+LIB 				:= $(BIN_DIR)/lib${PROJECT}.${LIB_EXT}
 
 COMPILE				= $(CC) $(CFLAGS) $(INC) $(DEFINES)
 
+prefix				?= usr/local
+libdir				?= ${prefix}/lib
+includedir			?= ${prefix}/include
+sudo				?=
 # Automatically include all source files
 SRCS 				:= $(shell find $(SRC_DIR) -type f -name '*.c' -not -path '*/\.*')
 OBJECTS    			:= $(patsubst $(SRC_DIR)%,$(BUILD_DIR)/%,$(SRCS:.$(SRC_EXT)=.$(OBJ_EXT)))
 
-all: default
+all: ${BIN} ${LIB}
+	ls $^
 
 $(BUILD_DIR)/%.$(OBJ_EXT): $(SRC_DIR)/%.$(SRC_EXT)
 	@echo 'Building project file: $<'
 	@mkdir -p $(dir $@)
 	@$(COMPILE) -c -o "$@" "$<"
 
-default: $(OBJECTS)
+${BIN}: ${LIB}
 	@mkdir -p $(BIN_DIR)
-	$(CC) -o $(BIN) $(OBJECTS) $(LDFLAGS) ${LDLIBS}
+	$(CC) -o $@ $(LDFLAGS) ${LIB} ${LDLIBS}
+
+${LIB}: ${OBJECTS}
+	@mkdir -p ${@D}
+	${AR} rcs $@ $^
 
 clean:
 	rm -rf $(WORKING_DIR)
 
-install: ${BIN}
-	install -d ${DESTDIR}/usr/lib/${PROJECT}/bin
-	install $< ${DESTDIR}/usr/lib/${PROJECT}/bin/
+install: ${BIN} install-headers
+	@echo "info: installing to ${DESTDIR} (sudo=${sudo})"
+	${sudo} install -d ${DESTDIR}/${libdir}/${PROJECT}/bin/
+	${sudo} install $< ${DESTDIR}/${libdir}/${PROJECT}/bin/demo
+	${sudo} install -d ${DESTDIR}/${libdir}
+	${sudo} install ${LIB} ${DESTDIR}/${libdir}
+
+${DESTDIR}/${includedir}/${PROJECT}:
+	${sudo} install -d $@
+
+install-headers: ${DESTDIR}/${includedir}/${PROJECT}
+	find . -type f \
+	 \( -iname "debian"  -o -iname ".?*" -o -iname "CVS" \) -prune -false \
+	 -o -type f -iname "*.h" -print \
+	 | while read t; do \
+		${sudo} install -vd "$</`dirname $${t}`"; \
+		${sudo} install -v "$${t}" "$</$${t}"; \
+	done
