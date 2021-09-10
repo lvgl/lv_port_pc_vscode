@@ -104,6 +104,29 @@
 #  define MONITOR_DUAL            0
 #endif
 
+/*---------------------------------
+ *  SDL with Hardware Acceleration
+ *--------------------------------*/
+#ifndef USE_SDL_GPU
+#  define USE_SDL_GPU       0
+#endif
+
+#if USE_SDL_GPU
+#  define SDL_HOR_RES     800
+#  define SDL_VER_RES     600
+#  define MONITOR_HOR_RES     SDL_HOR_RES
+#  define MONITOR_VER_RES     SDL_VER_RES
+
+/* Scale window by this factor (useful when simulating small screens) */
+#  define SDL_ZOOM          1
+
+/*Eclipse: <SDL2/SDL.h>    Visual Studio: <SDL.h>*/
+#  define SDL_INCLUDE_PATH    <SDL2/SDL.h>
+
+/*Open two windows to test multi display support*/
+#  define SDL_DUAL_DISPLAY         0
+#endif
+
 /*-----------------------------------
  *  Native Windows (including mouse)
  *----------------------------------*/

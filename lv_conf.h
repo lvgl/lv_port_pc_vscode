@@ -133,7 +133,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h"*/
 #define LV_USE_GPU_NXP_VG_LITE   0
 
 /*Use SDL's accelerated API*/
-#define LV_USE_GPU_SDL           1
+#define LV_USE_GPU_SDL           0
 
 /*-------------
  * Logging

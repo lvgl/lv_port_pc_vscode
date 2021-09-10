@@ -125,11 +125,21 @@ static void hal_init(void)
 
   /*Create a display buffer*/
   static lv_disp_draw_buf_t disp_buf1;
-  sdl_disp_draw_buf_init(&disp_buf1);
+#if USE_SDL_GPU
+  sdl_gpu_disp_draw_buf_init(&disp_buf1);
+#else
+  static lv_color_t buf1_1[MONITOR_HOR_RES * 100];
+  static lv_color_t buf1_2[MONITOR_HOR_RES * 100];
+  lv_disp_draw_buf_init(&disp_buf1, buf1_1, buf1_2, MONITOR_HOR_RES * 100);
+#endif
 
   /*Create a display*/
   static lv_disp_drv_t disp_drv;
-  sdl_disp_drv_init(&disp_drv); /*Basic initialization*/
+#if USE_SDL_GPU
+  sdl_gpu_disp_drv_init(&disp_drv); /*Basic initialization*/
+#else
+  lv_disp_drv_init(&disp_drv);
+#endif
   disp_drv.draw_buf = &disp_buf1;
   disp_drv.flush_cb = monitor_flush;
   disp_drv.hor_res = MONITOR_HOR_RES;
