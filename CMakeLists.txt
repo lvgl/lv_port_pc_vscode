@@ -1,14 +1,22 @@
 cmake_minimum_required(VERSION 3.18)
 
 # project name
-project(lvgl-sdl C ASM)
+project(lvgl-sdl LANGUAGES C CXX)
+
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(SDL2 REQUIRED)
 
 # Could not get this working
 # see https://trenki2.github.io/blog/2017/06/02/using-sdl2-with-cmake/
 #
-# set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/Cmake/" ${CMAKE_MODULE_PATH})
+# set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/CMake/" ${CMAKE_MODULE_PATH})
 # find_package(SDLTTF REQUIRED)
 # include_directories(${SDL2TTF_INCLUDE_DIR})
 
@@ -26,23 +34,20 @@ include_directories(
 # Generate compile_commands.json file 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_C_FLAGS_DEBUG "-Og -g -DDEBUG")
-set(CMAKE_CXX_FLAGS_DEBUG "-Og -g")
-set(CMAKE_C_FLAGS_RELEASE "-Os")
-set(CMAKE_CXX_FLAGS_RELEASE "-Os")
-set(CMAKE_ASM_SOURCE_FILE_EXTENSIONS s)
-
 add_compile_options(
-    $<$<COMPILE_LANGUAGE:C>:-std=gnu99>
     -ffunction-sections
     -fdata-sections
     -Wall
     -Wshadow
+    $<$<CONFIG:DEBUG>:-g3>
+    $<$<CONFIG:DEBUG>:-Og>
+    $<$<CONFIG:RELEASE>:-Os>  
 )
 
 add_compile_definitions(
     LV_BUILD_TEST=0
     SIMULATOR=1
+    $<$<CONFIG:DEBUG>:DEBUG>
 )
 
 
