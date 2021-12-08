@@ -11,24 +11,16 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
 find_package(SDL2 REQUIRED)
-
-# Could not get this working
-# see https://trenki2.github.io/blog/2017/06/02/using-sdl2-with-cmake/
-#
-# set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/CMake/" ${CMAKE_MODULE_PATH})
-# find_package(SDLTTF REQUIRED)
-# include_directories(${SDL2TTF_INCLUDE_DIR})
-
-# if MacOS then hard code paths to get SDL linking
-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    set(SDL2_INCLUDE_DIR /usr/local/Cellar/sdl2/2.0.18/include/)
-    link_directories(/usr/local/Cellar/sdl2/2.0.18/lib/)
-    set(SDL2_LIBRARY SDL2)
+if(SDL2_FOUND)
+    message("SDL2 inc ${SDL2_INCLUDE_DIRS}")
+    message("SDL2 lib ${SDL2_LIBRARY}")
 endif()
 
 include_directories(
-    ${SDL2_INCLUDE_DIR}
+    ${SDL2_INCLUDE_DIRS}
 )
 
 # Generate compile_commands.json file 
