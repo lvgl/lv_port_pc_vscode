@@ -26,8 +26,8 @@ done
 
 [[ -n $RESET && -d $BUILD_DIR ]] && rm -rf $BUILD_DIR
     
-$CMAKE -S . -B $BUILD_DIR --warn-uninitialized -DCMAKE_BUILD_TYPE=$TYPE
+$CMAKE -S . -B $BUILD_DIR --warn-uninitialized -Wno-dev -DCMAKE_BUILD_TYPE=$TYPE
 
 [[ -n $CLEAN ]] && $CMAKE --build $BUILD_DIR --target clean
 
-$CMAKE --build $BUILD_DIR --no-print-directory -- $VERBOSE
+$CMAKE --build $BUILD_DIR -- $VERBOSE

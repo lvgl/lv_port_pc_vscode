@@ -9,7 +9,7 @@ Using a PC simulator instead of an embedded hardware has several advantages:
 * **Developer friendly** because much easier and faster to debug on PC
 
 ## Requirements
-This project is configured for VSCode and only tested on Linux, although this may work on macOS (see below) or WSL. It requires a working version of GCC, GDB and make in your path.
+This project is configured for VSCode and tested on Linux and macOS (see below). It requires a working version of GCC (or AppleClang), GDB and make in your path.
 
 To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger.
 
@@ -75,7 +75,7 @@ Run the executable at:
 
 ## macOS
 
-This project has been tested with `Monterey`, Clang v13.0.0, SDL2 2.0.18
+This project has been tested with `Monterey`, AppleClang v13.0.0, SDL2 2.0.18
 ```
 $ gcc -v
 Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
@@ -84,23 +84,8 @@ Target: x86_64-apple-darwin21.1.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 ```
-### macOS SDL2 CMake "Hack" (YMMV)
 
-CMake happily finds the package SDL2, but is not setting the correct paths and library includes (to be resolved). The stock [stackoverflow](https://trenki2.github.io/blog/2017/06/02/using-sdl2-with-cmake/) answer did not fix the issue (outstanding issue to be resolved).
-
-Current the `hack` is to hard-code the include paths in the `CMakeLists.txt`.
-```
-# if MacOS then hard code paths to get SDL linking
-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    set(SDL2_INCLUDE_DIR /usr/local/Cellar/sdl2/2.0.18/include/)
-    link_directories(/usr/local/Cellar/sdl2/2.0.18/lib/)
-    set(SDL2_LIBRARY SDL2)
-endif()
-```
-
-This path may need editing for your install of SDL2. However if installed using [Homebrew](https://brew.sh/) then it is likely to be correct for the current version of SDL2.
-
-To check for the path of SDL2 using homebrew:
+To check for the path of SDL2 using homebrew, e.g.
 ```
 brew ls SDL2
 /usr/local/Cellar/sdl2/2.0.18/bin/sdl2-config

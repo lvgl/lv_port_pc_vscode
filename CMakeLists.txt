@@ -60,7 +60,7 @@ add_executable(${PROJECT_NAME}
     main/src/mouse_cursor_icon.c
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE lvgl lv_drivers lv_examples ${SDL2_LIBRARY})
+target_link_libraries(${PROJECT_NAME} PRIVATE lv_examples lvgl lv_drivers  ${SDL2_LIBRARY})
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
   # using Clang
