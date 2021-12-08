@@ -61,3 +61,15 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE lvgl lv_drivers lv_examples ${SDL2_LIBRARY})
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
+  # using Clang
+  target_link_options(${PROJECT_NAME} PRIVATE
+    LINKER:-map,${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map
+)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  # using GCC
+    target_link_options(${PROJECT_NAME} PRIVATE
+        LINKER:-Map,${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.map
+    )
+endif()
