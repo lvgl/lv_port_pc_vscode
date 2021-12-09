@@ -36,16 +36,17 @@ add_compile_options(
 add_compile_definitions(LV_BUILD_TEST=0 SIMULATOR=1 $<$<CONFIG:DEBUG>:DEBUG>)
 
 include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/main/src
-                    ${CMAKE_SOURCE_DIR}/lvgl ${CMAKE_SOURCE_DIR}/lv_examples)
+                    ${CMAKE_SOURCE_DIR}/lvgl ${CMAKE_SOURCE_DIR}/lv_demos)
 
 add_subdirectory(lv_drivers)
 add_subdirectory(lvgl)
-add_subdirectory(lv_examples)
+# add_subdirectory(lv_examples)
+add_subdirectory(lv_demos)
 
 # list of modules to build the appliaction (without extension .c or .cpp)
 add_executable(${PROJECT_NAME} main/src/main.c main/src/mouse_cursor_icon.c)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE lv_examples lvgl lv_drivers
+target_link_libraries(${PROJECT_NAME} PRIVATE lvgl::demos lvgl::lvgl lv_drivers
                                               ${SDL2_LIBRARY})
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
