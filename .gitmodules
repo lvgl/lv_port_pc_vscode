@@ -1,6 +1,7 @@
 [submodule "lv_drivers"]
 	path = lv_drivers
 	url = https://github.com/lvgl/lv_drivers.git
+	branch = release/v8.1
 [submodule "lvgl"]
 	path = lvgl
 	url = https://github.com/lvgl/lvgl.git
@@ -8,3 +9,4 @@
 [submodule "lv_demos"]
 	path = lv_demos
 	url = https://github.com/lvgl/lv_demos.git
+	branch = release/v8.1
