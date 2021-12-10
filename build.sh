@@ -26,7 +26,7 @@ done
 
 [[ -n $RESET && -d $BUILD_DIR ]] && rm -rf $BUILD_DIR
     
-$CMAKE -S . -B $BUILD_DIR --warn-uninitialized -Wno-dev -DCMAKE_BUILD_TYPE=$TYPE
+$CMAKE -S . -B $BUILD_DIR --warn-uninitialized -Wno-dev -DCMAKE_BUILD_TYPE=$TYPE -GNinja
 
 [[ -n $CLEAN ]] && $CMAKE --build $BUILD_DIR --target clean
 
