@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
+include(FetchContent)
 
 # project name
 project(lvgl-sdl LANGUAGES C CXX)
@@ -24,6 +25,36 @@ include_directories(${SDL2_INCLUDE_DIRS})
 # Generate compile_commands.json file
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+
+# Specify path to own LVGL config header
+set(LV_CONF_PATH
+    ${CMAKE_CURRENT_SOURCE_DIR}/lv_conf.h
+    CACHE STRING "" FORCE)
+
+# Fetch LVGL from GitHub
+FetchContent_Declare(
+  lvgl 
+  GIT_REPOSITORY https://github.com/lvgl/lvgl.git
+  # GIT_TAG d38eb1e689fa5a64c25e677275172d9c8a4ab2f0
+  # GIT_TAG        v8.1.0
+)
+
+# Specify path to own LVGL demos config header
+set(LV_DEMO_CONF_PATH
+    ${CMAKE_CURRENT_SOURCE_DIR}/lv_demo_conf.h
+    CACHE STRING "" FORCE)
+
+# Fetch LVGL Drivers from GitHub
+FetchContent_Declare(lv_drivers
+                     GIT_REPOSITORY https://github.com/lvgl/lv_drivers)
+
+# Fetch LVGL Demos from GitHub
+FetchContent_Declare(lv_demos
+                     GIT_REPOSITORY https://github.com/lvgl/lv_demos.git)
+
+FetchContent_MakeAvailable(lvgl lv_drivers lv_demos)
+
+
 add_compile_options(
   -ffunction-sections
   -fdata-sections
@@ -35,13 +66,7 @@ add_compile_options(
 
 add_compile_definitions(LV_BUILD_TEST=0 SIMULATOR=1 $<$<CONFIG:DEBUG>:DEBUG>)
 
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/main/src
-                    ${CMAKE_SOURCE_DIR}/lvgl ${CMAKE_SOURCE_DIR}/lv_demos)
-
-add_subdirectory(lv_drivers)
-add_subdirectory(lvgl)
-# add_subdirectory(lv_examples)
-add_subdirectory(lv_demos)
+include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/main/src)
 
 # list of modules to build the appliaction (without extension .c or .cpp)
 add_executable(${PROJECT_NAME} main/src/main.c main/src/mouse_cursor_icon.c)
