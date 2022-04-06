@@ -35,12 +35,12 @@ sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 On Windows install copy "SDL2.dll" to your "Windows/System32" directory.
 
 ### Build
-On Linux use the default make target:
+On Linux use the default make target. Select "g++ build and debug active file" from the VS Code "RUN AND DEBUG" drop down, or via the command line:
 ```
 make
 ```
 
-On Windows install Cygwin from https://www.cygwin.com. Select the appropriate compiler and debugger during installation (x86_64-w64-mingw32-gcc, gdb).  Use the win64 target to build:
+On Windows install Cygwin from https://www.cygwin.com. Select the appropriate compiler and debugger during installation (x86_64-w64-mingw32-gcc, gdb). Add the Cygwin binaries directory path ( C:\cygwin64\bin for example ) to the "Path" "System Environment Variable" via Windows Settings. Use the win64 target to build. Select "win64 build and debug active file" from the VS Code "RUN AND DEBUG" drop down, or via the command line:
 ```
 make win64
 ```
