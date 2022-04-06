@@ -32,7 +32,12 @@ On Linux you can install it via terminal:
 ```
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 ```
-On Windows install copy "SDL2.dll" to your "Windows/System32" directory.
+On Windows copy "SDL2.dll" to your "Windows\System32" directory and the "ui\simulator\dlls" directory. Copy the SDL2 source code "include" directory to "ui\simulator\inc" name it "SDL2", the final paths look like this:
+```
+C:\Windows\System32\SDL2.dll
+C:\(lv_sim_vscode_sdl source directory)\ui\simulator\dlls\SDL2.dll
+C:\(lv_sim_vscode_sdl source directory)\ui\simulator\inc\SDL2\*.h
+```
 
 ### Build
 On Linux use the default make target. Select "g++ build and debug active file" from the VS Code "RUN AND DEBUG" drop down, or via the command line:

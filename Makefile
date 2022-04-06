@@ -28,7 +28,7 @@ WARNINGS 			:= -Wall -Wextra \
 
 CFLAGS 				:= -O0 -g $(WARNINGS)
 all: LDFLAGS 		:= 
-win64: LDFLAGS 		:= -L./dlls
+win64: LDFLAGS 		:= -L./ui/simulator/dlls
 
 # Add simulator define to allow modification of source
 all: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1
