@@ -32,6 +32,10 @@ On on Linux you can install it via terminal:
 ```
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 ```
+On Windows install Cygwin from https://www.cygwin.com. Install the appropriate compiler and debugger with Cygwin (x86_64-w64-mingw32-gcc, gdb). Copy "SDL2.dll" to your "Windows/System32" directory. Use the win64 target to build.
+```
+make win64
+```
 
 ### Setup
 To allow custom UI code an `lv_conf.h` file placed at `ui/simulator/inc` will automatically override this projects lv_conf.h file. By default code under `ui` is ignored so you can reuse this repository for multiple projects. You will need to place a call from `main.c` to your UI's entry function.

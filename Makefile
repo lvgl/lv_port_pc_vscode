@@ -7,7 +7,10 @@ PROJECT 			?= lvgl-sdl
 MAKEFLAGS 			:= -j $(shell nproc)
 SRC_EXT      		:= c
 OBJ_EXT				:= o
-CC 					?= gcc
+all: CC 			:= gcc
+win64: CC 			:= x86_64-w64-mingw32-gcc.exe
+
+
 
 SRC_DIR				:= ./
 WORKING_DIR			:= ./build
@@ -24,9 +27,12 @@ WARNINGS 			:= -Wall -Wextra \
             			-Wtype-limits -Wsizeof-pointer-memaccess -Wpointer-arith
 
 CFLAGS 				:= -O0 -g $(WARNINGS)
+all: LDFLAGS 		:= 
+win64: LDFLAGS 		:= -L./dlls
 
 # Add simulator define to allow modification of source
-DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0
+all: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1
+win64: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1 -D __WIN64__ -D LV_PRId32=PRId32 -D LV_PRIu32=PRIu32
 
 # Include simulator inc folder first so lv_conf.h from custom UI can be used instead
 INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/
@@ -56,3 +62,7 @@ clean:
 install: ${BIN}
 	install -d ${DESTDIR}/usr/lib/${PROJECT}/bin
 	install $< ${DESTDIR}/usr/lib/${PROJECT}/bin/
+
+win64: $(OBJECTS)
+	@mkdir -p $(BIN_DIR)
+	$(CC) -o $(BIN) $(OBJECTS) $(LDFLAGS) ${LDLIBS}

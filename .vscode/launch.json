@@ -7,7 +7,7 @@
         "request": "launch",
         "program": "${workspaceFolder}/build/bin/demo",
         "args": [],
-        "stopAtEntry": false,
+        "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
         "environment": [],
         "externalConsole": false,
@@ -20,6 +20,27 @@
           }
         ],
         "preLaunchTask": "Build"
+      },
+      {
+        "name": "win64 build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/bin/demo",
+        "args": [],
+        "stopAtEntry": true,
+        "targetArchitecture": "x64",
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "Build Win64"
       }
     ]
 }
