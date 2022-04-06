@@ -472,10 +472,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h"*/
 #define LV_USE_THEME_DEFAULT    1
 #if LV_USE_THEME_DEFAULT
 
-/*0: Light mode; 1: Dark mode*/
-# define LV_THEME_DEFAULT_DARK     0
-
-/*1: Enable grow on press*/
+/*Enable grow on press*/
 # define LV_THEME_DEFAULT_GROW              1
 
 /*Default transition time in [ms]*/
@@ -486,7 +483,10 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h"*/
  #define LV_USE_THEME_BASIC    1
 
 /*A theme designed for monochrome displays*/
-#define LV_USE_THEME_MONO       1
+#define LV_USE_THEME_MONO       0
+
+/*Light mode; 1: Dark mode*/
+# define LV_THEME_DEFAULT_DARK     0
 
 /*-----------
  * Layouts
