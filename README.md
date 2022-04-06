@@ -28,11 +28,19 @@ git clone --recursive https://github.com/lvgl/lv_sim_vscode_sdl
 ### Install SDL
 You can download SDL from https://www.libsdl.org/
 
-On on Linux you can install it via terminal:
+On Linux you can install it via terminal:
 ```
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 ```
-On Windows install Cygwin from https://www.cygwin.com. Install the appropriate compiler and debugger with Cygwin (x86_64-w64-mingw32-gcc, gdb). Copy "SDL2.dll" to your "Windows/System32" directory. Use the win64 target to build.
+On Windows install copy "SDL2.dll" to your "Windows/System32" directory.
+
+### Build
+On Linux use the default make target:
+```
+make
+```
+
+On Windows install Cygwin from https://www.cygwin.com. Select the appropriate compiler and debugger during installation (x86_64-w64-mingw32-gcc, gdb).  Use the win64 target to build:
 ```
 make win64
 ```
