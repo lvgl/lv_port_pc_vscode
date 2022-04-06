@@ -31,8 +31,8 @@ all: LDFLAGS 		:=
 win64: LDFLAGS 		:= -L./ui/simulator/dlls
 
 # Add simulator define to allow modification of source
-all: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1
-win64: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1 -D __WIN64__ -D LV_PRId32=PRId32 -D LV_PRIu32=PRIu32
+all: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1 -D LV_USE_DEMO_WIDGETS=1
+win64: DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0 -D LV_CONF_INCLUDE_SIMPLE=1 -D __WIN64__ -D LV_PRId32=PRId32 -D LV_PRIu32=PRIu32 -D LV_USE_DEMO_WIDGETS=1
 
 # Include simulator inc folder first so lv_conf.h from custom UI can be used instead
 INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/

@@ -22,6 +22,26 @@
         "preLaunchTask": "Build"
       },
       {
+        "name": "g++ clean-build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/bin/demo",
+        "args": [],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "Clean Build"
+      },
+      {
         "name": "win64 build and debug active file",
         "type": "cppdbg",
         "request": "launch",
@@ -41,6 +61,27 @@
           }
         ],
         "preLaunchTask": "Build Win64"
+      },
+      {
+        "name": "win64 clean-build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/bin/demo",
+        "args": [],
+        "stopAtEntry": true,
+        "targetArchitecture": "x64",
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "Clean Build Win64"
       }
     ]
 }

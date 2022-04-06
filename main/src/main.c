@@ -14,7 +14,7 @@
 #include <SDL2/SDL.h>
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
-#include "lv_examples/lv_demo.h"
+#include "lvgl/demos/lv_demos.h"
 #include "lv_drivers/display/monitor.h"
 #include "lv_drivers/indev/mouse.h"
 #include "lv_drivers/indev/keyboard.h"
@@ -77,29 +77,21 @@ int main(int argc, char **argv)
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
   hal_init();
 
-//  lv_example_switch_1();
-//  lv_example_calendar_1();
-//  lv_example_btnmatrix_2();
-//  lv_example_checkbox_1();
-//  lv_example_colorwheel_1();
-//  lv_example_chart_6();
-//  lv_example_table_2();
-//  lv_example_scroll_2();
-//  lv_example_textarea_1();
-//  lv_example_msgbox_1();
-//  lv_example_dropdown_2();
-//  lv_example_btn_1();
-//  lv_example_scroll_1();
-//  lv_example_tabview_1();
-//  lv_example_tabview_1();
-//  lv_example_flex_3();
-//  lv_example_label_1();
+  /*add your ui here, if using demos make sure the appropriate guard is defined*/
 
+  #if LV_USE_DEMO_BENCHMARK /*add -D LV_USE_DEMO_BENCHMARK=1 to your make file*/
+  lv_demo_benchmark();
+  #elif LV_USE_DEMO_KEYPAD_AND_ENCODER /*add -D LV_USE_DEMO_KEYPAD_AND_ENCODER=1 to your make file*/
+  lv_demo_keypad_encoder();
+  #elif LV_USE_DEMO_MUSIC /*add -D LV_USE_DEMO_MUSIC=1 to your make file*/
+  lv_demo_music();
+  #elif LV_USE_DEMO_STRESS /*add -D LV_USE_DEMO_STRESS=1 to your make file*/
+  lv_demo_stress();
+  #elif LV_USE_DEMO_WIDGETS /*add -D LV_USE_DEMO_WIDGETS=1 to your make file*/
   lv_demo_widgets();
-//  lv_demo_keypad_encoder();
-//  lv_demo_benchmark();
-//  lv_demo_stress();
-//  lv_demo_music();
+  #else
+  my_gui(); /*replace this with your gui*/
+  #endif
 
   while(1) {
     /* Periodically call the lv_task handler.
