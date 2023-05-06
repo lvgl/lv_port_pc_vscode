@@ -10,6 +10,7 @@
 #define _DEFAULT_SOURCE /* needed for usleep() */
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #define SDL_MAIN_HANDLED /*To fix SDL's "undefined reference to WinMain" issue*/
 #include <SDL2/SDL.h>
 #include "lvgl/lvgl.h"
@@ -33,6 +34,7 @@
  **********************/
 static void hal_init(void);
 static int tick_thread(void *data);
+static int parse_args(int argc, char **argv);
 
 /**********************
  *  STATIC VARIABLES
@@ -68,8 +70,61 @@ static int tick_thread(void *data);
 
 int main(int argc, char **argv)
 {
-  (void)argc; /*Unused*/
-  (void)argv; /*Unused*/
+  int len = 0;
+  int index = 0;
+
+  /* Example function lists. */
+  void (*lv_example_func[])(void) = {
+    lv_demo_widgets,
+    lv_demo_keypad_encoder,
+    lv_demo_benchmark,
+    lv_demo_stress,
+    lv_demo_music,
+
+    lv_example_switch_1,
+    lv_example_calendar_1,
+    lv_example_btnmatrix_2,
+    lv_example_checkbox_1,
+    lv_example_colorwheel_1,
+    lv_example_chart_6,
+    lv_example_table_2,
+    lv_example_scroll_2,
+    lv_example_textarea_1,
+    lv_example_msgbox_1,
+    lv_example_dropdown_2,
+    lv_example_btn_1,
+    lv_example_scroll_1,
+    lv_example_tabview_1,
+    lv_example_tabview_1,
+    lv_example_flex_3,
+    lv_example_label_1,
+  };
+
+  /* Get example function counts. */
+  len = sizeof(lv_example_func) / sizeof(lv_example_func[0]);
+
+  /**
+   * Example 1:
+   * ./demo
+   * 
+   * Example 2:
+   * ./demo -e 0
+   * ./demo -e 1
+  */
+  printf("You can select examples index:\n");
+  printf("%s -e 0~%d.\n", argv[0], len - 1);
+
+  /* Parse arguments. */
+  if (argc > 1) {
+    index = parse_args(argc, argv);
+
+    if (index < 0) {
+      index = 0;
+    }
+    else if (index > len - 1) {
+      index = len - 1;
+    }
+  }
 
   /*Initialize LVGL*/
   lv_init();
@@ -77,29 +132,8 @@ int main(int argc, char **argv)
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
   hal_init();
 
-//  lv_example_switch_1();
-//  lv_example_calendar_1();
-//  lv_example_btnmatrix_2();
-//  lv_example_checkbox_1();
-//  lv_example_colorwheel_1();
-//  lv_example_chart_6();
-//  lv_example_table_2();
-//  lv_example_scroll_2();
-//  lv_example_textarea_1();
-//  lv_example_msgbox_1();
-//  lv_example_dropdown_2();
-//  lv_example_btn_1();
-//  lv_example_scroll_1();
-//  lv_example_tabview_1();
-//  lv_example_tabview_1();
-//  lv_example_flex_3();
-//  lv_example_label_1();
-
-  lv_demo_widgets();
-//  lv_demo_keypad_encoder();
-//  lv_demo_benchmark();
-//  lv_demo_stress();
-//  lv_demo_music();
+  /* Do example. */
+  lv_example_func[index]();
 
   while(1) {
     /* Periodically call the lv_task handler.
@@ -199,4 +233,25 @@ static int tick_thread(void *data) {
   }
 
   return 0;
+}
+
+/**
+ * parse_arguments - Parse arguments.
+ */
+static int parse_args(int argc, char **argv)
+{
+  int index = -1;
+
+  if (argc > 1) {
+    if (!strcmp("-e", argv[1])) {
+      if (argc >= 3) {
+        /* Make sure the parameter contains only numbers. */
+        if(strspn(argv[2], "-0123456789") == strlen(argv[2])) {
+          index = atoi(argv[2]);
+        }
+      }
+    }
+  }
+
+  return index;
 }
