@@ -3,7 +3,7 @@
 The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
 Using a PC simulator instead of an embedded hardware has several advantages:
-* **Costs $0** because you you don't have to buy or design PCB
+* **Costs $0** because you don't have to buy or design PCB
 * **Fast** because you don't have to design and manufacture PCB
 * **Collaborative** because any number of developers can work in the same environment
 * **Developer friendly** because much easier and faster to debug on PC
