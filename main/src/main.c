@@ -66,7 +66,7 @@ static int tick_thread(void *data);
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
-
+#if 0
 static void user_image_demo()
 {
   lv_obj_t * img = lv_gif_create(lv_scr_act());
@@ -151,6 +151,7 @@ static void user_image_demo()
     lv_ffmpeg_player_set_cmd(player, LV_FFMPEG_PLAYER_CMD_START);
     lv_obj_align(player, LV_ALIGN_TOP_MID, 0, 20);
 }
+#endif
 
 int main(int argc, char **argv)
 {
@@ -181,13 +182,13 @@ int main(int argc, char **argv)
 //  lv_example_flex_3();
 //  lv_example_label_1();
 
-//  lv_demo_widgets();
+  lv_demo_widgets();
 //  lv_demo_keypad_encoder();
 //  lv_demo_benchmark();
 //  lv_demo_stress();
 //  lv_demo_music();
 
-  user_image_demo();
+//  user_image_demo();
 
   while(1) {
     /* Periodically call the lv_task handler.
