@@ -21,16 +21,44 @@ To allow debugging inside VSCode you will also require a GDB [extension](https:/
 
 Clone the PC project and the related sub modules:
 
-```
-git clone --recursive https://github.com/lvgl/lv_sim_vscode_sdl
+```bash
+git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
 ### Install SDL
 You can download SDL from https://www.libsdl.org/
 
 On on Linux you can install it via terminal:
-```
+```bash
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
+```
+
+### Optional library
+There are also FreeType and FFmpeg support. You can install FreeType support with:
+```bash
+# FreeType support
+wget https://kumisystems.dl.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
+tar -xf freetype-2.13.2.tar.xz
+cd freetype-2.13.2
+make
+make install
+```
+
+The FFmpeg support can be installed with:
+```bash
+# FFmpeg support
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+cd ffmpeg
+git checkout release/6.0
+./configure --disable-all --disable-autodetect --disable-podpages --disable-asm --enable-avcodec --enable-avformat --enable-decoders --enable-encoders --enable-demuxers --enable-parsers --enable-protocol='file' --enable-swscale --enable-zlib
+make
+sudo make install
+```
+
+And then remove all the comments in the `Makefile` on `INC` and `LDLIBS` lines. They should be:
+```Makefile
+INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
+LDLIBS	 			:= -lSDL2 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
 ```
 
 ### Setup
