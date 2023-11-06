@@ -1,3 +1,6 @@
+[submodule "lv_drivers"]
+	path = lv_drivers
+	url = https://github.com/gcopoix/lv_drivers.git
 [submodule "lvgl"]
 	path = lvgl
 	url = https://github.com/lvgl/lvgl.git

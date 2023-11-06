@@ -1,6 +1,6 @@
 /**
  * @file lv_drv_conf.h
- * Configuration file for v8.3.0
+ * Configuration file for v9.0.0-dev
  */
 
 /*
@@ -86,7 +86,7 @@
 
 /* SDL based drivers for display, mouse, mousewheel and keyboard*/
 #ifndef USE_SDL
-# define USE_SDL 1
+# define USE_SDL 0
 #endif
 
 /* Hardware accelerated SDL driver */
@@ -113,6 +113,9 @@
 
 /*Open two windows to test multi display support*/
 #  define SDL_DUAL_DISPLAY            0
+
+/* Window Title  */
+#  define SDL_WINDOW_TITLE "TFT Simulator"
 #endif
 
 /*-------------------
@@ -194,6 +197,23 @@
 #    define LV_WAYLAND_XDG_SHELL 0
 #  endif
 #endif
+
+/*----------------------------------------
+ *  X11 drivers (monitor, mouse, keyboard)
+ *---------------------------------------*/
+#ifndef USE_X11
+#  define USE_X11       0
+#endif
+
+#if USE_X11
+  /* Simulated screen resolution  */
+  #ifndef DISP_HOR_RES
+    #define DISP_HOR_RES   480
+  #endif
+  #ifndef DISP_VER_RES
+    #define DISP_VER_RES   320
+  #endif
+#endif // USE_X11
 
 /*----------------
  *    SSD1963
@@ -323,8 +343,7 @@
 #endif
 
 #if USE_FBDEV
-#  define FBDEV_PATH              "/dev/fb0"
-#  define FBDEV_DISPLAY_POWER_ON  1 /* 1 to force display power during initialization */
+#  define FBDEV_PATH          "/dev/fb0"
 #endif
 
 /*-----------------------------------------
@@ -335,8 +354,7 @@
 #endif
 
 #if USE_BSD_FBDEV
-#  define FBDEV_PATH              "/dev/fb0"
-#  define FBDEV_DISPLAY_POWER_ON  1 /* 1 to force display power during initialization */
+# define FBDEV_PATH		"/dev/fb0"
 #endif
 
 /*-----------------------------------------

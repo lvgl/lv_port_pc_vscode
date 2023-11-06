@@ -9,11 +9,12 @@ Using a PC simulator instead of an embedded hardware has several advantages:
 * **Developer friendly** because much easier and faster to debug on PC
 
 ## Requirements
-This project is configured for VSCode and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
+This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
 
-To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger.
+To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements have been pre-configured in the [.workspace](simulator.code-workspace) file (simply open the project by doubleclick on this file).
 
-* **SDL** a low level driver library to use graphics, handle mouse, keyboard etc.
+The project can use **SDL** or **X11** as LVGL display driver for lowlevel graphics/mouse/keyboard support. This can be defined in the [Makefile](Makefile#L8).
+Please make sure the selected library is installed in the system (check [Install graphics driver](#install-graphics-driver)).
 
 ## Usage
 
@@ -25,12 +26,22 @@ Clone the PC project and the related sub modules:
 git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
-### Install SDL
+### Install graphics driver
+The project can use **SDL** or **X11** as LVGL display driver. This can be selected in the [Makefile](Makefile#L8).
+Please make sure the used library is installed in the system:
+
+#### Install SDL
 You can download SDL from https://www.libsdl.org/
 
 On on Linux you can install it via terminal:
 ```bash
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
+```
+
+#### Install X11
+On on Linux you can install it via terminal:
+```bash
+sudo apt-get update && sudo apt-get install -y libx11-dev
 ```
 
 ### Optional library
@@ -55,10 +66,16 @@ make
 sudo make install
 ```
 
-And then remove all the comments in the `Makefile` on `INC` and `LDLIBS` lines. They should be:
+And then remove all the comments in the `Makefile` on `INC` and `LDLIBS` lines. \
+They should be for **SDL**:
 ```Makefile
-INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
-LDLIBS	 			:= -lSDL2 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
+INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
+LDLIBS := -lSDL2 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
+```
+They should be for **X11**:
+```Makefile
+INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
+LDLIBS := -lX11 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
 ```
 
 ### Setup
