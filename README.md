@@ -9,7 +9,7 @@ Using a PC simulator instead of an embedded hardware has several advantages:
 * **Developer friendly** because much easier and faster to debug on PC
 
 ## Requirements
-This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
+This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux and macOS, although this may work on WSL as well. It requires a working version of GCC, GDB and make in your path.
 
 To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements have been pre-configured in the [.workspace](simulator.code-workspace) file (simply open the project by doubleclick on this file).
 
@@ -33,13 +33,18 @@ Please make sure the used library is installed in the system:
 #### Install SDL
 You can download SDL from https://www.libsdl.org/
 
-On on Linux you can install it via terminal:
+On Linux you can install it via terminal:
 ```bash
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
 ```
 
+On macOS you can install it via terminal:
+```bash
+brew install sdl2
+```
+
 #### Install X11
-On on Linux you can install it via terminal:
+On Linux you can install it via terminal:
 ```bash
 sudo apt-get update && sudo apt-get install -y libx11-dev
 ```
@@ -66,16 +71,72 @@ make
 sudo make install
 ```
 
-And then remove all the comments in the `Makefile` on `INC` and `LDLIBS` lines. \
-They should be for **SDL**:
+Build with **SDL2**:
+
+Select **SDL2** at the beginning of the Makefile:
+
 ```Makefile
-INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
-LDLIBS := -lSDL2 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
+# select underlaying LCGL display driver (SDL2 || X11)
+# LV_DRIVER          := X11
+LV_DRIVER          := SDL2
 ```
-They should be for **X11**:
+
+On macOS you'll need to include the [SDL2 library](https://formulae.brew.sh/formula/sdl2). To find the include path, run via terminal:
+
+```bash
+brew ls SDL2
+```
+
+It will print something like this:
+
+```bash
+/opt/homebrew/Cellar/sdl2/2.28.5/bin/sdl2-config
+/opt/homebrew/Cellar/sdl2/2.28.5/include/SDL2/ (78 files)
+/opt/homebrew/Cellar/sdl2/2.28.5/lib/libSDL2-2.0.0.dylib
+/opt/homebrew/Cellar/sdl2/2.28.5/lib/cmake/ (2 files)
+/opt/homebrew/Cellar/sdl2/2.28.5/lib/pkgconfig/sdl2.pc
+/opt/homebrew/Cellar/sdl2/2.28.5/lib/ (4 other files)
+/opt/homebrew/Cellar/sdl2/2.28.5/share/aclocal/sdl2.m4
+```
+
+You take the second line path and copy into the Makefile:
+
 ```Makefile
-INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/usr/include/freetype2 -L/usr/local/lib
-LDLIBS := -lX11 -lm -lfreetype -lavformat -lavcodec -lavutil -lswscale -lm -lz -lpthread
+INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/opt/homebrew/Cellar/sdl2/2.28.5/include/SDL2 # -I/usr/include/freetype2 -L/usr/local/lib
+```
+
+Next, include the SDL2 library and respective C flags, by adding `sdl2-config --cflags --libs`:
+
+```Makefile
+$(BIN): $(OBJECTS)
+	@mkdir -p $(BIN_DIR)
+	$(CC) -o $(BIN) $(OBJECTS) $(LDFLAGS) ${LDLIBS} `sdl2-config --cflags --libs`
+```
+
+Comment out the last lines, as such:
+
+```Makefile
+# install: ${BIN}
+# 	install -d ${DESTDIR}/usr/lib/${PROJECT}/bin
+# 	install $< ${DESTDIR}/usr/lib/${PROJECT}/bin/
+```
+
+Finally, change the `main.c` include `#include <SDL2/SDL.h>` to `#include <SDL.h>`.
+
+Build with **X11**:
+
+Select X11 at the beginning of the Makefile:
+
+```Makefile
+# select underlaying LCGL display driver (SDL2 || X11)
+LV_DRIVER          := X11
+# LV_DRIVER          := SDL2
+```
+
+This is enough to build. Try via terminal:
+
+```bash
+make
 ```
 
 ### Setup
