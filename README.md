@@ -30,7 +30,7 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 The project can use **SDL** or **X11** as LVGL display driver. This can be selected in the [Makefile](Makefile#L8).
 Please make sure the used library is installed in the system:
 
-#### Install SDL
+### Install SDL
 You can download SDL from https://www.libsdl.org/
 
 On Linux you can install it via terminal:
@@ -43,7 +43,7 @@ On macOS you can install it via terminal:
 brew install sdl2
 ```
 
-#### Install X11
+### Install X11
 On Linux you can install it via terminal:
 ```bash
 sudo apt-get update && sudo apt-get install -y libx11-dev
@@ -71,7 +71,9 @@ make
 sudo make install
 ```
 
-Build with **SDL2**:
+## Building
+
+### With SDL2
 
 Select **SDL2** at the beginning of the Makefile:
 
@@ -80,6 +82,8 @@ Select **SDL2** at the beginning of the Makefile:
 # LV_DRIVER          := X11
 LV_DRIVER          := SDL2
 ```
+
+#### Notes for macOS
 
 On macOS you'll need to include the [SDL2 library](https://formulae.brew.sh/formula/sdl2). To find the include path, run via terminal:
 
@@ -102,7 +106,7 @@ It will print something like this:
 You take the second line path and copy into the Makefile:
 
 ```Makefile
-INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/opt/homebrew/Cellar/sdl2/2.28.5/include/SDL2 # -I/usr/include/freetype2 -L/usr/local/lib
+INC    := -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/opt/homebrew/Cellar/sdl2/2.28.5/include # -I/usr/include/freetype2 -L/usr/local/lib
 ```
 
 Next, include the SDL2 library and respective C flags, by adding `sdl2-config --cflags --libs`:
@@ -113,17 +117,9 @@ $(BIN): $(OBJECTS)
 	$(CC) -o $(BIN) $(OBJECTS) $(LDFLAGS) ${LDLIBS} `sdl2-config --cflags --libs`
 ```
 
-Comment out the last lines, as such:
-
-```Makefile
-# install: ${BIN}
-# 	install -d ${DESTDIR}/usr/lib/${PROJECT}/bin
-# 	install $< ${DESTDIR}/usr/lib/${PROJECT}/bin/
-```
-
 Finally, change the `main.c` include `#include <SDL2/SDL.h>` to `#include <SDL.h>`.
 
-Build with **X11**:
+### Build with **X11**:
 
 Select X11 at the beginning of the Makefile:
 
