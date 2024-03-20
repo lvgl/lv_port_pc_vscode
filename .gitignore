@@ -1,5 +1,6 @@
 # Ignore build folder
 build/
+bin/
 
 # Ignore UI folder, this should be commited in its own repository
 ui/
@@ -8,5 +9,4 @@ ui/
 .*/
 
 # VSCode
-!.vscode/
-!.vscode/*
+.vscode
