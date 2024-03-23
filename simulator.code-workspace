@@ -23,13 +23,7 @@
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
-		"cmake.configureOnOpen": false,
-		"files.associations": {
-			"lv_demos.h": "c",
-			"lvgl.h": "c",
-			"lv_drv_conf.h": "c",
-			"stdlib.h": "c"
-		},
+		"cmake.configureOnOpen": true,
 	},
 	// tasks.json section
 	"tasks": {
@@ -68,7 +62,7 @@
 				"name": "Debug LVGL demo with gdb",
 				"type": "cppdbg",
 				"request": "launch",
-			        "program": "bin/main",
+		        "program": "${workspaceFolder}/bin/main",
 				"args": [],
 				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
