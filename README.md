@@ -5,7 +5,7 @@ The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers 
 ## Requirements
 This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
 
-To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements have been pre-configured in the [.workspace](simulator.code-workspace) file (simply open the project by doubleclick on this file).
+To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file (simply open the project by doubleclick on this file).
 
 The project can use **SDL** but it can be easily relaced by any other built-in LVGL dirvers.
 
@@ -20,7 +20,7 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
 ### Install graphics driver
- 
+
 Please make sure **SDL**  is installed in the system:
 
 #### Install SDL

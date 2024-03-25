@@ -13,6 +13,7 @@
 		"recommendations": [
 			"ms-vscode.cpptools",              // common C/C++ support
 			"ms-vscode.cpptools-themes",       // general C/C++ theme
+			"ms-vscode.cmake-tools"            // cmake support
 		],
 		"unwantedRecommendations": [
 		]
@@ -22,13 +23,7 @@
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
-		"cmake.configureOnOpen": false,
-		"files.associations": {
-			"lv_demos.h": "c",
-			"lvgl.h": "c",
-			"lv_drv_conf.h": "c",
-			"stdlib.h": "c"
-		},
+		"cmake.configureOnOpen": true,
 	},
 	// tasks.json section
 	"tasks": {
@@ -36,7 +31,10 @@
 		"tasks": [
 			{
 				"label": "Build",
-				"command": "make",
+				"command": "cmake",
+				"args": [
+					"--build", "${command:cmake.buildDirectory}"
+				],
 				"group": {
 					"kind": "build",
 					"isDefault": true
@@ -64,9 +62,9 @@
 				"name": "Debug LVGL demo with gdb",
 				"type": "cppdbg",
 				"request": "launch",
-			        "program": "${workspaceFolder}/build/bin/demo",
+		        "program": "${workspaceFolder}/bin/main",
 				"args": [],
-				"cwd": "${fileDirname}",
+				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
 				"stopAtEntry": false,
 			},
