@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD 17)#C17
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
 find_package(SDL2 REQUIRED SDL2)
 
@@ -55,7 +56,7 @@ if(LV_USE_LIBJPEG_TURBO)
 endif(LV_USE_LIBJPEG_TURBO)
 
 if(LV_USE_FFMPEG)
-    target_link_libraries(main avformat avcodec avutil swscale)
+    target_link_libraries(main avformat avcodec avutil swscale z)
 endif(LV_USE_FFMPEG)
 
 if(LV_USE_FREETYPE)
