@@ -52,6 +52,16 @@
 					}
 				}
 			},
+			{
+				"label": "Build and Run",
+				"type": "shell",
+				"command": "${workspaceFolder}/bin/main",
+				"group": {
+					"kind": "test",
+					"isDefault": true
+				},
+				"dependsOn": "Build"
+			}
 		],
 	},
 	// launch.json section
@@ -60,6 +70,16 @@
 		"configurations": [
 			{
 				"name": "Debug LVGL demo with gdb",
+				"type": "cppdbg",
+				"request": "launch",
+		        "program": "${workspaceFolder}/bin/main",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"preLaunchTask": "Build",
+				"stopAtEntry": false,
+			},
+			{
+				"name": "Debug LVGL demo with LLVM",
 				"type": "cppdbg",
 				"request": "launch",
 		        "program": "${workspaceFolder}/bin/main",
