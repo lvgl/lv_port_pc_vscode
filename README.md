@@ -1,38 +1,44 @@
 # Simulator project for LVGL embedded GUI Library
 
-The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
+The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
-## Requirements
 This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
 
-To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file (simply open the project by doubleclick on this file).
+To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file.
 
 The project can use **SDL** but it can be easily relaced by any other built-in LVGL dirvers.
 
-## Usage
+## Get started
 
 ### Get the PC project
-
 Clone the PC project and the related sub modules:
 
 ```bash
 git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
-### Install graphics driver
-
-Please make sure **SDL**  is installed in the system:
-
-#### Install SDL
+### Install SDL and build tools
 You can download SDL from https://www.libsdl.org/
 
-On on Linux you can install it via terminal:
+#### Linux 
+Copy this in the Terminal:
 ```bash
-sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
+sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 ```
 
-### Optional library
-There are also FreeType and FFmpeg support. You can install FreeType support with:
+## Usage
+1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
+1. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
+2. Install the recommended plugins
+3. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
+![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
+4. Click the Play button or hit F5 to start debugging.
+
+## Optional library
+
+There are also FreeType and FFmpeg support. You can install these according to the followings:
+
+### Linux
 ```bash
 # FreeType support
 wget https://kumisystems.dl.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
@@ -42,7 +48,6 @@ make
 make install
 ```
 
-The FFmpeg support can be installed with:
 ```bash
 # FFmpeg support
 git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
