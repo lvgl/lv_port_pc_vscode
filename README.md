@@ -27,12 +27,23 @@ sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 ```
 
 ## Usage
+
+### Visual Studio Code
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
 1. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
 2. Install the recommended plugins
 3. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
 ![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
 4. Click the Play button or hit F5 to start debugging.
+
+### CMake
+This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
+```bash
+mkdir build
+cd build
+cmake ..
+make -j
+```
 
 ## Optional library
 
