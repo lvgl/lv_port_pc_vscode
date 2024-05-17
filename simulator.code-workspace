@@ -77,6 +77,17 @@
 				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
 				"stopAtEntry": false,
+				"linux": {
+					"MIMode": "gdb",
+					"miDebuggerPath": "/usr/bin/gdb"
+				  },
+				  "osx": {
+					"MIMode": "lldb"
+				  },
+				  "windows": {
+					"MIMode": "gdb",
+					"miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+				  }
 			},
 			{
 				"name": "Debug LVGL demo with LLVM",
@@ -87,6 +98,7 @@
 				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
 				"stopAtEntry": false,
+				"MIMode": "lldb"
 			},
 		],
 	},
