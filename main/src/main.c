@@ -52,13 +52,13 @@ int main(int argc, char **argv)
 
   /* 创建主屏幕 */
   lv_obj_t * scr = lv_scr_act();
-  
+
   /* 创建一个用于放置方块的网格 */
   static lv_coord_t col_dsc[] = {100, 20, 100, LV_GRID_TEMPLATE_LAST};  // 每个方块100px，间隙20px
   static lv_coord_t row_dsc[] = {100, 20, 100, 20, 100, LV_GRID_TEMPLATE_LAST};  // 每个方块100px，间隙20px
   
   lv_obj_t * grid = lv_obj_create(scr);
-  lv_obj_set_size(grid, LV_PCT(100), LV_PCT(100));
+  lv_obj_set_size(grid, 220, 340);  // 宽度为2个100px的方块和1个20px的间隙，高度为3个100px的方块和2个20px的间隙
   lv_obj_center(grid);
   lv_obj_set_layout(grid, LV_LAYOUT_GRID);
   lv_obj_set_grid_dsc_array(grid, col_dsc, row_dsc);
