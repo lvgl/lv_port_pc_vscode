@@ -6,11 +6,16 @@
 #include "lvgl/lvgl.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>  // 包含字符串操作的头文件
 
 /* 静态函数声明 */
 static lv_display_t * hal_init(int32_t w, int32_t h);
 static void create_pin_code_screen(void);
 static void pin_btn_event_cb(lv_event_t * e);
+
+/* 全局变量 */
+static lv_obj_t * pin_label;
+static char pin_code[7] = "";  // 最大6位数字的PIN码
 
 /**
  * 主函数
@@ -85,27 +90,25 @@ static void create_pin_code_screen(void)
     lv_obj_set_style_bg_color(cont, lv_color_hex(0xFFFFFF), 0);  // 白色背景
     lv_obj_set_style_radius(cont, 10, 0);  // 圆角
 
-    /* 创建 PIN 码输入按钮 */
-    for (int i = 0; i < 10; i++) {
-        lv_obj_t * btn = lv_btn_create(cont);
-        lv_obj_set_size(btn, 60, 60);
-        lv_obj_set_style_bg_color(btn, lv_color_hex(0xCCCCCC), 0);  // 灰色按钮
-        lv_obj_set_style_radius(btn, 10, 0);  // 圆角
-        lv_obj_set_style_text_color(btn, lv_color_hex(0x000000), 0);  // 黑色文本
+    /* 创建一个标签来显示输入的PIN码 */
+    pin_label = lv_label_create(cont);
+    lv_label_set_text(pin_label, "");
+    lv_obj_set_style_text_font(pin_label, &lv_font_montserrat_14, 0);
+    lv_obj_align(pin_label, LV_ALIGN_TOP_MID, 0, 10);
 
-        /* 设置按钮位置 */
-        int row = i / 3;
-        int col = i % 3;
-        lv_obj_set_pos(btn, col * 70 + 10, row * 70 + 10);
+    /* 创建数字键盘 */
+    static const char * btn_map[] = {
+        "1", "2", "3", "\n",
+        "4", "5", "6", "\n",
+        "7", "8", "9", "\n",
+        "DEL", "0", "OK", ""
+    };
 
-        /* 创建按钮标签 */
-        lv_obj_t * label = lv_label_create(btn);
-        lv_label_set_text_fmt(label, "%d", i);
-        lv_obj_center(label);
-
-        /* 添加按钮事件回调 */
-        lv_obj_add_event_cb(btn, pin_btn_event_cb, LV_EVENT_CLICKED, NULL);
-    }
+    lv_obj_t * btnm = lv_btnmatrix_create(cont);
+    lv_btnmatrix_set_map(btnm, btn_map);
+    lv_obj_set_size(btnm, 220, 180);
+    lv_obj_align(btnm, LV_ALIGN_CENTER, 0, 50);
+    lv_obj_add_event_cb(btnm, pin_btn_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
 }
 
 /**
@@ -113,9 +116,22 @@ static void create_pin_code_screen(void)
  */
 static void pin_btn_event_cb(lv_event_t * e)
 {
-    lv_obj_t * btn = lv_event_get_target(e);
-    lv_obj_t * label = lv_obj_get_child(btn, 0);
-    const char * txt = lv_label_get_text(label);
+    lv_obj_t * btnm = lv_event_get_target(e);
+    const char * txt = lv_btnmatrix_get_btn_text(btnm, lv_btnmatrix_get_selected_btn(btnm));
 
-    LV_LOG_USER("PIN button %s clicked", txt);
+    if (strcmp(txt, "DEL") == 0) {
+        size_t len = strlen(pin_code);
+        if (len > 0) {
+            pin_code[len - 1] = '\0';
+        }
+    } else if (strcmp(txt, "OK") == 0) {
+        LV_LOG_USER("PIN code entered: %s", pin_code);
+        // 这里可以添加提交PIN码的处理代码
+    } else {
+        if (strlen(pin_code) < 6) {
+            strcat(pin_code, txt);
+        }
+    }
+
+    lv_label_set_text(pin_label, pin_code);
 }
