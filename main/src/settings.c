@@ -1,6 +1,5 @@
-// src/settings.c
-
 #include "lvgl/lvgl.h"
+#include <unistd.h>  // 添加这个头文件以使用 usleep
 
 static lv_display_t * hal_init(int32_t w, int32_t h);
 

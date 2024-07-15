@@ -38,6 +38,13 @@ target_compile_definitions(pin PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(pin lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 add_custom_target(run_pin COMMAND ${EXECUTABLE_OUTPUT_PATH}/pin DEPENDS pin)
 
+# 添加 settings 目标
+add_executable(settings main/src/settings.c)
+
+target_compile_definitions(settings PRIVATE LV_CONF_INCLUDE_SIMPLE)
+target_link_libraries(settings lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
+add_custom_target(run_settings COMMAND ${EXECUTABLE_OUTPUT_PATH}/settings DEPENDS settings)
+
 if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
     # Need to install libsdl2-image-dev
@@ -47,6 +54,7 @@ if(LV_USE_DRAW_SDL)
     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
     target_link_libraries(main ${SDL2_IMAGE_LIBRARIES})
     target_link_libraries(pin ${SDL2_IMAGE_LIBRARIES})
+    target_link_libraries(settings ${SDL2_IMAGE_LIBRARIES})
 endif(LV_USE_DRAW_SDL)
 
 if(LV_USE_LIBPNG)
@@ -54,6 +62,7 @@ if(LV_USE_LIBPNG)
     target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIR})
     target_link_libraries(main ${PNG_LIBRARY})
     target_link_libraries(pin ${PNG_LIBRARY})
+    target_link_libraries(settings ${PNG_LIBRARY})
 endif(LV_USE_LIBPNG)
 
 if(LV_USE_LIBJPEG_TURBO)
@@ -64,17 +73,20 @@ if(LV_USE_LIBJPEG_TURBO)
     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
     target_link_libraries(main ${JPEG_LIBRARIES})
     target_link_libraries(pin ${JPEG_LIBRARIES})
+    target_link_libraries(settings ${JPEG_LIBRARIES})
 endif(LV_USE_LIBJPEG_TURBO)
 
 if(LV_USE_FFMPEG)
     target_link_libraries(main avformat avcodec avutil swscale z)
     target_link_libraries(pin avformat avcodec avutil swscale z)
+    target_link_libraries(settings avformat avcodec avutil swscale z)
 endif(LV_USE_FFMPEG)
 
 if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
     target_link_libraries(main ${FREETYPE_LIBRARIES})
     target_link_libraries(pin ${FREETYPE_LIBRARIES})
+    target_link_libraries(settings ${FREETYPE_LIBRARIES})
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
 endif(LV_USE_FREETYPE)
 
@@ -110,4 +122,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
     target_compile_options(pin PRIVATE -fsanitize=address,leak,undefined)
     target_link_options(pin PRIVATE -fsanitize=address,leak,undefined)
+
+    target_compile_options(settings PRIVATE -fsanitize=address,leak,undefined)
+    target_link_options(settings PRIVATE -fsanitize=address,leak,undefined)
 endif()
