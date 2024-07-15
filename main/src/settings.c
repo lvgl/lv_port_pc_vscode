@@ -35,34 +35,21 @@ int main(int argc, char **argv) {
     lv_obj_set_style_text_color(label, lv_color_white(), 0);  // 设置标题文字颜色为白色
     lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 10);  // 将标题居中放置在顶部
 
-    /* 按钮样式 */
+    /* 创建一个宽度为200，高度较小的圆角矩形按钮，按钮上面的文字是"About Device" */
+    lv_obj_t * btn = lv_btn_create(container);
+    lv_obj_set_size(btn, 200, 30);  // 设置按钮的宽度为200，高度为30
+    lv_obj_align(btn, LV_ALIGN_CENTER, 0, 40);  // 将按钮放置在容器中央偏下
+
     static lv_style_t style_btn;
     lv_style_init(&style_btn);
     lv_style_set_radius(&style_btn, 10);  // 设置按钮的圆角
     lv_style_set_bg_color(&style_btn, lv_color_hex(0xD8D8D8));  // 设置按钮的背景颜色为0xD8D8D8
+    lv_obj_add_style(btn, &style_btn, 0);
 
-    /* 按钮创建函数 */
-    void create_button(lv_obj_t * parent, const char * text, int x_offset, int y_offset) {
-        lv_obj_t * btn = lv_btn_create(parent);
-        lv_obj_set_size(btn, 200, 30);  // 设置按钮的宽度为200，高度为30
-        lv_obj_align(btn, LV_ALIGN_CENTER, x_offset, y_offset);  // 设置按钮的位置
-
-        lv_obj_add_style(btn, &style_btn, 0);
-
-        lv_obj_t * btn_label = lv_label_create(btn);
-        lv_label_set_text(btn_label, text);
-        lv_obj_set_style_text_color(btn_label, lv_color_black(), 0);  // 设置按钮文字颜色为黑色
-        lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
-    }
-
-    /* 创建各个按钮 */
-    create_button(container, "About Device", 0, -70);
-    create_button(container, "Language", 0, -40);
-    create_button(container, "Home Screen", 0, -10);
-    create_button(container, "Power Off", 0, 20);
-    create_button(container, "Brightness", 0, 50);
-    create_button(container, "User Guide", 0, 80);
-    create_button(container, "System Update", 0, 110);
+    lv_obj_t * btn_label = lv_label_create(btn);
+    lv_label_set_text(btn_label, "About Device");
+    lv_obj_set_style_text_color(btn_label, lv_color_black(), 0);  // 设置按钮文字颜色为黑色
+    lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
 
     while(1) {
         /* 定期调用lv_task处理器 */
