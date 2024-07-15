@@ -54,7 +54,7 @@ int main(int argc, char **argv)
     lv_obj_t * scr = lv_scr_act();
 
     /* 创建一个用于放置方块的网格 */
-    static lv_coord_t col_dsc[] = {100, LV_GRID_FR(1), 100, LV_GRID_TEMPLATE_LAST};  // 每个方块100px，中间间隙均分
+    static lv_coord_t col_dsc[] = {80, LV_GRID_FR(1), 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，中间间隙均分
     static lv_coord_t row_dsc[] = {70, LV_GRID_FR(1), 70, LV_GRID_FR(1), 70, LV_GRID_TEMPLATE_LAST};  // 每个方块70px，中间间隙均分
 
     lv_obj_t * grid = lv_obj_create(scr);
@@ -76,25 +76,24 @@ int main(int argc, char **argv)
     lv_style_set_radius(&style_block, 10);  /* 圆角 */
 
     /* 创建方块 */
-    const char *btn_texts[2][2] = {
+    const char *btn_texts[3][2] = {
         {"Settings", "Tips"},
-        {"User Guide", ""}
+        {"User Guide", "Button 4"},
+        {"Button 5", "Button 6"}
     };
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 2; j++) {
-            if(btn_texts[i][j][0] != '\0') {
-                lv_obj_t * block = lv_btn_create(grid);
-                lv_obj_set_size(block, 100, 70);  // 设置宽度为100px，高度为70px
-                lv_obj_add_style(block, &style_block, 0);
-                lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
+            lv_obj_t * block = lv_btn_create(grid);
+            lv_obj_set_size(block, 80, 70);  // 设置宽度为80px，高度为70px
+            lv_obj_add_style(block, &style_block, 0);
+            lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
 
-                /* 创建标签并设置样式 */
-                lv_obj_t * label = lv_label_create(block);
-                lv_label_set_text(label, btn_texts[i][j]);
-                lv_obj_set_style_text_color(label, lv_color_black(), 0);  // 设置文字颜色为黑色
-                lv_obj_center(label);  // 使文字在按钮中居中
-            }
+            /* 创建标签并设置样式 */
+            lv_obj_t * label = lv_label_create(block);
+            lv_label_set_text(label, btn_texts[i][j]);
+            lv_obj_set_style_text_color(label, lv_color_black(), 0);  // 设置文字颜色为黑色
+            lv_obj_center(label);  // 使文字在按钮中居中
         }
     }
 
