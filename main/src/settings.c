@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
     create_button(container, "System Update", 70, lv_color_black());
     create_button(container, "Reset Device", 110, lv_color_black());  // 新增按钮：Reset Device
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
-   
+
     while(1) {
         /* 定期调用lv_task处理器 */
         lv_timer_handler();
