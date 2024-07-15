@@ -114,6 +114,13 @@ static void create_pin_code_screen(void)
     lv_obj_set_style_bg_color(btnm, lv_color_hex(0xD8D8D8), LV_PART_ITEMS | LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(btnm, 0, LV_PART_ITEMS | LV_STATE_DEFAULT);
 
+    /* 设置数字键盘的背景颜色为黑色 */
+    lv_obj_set_style_bg_color(btnm, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    /* 设置数字键盘的边框颜色为黑色并去掉边框宽度 */
+    lv_obj_set_style_border_color(btnm, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(btnm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(btnm, pin_btn_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
 }
 
