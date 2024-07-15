@@ -63,6 +63,12 @@ int main(int argc, char **argv)
   lv_obj_set_layout(grid, LV_LAYOUT_GRID);
   lv_obj_set_grid_dsc_array(grid, col_dsc, row_dsc);
 
+  /* 创建容器的样式并设置背景为黑色 */
+  static lv_style_t style_container;
+  lv_style_init(&style_container);
+  lv_style_set_bg_color(&style_container, lv_color_black());  /* 设置背景颜色为黑色 */
+  lv_obj_add_style(grid, &style_container, 0);  /* 将样式应用到容器上 */
+
   /* 创建方块的样式 */
   static lv_style_t style_block;
   lv_style_init(&style_block);
