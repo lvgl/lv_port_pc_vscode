@@ -39,7 +39,7 @@ target_link_libraries(pin lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LI
 add_custom_target(run_pin COMMAND ${EXECUTABLE_OUTPUT_PATH}/pin DEPENDS pin)
 
 # 添加 settings 目标
-add_executable(settings main/src/settings.c)
+add_executable(settings main/src/settings.c main/src/mouse_cursor_icon.c)
 
 target_compile_definitions(settings PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(settings lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)

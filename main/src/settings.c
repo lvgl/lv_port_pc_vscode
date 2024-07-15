@@ -1,6 +1,8 @@
 #include "lvgl/lvgl.h"
 #include <unistd.h>  // 添加这个头文件以使用 usleep
 
+LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
+
 static lv_display_t * hal_init(int32_t w, int32_t h);
 
 int main(int argc, char **argv) {
