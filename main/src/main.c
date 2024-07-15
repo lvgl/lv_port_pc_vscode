@@ -54,7 +54,7 @@ int main(int argc, char **argv)
     lv_obj_t * scr = lv_scr_act();
 
     /* 创建一个用于放置方块的网格 */
-    static lv_coord_t col_dsc[] = {80, LV_GRID_FR(1), 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，中间间隙均分
+    static lv_coord_t col_dsc[] = {80, LV_GRID_FR(1), 80, LV_GRID_TEMPLATE_LAST};  // 每个方块100px，中间间隙均分
     static lv_coord_t row_dsc[] = {70, LV_GRID_FR(1), 70, LV_GRID_FR(1), 70, LV_GRID_TEMPLATE_LAST};  // 每个方块70px，中间间隙均分
 
     lv_obj_t * grid = lv_obj_create(scr);
