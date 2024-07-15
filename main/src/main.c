@@ -14,6 +14,9 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
+/* 包含图片数组头文件 */
+/* #include "../assets/btn_img_up.h"
+#include "../assets/btn_img_down.h" */
 /*********************
  *      DEFINES
  *********************/
