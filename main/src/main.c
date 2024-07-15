@@ -69,21 +69,22 @@ int main(int argc, char **argv)
     lv_style_set_bg_color(&style_container, lv_color_black());  /* 设置背景颜色为黑色 */
     lv_obj_add_style(grid, &style_container, 0);  /* 将样式应用到容器上 */
 
-    /* 创建方块的样式 */
-    static lv_style_t style_block;
-    lv_style_init(&style_block);
-    lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
-    lv_style_set_radius(&style_block, 10);  /* 圆角 */
+/* 创建方块的样式 */
+static lv_style_t style_block;
+lv_style_init(&style_block);
+lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
+lv_style_set_radius(&style_block, 10);  /* 圆角 */
 
-    /* 创建方块 */
-    const char *btn_texts[3][2] = {
-        {"Settings", "Tips"},
-        {"Guide", "Button 4"},
-        {"Button 5", "Button 6"}
-    };
+/* 更新按钮文本数组以移除不需要的按钮 */
+const char *btn_texts[3][2] = {
+    {"Settings", "Tips"},
+    {"Guide", NULL},  // 将 "Button 4" 更改为 NULL
+    {NULL, NULL}      // 将 "Button 5" 和 "Button 6" 更改为 NULL
+};
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 2; j++) {
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 2; j++) {
+        if (btn_texts[i][j] != NULL) {  // 只有当存在有效文本时才创建按钮
             lv_obj_t * block = lv_btn_create(grid);
             lv_obj_set_size(block, 80, 70);  // 设置宽度为80px，高度为70px
             lv_obj_add_style(block, &style_block, 0);
@@ -96,6 +97,8 @@ int main(int argc, char **argv)
             lv_obj_center(label);  // 使文字在按钮中居中
         }
     }
+}
+
 
     while(1) {
         /* 定期调用lv_task处理器。
