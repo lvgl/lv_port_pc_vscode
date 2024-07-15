@@ -85,7 +85,7 @@ static void create_pin_code_screen(void)
 
     /* 创建一个容器来放置 PIN 码输入 */
     lv_obj_t * cont = lv_obj_create(scr);
-    lv_obj_set_size(cont, 240, 280);
+    lv_obj_set_size(cont, 240, 320);
     lv_obj_center(cont);
     lv_obj_set_style_bg_color(cont, lv_color_hex(0x000000), 0);  // 黑色背景
     lv_obj_set_style_radius(cont, 10, 0);  // 圆角
