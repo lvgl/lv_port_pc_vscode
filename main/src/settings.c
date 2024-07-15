@@ -43,14 +43,14 @@ int main(int argc, char **argv) {
     lv_style_set_bg_color(&style_btn, lv_color_hex(0xD8D8D8));  // 设置按钮的背景颜色为0xD8D8D8
 
     /* 创建多个按钮 */
-    create_button(container, "About Device", -90, lv_color_black());
-    create_button(container, "Language", -50, lv_color_black());
     create_button(container, "Home Screen", -10, lv_color_black());
-    create_button(container, "Power Off", 30, lv_color_hex(0xFF0000));  // 将 Power Off 按钮文字设置为红色
+    create_button(container, "Language", -50, lv_color_black());
     create_button(container, "Brightness", 70, lv_color_black());
     create_button(container, "User Guide", 110, lv_color_black());
+    create_button(container, "About Device", -90, lv_color_black());
     create_button(container, "System Update", 150, lv_color_black());
-
+    create_button(container, "Power Off", 30, lv_color_hex(0xFF0000));  
+   
     while(1) {
         /* 定期调用lv_task处理器 */
         lv_timer_handler();
