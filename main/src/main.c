@@ -54,8 +54,8 @@ int main(int argc, char **argv)
   lv_obj_t * scr = lv_scr_act();
 
   /* 创建一个用于放置方块的网格 */
-  static lv_coord_t col_dsc[] = {80, 10, 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，间隙10px
-  static lv_coord_t row_dsc[] = {80, 10, 80, 10, 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，间隙10px
+  static lv_coord_t col_dsc[] = {70, LV_GRID_FR(1), 70, LV_GRID_TEMPLATE_LAST};  // 每个方块70px，中间间隙均分
+  static lv_coord_t row_dsc[] = {70, LV_GRID_FR(1), 70, LV_GRID_FR(1), 70, LV_GRID_TEMPLATE_LAST};  // 每个方块70px，中间间隙均分
   
   lv_obj_t * grid = lv_obj_create(scr);
   lv_obj_set_size(grid, 240, 320);  // 宽度为240px，高度为320px
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 2; j++) {
       lv_obj_t * block = lv_btn_create(grid);
-      lv_obj_set_size(block, 80, 80);  // 设置大小为80px x 80px
+      lv_obj_set_size(block, 70, 70);  // 设置大小为70px x 70px
       lv_obj_add_style(block, &style_block, 0);
       lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
     }
