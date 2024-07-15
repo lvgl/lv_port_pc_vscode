@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     /* 创建方块 */
     const char *btn_texts[3][2] = {
         {"Settings", "Tips"},
-        {"Button 3", "Button 4"},
+        {"User Guide", "Button 4"},
         {"Button 5", "Button 6"}
     };
 

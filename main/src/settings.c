@@ -46,11 +46,10 @@ int main(int argc, char **argv) {
     create_button(container, "Home Screen", -90, lv_color_black());
     create_button(container, "Language", -50, lv_color_black());
     create_button(container, "Brightness", -10, lv_color_black());
-    create_button(container, "User Guide", 30, lv_color_black());
-    create_button(container, "About Device", 70, lv_color_black());
-    create_button(container, "System Update", 110, lv_color_black());
-    create_button(container, "Reset Device", 150, lv_color_black());  // 新增按钮：Reset Device
-    create_button(container, "Power Off", 190, lv_color_hex(0xFF0000));  
+    create_button(container, "About Device", 30, lv_color_black());
+    create_button(container, "System Update", 70, lv_color_black());
+    create_button(container, "Reset Device", 110, lv_color_black());  // 新增按钮：Reset Device
+    create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
    
     while(1) {
         /* 定期调用lv_task处理器 */
