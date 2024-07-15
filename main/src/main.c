@@ -72,7 +72,7 @@ int main(int argc, char **argv)
   /* 创建方块的样式 */
   static lv_style_t style_block;
   lv_style_init(&style_block);
-  lv_style_set_bg_color(&style_block, lv_color_hex(0xCCCCCC));  /* 灰色背景 */
+  lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
   lv_style_set_radius(&style_block, 10);  /* 圆角 */
 
   /* 创建方块 */
