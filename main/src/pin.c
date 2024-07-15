@@ -90,12 +90,19 @@ static void create_pin_code_screen(void)
     lv_obj_set_style_bg_color(cont, lv_color_hex(0x000000), 0);  // 黑色背景
     lv_obj_set_style_radius(cont, 10, 0);  // 圆角
 
+    /* 创建一个标题标签来显示 "Enter New Pin" */
+    lv_obj_t * title_label = lv_label_create(cont);
+    lv_label_set_text(title_label, "Enter New Pin");
+    lv_obj_set_style_text_font(title_label, &lv_font_montserrat_14, 0);  // 使用已经声明的字体
+    lv_obj_set_style_text_color(title_label, lv_color_hex(0xFFFFFF), 0); // 设置文字颜色为白色
+    lv_obj_align(title_label, LV_ALIGN_TOP_MID, 0, 10);
+
     /* 创建一个标签来显示输入的PIN码 */
     pin_label = lv_label_create(cont);
     lv_label_set_text(pin_label, "");
     lv_obj_set_style_text_font(pin_label, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(pin_label, lv_color_hex(0xFFFFFF), 0); // 设置文字颜色为白色
-    lv_obj_align(pin_label, LV_ALIGN_TOP_MID, 0, 10);
+    lv_obj_align(pin_label, LV_ALIGN_TOP_MID, 0, 40);  // 修改Y坐标以避免与标题重叠
 
     /* 创建数字键盘 */
     static const char * btn_map[] = {
@@ -108,7 +115,7 @@ static void create_pin_code_screen(void)
     lv_obj_t * btnm = lv_btnmatrix_create(cont);
     lv_btnmatrix_set_map(btnm, btn_map);
     lv_obj_set_size(btnm, 220, 180);
-    lv_obj_align(btnm, LV_ALIGN_CENTER, 0, 50);
+    lv_obj_align(btnm, LV_ALIGN_CENTER, 0, 90);  // 修改Y坐标以适应新布局
 
     /* 设置按钮背景颜色为D8D8D8并且去掉投影 */
     lv_obj_set_style_bg_color(btnm, lv_color_hex(0xD8D8D8), LV_PART_ITEMS | LV_STATE_DEFAULT);
