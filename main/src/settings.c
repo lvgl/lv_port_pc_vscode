@@ -5,7 +5,7 @@ LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 
 static lv_display_t * hal_init(int32_t w, int32_t h);
 
-void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset);
+void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
 
 int main(int argc, char **argv) {
     (void)argc; /* 未使用 */
@@ -43,13 +43,13 @@ int main(int argc, char **argv) {
     lv_style_set_bg_color(&style_btn, lv_color_hex(0xD8D8D8));  // 设置按钮的背景颜色为0xD8D8D8
 
     /* 创建多个按钮 */
-    create_button(container, "About Device", -90);
-    create_button(container, "Language", -50);
-    create_button(container, "Home Screen", -10);
-    create_button(container, "Power Off", 30);
-    create_button(container, "Brightness", 70);
-    create_button(container, "User Guide", 110);
-    create_button(container, "System Update", 150);
+    create_button(container, "About Device", -90, lv_color_black());
+    create_button(container, "Language", -50, lv_color_black());
+    create_button(container, "Home Screen", -10, lv_color_black());
+    create_button(container, "Power Off", 30, lv_color_hex(0xFF0000));  // 将 Power Off 按钮文字设置为红色
+    create_button(container, "Brightness", 70, lv_color_black());
+    create_button(container, "User Guide", 110, lv_color_black());
+    create_button(container, "System Update", 150, lv_color_black());
 
     while(1) {
         /* 定期调用lv_task处理器 */
@@ -93,7 +93,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h) {
 /**
  * 创建按钮函数
  */
-void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset) {
+void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color) {
     lv_obj_t * btn = lv_btn_create(parent);
     lv_obj_set_size(btn, 200, 30);  // 设置按钮的宽度为200，高度为30
     lv_obj_align(btn, LV_ALIGN_CENTER, 0, y_offset);  // 将按钮放置在容器中央偏下，与上一个按钮有间隙
@@ -105,6 +105,6 @@ void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset) {
 
     lv_obj_t * btn_label = lv_label_create(btn);
     lv_label_set_text(btn_label, text);
-    lv_obj_set_style_text_color(btn_label, lv_color_black(), 0);  // 设置按钮文字颜色为黑色
+    lv_obj_set_style_text_color(btn_label, text_color, 0);  // 设置按钮文字颜色
     lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
 }
