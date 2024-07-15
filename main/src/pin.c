@@ -87,13 +87,14 @@ static void create_pin_code_screen(void)
     lv_obj_t * cont = lv_obj_create(scr);
     lv_obj_set_size(cont, 240, 280);
     lv_obj_center(cont);
-    lv_obj_set_style_bg_color(cont, lv_color_hex(0xFFFFFF), 0);  // 白色背景
+    lv_obj_set_style_bg_color(cont, lv_color_hex(0x000000), 0);  // 黑色背景
     lv_obj_set_style_radius(cont, 10, 0);  // 圆角
 
     /* 创建一个标签来显示输入的PIN码 */
     pin_label = lv_label_create(cont);
     lv_label_set_text(pin_label, "");
     lv_obj_set_style_text_font(pin_label, &lv_font_montserrat_14, 0);
+    lv_obj_set_style_text_color(pin_label, lv_color_hex(0xFFFFFF), 0); // 设置文字颜色为白色
     lv_obj_align(pin_label, LV_ALIGN_TOP_MID, 0, 10);
 
     /* 创建数字键盘 */
@@ -108,6 +109,11 @@ static void create_pin_code_screen(void)
     lv_btnmatrix_set_map(btnm, btn_map);
     lv_obj_set_size(btnm, 220, 180);
     lv_obj_align(btnm, LV_ALIGN_CENTER, 0, 50);
+
+    /* 设置按钮背景颜色为D8D8D8并且去掉投影 */
+    lv_obj_set_style_bg_color(btnm, lv_color_hex(0xD8D8D8), LV_PART_ITEMS | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(btnm, 0, LV_PART_ITEMS | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(btnm, pin_btn_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
 }
 
