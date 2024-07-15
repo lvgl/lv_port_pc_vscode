@@ -121,6 +121,9 @@ static void create_pin_code_screen(void)
     lv_obj_set_style_border_color(btnm, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(btnm, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    /* 设置数字键盘按键文字颜色 */
+    /* lv_obj_set_style_text_color(btnm, lv_color_hex(0xFFFFFF), LV_PART_ITEMS | LV_STATE_DEFAULT); */
+
     lv_obj_add_event_cb(btnm, pin_btn_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
 }
 
