@@ -48,6 +48,7 @@ int main(int argc, char **argv) {
 
     lv_obj_t * btn_label = lv_label_create(btn);
     lv_label_set_text(btn_label, "About Device");
+    lv_obj_set_style_text_color(btn_label, lv_color_black(), 0);  // 设置按钮文字颜色为黑色
     lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
 
     while(1) {
