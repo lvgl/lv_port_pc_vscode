@@ -30,7 +30,7 @@ static void show_reset_popup() {
 
     // 创建一个容器来放置按钮，使其垂直排列
     lv_obj_t * btn_container = lv_obj_create(popup);
-    lv_obj_set_size(btn_container, 200, 110); // 调整容器高度以容纳两个按钮
+    lv_obj_set_size(btn_container, 160, 110); // 调整容器高度以容纳两个按钮
     lv_obj_align(btn_container, LV_ALIGN_BOTTOM_MID, 0, -10);
     lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色
     lv_obj_set_style_border_width(btn_container, 0, 0); // 去掉容器边框
@@ -42,6 +42,7 @@ static void show_reset_popup() {
     lv_obj_t * continue_label = lv_label_create(continue_btn);
     lv_label_set_text(continue_label, "Continue");
     lv_obj_set_style_bg_color(continue_btn, lv_color_hex(0xAAAAAA), 0); // 设置按钮颜色为AAAAAA
+    lv_obj_set_style_text_color(continue_label, lv_color_black(), 0); // 设置按钮文字颜色为黑色
 
     // 创建取消按钮
     lv_obj_t * cancel_btn = lv_btn_create(btn_container);
@@ -50,6 +51,7 @@ static void show_reset_popup() {
     lv_obj_t * cancel_label = lv_label_create(cancel_btn);
     lv_label_set_text(cancel_label, "Cancel");
     lv_obj_set_style_bg_color(cancel_btn, lv_color_hex(0xAAAAAA), 0); // 设置按钮颜色为AAAAAA
+    lv_obj_set_style_text_color(cancel_label, lv_color_black(), 0); // 设置按钮文字颜色为黑色
 
     // 为按钮添加事件处理函数
     lv_obj_add_event_cb(continue_btn, msgbox_btn_event_handler, LV_EVENT_CLICKED, popup);
