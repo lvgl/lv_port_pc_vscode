@@ -36,7 +36,7 @@ static void show_reset_popup() {
     lv_obj_t * btn_container = lv_obj_create(popup);
     lv_obj_set_size(btn_container, 180, 80);
     lv_obj_align(btn_container, LV_ALIGN_BOTTOM_MID, 0, -10);
-    lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色为透明
+    lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色
     lv_obj_set_style_border_width(btn_container, 0, 0); // 去掉容器边框
 
     // 创建继续按钮
@@ -50,7 +50,7 @@ static void show_reset_popup() {
     // 创建取消按钮
     lv_obj_t * cancel_btn = lv_btn_create(btn_container);
     lv_obj_set_size(cancel_btn, 160, 30); // 调整按钮大小
-    lv_obj_align(cancel_btn, LV_ALIGN_BOTTOM_MID, 0, 0);
+    lv_obj_align(cancel_btn, LV_ALIGN_TOP_MID, 0, 40); // 调整取消按钮的位置，使其在继续按钮下方
     lv_obj_t * cancel_label = lv_label_create(cancel_btn);
     lv_label_set_text(cancel_label, "Cancel");
     lv_obj_set_style_bg_color(cancel_btn, lv_color_hex(0xAAAAAA), 0); // 设置按钮颜色为AAAAAA
