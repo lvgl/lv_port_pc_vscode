@@ -1,3 +1,9 @@
+/**
+ * @file main/src/wallet.c
+ *
+ */
+
+
 #include "lvgl/lvgl.h"
 #include <unistd.h>  // 添加这个头文件以使用 usleep
 

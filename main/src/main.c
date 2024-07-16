@@ -1,5 +1,5 @@
 /**
- * @file main
+ * @file main/src/main.c
  *
  */
 
