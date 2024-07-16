@@ -1,3 +1,8 @@
+# LVGL 的转图工具
+
+https://lvgl.io/tools/imageconverter
+使用 LVGL 8.2 转图
+
 # Simulator project for LVGL embedded GUI Library
 
 The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
@@ -11,6 +16,7 @@ The project can use **SDL** but it can be easily relaced by any other built-in L
 ## Get started
 
 ### Get the PC project
+
 Clone the PC project and the related sub modules:
 
 ```bash
@@ -18,10 +24,13 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
 ### Install SDL and build tools
+
 You can download SDL from https://www.libsdl.org/
 
-#### Linux 
+#### Linux
+
 Copy this in the Terminal:
+
 ```bash
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 ```
@@ -29,15 +38,18 @@ sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 ## Usage
 
 ### Visual Studio Code
+
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
 1. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
-2. Install the recommended plugins
-3. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
-![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
-4. Click the Play button or hit F5 to start debugging.
+1. Install the recommended plugins
+1. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
+   ![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
+1. Click the Play button or hit F5 to start debugging.
 
 ### CMake
+
 This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
+
 ```bash
 mkdir build
 cd build
@@ -50,6 +62,7 @@ make -j
 There are also FreeType and FFmpeg support. You can install these according to the followings:
 
 ### Linux
+
 ```bash
 # FreeType support
 wget https://kumisystems.dl.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
