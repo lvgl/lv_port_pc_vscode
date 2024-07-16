@@ -1,18 +1,61 @@
-/**
- * @file main/src/settings.c
- *
- */
-
 #include "lvgl/lvgl.h"
 #include <unistd.h>
+#include <stdio.h>  // 添加此行以包含 printf 函数
+#include <string.h> // 添加此行以包含 strcmp 函数
 
 LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 
 static lv_display_t * hal_init(int32_t w, int32_t h);
 static void back_btn_event_handler(lv_event_t * e); // 声明Back按钮事件处理函数
 static void about_device_btn_event_handler(lv_event_t * e); // 声明关于设备按钮事件处理函数
+static void reset_device_btn_event_handler(lv_event_t * e); // 声明重置设备按钮事件处理函数
+static void msgbox_btn_event_handler(lv_event_t * e); // 声明消息框按钮事件处理函数
 
 lv_obj_t * create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
+
+/**
+ * 显示重置弹窗
+ */
+static void show_reset_popup() {
+    lv_obj_t * popup = lv_obj_create(lv_scr_act());
+    lv_obj_set_size(popup, 200, 150);
+    lv_obj_center(popup);
+
+    lv_obj_t * title = lv_label_create(popup);
+    lv_label_set_text(title, "Reset Device");
+    lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 10);
+
+    lv_obj_t * msg = lv_label_create(popup);
+    lv_label_set_text(msg, "Are you sure you want to reset the device?");
+    lv_obj_align(msg, LV_ALIGN_CENTER, 0, -10);
+
+    static const char * btns[] = {"Continue", "Cancel", ""};
+    lv_obj_t * btnm = lv_btnmatrix_create(popup);
+    lv_btnmatrix_set_map(btnm, btns);
+    lv_obj_align(btnm, LV_ALIGN_BOTTOM_MID, 0, -10);
+
+    lv_obj_add_event_cb(btnm, msgbox_btn_event_handler, LV_EVENT_VALUE_CHANGED, popup);
+}
+
+static void msgbox_btn_event_handler(lv_event_t * e) {
+    lv_obj_t * btnm = lv_event_get_target(e);
+    const char * txt = lv_btnmatrix_get_btn_text(btnm, lv_btnmatrix_get_selected_btn(btnm));
+    lv_obj_t * popup = lv_event_get_user_data(e);
+
+    if(strcmp(txt, "Continue") == 0) {
+        // 在此处添加重置设备的逻辑
+        printf("Device is being reset...\n");
+    }
+    else if(strcmp(txt, "Cancel") == 0) {
+        printf("Reset cancelled.\n");
+    }
+
+    lv_obj_del(popup);  // 关闭消息框
+}
+
+static void reset_device_btn_event_handler(lv_event_t * e) {
+    show_reset_popup();  // 显示重置弹窗
+}
 
 /**
  * 加载 settings 屏幕
@@ -53,7 +96,8 @@ void load_settings_screen() {
     lv_obj_t * about_btn = create_button(container, "About Device", 30, lv_color_black());
     lv_obj_add_event_cb(about_btn, about_device_btn_event_handler, LV_EVENT_CLICKED, NULL); // 添加关于设备按钮的事件处理
     create_button(container, "System Update", 70, lv_color_black());
-    create_button(container, "Reset Device", 110, lv_color_black());
+    lv_obj_t * reset_btn = create_button(container, "Reset Device", 110, lv_color_black());
+    lv_obj_add_event_cb(reset_btn, reset_device_btn_event_handler, LV_EVENT_CLICKED, NULL);  // 添加重置设备按钮的事件处理
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
 
     /* 创建Back按钮 */
