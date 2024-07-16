@@ -16,9 +16,11 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
-// 声明 tip.c 中的函数
+// 声明 tip.c 和 guide.c 中的函数
 extern void load_tips_screen();
 extern void add_tips_button_event(lv_obj_t * btn);
+extern void load_guide_screen();
+extern void add_guide_button_event(lv_obj_t * btn);
 
 /*********************
  *      DEFINES
@@ -166,6 +168,10 @@ void load_main_screen() {
                 /* 如果是Tips按钮，添加事件处理 */
                 else if (strcmp(btn_texts[i][j], "Tips") == 0) {
                     add_tips_button_event(block);
+                }
+                /* 如果是Guide按钮，添加事件处理 */
+                else if (strcmp(btn_texts[i][j], "Guide") == 0) {
+                    add_guide_button_event(block);
                 }
             }
         }

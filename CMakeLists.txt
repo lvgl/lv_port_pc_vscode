@@ -32,6 +32,7 @@ add_executable(main
     main/src/settings.c 
     main/src/mouse_cursor_icon.c
     main/src/tip.c  # 确保添加 tip.c 文件
+    main/src/guide.c  # 确保添加 guide.c 文件
 )
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
