@@ -9,6 +9,7 @@
 LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 
 static lv_display_t * hal_init(int32_t w, int32_t h);
+static void back_btn_event_handler(lv_event_t * e); // 声明Back按钮事件处理函数
 
 void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
 
@@ -52,6 +53,16 @@ void load_settings_screen() {
     create_button(container, "System Update", 70, lv_color_black());
     create_button(container, "Reset Device", 110, lv_color_black());
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
+
+    /* 创建Back按钮 */
+    lv_obj_t * back_btn = lv_btn_create(container);
+    lv_obj_set_size(back_btn, 200, 30);  // 设置按钮的宽度为200，高度为30
+    lv_obj_align(back_btn, LV_ALIGN_BOTTOM_MID, 0, -10);  // 将按钮放置在底部中央
+    lv_obj_add_event_cb(back_btn, back_btn_event_handler, LV_EVENT_CLICKED, NULL);
+
+    lv_obj_t * back_label = lv_label_create(back_btn);
+    lv_label_set_text(back_label, "Back");
+    lv_obj_center(back_label);  // 确保文字在按钮中居中对齐
 }
 
 /**
@@ -101,4 +112,12 @@ void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv
     lv_label_set_text(btn_label, text);
     lv_obj_set_style_text_color(btn_label, text_color, 0);  // 设置按钮文字颜色
     lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
+}
+
+/**
+ * Back按钮点击事件处理函数
+ */
+static void back_btn_event_handler(lv_event_t * e) {
+    extern void load_main_screen(); // 声明外部函数
+    load_main_screen(); // 调用函数加载 main 屏幕
 }

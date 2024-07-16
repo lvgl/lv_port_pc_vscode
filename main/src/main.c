@@ -29,6 +29,7 @@
  **********************/
 static lv_display_t * hal_init(int32_t w, int32_t h);
 static void settings_btn_event_handler(lv_event_t * e); // 声明事件处理函数
+void load_main_screen(); // 声明加载主屏幕的函数
 extern void load_settings_screen(); // 确保声明外部函数
 
 /**********************
@@ -54,8 +55,62 @@ int main(int argc, char **argv)
     /* 初始化LVGL的HAL（显示，输入设备，计时） */
     hal_init(480, 272);
 
+    /* 加载主屏幕 */
+    load_main_screen();
+
+    while(1) {
+        /* 定期调用lv_task处理器 */
+        lv_timer_handler();
+        usleep(5 * 1000);
+    }
+
+    return 0;
+}
+
+/**********************
+ *   静态函数
+ **********************/
+
+/**
+ * 初始化LVGL图形库的硬件抽象层（HAL）
+ */
+static lv_display_t * hal_init(int32_t w, int32_t h)
+{
+    lv_group_set_default(lv_group_create());
+
+    lv_display_t * disp = lv_sdl_window_create(w, h);
+
+    lv_indev_t * mouse = lv_sdl_mouse_create();
+    lv_indev_set_group(mouse, lv_group_get_default());
+    lv_indev_set_display(mouse, disp);
+    lv_display_set_default(disp);
+
+    LV_IMAGE_DECLARE(mouse_cursor_icon); /* 声明图像文件。*/
+    lv_obj_t * cursor_obj;
+    cursor_obj = lv_image_create(lv_screen_active()); /* 创建一个用于光标的图像对象 */
+    lv_image_set_src(cursor_obj, &mouse_cursor_icon); /* 设置图像源 */
+    lv_indev_set_cursor(mouse, cursor_obj); /* 将图像对象连接到驱动程序 */
+
+    lv_indev_t * mousewheel = lv_sdl_mousewheel_create();
+    lv_indev_set_display(mousewheel, disp);
+    lv_indev_set_group(mousewheel, lv_group_get_default());
+
+    lv_indev_t * kb = lv_sdl_keyboard_create();
+    lv_indev_set_display(kb, disp);
+    lv_indev_set_group(kb, lv_group_get_default());
+
+    return disp;
+}
+
+/**
+ * 加载主屏幕
+ */
+void load_main_screen() {
     /* 创建主屏幕 */
     lv_obj_t * scr = lv_scr_act();
+
+    /* 清空当前屏幕 */
+    lv_obj_clean(scr);
 
     /* 创建一个用于放置方块的网格 */
     static lv_coord_t col_dsc[] = {80, LV_GRID_FR(1), 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，中间间隙均分
@@ -107,49 +162,6 @@ int main(int argc, char **argv)
             }
         }
     }
-
-    while(1) {
-        /* 定期调用lv_task处理器 */
-        lv_timer_handler();
-        usleep(5 * 1000);
-    }
-
-    return 0;
-}
-
-/**********************
- *   静态函数
- **********************/
-
-/**
- * 初始化LVGL图形库的硬件抽象层（HAL）
- */
-static lv_display_t * hal_init(int32_t w, int32_t h)
-{
-    lv_group_set_default(lv_group_create());
-
-    lv_display_t * disp = lv_sdl_window_create(w, h);
-
-    lv_indev_t * mouse = lv_sdl_mouse_create();
-    lv_indev_set_group(mouse, lv_group_get_default());
-    lv_indev_set_display(mouse, disp);
-    lv_display_set_default(disp);
-
-    LV_IMAGE_DECLARE(mouse_cursor_icon); /* 声明图像文件。*/
-    lv_obj_t * cursor_obj;
-    cursor_obj = lv_image_create(lv_screen_active()); /* 创建一个用于光标的图像对象 */
-    lv_image_set_src(cursor_obj, &mouse_cursor_icon); /* 设置图像源 */
-    lv_indev_set_cursor(mouse, cursor_obj); /* 将图像对象连接到驱动程序 */
-
-    lv_indev_t * mousewheel = lv_sdl_mousewheel_create();
-    lv_indev_set_display(mousewheel, disp);
-    lv_indev_set_group(mousewheel, lv_group_get_default());
-
-    lv_indev_t * kb = lv_sdl_keyboard_create();
-    lv_indev_set_display(kb, disp);
-    lv_indev_set_group(kb, lv_group_get_default());
-
-    return disp;
 }
 
 /**
