@@ -39,18 +39,21 @@ static void show_reset_popup() {
     lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色为透明
     lv_obj_set_style_border_width(btn_container, 0, 0); // 去掉容器边框
 
-    // 创建继续和取消按钮
+    // 创建继续按钮
     lv_obj_t * continue_btn = lv_btn_create(btn_container);
     lv_obj_set_size(continue_btn, 160, 30); // 调整按钮大小
     lv_obj_align(continue_btn, LV_ALIGN_TOP_MID, 0, 0);
     lv_obj_t * continue_label = lv_label_create(continue_btn);
     lv_label_set_text(continue_label, "Continue");
+    lv_obj_set_style_bg_color(continue_btn, lv_color_hex(0xAAAAAA), 0); // 设置按钮颜色为AAAAAA
 
+    // 创建取消按钮
     lv_obj_t * cancel_btn = lv_btn_create(btn_container);
     lv_obj_set_size(cancel_btn, 160, 30); // 调整按钮大小
     lv_obj_align(cancel_btn, LV_ALIGN_BOTTOM_MID, 0, 0);
     lv_obj_t * cancel_label = lv_label_create(cancel_btn);
     lv_label_set_text(cancel_label, "Cancel");
+    lv_obj_set_style_bg_color(cancel_btn, lv_color_hex(0xAAAAAA), 0); // 设置按钮颜色为AAAAAA
 
     // 为按钮添加事件处理函数
     lv_obj_add_event_cb(continue_btn, msgbox_btn_event_handler, LV_EVENT_CLICKED, popup);
