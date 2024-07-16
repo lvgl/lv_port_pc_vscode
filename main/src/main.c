@@ -3,20 +3,19 @@
  *
  */
 
-/*********************
- *      INCLUDES
- *********************/
+/* 包含图片数组头文件 */
+/* #include "../assets/btn_img_up.h"
+#include "../assets/btn_img_down.h" */
+
 #define _DEFAULT_SOURCE /* usleep()需要此定义 */
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <string.h>  // 添加此行
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
-/* 包含图片数组头文件 */
-/* #include "../assets/btn_img_up.h"
-#include "../assets/btn_img_down.h" */
 /*********************
  *      DEFINES
  *********************/
@@ -29,6 +28,8 @@
  *  静态函数声明
  **********************/
 static lv_display_t * hal_init(int32_t w, int32_t h);
+static void settings_btn_event_handler(lv_event_t * e); // 声明事件处理函数
+extern void load_settings_screen(); // 确保声明外部函数
 
 /**********************
  *  静态变量
@@ -72,40 +73,43 @@ int main(int argc, char **argv)
     lv_style_set_bg_color(&style_container, lv_color_black());  /* 设置背景颜色为黑色 */
     lv_obj_add_style(grid, &style_container, 0);  /* 将样式应用到容器上 */
 
-/* 创建方块的样式 */
-static lv_style_t style_block;
-lv_style_init(&style_block);
-lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
-lv_style_set_radius(&style_block, 10);  /* 圆角 */
+    /* 创建方块的样式 */
+    static lv_style_t style_block;
+    lv_style_init(&style_block);
+    lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
+    lv_style_set_radius(&style_block, 10);  /* 圆角 */
 
-/* 更新按钮文本数组以移除不需要的按钮 */
-const char *btn_texts[3][2] = {
-    {"Settings", "Tips"},
-    {"Guide", NULL},  // 将 "Button 4" 更改为 NULL
-    {NULL, NULL}      // 将 "Button 5" 和 "Button 6" 更改为 NULL
-};
+    /* 更新按钮文本数组以移除不需要的按钮 */
+    const char *btn_texts[3][2] = {
+        {"Settings", "Tips"},
+        {"Guide", NULL},  // 将 "Button 4" 更改为 NULL
+        {NULL, NULL}      // 将 "Button 5" 和 "Button 6" 更改为 NULL
+    };
 
-for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 2; j++) {
-        if (btn_texts[i][j] != NULL) {  // 只有当存在有效文本时才创建按钮
-            lv_obj_t * block = lv_btn_create(grid);
-            lv_obj_set_size(block, 80, 70);  // 设置宽度为80px，高度为70px
-            lv_obj_add_style(block, &style_block, 0);
-            lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            if (btn_texts[i][j] != NULL) {  // 只有当存在有效文本时才创建按钮
+                lv_obj_t * block = lv_btn_create(grid);
+                lv_obj_set_size(block, 80, 70);  // 设置宽度为80px，高度为70px
+                lv_obj_add_style(block, &style_block, 0);
+                lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
 
-            /* 创建标签并设置样式 */
-            lv_obj_t * label = lv_label_create(block);
-            lv_label_set_text(label, btn_texts[i][j]);
-            lv_obj_set_style_text_color(label, lv_color_black(), 0);  // 设置文字颜色为黑色
-            lv_obj_center(label);  // 使文字在按钮中居中
+                /* 创建标签并设置样式 */
+                lv_obj_t * label = lv_label_create(block);
+                lv_label_set_text(label, btn_texts[i][j]);
+                lv_obj_set_style_text_color(label, lv_color_black(), 0);  // 设置文字颜色为黑色
+                lv_obj_center(label);  // 使文字在按钮中居中
+
+                /* 如果是Settings按钮，添加事件处理 */
+                if (strcmp(btn_texts[i][j], "Settings") == 0) {
+                    lv_obj_add_event_cb(block, settings_btn_event_handler, LV_EVENT_CLICKED, NULL);
+                }
+            }
         }
     }
-}
-
 
     while(1) {
-        /* 定期调用lv_task处理器。
-         * 这也可以在定时器中断或操作系统任务中完成。*/
+        /* 定期调用lv_task处理器 */
         lv_timer_handler();
         usleep(5 * 1000);
     }
@@ -146,4 +150,12 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
     lv_indev_set_group(kb, lv_group_get_default());
 
     return disp;
+}
+
+/**
+ * 设置按钮点击事件处理函数
+ */
+static void settings_btn_event_handler(lv_event_t * e)
+{
+    load_settings_screen(); // 调用函数加载 settings 屏幕
 }

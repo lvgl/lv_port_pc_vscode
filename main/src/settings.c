@@ -4,7 +4,7 @@
  */
 
 #include "lvgl/lvgl.h"
-#include <unistd.h>  // 添加这个头文件以使用 usleep
+#include <unistd.h>
 
 LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 
@@ -12,18 +12,15 @@ static lv_display_t * hal_init(int32_t w, int32_t h);
 
 void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
 
-int main(int argc, char **argv) {
-    (void)argc; /* 未使用 */
-    (void)argv; /* 未使用 */
-
-    /* 初始化LVGL */
-    lv_init();
-
-    /* 初始化LVGL的HAL（显示，输入设备，计时） */
-    hal_init(480, 272);
-
+/**
+ * 加载 settings 屏幕
+ */
+void load_settings_screen() {
     /* 创建主屏幕 */
     lv_obj_t * scr = lv_scr_act();
+
+    /* 清空当前屏幕 */
+    lv_obj_clean(scr);
 
     /* 创建一个新的容器作为页面 */
     lv_obj_t * container = lv_obj_create(scr);
@@ -53,16 +50,8 @@ int main(int argc, char **argv) {
     create_button(container, "Brightness", -10, lv_color_black());
     create_button(container, "About Device", 30, lv_color_black());
     create_button(container, "System Update", 70, lv_color_black());
-    create_button(container, "Reset Device", 110, lv_color_black());  // 新增按钮：Reset Device
+    create_button(container, "Reset Device", 110, lv_color_black());
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
-
-    while(1) {
-        /* 定期调用lv_task处理器 */
-        lv_timer_handler();
-        usleep(5 * 1000);
-    }
-
-    return 0;
 }
 
 /**
