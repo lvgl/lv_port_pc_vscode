@@ -11,7 +11,7 @@ LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 static lv_display_t * hal_init(int32_t w, int32_t h);
 static void back_btn_event_handler(lv_event_t * e); // 声明Back按钮事件处理函数
 
-void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
+lv_obj_t * create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
 
 /**
  * 加载 settings 屏幕
@@ -46,7 +46,7 @@ void load_settings_screen() {
     lv_style_set_bg_color(&style_btn, lv_color_hex(0xD8D8D8));  // 设置按钮的背景颜色为0xD8D8D8
 
     /* 创建多个按钮 */
-    create_button(container, "Home Screen", -90, lv_color_black());
+    create_button(container, "Wallpaper", -90, lv_color_black());
     create_button(container, "Language", -50, lv_color_black());
     create_button(container, "Brightness", -10, lv_color_black());
     create_button(container, "About Device", 30, lv_color_black());
@@ -55,14 +55,8 @@ void load_settings_screen() {
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
 
     /* 创建Back按钮 */
-    lv_obj_t * back_btn = lv_btn_create(container);
-    lv_obj_set_size(back_btn, 200, 30);  // 设置按钮的宽度为200，高度为30
-    lv_obj_align(back_btn, LV_ALIGN_BOTTOM_MID, 0, -10);  // 将按钮放置在底部中央
+    lv_obj_t * back_btn = create_button(container, "Back", 190, lv_color_black());
     lv_obj_add_event_cb(back_btn, back_btn_event_handler, LV_EVENT_CLICKED, NULL);
-
-    lv_obj_t * back_label = lv_label_create(back_btn);
-    lv_label_set_text(back_label, "Back");
-    lv_obj_center(back_label);  // 确保文字在按钮中居中对齐
 }
 
 /**
@@ -98,7 +92,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h) {
 /**
  * 创建按钮函数
  */
-void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color) {
+lv_obj_t * create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color) {
     lv_obj_t * btn = lv_btn_create(parent);
     lv_obj_set_size(btn, 200, 30);  // 设置按钮的宽度为200，高度为30
     lv_obj_align(btn, LV_ALIGN_CENTER, 0, y_offset);  // 将按钮放置在容器中央偏下，与上一个按钮有间隙
@@ -112,6 +106,8 @@ void create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv
     lv_label_set_text(btn_label, text);
     lv_obj_set_style_text_color(btn_label, text_color, 0);  // 设置按钮文字颜色
     lv_obj_center(btn_label);  // 确保文字在按钮中居中对齐
+    
+    return btn;
 }
 
 /**
