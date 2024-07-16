@@ -16,6 +16,10 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
+// 声明 tip.c 中的函数
+extern void load_tips_screen();
+extern void add_tips_button_event(lv_obj_t * btn);
+
 /*********************
  *      DEFINES
  *********************/
@@ -87,7 +91,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
 
     LV_IMAGE_DECLARE(mouse_cursor_icon); /* 声明图像文件。*/
     lv_obj_t * cursor_obj;
-    cursor_obj = lv_image_create(lv_screen_active()); /* 创建一个用于光标的图像对象 */
+    cursor_obj = lv_image_create(lv_scr_act()); /* 创建一个用于光标的图像对象 */
     lv_image_set_src(cursor_obj, &mouse_cursor_icon); /* 设置图像源 */
     lv_indev_set_cursor(mouse, cursor_obj); /* 将图像对象连接到驱动程序 */
 
@@ -158,6 +162,10 @@ void load_main_screen() {
                 /* 如果是Settings按钮，添加事件处理 */
                 if (strcmp(btn_texts[i][j], "Settings") == 0) {
                     lv_obj_add_event_cb(block, settings_btn_event_handler, LV_EVENT_CLICKED, NULL);
+                }
+                /* 如果是Tips按钮，添加事件处理 */
+                else if (strcmp(btn_texts[i][j], "Tips") == 0) {
+                    add_tips_button_event(block);
                 }
             }
         }
