@@ -18,7 +18,7 @@ lv_obj_t * create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offs
  */
 static void show_reset_popup() {
     lv_obj_t * popup = lv_obj_create(lv_scr_act());
-    lv_obj_set_size(popup, 200, 150);
+    lv_obj_set_size(popup, 200, 200);
     lv_obj_center(popup);
 
     // 设置弹窗背景颜色
@@ -28,13 +28,9 @@ static void show_reset_popup() {
     lv_label_set_text(title, "Reset Device");
     lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 10);
 
-    lv_obj_t * msg = lv_label_create(popup);
-    lv_label_set_text(msg, "Are you sure you want to reset the device?");
-    lv_obj_align(msg, LV_ALIGN_CENTER, 0, -10);
-
     // 创建一个容器来放置按钮，使其垂直排列
     lv_obj_t * btn_container = lv_obj_create(popup);
-    lv_obj_set_size(btn_container, 180, 80);
+    lv_obj_set_size(btn_container, 200, 110); // 调整容器高度以容纳两个按钮
     lv_obj_align(btn_container, LV_ALIGN_BOTTOM_MID, 0, -10);
     lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色
     lv_obj_set_style_border_width(btn_container, 0, 0); // 去掉容器边框
