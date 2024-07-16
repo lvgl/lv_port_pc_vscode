@@ -21,6 +21,9 @@ static void show_reset_popup() {
     lv_obj_set_size(popup, 200, 150);
     lv_obj_center(popup);
 
+    // 设置弹窗背景颜色
+    lv_obj_set_style_bg_color(popup, lv_color_hex(0xDDDDDD), 0);
+
     lv_obj_t * title = lv_label_create(popup);
     lv_label_set_text(title, "Reset Device");
     lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 10);
@@ -29,24 +32,41 @@ static void show_reset_popup() {
     lv_label_set_text(msg, "Are you sure you want to reset the device?");
     lv_obj_align(msg, LV_ALIGN_CENTER, 0, -10);
 
-    static const char * btns[] = {"Continue", "Cancel", ""};
-    lv_obj_t * btnm = lv_btnmatrix_create(popup);
-    lv_btnmatrix_set_map(btnm, btns);
-    lv_obj_align(btnm, LV_ALIGN_BOTTOM_MID, 0, -10);
+    // 创建一个容器来放置按钮，使其垂直排列
+    lv_obj_t * btn_container = lv_obj_create(popup);
+    lv_obj_set_size(btn_container, 180, 80);
+    lv_obj_align(btn_container, LV_ALIGN_BOTTOM_MID, 0, -10);
+    lv_obj_set_style_bg_color(btn_container, lv_color_hex(0xDDDDDD), 0); // 设置容器背景颜色为透明
+    lv_obj_set_style_border_width(btn_container, 0, 0); // 去掉容器边框
 
-    lv_obj_add_event_cb(btnm, msgbox_btn_event_handler, LV_EVENT_VALUE_CHANGED, popup);
+    // 创建继续和取消按钮
+    lv_obj_t * continue_btn = lv_btn_create(btn_container);
+    lv_obj_set_size(continue_btn, 160, 30); // 调整按钮大小
+    lv_obj_align(continue_btn, LV_ALIGN_TOP_MID, 0, 0);
+    lv_obj_t * continue_label = lv_label_create(continue_btn);
+    lv_label_set_text(continue_label, "Continue");
+
+    lv_obj_t * cancel_btn = lv_btn_create(btn_container);
+    lv_obj_set_size(cancel_btn, 160, 30); // 调整按钮大小
+    lv_obj_align(cancel_btn, LV_ALIGN_BOTTOM_MID, 0, 0);
+    lv_obj_t * cancel_label = lv_label_create(cancel_btn);
+    lv_label_set_text(cancel_label, "Cancel");
+
+    // 为按钮添加事件处理函数
+    lv_obj_add_event_cb(continue_btn, msgbox_btn_event_handler, LV_EVENT_CLICKED, popup);
+    lv_obj_add_event_cb(cancel_btn, msgbox_btn_event_handler, LV_EVENT_CLICKED, popup);
 }
 
 static void msgbox_btn_event_handler(lv_event_t * e) {
-    lv_obj_t * btnm = lv_event_get_target(e);
-    const char * txt = lv_btnmatrix_get_btn_text(btnm, lv_btnmatrix_get_selected_btn(btnm));
+    lv_obj_t * btn = lv_event_get_target(e);
     lv_obj_t * popup = lv_event_get_user_data(e);
+
+    const char * txt = lv_label_get_text(lv_obj_get_child(btn, 0));
 
     if(strcmp(txt, "Continue") == 0) {
         // 在此处添加重置设备的逻辑
         printf("Device is being reset...\n");
-    }
-    else if(strcmp(txt, "Cancel") == 0) {
+    } else if(strcmp(txt, "Cancel") == 0) {
         printf("Reset cancelled.\n");
     }
 
