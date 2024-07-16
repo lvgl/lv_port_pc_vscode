@@ -1,7 +1,8 @@
 /**
- * @file pin.c
+ * @file main/src/pin.c
  *
  */
+
 
 #include "lvgl/lvgl.h"
 #include <stdlib.h>
