@@ -10,6 +10,7 @@ LV_IMG_DECLARE(mouse_cursor_icon); // 确保声明 mouse_cursor_icon
 
 static lv_display_t * hal_init(int32_t w, int32_t h);
 static void back_btn_event_handler(lv_event_t * e); // 声明Back按钮事件处理函数
+static void about_device_btn_event_handler(lv_event_t * e); // 声明关于设备按钮事件处理函数
 
 lv_obj_t * create_button(lv_obj_t * parent, const char * text, lv_coord_t y_offset, lv_color_t text_color);
 
@@ -49,7 +50,8 @@ void load_settings_screen() {
     create_button(container, "Wallpaper", -90, lv_color_black());
     create_button(container, "Language", -50, lv_color_black());
     create_button(container, "Brightness", -10, lv_color_black());
-    create_button(container, "About Device", 30, lv_color_black());
+    lv_obj_t * about_btn = create_button(container, "About Device", 30, lv_color_black());
+    lv_obj_add_event_cb(about_btn, about_device_btn_event_handler, LV_EVENT_CLICKED, NULL); // 添加关于设备按钮的事件处理
     create_button(container, "System Update", 70, lv_color_black());
     create_button(container, "Reset Device", 110, lv_color_black());
     create_button(container, "Power Off", 150, lv_color_hex(0xFF0000));  
@@ -57,6 +59,51 @@ void load_settings_screen() {
     /* 创建Back按钮 */
     lv_obj_t * back_btn = create_button(container, "Back", 190, lv_color_black());
     lv_obj_add_event_cb(back_btn, back_btn_event_handler, LV_EVENT_CLICKED, NULL);
+}
+
+/**
+ * 加载关于设备页面
+ */
+void load_about_device_screen() {
+    /* 创建主屏幕 */
+    lv_obj_t * scr = lv_scr_act();
+
+    /* 清空当前屏幕 */
+    lv_obj_clean(scr);
+
+    /* 创建一个新的容器作为页面 */
+    lv_obj_t * container = lv_obj_create(scr);
+    lv_obj_set_size(container, 240, 320);
+    lv_obj_center(container);
+
+    /* 创建容器的样式并设置背景为黑色 */
+    static lv_style_t style_container;
+    lv_style_init(&style_container);
+    lv_style_set_bg_color(&style_container, lv_color_black());
+    lv_obj_add_style(container, &style_container, 0);
+
+    /* 创建一个标签作为标题 */
+    lv_obj_t * label = lv_label_create(container);
+    lv_label_set_text(label, "About Device");
+    lv_obj_set_style_text_color(label, lv_color_white(), 0);  // 设置标题文字颜色为白色
+    lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 10);  // 将标题居中放置在顶部
+
+    /* 创建设备信息的标签 */
+    lv_obj_t * info_label = lv_label_create(container);
+    lv_label_set_text(info_label, "Device Name: My Device\nVersion: 1.0\nManufacturer: My Company");
+    lv_obj_set_style_text_color(info_label, lv_color_white(), 0);  // 设置文字颜色为白色
+    lv_obj_align(info_label, LV_ALIGN_CENTER, 0, 0);  // 将标签居中放置
+
+    /* 创建Back按钮 */
+    lv_obj_t * back_btn = create_button(container, "Back", 190, lv_color_black());
+    lv_obj_add_event_cb(back_btn, back_btn_event_handler, LV_EVENT_CLICKED, NULL);
+}
+
+/**
+ * 关于设备按钮点击事件处理函数
+ */
+static void about_device_btn_event_handler(lv_event_t * e) {
+    load_about_device_screen(); // 加载关于设备页面
 }
 
 /**
