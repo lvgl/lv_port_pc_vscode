@@ -1,6 +1,6 @@
 /**
  * @file main/src/wallet.c
- *
+ * 这个是创建钱包页面
  */
 
 

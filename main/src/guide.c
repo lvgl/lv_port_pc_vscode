@@ -1,6 +1,6 @@
 /**
  * @file main/src/guide.c
- *
+ * 这个guide页面
  */
 #include "lvgl/lvgl.h"
 #include <string.h>

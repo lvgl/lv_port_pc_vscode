@@ -1,6 +1,6 @@
 /**
  * @file main/src/pin.c
- *
+ * 这个是输入pin码文件
  */
 
 
