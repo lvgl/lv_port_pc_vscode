@@ -14,8 +14,8 @@ typedef struct
 
 
 
-void guide_guide_start(void);
-void guide_guide_stop(void);
+extern void guide_guide_start(void);
+extern void guide_guide_stop(void);
 
 #endif /* __GUIDE_GUIDE_H__ */
 

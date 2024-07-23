@@ -54,7 +54,7 @@ static void guide_menu_bg_cont(lv_obj_t* parent)
         lv_obj_t* img_btn = lv_img_create(parent);
         lv_img_set_src(img_btn, guide_menu_img_table[i].src);
         lv_obj_set_pos(img_btn, guide_menu_img_table[i].x, guide_menu_img_table[i].y);
-        lv_obj_add_event_cb(img_btn, guide_menu_word_handler, LV_EVENT_SHORT_CLICKED, guide_menu_img_table[i].str);
+        lv_obj_add_event_cb(img_btn, guide_menu_word_handler, LV_EVENT_SHORT_CLICKED, (void *)guide_menu_img_table[i].str);
         lv_obj_add_flag(img_btn, LV_OBJ_FLAG_CLICKABLE);
 
         lv_obj_t* label = lv_label_create(parent);

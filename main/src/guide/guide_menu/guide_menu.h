@@ -13,8 +13,8 @@ typedef struct
 } guide_menu_t;
 
 
-void guide_menu_start(void);
-void guide_menu_stop(void);
+extern void guide_menu_start(void);
+extern void guide_menu_stop(void);
 
 
 #endif /* __GUIDE_MENU_H__ */

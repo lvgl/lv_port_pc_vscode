@@ -12,8 +12,8 @@ typedef struct
 	lv_obj_t* bg_cont;
 } guide_quick_start_t;
 
-void guide_quick_start_start(void);
-void guide_quick_start_stop(void);
+extern void guide_quick_start_start(void);
+extern void guide_quick_start_stop(void);
 
 
 #endif /* __GUIDE_QUICK_START_H__ */

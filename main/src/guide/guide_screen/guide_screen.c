@@ -6,7 +6,9 @@
 #include "guide_screen.h"
 #include "guide_comm.h"
 
+
 static guide_screen_t* p_guide_screen = NULL;
+
 
 static void guide_screen_scroll_cb(lv_event_t* e)
 {

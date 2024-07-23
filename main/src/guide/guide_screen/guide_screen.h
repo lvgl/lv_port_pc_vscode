@@ -15,8 +15,8 @@ typedef struct
 	lv_obj_t* scroll_label;
 } guide_screen_t;
 
-void guide_screen_start(void);
-void guide_screen_stop(void);
+extern void guide_screen_start(void);
+extern void guide_screen_stop(void);
 
 
 #endif /* __GUIDE_SCREEN_H__ */

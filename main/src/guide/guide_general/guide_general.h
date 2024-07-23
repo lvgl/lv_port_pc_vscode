@@ -17,8 +17,8 @@ typedef struct
 } guide_general_t;
 
 
-void guide_general_start(void);
-void guide_general_stop(void);
+extern void guide_general_start(void);
+extern void guide_general_stop(void);
 
 #endif /* __GUIDE_GENERAL_H__ */
 

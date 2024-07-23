@@ -55,7 +55,7 @@ static void guide_language_bg_cont(lv_obj_t* parent)
         lv_obj_set_style_bg_color(btn, lv_color_hex(0x888888), LV_PART_MAIN);
         lv_obj_set_size(btn, 200, 26);
         lv_obj_set_pos(btn, guide_language_desc_table[i].x, guide_language_desc_table[i].y);
-        lv_obj_add_event_cb(btn, guide_language_event_handler, LV_EVENT_SHORT_CLICKED, guide_language_desc_table[i].str);
+        lv_obj_add_event_cb(btn, guide_language_event_handler, LV_EVENT_SHORT_CLICKED, (void *)guide_language_desc_table[i].str);
         lv_obj_add_flag(btn, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLL_WITH_ARROW);
 		lv_obj_remove_flag(btn, LV_OBJ_FLAG_SCROLLABLE | LV_OBJ_FLAG_SCROLL_ELASTIC);
 

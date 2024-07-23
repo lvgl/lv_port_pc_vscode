@@ -15,8 +15,8 @@ typedef struct
 } guide_enter_pin_t;
 
 
-void guide_enter_pin_strat(void);
-void guide_enter_pin_stop(void);
+extern void guide_enter_pin_start(void);
+extern void guide_enter_pin_stop(void);
 
 
 #endif /* __GUIDE_LANGUAGE_H__ */

@@ -13,8 +13,8 @@ typedef struct
 } guide_language_t;
 
 
-void guide_language_start(void);
-void guide_language_stop(void);
+extern void guide_language_start(void);
+extern void guide_language_stop(void);
 
 #endif /* __GUIDE_LANGUAGE_H__ */
 

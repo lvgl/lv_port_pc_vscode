@@ -9,7 +9,6 @@
 #include <stdio.h>
 
 #include "guide_connect.h"
-#include "guide_comm.h"
 #include "guide_enter_pin.h"
 #include "guide_general.h"
 #include "guide_guide.h"

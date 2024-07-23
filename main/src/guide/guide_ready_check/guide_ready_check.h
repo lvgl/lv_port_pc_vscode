@@ -13,8 +13,8 @@ typedef struct
 } guide_ready_check_t;
 
 
-void guide_ready_check_start(void);
-void guide_ready_check_stop(void);
+extern void guide_ready_check_start(void);
+extern void guide_ready_check_stop(void);
 
 #endif /* __GUIDE_READY_CHECK_H__ */
 

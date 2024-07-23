@@ -13,8 +13,8 @@ typedef struct
 } guide_settings_t;
 
 
-void guide_settings_start(void);
-void guide_settings_stop(void);
+extern void guide_settings_start(void);
+extern void guide_settings_stop(void);
 
 #endif /* __GUIDE_SETTINGS_H__ */
 

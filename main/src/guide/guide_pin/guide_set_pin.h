@@ -25,8 +25,8 @@ typedef struct
 	char confirm_pin[8];
 } guide_set_pin_t;
 
-void guide_set_pin_start(void);
-void guide_set_pin_stop(void);
+extern void guide_set_pin_start(void);
+extern void guide_set_pin_stop(void);
 
 #endif /* __GUIDE_SET_PIN_H__ */
 

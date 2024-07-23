@@ -11,6 +11,8 @@
 
 static guide_enter_pin_t* p_guide_enter_pin = NULL;
 
+extern void guide_language_start(void);
+
 static void guide_wrong_pin_bg_cont(lv_obj_t* parent);
 static void guide_enter_pin_bg_cont(lv_obj_t* parent);
 

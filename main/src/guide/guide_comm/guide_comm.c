@@ -29,7 +29,7 @@ void guide_draw_keypad(lv_obj_t* parent, lv_event_cb_t num_cb, lv_event_cb_t ok_
         lv_imagebutton_set_src(img_btn, LV_IMAGEBUTTON_STATE_PRESSED, &img_left_pressed_bbbbbb_16x40, &img_mid_pressed_bbbbbb_4x40, &img_right_pressed_bbbbbb_16x40);
         lv_obj_set_width(img_btn, 64);
         lv_obj_set_pos(img_btn, guide_imgbtn_num_table[i].x, guide_imgbtn_num_table[i].y);
-        lv_obj_add_event_cb(img_btn, num_cb, LV_EVENT_SHORT_CLICKED, guide_imgbtn_num_table[i].str);
+        lv_obj_add_event_cb(img_btn, num_cb, LV_EVENT_SHORT_CLICKED, (void *)guide_imgbtn_num_table[i].str);
         lv_obj_add_flag(img_btn, LV_OBJ_FLAG_CLICKABLE);
 
         lv_obj_t *label = lv_label_create(img_btn);
