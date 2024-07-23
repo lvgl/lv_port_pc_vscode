@@ -33,7 +33,79 @@ add_executable(main
     main/src/mouse_cursor_icon.c
     main/src/tip.c  # 确保添加 tip.c 文件
     main/src/guide.c  # 确保添加 guide.c 文件
+    
+    main/src/guide/guide_comm/guide_comm.c
+    main/src/guide/guide_connect/guide_connect.c
+    main/src/guide/guide_done/guide_done.c
+    main/src/guide/guide_general/guide_general.c
+    main/src/guide/guide_guide/guide_guide.c
+    main/src/guide/guide_language/guide_language.c
+    main/src/guide/guide_menu/guide_menu.c
+    main/src/guide/guide_pin/guide_set_pin.c
+    main/src/guide/guide_pin/guide_enter_pin.c
+    main/src/guide/guide_quick_start/guide_quick_start.c
+    main/src/guide/guide_ready_check/guide_ready_check.c
+    main/src/guide/guide_recovery/guide_recovery.c
+    main/src/guide/guide_screen/guide_screen.c
+    main/src/guide/guide_settings/guide_settings.c
+    main/src/guide/guide_verification/guide_verification.c
+
+    main/img/img_backgroud.c 
+    main/img/img_imgbtn_cancle_15x15.c 
+    main/img/img_imgbtn_ok_12x9.c 
+    main/img/img_left_pressed_8f7ff0_16x40.c 
+    main/img/img_left_pressed_bbbbbb_14x26.c 
+    main/img/img_left_pressed_bbbbbb_16x40.c 
+    main/img/img_left_pressed_ff593c_16x40.c 
+    main/img/img_left_released_6c6cf4_14x26.c 
+    main/img/img_left_released_6c6cf4_16x40.c 
+    main/img/img_left_released_6c6cf4_16x80.c 
+    main/img/img_left_released_888888_14x26.c 
+    main/img/img_left_released_888888_16x40.c 
+    main/img/img_left_released_ff2600_16x40.c 
+    main/img/img_menu_connect.c 
+    main/img/img_menu_general.c 
+    main/img/img_menu_guide.c 
+    main/img/img_menu_settings.c 
+    main/img/img_mid_pressed_8f7ff0_4x40.c 
+    main/img/img_mid_pressed_bbbbbb_4x26.c 
+    main/img/img_mid_pressed_bbbbbb_4x40.c 
+    main/img/img_mid_pressed_ff593c_4x40.c 
+    main/img/img_mid_released_6c6cf4_4x26.c 
+    main/img/img_mid_released_6c6cf4_4x40.c 
+    main/img/img_mid_released_6c6cf4_16x80.c 
+    main/img/img_mid_released_888888_4x26.c 
+    main/img/img_mid_released_888888_4x40.c 
+    main/img/img_mid_released_ff2600_4x40.c 
+    main/img/img_right_pressed_8f7ff0_16x40.c 
+    main/img/img_right_pressed_bbbbbb_14x26.c 
+    main/img/img_right_pressed_bbbbbb_16x40.c 
+    main/img/img_right_pressed_ff593c_16x40.c 
+    main/img/img_right_released_6c6cf4_14x26.c 
+    main/img/img_right_released_6c6cf4_16x40.c 
+    main/img/img_right_released_6c6cf4_16x80.c 
+    main/img/img_right_released_888888_14x26.c 
+    main/img/img_right_released_888888_16x40.c 
+    main/img/img_right_released_ff2600_16x40.c 
+    main/img/img_guide_back.c 
+    main/img/img_screen_shape.c 
+	
 )
+
+include_directories(main/src/guide/guide_comm)
+include_directories(main/src/guide/guide_connect)
+include_directories(main/src/guide/guide_done)
+include_directories(main/src/guide/guide_general)
+include_directories(main/src/guide/guide_guide)
+include_directories(main/src/guide/guide_language)
+include_directories(main/src/guide/guide_menu)
+include_directories(main/src/guide/guide_pin)
+include_directories(main/src/guide/guide_quick_start)
+include_directories(main/src/guide/guide_ready_check)
+include_directories(main/src/guide/guide_recovery)
+include_directories(main/src/guide/guide_screen)
+include_directories(main/src/guide/guide_settings)
+include_directories(main/src/guide/guide_verification)
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)

@@ -16,6 +16,8 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
+#include "guide_comm.h"
+
 // 声明 tip.c 和 guide.c 中的函数
 extern void load_tips_screen();
 extern void add_tips_button_event(lv_obj_t * btn);
@@ -59,7 +61,7 @@ int main(int argc, char **argv)
     lv_init();
 
     /* 初始化LVGL的HAL（显示，输入设备，计时） */
-    hal_init(480, 272);
+    hal_init(240, 320);
 
     /* 加载主屏幕 */
     load_main_screen();
@@ -112,6 +114,11 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  * 加载主屏幕
  */
 void load_main_screen() {
+
+	extern void guide_screen_start(void);
+	guide_screen_start();
+	return;
+
     /* 创建主屏幕 */
     lv_obj_t * scr = lv_scr_act();
 
