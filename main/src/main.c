@@ -115,10 +115,10 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  */
 void load_main_screen() {
 
-//	extern void startup_screen_start(void);
-//	startup_screen_start();
-	extern void menu_main_start(void);
-	menu_main_start();
+    extern void startup_screen_start(void);
+	startup_screen_start();
+//	extern void menu_main_start(void);
+//	menu_main_start();
 	return;
 
     /* 创建主屏幕 */
