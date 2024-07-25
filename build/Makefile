@@ -1227,6 +1227,126 @@ main/img/img_screen_shape.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_screen_shape.c.s
 .PHONY : main/img/img_screen_shape.c.s
 
+main/src/comm/gui_comm.o: main/src/comm/gui_comm.c.o
+.PHONY : main/src/comm/gui_comm.o
+
+# target to build an object file
+main/src/comm/gui_comm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_comm.c.o
+.PHONY : main/src/comm/gui_comm.c.o
+
+main/src/comm/gui_comm.i: main/src/comm/gui_comm.c.i
+.PHONY : main/src/comm/gui_comm.i
+
+# target to preprocess a source file
+main/src/comm/gui_comm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_comm.c.i
+.PHONY : main/src/comm/gui_comm.c.i
+
+main/src/comm/gui_comm.s: main/src/comm/gui_comm.c.s
+.PHONY : main/src/comm/gui_comm.s
+
+# target to generate assembly for a file
+main/src/comm/gui_comm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_comm.c.s
+.PHONY : main/src/comm/gui_comm.c.s
+
+main/src/connect/connect_main/connect_main.o: main/src/connect/connect_main/connect_main.c.o
+.PHONY : main/src/connect/connect_main/connect_main.o
+
+# target to build an object file
+main/src/connect/connect_main/connect_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_main/connect_main.c.o
+.PHONY : main/src/connect/connect_main/connect_main.c.o
+
+main/src/connect/connect_main/connect_main.i: main/src/connect/connect_main/connect_main.c.i
+.PHONY : main/src/connect/connect_main/connect_main.i
+
+# target to preprocess a source file
+main/src/connect/connect_main/connect_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_main/connect_main.c.i
+.PHONY : main/src/connect/connect_main/connect_main.c.i
+
+main/src/connect/connect_main/connect_main.s: main/src/connect/connect_main/connect_main.c.s
+.PHONY : main/src/connect/connect_main/connect_main.s
+
+# target to generate assembly for a file
+main/src/connect/connect_main/connect_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_main/connect_main.c.s
+.PHONY : main/src/connect/connect_main/connect_main.c.s
+
+main/src/connect/connect_reset/connect_reset.o: main/src/connect/connect_reset/connect_reset.c.o
+.PHONY : main/src/connect/connect_reset/connect_reset.o
+
+# target to build an object file
+main/src/connect/connect_reset/connect_reset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_reset/connect_reset.c.o
+.PHONY : main/src/connect/connect_reset/connect_reset.c.o
+
+main/src/connect/connect_reset/connect_reset.i: main/src/connect/connect_reset/connect_reset.c.i
+.PHONY : main/src/connect/connect_reset/connect_reset.i
+
+# target to preprocess a source file
+main/src/connect/connect_reset/connect_reset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_reset/connect_reset.c.i
+.PHONY : main/src/connect/connect_reset/connect_reset.c.i
+
+main/src/connect/connect_reset/connect_reset.s: main/src/connect/connect_reset/connect_reset.c.s
+.PHONY : main/src/connect/connect_reset/connect_reset.s
+
+# target to generate assembly for a file
+main/src/connect/connect_reset/connect_reset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_reset/connect_reset.c.s
+.PHONY : main/src/connect/connect_reset/connect_reset.c.s
+
+main/src/general/general_lock/general_lock.o: main/src/general/general_lock/general_lock.c.o
+.PHONY : main/src/general/general_lock/general_lock.o
+
+# target to build an object file
+main/src/general/general_lock/general_lock.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_lock/general_lock.c.o
+.PHONY : main/src/general/general_lock/general_lock.c.o
+
+main/src/general/general_lock/general_lock.i: main/src/general/general_lock/general_lock.c.i
+.PHONY : main/src/general/general_lock/general_lock.i
+
+# target to preprocess a source file
+main/src/general/general_lock/general_lock.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_lock/general_lock.c.i
+.PHONY : main/src/general/general_lock/general_lock.c.i
+
+main/src/general/general_lock/general_lock.s: main/src/general/general_lock/general_lock.c.s
+.PHONY : main/src/general/general_lock/general_lock.s
+
+# target to generate assembly for a file
+main/src/general/general_lock/general_lock.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_lock/general_lock.c.s
+.PHONY : main/src/general/general_lock/general_lock.c.s
+
+main/src/general/general_main/general_main.o: main/src/general/general_main/general_main.c.o
+.PHONY : main/src/general/general_main/general_main.o
+
+# target to build an object file
+main/src/general/general_main/general_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_main/general_main.c.o
+.PHONY : main/src/general/general_main/general_main.c.o
+
+main/src/general/general_main/general_main.i: main/src/general/general_main/general_main.c.i
+.PHONY : main/src/general/general_main/general_main.i
+
+# target to preprocess a source file
+main/src/general/general_main/general_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_main/general_main.c.i
+.PHONY : main/src/general/general_main/general_main.c.i
+
+main/src/general/general_main/general_main.s: main/src/general/general_main/general_main.c.s
+.PHONY : main/src/general/general_main/general_main.s
+
+# target to generate assembly for a file
+main/src/general/general_main/general_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_main/general_main.c.s
+.PHONY : main/src/general/general_main/general_main.c.s
+
 main/src/guide.o: main/src/guide.c.o
 .PHONY : main/src/guide.o
 
@@ -1251,269 +1371,29 @@ main/src/guide.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide.c.s
 .PHONY : main/src/guide.c.s
 
-main/src/guide/guide_comm/guide_comm.o: main/src/guide/guide_comm/guide_comm.c.o
-.PHONY : main/src/guide/guide_comm/guide_comm.o
+main/src/guide/guide_main/guide_main.o: main/src/guide/guide_main/guide_main.c.o
+.PHONY : main/src/guide/guide_main/guide_main.o
 
 # target to build an object file
-main/src/guide/guide_comm/guide_comm.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_comm/guide_comm.c.o
-.PHONY : main/src/guide/guide_comm/guide_comm.c.o
+main/src/guide/guide_main/guide_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_main/guide_main.c.o
+.PHONY : main/src/guide/guide_main/guide_main.c.o
 
-main/src/guide/guide_comm/guide_comm.i: main/src/guide/guide_comm/guide_comm.c.i
-.PHONY : main/src/guide/guide_comm/guide_comm.i
-
-# target to preprocess a source file
-main/src/guide/guide_comm/guide_comm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_comm/guide_comm.c.i
-.PHONY : main/src/guide/guide_comm/guide_comm.c.i
-
-main/src/guide/guide_comm/guide_comm.s: main/src/guide/guide_comm/guide_comm.c.s
-.PHONY : main/src/guide/guide_comm/guide_comm.s
-
-# target to generate assembly for a file
-main/src/guide/guide_comm/guide_comm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_comm/guide_comm.c.s
-.PHONY : main/src/guide/guide_comm/guide_comm.c.s
-
-main/src/guide/guide_connect/guide_connect.o: main/src/guide/guide_connect/guide_connect.c.o
-.PHONY : main/src/guide/guide_connect/guide_connect.o
-
-# target to build an object file
-main/src/guide/guide_connect/guide_connect.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_connect/guide_connect.c.o
-.PHONY : main/src/guide/guide_connect/guide_connect.c.o
-
-main/src/guide/guide_connect/guide_connect.i: main/src/guide/guide_connect/guide_connect.c.i
-.PHONY : main/src/guide/guide_connect/guide_connect.i
+main/src/guide/guide_main/guide_main.i: main/src/guide/guide_main/guide_main.c.i
+.PHONY : main/src/guide/guide_main/guide_main.i
 
 # target to preprocess a source file
-main/src/guide/guide_connect/guide_connect.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_connect/guide_connect.c.i
-.PHONY : main/src/guide/guide_connect/guide_connect.c.i
+main/src/guide/guide_main/guide_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_main/guide_main.c.i
+.PHONY : main/src/guide/guide_main/guide_main.c.i
 
-main/src/guide/guide_connect/guide_connect.s: main/src/guide/guide_connect/guide_connect.c.s
-.PHONY : main/src/guide/guide_connect/guide_connect.s
-
-# target to generate assembly for a file
-main/src/guide/guide_connect/guide_connect.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_connect/guide_connect.c.s
-.PHONY : main/src/guide/guide_connect/guide_connect.c.s
-
-main/src/guide/guide_done/guide_done.o: main/src/guide/guide_done/guide_done.c.o
-.PHONY : main/src/guide/guide_done/guide_done.o
-
-# target to build an object file
-main/src/guide/guide_done/guide_done.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_done/guide_done.c.o
-.PHONY : main/src/guide/guide_done/guide_done.c.o
-
-main/src/guide/guide_done/guide_done.i: main/src/guide/guide_done/guide_done.c.i
-.PHONY : main/src/guide/guide_done/guide_done.i
-
-# target to preprocess a source file
-main/src/guide/guide_done/guide_done.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_done/guide_done.c.i
-.PHONY : main/src/guide/guide_done/guide_done.c.i
-
-main/src/guide/guide_done/guide_done.s: main/src/guide/guide_done/guide_done.c.s
-.PHONY : main/src/guide/guide_done/guide_done.s
+main/src/guide/guide_main/guide_main.s: main/src/guide/guide_main/guide_main.c.s
+.PHONY : main/src/guide/guide_main/guide_main.s
 
 # target to generate assembly for a file
-main/src/guide/guide_done/guide_done.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_done/guide_done.c.s
-.PHONY : main/src/guide/guide_done/guide_done.c.s
-
-main/src/guide/guide_general/guide_general.o: main/src/guide/guide_general/guide_general.c.o
-.PHONY : main/src/guide/guide_general/guide_general.o
-
-# target to build an object file
-main/src/guide/guide_general/guide_general.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_general/guide_general.c.o
-.PHONY : main/src/guide/guide_general/guide_general.c.o
-
-main/src/guide/guide_general/guide_general.i: main/src/guide/guide_general/guide_general.c.i
-.PHONY : main/src/guide/guide_general/guide_general.i
-
-# target to preprocess a source file
-main/src/guide/guide_general/guide_general.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_general/guide_general.c.i
-.PHONY : main/src/guide/guide_general/guide_general.c.i
-
-main/src/guide/guide_general/guide_general.s: main/src/guide/guide_general/guide_general.c.s
-.PHONY : main/src/guide/guide_general/guide_general.s
-
-# target to generate assembly for a file
-main/src/guide/guide_general/guide_general.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_general/guide_general.c.s
-.PHONY : main/src/guide/guide_general/guide_general.c.s
-
-main/src/guide/guide_guide/guide_guide.o: main/src/guide/guide_guide/guide_guide.c.o
-.PHONY : main/src/guide/guide_guide/guide_guide.o
-
-# target to build an object file
-main/src/guide/guide_guide/guide_guide.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_guide/guide_guide.c.o
-.PHONY : main/src/guide/guide_guide/guide_guide.c.o
-
-main/src/guide/guide_guide/guide_guide.i: main/src/guide/guide_guide/guide_guide.c.i
-.PHONY : main/src/guide/guide_guide/guide_guide.i
-
-# target to preprocess a source file
-main/src/guide/guide_guide/guide_guide.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_guide/guide_guide.c.i
-.PHONY : main/src/guide/guide_guide/guide_guide.c.i
-
-main/src/guide/guide_guide/guide_guide.s: main/src/guide/guide_guide/guide_guide.c.s
-.PHONY : main/src/guide/guide_guide/guide_guide.s
-
-# target to generate assembly for a file
-main/src/guide/guide_guide/guide_guide.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_guide/guide_guide.c.s
-.PHONY : main/src/guide/guide_guide/guide_guide.c.s
-
-main/src/guide/guide_language/guide_language.o: main/src/guide/guide_language/guide_language.c.o
-.PHONY : main/src/guide/guide_language/guide_language.o
-
-# target to build an object file
-main/src/guide/guide_language/guide_language.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_language/guide_language.c.o
-.PHONY : main/src/guide/guide_language/guide_language.c.o
-
-main/src/guide/guide_language/guide_language.i: main/src/guide/guide_language/guide_language.c.i
-.PHONY : main/src/guide/guide_language/guide_language.i
-
-# target to preprocess a source file
-main/src/guide/guide_language/guide_language.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_language/guide_language.c.i
-.PHONY : main/src/guide/guide_language/guide_language.c.i
-
-main/src/guide/guide_language/guide_language.s: main/src/guide/guide_language/guide_language.c.s
-.PHONY : main/src/guide/guide_language/guide_language.s
-
-# target to generate assembly for a file
-main/src/guide/guide_language/guide_language.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_language/guide_language.c.s
-.PHONY : main/src/guide/guide_language/guide_language.c.s
-
-main/src/guide/guide_menu/guide_menu.o: main/src/guide/guide_menu/guide_menu.c.o
-.PHONY : main/src/guide/guide_menu/guide_menu.o
-
-# target to build an object file
-main/src/guide/guide_menu/guide_menu.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_menu/guide_menu.c.o
-.PHONY : main/src/guide/guide_menu/guide_menu.c.o
-
-main/src/guide/guide_menu/guide_menu.i: main/src/guide/guide_menu/guide_menu.c.i
-.PHONY : main/src/guide/guide_menu/guide_menu.i
-
-# target to preprocess a source file
-main/src/guide/guide_menu/guide_menu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_menu/guide_menu.c.i
-.PHONY : main/src/guide/guide_menu/guide_menu.c.i
-
-main/src/guide/guide_menu/guide_menu.s: main/src/guide/guide_menu/guide_menu.c.s
-.PHONY : main/src/guide/guide_menu/guide_menu.s
-
-# target to generate assembly for a file
-main/src/guide/guide_menu/guide_menu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_menu/guide_menu.c.s
-.PHONY : main/src/guide/guide_menu/guide_menu.c.s
-
-main/src/guide/guide_pin/guide_enter_pin.o: main/src/guide/guide_pin/guide_enter_pin.c.o
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.o
-
-# target to build an object file
-main/src/guide/guide_pin/guide_enter_pin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_enter_pin.c.o
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.c.o
-
-main/src/guide/guide_pin/guide_enter_pin.i: main/src/guide/guide_pin/guide_enter_pin.c.i
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.i
-
-# target to preprocess a source file
-main/src/guide/guide_pin/guide_enter_pin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_enter_pin.c.i
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.c.i
-
-main/src/guide/guide_pin/guide_enter_pin.s: main/src/guide/guide_pin/guide_enter_pin.c.s
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.s
-
-# target to generate assembly for a file
-main/src/guide/guide_pin/guide_enter_pin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_enter_pin.c.s
-.PHONY : main/src/guide/guide_pin/guide_enter_pin.c.s
-
-main/src/guide/guide_pin/guide_set_pin.o: main/src/guide/guide_pin/guide_set_pin.c.o
-.PHONY : main/src/guide/guide_pin/guide_set_pin.o
-
-# target to build an object file
-main/src/guide/guide_pin/guide_set_pin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_set_pin.c.o
-.PHONY : main/src/guide/guide_pin/guide_set_pin.c.o
-
-main/src/guide/guide_pin/guide_set_pin.i: main/src/guide/guide_pin/guide_set_pin.c.i
-.PHONY : main/src/guide/guide_pin/guide_set_pin.i
-
-# target to preprocess a source file
-main/src/guide/guide_pin/guide_set_pin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_set_pin.c.i
-.PHONY : main/src/guide/guide_pin/guide_set_pin.c.i
-
-main/src/guide/guide_pin/guide_set_pin.s: main/src/guide/guide_pin/guide_set_pin.c.s
-.PHONY : main/src/guide/guide_pin/guide_set_pin.s
-
-# target to generate assembly for a file
-main/src/guide/guide_pin/guide_set_pin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_pin/guide_set_pin.c.s
-.PHONY : main/src/guide/guide_pin/guide_set_pin.c.s
-
-main/src/guide/guide_quick_start/guide_quick_start.o: main/src/guide/guide_quick_start/guide_quick_start.c.o
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.o
-
-# target to build an object file
-main/src/guide/guide_quick_start/guide_quick_start.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_quick_start/guide_quick_start.c.o
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.c.o
-
-main/src/guide/guide_quick_start/guide_quick_start.i: main/src/guide/guide_quick_start/guide_quick_start.c.i
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.i
-
-# target to preprocess a source file
-main/src/guide/guide_quick_start/guide_quick_start.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_quick_start/guide_quick_start.c.i
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.c.i
-
-main/src/guide/guide_quick_start/guide_quick_start.s: main/src/guide/guide_quick_start/guide_quick_start.c.s
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.s
-
-# target to generate assembly for a file
-main/src/guide/guide_quick_start/guide_quick_start.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_quick_start/guide_quick_start.c.s
-.PHONY : main/src/guide/guide_quick_start/guide_quick_start.c.s
-
-main/src/guide/guide_ready_check/guide_ready_check.o: main/src/guide/guide_ready_check/guide_ready_check.c.o
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.o
-
-# target to build an object file
-main/src/guide/guide_ready_check/guide_ready_check.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_ready_check/guide_ready_check.c.o
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.c.o
-
-main/src/guide/guide_ready_check/guide_ready_check.i: main/src/guide/guide_ready_check/guide_ready_check.c.i
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.i
-
-# target to preprocess a source file
-main/src/guide/guide_ready_check/guide_ready_check.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_ready_check/guide_ready_check.c.i
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.c.i
-
-main/src/guide/guide_ready_check/guide_ready_check.s: main/src/guide/guide_ready_check/guide_ready_check.c.s
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.s
-
-# target to generate assembly for a file
-main/src/guide/guide_ready_check/guide_ready_check.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_ready_check/guide_ready_check.c.s
-.PHONY : main/src/guide/guide_ready_check/guide_ready_check.c.s
+main/src/guide/guide_main/guide_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_main/guide_main.c.s
+.PHONY : main/src/guide/guide_main/guide_main.c.s
 
 main/src/guide/guide_recovery/guide_recovery.o: main/src/guide/guide_recovery/guide_recovery.c.o
 .PHONY : main/src/guide/guide_recovery/guide_recovery.o
@@ -1539,77 +1419,29 @@ main/src/guide/guide_recovery/guide_recovery.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_recovery/guide_recovery.c.s
 .PHONY : main/src/guide/guide_recovery/guide_recovery.c.s
 
-main/src/guide/guide_screen/guide_screen.o: main/src/guide/guide_screen/guide_screen.c.o
-.PHONY : main/src/guide/guide_screen/guide_screen.o
+main/src/guide/guide_tutorial/guide_tutorial.o: main/src/guide/guide_tutorial/guide_tutorial.c.o
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.o
 
 # target to build an object file
-main/src/guide/guide_screen/guide_screen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_screen/guide_screen.c.o
-.PHONY : main/src/guide/guide_screen/guide_screen.c.o
+main/src/guide/guide_tutorial/guide_tutorial.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_tutorial/guide_tutorial.c.o
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.c.o
 
-main/src/guide/guide_screen/guide_screen.i: main/src/guide/guide_screen/guide_screen.c.i
-.PHONY : main/src/guide/guide_screen/guide_screen.i
-
-# target to preprocess a source file
-main/src/guide/guide_screen/guide_screen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_screen/guide_screen.c.i
-.PHONY : main/src/guide/guide_screen/guide_screen.c.i
-
-main/src/guide/guide_screen/guide_screen.s: main/src/guide/guide_screen/guide_screen.c.s
-.PHONY : main/src/guide/guide_screen/guide_screen.s
-
-# target to generate assembly for a file
-main/src/guide/guide_screen/guide_screen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_screen/guide_screen.c.s
-.PHONY : main/src/guide/guide_screen/guide_screen.c.s
-
-main/src/guide/guide_settings/guide_settings.o: main/src/guide/guide_settings/guide_settings.c.o
-.PHONY : main/src/guide/guide_settings/guide_settings.o
-
-# target to build an object file
-main/src/guide/guide_settings/guide_settings.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_settings/guide_settings.c.o
-.PHONY : main/src/guide/guide_settings/guide_settings.c.o
-
-main/src/guide/guide_settings/guide_settings.i: main/src/guide/guide_settings/guide_settings.c.i
-.PHONY : main/src/guide/guide_settings/guide_settings.i
+main/src/guide/guide_tutorial/guide_tutorial.i: main/src/guide/guide_tutorial/guide_tutorial.c.i
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.i
 
 # target to preprocess a source file
-main/src/guide/guide_settings/guide_settings.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_settings/guide_settings.c.i
-.PHONY : main/src/guide/guide_settings/guide_settings.c.i
+main/src/guide/guide_tutorial/guide_tutorial.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_tutorial/guide_tutorial.c.i
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.c.i
 
-main/src/guide/guide_settings/guide_settings.s: main/src/guide/guide_settings/guide_settings.c.s
-.PHONY : main/src/guide/guide_settings/guide_settings.s
-
-# target to generate assembly for a file
-main/src/guide/guide_settings/guide_settings.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_settings/guide_settings.c.s
-.PHONY : main/src/guide/guide_settings/guide_settings.c.s
-
-main/src/guide/guide_verification/guide_verification.o: main/src/guide/guide_verification/guide_verification.c.o
-.PHONY : main/src/guide/guide_verification/guide_verification.o
-
-# target to build an object file
-main/src/guide/guide_verification/guide_verification.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_verification/guide_verification.c.o
-.PHONY : main/src/guide/guide_verification/guide_verification.c.o
-
-main/src/guide/guide_verification/guide_verification.i: main/src/guide/guide_verification/guide_verification.c.i
-.PHONY : main/src/guide/guide_verification/guide_verification.i
-
-# target to preprocess a source file
-main/src/guide/guide_verification/guide_verification.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_verification/guide_verification.c.i
-.PHONY : main/src/guide/guide_verification/guide_verification.c.i
-
-main/src/guide/guide_verification/guide_verification.s: main/src/guide/guide_verification/guide_verification.c.s
-.PHONY : main/src/guide/guide_verification/guide_verification.s
+main/src/guide/guide_tutorial/guide_tutorial.s: main/src/guide/guide_tutorial/guide_tutorial.c.s
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.s
 
 # target to generate assembly for a file
-main/src/guide/guide_verification/guide_verification.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_verification/guide_verification.c.s
-.PHONY : main/src/guide/guide_verification/guide_verification.c.s
+main/src/guide/guide_tutorial/guide_tutorial.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide/guide_tutorial/guide_tutorial.c.s
+.PHONY : main/src/guide/guide_tutorial/guide_tutorial.c.s
 
 main/src/main.o: main/src/main.c.o
 .PHONY : main/src/main.o
@@ -1634,6 +1466,30 @@ main/src/main.s: main/src/main.c.s
 main/src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/main.c.s
 .PHONY : main/src/main.c.s
+
+main/src/menu/menu_main.o: main/src/menu/menu_main.c.o
+.PHONY : main/src/menu/menu_main.o
+
+# target to build an object file
+main/src/menu/menu_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/menu/menu_main.c.o
+.PHONY : main/src/menu/menu_main.c.o
+
+main/src/menu/menu_main.i: main/src/menu/menu_main.c.i
+.PHONY : main/src/menu/menu_main.i
+
+# target to preprocess a source file
+main/src/menu/menu_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/menu/menu_main.c.i
+.PHONY : main/src/menu/menu_main.c.i
+
+main/src/menu/menu_main.s: main/src/menu/menu_main.c.s
+.PHONY : main/src/menu/menu_main.s
+
+# target to generate assembly for a file
+main/src/menu/menu_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/menu/menu_main.c.s
+.PHONY : main/src/menu/menu_main.c.s
 
 main/src/mouse_cursor_icon.o: main/src/mouse_cursor_icon.c.o
 .PHONY : main/src/mouse_cursor_icon.o
@@ -1712,6 +1568,318 @@ main/src/settings.s: main/src/settings.c.s
 main/src/settings.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings.c.s
 .PHONY : main/src/settings.c.s
+
+main/src/settings/settings_about/settings_about.o: main/src/settings/settings_about/settings_about.c.o
+.PHONY : main/src/settings/settings_about/settings_about.o
+
+# target to build an object file
+main/src/settings/settings_about/settings_about.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_about/settings_about.c.o
+.PHONY : main/src/settings/settings_about/settings_about.c.o
+
+main/src/settings/settings_about/settings_about.i: main/src/settings/settings_about/settings_about.c.i
+.PHONY : main/src/settings/settings_about/settings_about.i
+
+# target to preprocess a source file
+main/src/settings/settings_about/settings_about.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_about/settings_about.c.i
+.PHONY : main/src/settings/settings_about/settings_about.c.i
+
+main/src/settings/settings_about/settings_about.s: main/src/settings/settings_about/settings_about.c.s
+.PHONY : main/src/settings/settings_about/settings_about.s
+
+# target to generate assembly for a file
+main/src/settings/settings_about/settings_about.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_about/settings_about.c.s
+.PHONY : main/src/settings/settings_about/settings_about.c.s
+
+main/src/settings/settings_main/settings_main.o: main/src/settings/settings_main/settings_main.c.o
+.PHONY : main/src/settings/settings_main/settings_main.o
+
+# target to build an object file
+main/src/settings/settings_main/settings_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_main/settings_main.c.o
+.PHONY : main/src/settings/settings_main/settings_main.c.o
+
+main/src/settings/settings_main/settings_main.i: main/src/settings/settings_main/settings_main.c.i
+.PHONY : main/src/settings/settings_main/settings_main.i
+
+# target to preprocess a source file
+main/src/settings/settings_main/settings_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_main/settings_main.c.i
+.PHONY : main/src/settings/settings_main/settings_main.c.i
+
+main/src/settings/settings_main/settings_main.s: main/src/settings/settings_main/settings_main.c.s
+.PHONY : main/src/settings/settings_main/settings_main.s
+
+# target to generate assembly for a file
+main/src/settings/settings_main/settings_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_main/settings_main.c.s
+.PHONY : main/src/settings/settings_main/settings_main.c.s
+
+main/src/settings/settings_reset/settings_reset.o: main/src/settings/settings_reset/settings_reset.c.o
+.PHONY : main/src/settings/settings_reset/settings_reset.o
+
+# target to build an object file
+main/src/settings/settings_reset/settings_reset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.o
+.PHONY : main/src/settings/settings_reset/settings_reset.c.o
+
+main/src/settings/settings_reset/settings_reset.i: main/src/settings/settings_reset/settings_reset.c.i
+.PHONY : main/src/settings/settings_reset/settings_reset.i
+
+# target to preprocess a source file
+main/src/settings/settings_reset/settings_reset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.i
+.PHONY : main/src/settings/settings_reset/settings_reset.c.i
+
+main/src/settings/settings_reset/settings_reset.s: main/src/settings/settings_reset/settings_reset.c.s
+.PHONY : main/src/settings/settings_reset/settings_reset.s
+
+# target to generate assembly for a file
+main/src/settings/settings_reset/settings_reset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.s
+.PHONY : main/src/settings/settings_reset/settings_reset.c.s
+
+main/src/settings/settings_security/settings_security.o: main/src/settings/settings_security/settings_security.c.o
+.PHONY : main/src/settings/settings_security/settings_security.o
+
+# target to build an object file
+main/src/settings/settings_security/settings_security.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_security.c.o
+.PHONY : main/src/settings/settings_security/settings_security.c.o
+
+main/src/settings/settings_security/settings_security.i: main/src/settings/settings_security/settings_security.c.i
+.PHONY : main/src/settings/settings_security/settings_security.i
+
+# target to preprocess a source file
+main/src/settings/settings_security/settings_security.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_security.c.i
+.PHONY : main/src/settings/settings_security/settings_security.c.i
+
+main/src/settings/settings_security/settings_security.s: main/src/settings/settings_security/settings_security.c.s
+.PHONY : main/src/settings/settings_security/settings_security.s
+
+# target to generate assembly for a file
+main/src/settings/settings_security/settings_security.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_security.c.s
+.PHONY : main/src/settings/settings_security/settings_security.c.s
+
+main/src/startup/startup_done/startup_done.o: main/src/startup/startup_done/startup_done.c.o
+.PHONY : main/src/startup/startup_done/startup_done.o
+
+# target to build an object file
+main/src/startup/startup_done/startup_done.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_done/startup_done.c.o
+.PHONY : main/src/startup/startup_done/startup_done.c.o
+
+main/src/startup/startup_done/startup_done.i: main/src/startup/startup_done/startup_done.c.i
+.PHONY : main/src/startup/startup_done/startup_done.i
+
+# target to preprocess a source file
+main/src/startup/startup_done/startup_done.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_done/startup_done.c.i
+.PHONY : main/src/startup/startup_done/startup_done.c.i
+
+main/src/startup/startup_done/startup_done.s: main/src/startup/startup_done/startup_done.c.s
+.PHONY : main/src/startup/startup_done/startup_done.s
+
+# target to generate assembly for a file
+main/src/startup/startup_done/startup_done.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_done/startup_done.c.s
+.PHONY : main/src/startup/startup_done/startup_done.c.s
+
+main/src/startup/startup_language/startup_language.o: main/src/startup/startup_language/startup_language.c.o
+.PHONY : main/src/startup/startup_language/startup_language.o
+
+# target to build an object file
+main/src/startup/startup_language/startup_language.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_language/startup_language.c.o
+.PHONY : main/src/startup/startup_language/startup_language.c.o
+
+main/src/startup/startup_language/startup_language.i: main/src/startup/startup_language/startup_language.c.i
+.PHONY : main/src/startup/startup_language/startup_language.i
+
+# target to preprocess a source file
+main/src/startup/startup_language/startup_language.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_language/startup_language.c.i
+.PHONY : main/src/startup/startup_language/startup_language.c.i
+
+main/src/startup/startup_language/startup_language.s: main/src/startup/startup_language/startup_language.c.s
+.PHONY : main/src/startup/startup_language/startup_language.s
+
+# target to generate assembly for a file
+main/src/startup/startup_language/startup_language.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_language/startup_language.c.s
+.PHONY : main/src/startup/startup_language/startup_language.c.s
+
+main/src/startup/startup_pin/startup_enter_pin.o: main/src/startup/startup_pin/startup_enter_pin.c.o
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.o
+
+# target to build an object file
+main/src/startup/startup_pin/startup_enter_pin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_enter_pin.c.o
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.c.o
+
+main/src/startup/startup_pin/startup_enter_pin.i: main/src/startup/startup_pin/startup_enter_pin.c.i
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.i
+
+# target to preprocess a source file
+main/src/startup/startup_pin/startup_enter_pin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_enter_pin.c.i
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.c.i
+
+main/src/startup/startup_pin/startup_enter_pin.s: main/src/startup/startup_pin/startup_enter_pin.c.s
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.s
+
+# target to generate assembly for a file
+main/src/startup/startup_pin/startup_enter_pin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_enter_pin.c.s
+.PHONY : main/src/startup/startup_pin/startup_enter_pin.c.s
+
+main/src/startup/startup_pin/startup_set_pin.o: main/src/startup/startup_pin/startup_set_pin.c.o
+.PHONY : main/src/startup/startup_pin/startup_set_pin.o
+
+# target to build an object file
+main/src/startup/startup_pin/startup_set_pin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_set_pin.c.o
+.PHONY : main/src/startup/startup_pin/startup_set_pin.c.o
+
+main/src/startup/startup_pin/startup_set_pin.i: main/src/startup/startup_pin/startup_set_pin.c.i
+.PHONY : main/src/startup/startup_pin/startup_set_pin.i
+
+# target to preprocess a source file
+main/src/startup/startup_pin/startup_set_pin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_set_pin.c.i
+.PHONY : main/src/startup/startup_pin/startup_set_pin.c.i
+
+main/src/startup/startup_pin/startup_set_pin.s: main/src/startup/startup_pin/startup_set_pin.c.s
+.PHONY : main/src/startup/startup_pin/startup_set_pin.s
+
+# target to generate assembly for a file
+main/src/startup/startup_pin/startup_set_pin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_pin/startup_set_pin.c.s
+.PHONY : main/src/startup/startup_pin/startup_set_pin.c.s
+
+main/src/startup/startup_quick_start/startup_quick_start.o: main/src/startup/startup_quick_start/startup_quick_start.c.o
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.o
+
+# target to build an object file
+main/src/startup/startup_quick_start/startup_quick_start.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_quick_start/startup_quick_start.c.o
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.c.o
+
+main/src/startup/startup_quick_start/startup_quick_start.i: main/src/startup/startup_quick_start/startup_quick_start.c.i
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.i
+
+# target to preprocess a source file
+main/src/startup/startup_quick_start/startup_quick_start.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_quick_start/startup_quick_start.c.i
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.c.i
+
+main/src/startup/startup_quick_start/startup_quick_start.s: main/src/startup/startup_quick_start/startup_quick_start.c.s
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.s
+
+# target to generate assembly for a file
+main/src/startup/startup_quick_start/startup_quick_start.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_quick_start/startup_quick_start.c.s
+.PHONY : main/src/startup/startup_quick_start/startup_quick_start.c.s
+
+main/src/startup/startup_ready_check/startup_ready_check.o: main/src/startup/startup_ready_check/startup_ready_check.c.o
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.o
+
+# target to build an object file
+main/src/startup/startup_ready_check/startup_ready_check.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_ready_check/startup_ready_check.c.o
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.c.o
+
+main/src/startup/startup_ready_check/startup_ready_check.i: main/src/startup/startup_ready_check/startup_ready_check.c.i
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.i
+
+# target to preprocess a source file
+main/src/startup/startup_ready_check/startup_ready_check.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_ready_check/startup_ready_check.c.i
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.c.i
+
+main/src/startup/startup_ready_check/startup_ready_check.s: main/src/startup/startup_ready_check/startup_ready_check.c.s
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.s
+
+# target to generate assembly for a file
+main/src/startup/startup_ready_check/startup_ready_check.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_ready_check/startup_ready_check.c.s
+.PHONY : main/src/startup/startup_ready_check/startup_ready_check.c.s
+
+main/src/startup/startup_recovery/startup_recovery.o: main/src/startup/startup_recovery/startup_recovery.c.o
+.PHONY : main/src/startup/startup_recovery/startup_recovery.o
+
+# target to build an object file
+main/src/startup/startup_recovery/startup_recovery.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_recovery/startup_recovery.c.o
+.PHONY : main/src/startup/startup_recovery/startup_recovery.c.o
+
+main/src/startup/startup_recovery/startup_recovery.i: main/src/startup/startup_recovery/startup_recovery.c.i
+.PHONY : main/src/startup/startup_recovery/startup_recovery.i
+
+# target to preprocess a source file
+main/src/startup/startup_recovery/startup_recovery.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_recovery/startup_recovery.c.i
+.PHONY : main/src/startup/startup_recovery/startup_recovery.c.i
+
+main/src/startup/startup_recovery/startup_recovery.s: main/src/startup/startup_recovery/startup_recovery.c.s
+.PHONY : main/src/startup/startup_recovery/startup_recovery.s
+
+# target to generate assembly for a file
+main/src/startup/startup_recovery/startup_recovery.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_recovery/startup_recovery.c.s
+.PHONY : main/src/startup/startup_recovery/startup_recovery.c.s
+
+main/src/startup/startup_screen/startup_screen.o: main/src/startup/startup_screen/startup_screen.c.o
+.PHONY : main/src/startup/startup_screen/startup_screen.o
+
+# target to build an object file
+main/src/startup/startup_screen/startup_screen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_screen/startup_screen.c.o
+.PHONY : main/src/startup/startup_screen/startup_screen.c.o
+
+main/src/startup/startup_screen/startup_screen.i: main/src/startup/startup_screen/startup_screen.c.i
+.PHONY : main/src/startup/startup_screen/startup_screen.i
+
+# target to preprocess a source file
+main/src/startup/startup_screen/startup_screen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_screen/startup_screen.c.i
+.PHONY : main/src/startup/startup_screen/startup_screen.c.i
+
+main/src/startup/startup_screen/startup_screen.s: main/src/startup/startup_screen/startup_screen.c.s
+.PHONY : main/src/startup/startup_screen/startup_screen.s
+
+# target to generate assembly for a file
+main/src/startup/startup_screen/startup_screen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_screen/startup_screen.c.s
+.PHONY : main/src/startup/startup_screen/startup_screen.c.s
+
+main/src/startup/startup_verification/startup_verification.o: main/src/startup/startup_verification/startup_verification.c.o
+.PHONY : main/src/startup/startup_verification/startup_verification.o
+
+# target to build an object file
+main/src/startup/startup_verification/startup_verification.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_verification/startup_verification.c.o
+.PHONY : main/src/startup/startup_verification/startup_verification.c.o
+
+main/src/startup/startup_verification/startup_verification.i: main/src/startup/startup_verification/startup_verification.c.i
+.PHONY : main/src/startup/startup_verification/startup_verification.i
+
+# target to preprocess a source file
+main/src/startup/startup_verification/startup_verification.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_verification/startup_verification.c.i
+.PHONY : main/src/startup/startup_verification/startup_verification.c.i
+
+main/src/startup/startup_verification/startup_verification.s: main/src/startup/startup_verification/startup_verification.c.s
+.PHONY : main/src/startup/startup_verification/startup_verification.s
+
+# target to generate assembly for a file
+main/src/startup/startup_verification/startup_verification.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_verification/startup_verification.c.s
+.PHONY : main/src/startup/startup_verification/startup_verification.c.s
 
 main/src/tip.o: main/src/tip.c.o
 .PHONY : main/src/tip.o
@@ -1900,57 +2068,39 @@ help:
 	@echo "... main/img/img_screen_shape.o"
 	@echo "... main/img/img_screen_shape.i"
 	@echo "... main/img/img_screen_shape.s"
+	@echo "... main/src/comm/gui_comm.o"
+	@echo "... main/src/comm/gui_comm.i"
+	@echo "... main/src/comm/gui_comm.s"
+	@echo "... main/src/connect/connect_main/connect_main.o"
+	@echo "... main/src/connect/connect_main/connect_main.i"
+	@echo "... main/src/connect/connect_main/connect_main.s"
+	@echo "... main/src/connect/connect_reset/connect_reset.o"
+	@echo "... main/src/connect/connect_reset/connect_reset.i"
+	@echo "... main/src/connect/connect_reset/connect_reset.s"
+	@echo "... main/src/general/general_lock/general_lock.o"
+	@echo "... main/src/general/general_lock/general_lock.i"
+	@echo "... main/src/general/general_lock/general_lock.s"
+	@echo "... main/src/general/general_main/general_main.o"
+	@echo "... main/src/general/general_main/general_main.i"
+	@echo "... main/src/general/general_main/general_main.s"
 	@echo "... main/src/guide.o"
 	@echo "... main/src/guide.i"
 	@echo "... main/src/guide.s"
-	@echo "... main/src/guide/guide_comm/guide_comm.o"
-	@echo "... main/src/guide/guide_comm/guide_comm.i"
-	@echo "... main/src/guide/guide_comm/guide_comm.s"
-	@echo "... main/src/guide/guide_connect/guide_connect.o"
-	@echo "... main/src/guide/guide_connect/guide_connect.i"
-	@echo "... main/src/guide/guide_connect/guide_connect.s"
-	@echo "... main/src/guide/guide_done/guide_done.o"
-	@echo "... main/src/guide/guide_done/guide_done.i"
-	@echo "... main/src/guide/guide_done/guide_done.s"
-	@echo "... main/src/guide/guide_general/guide_general.o"
-	@echo "... main/src/guide/guide_general/guide_general.i"
-	@echo "... main/src/guide/guide_general/guide_general.s"
-	@echo "... main/src/guide/guide_guide/guide_guide.o"
-	@echo "... main/src/guide/guide_guide/guide_guide.i"
-	@echo "... main/src/guide/guide_guide/guide_guide.s"
-	@echo "... main/src/guide/guide_language/guide_language.o"
-	@echo "... main/src/guide/guide_language/guide_language.i"
-	@echo "... main/src/guide/guide_language/guide_language.s"
-	@echo "... main/src/guide/guide_menu/guide_menu.o"
-	@echo "... main/src/guide/guide_menu/guide_menu.i"
-	@echo "... main/src/guide/guide_menu/guide_menu.s"
-	@echo "... main/src/guide/guide_pin/guide_enter_pin.o"
-	@echo "... main/src/guide/guide_pin/guide_enter_pin.i"
-	@echo "... main/src/guide/guide_pin/guide_enter_pin.s"
-	@echo "... main/src/guide/guide_pin/guide_set_pin.o"
-	@echo "... main/src/guide/guide_pin/guide_set_pin.i"
-	@echo "... main/src/guide/guide_pin/guide_set_pin.s"
-	@echo "... main/src/guide/guide_quick_start/guide_quick_start.o"
-	@echo "... main/src/guide/guide_quick_start/guide_quick_start.i"
-	@echo "... main/src/guide/guide_quick_start/guide_quick_start.s"
-	@echo "... main/src/guide/guide_ready_check/guide_ready_check.o"
-	@echo "... main/src/guide/guide_ready_check/guide_ready_check.i"
-	@echo "... main/src/guide/guide_ready_check/guide_ready_check.s"
+	@echo "... main/src/guide/guide_main/guide_main.o"
+	@echo "... main/src/guide/guide_main/guide_main.i"
+	@echo "... main/src/guide/guide_main/guide_main.s"
 	@echo "... main/src/guide/guide_recovery/guide_recovery.o"
 	@echo "... main/src/guide/guide_recovery/guide_recovery.i"
 	@echo "... main/src/guide/guide_recovery/guide_recovery.s"
-	@echo "... main/src/guide/guide_screen/guide_screen.o"
-	@echo "... main/src/guide/guide_screen/guide_screen.i"
-	@echo "... main/src/guide/guide_screen/guide_screen.s"
-	@echo "... main/src/guide/guide_settings/guide_settings.o"
-	@echo "... main/src/guide/guide_settings/guide_settings.i"
-	@echo "... main/src/guide/guide_settings/guide_settings.s"
-	@echo "... main/src/guide/guide_verification/guide_verification.o"
-	@echo "... main/src/guide/guide_verification/guide_verification.i"
-	@echo "... main/src/guide/guide_verification/guide_verification.s"
+	@echo "... main/src/guide/guide_tutorial/guide_tutorial.o"
+	@echo "... main/src/guide/guide_tutorial/guide_tutorial.i"
+	@echo "... main/src/guide/guide_tutorial/guide_tutorial.s"
 	@echo "... main/src/main.o"
 	@echo "... main/src/main.i"
 	@echo "... main/src/main.s"
+	@echo "... main/src/menu/menu_main.o"
+	@echo "... main/src/menu/menu_main.i"
+	@echo "... main/src/menu/menu_main.s"
 	@echo "... main/src/mouse_cursor_icon.o"
 	@echo "... main/src/mouse_cursor_icon.i"
 	@echo "... main/src/mouse_cursor_icon.s"
@@ -1960,6 +2110,45 @@ help:
 	@echo "... main/src/settings.o"
 	@echo "... main/src/settings.i"
 	@echo "... main/src/settings.s"
+	@echo "... main/src/settings/settings_about/settings_about.o"
+	@echo "... main/src/settings/settings_about/settings_about.i"
+	@echo "... main/src/settings/settings_about/settings_about.s"
+	@echo "... main/src/settings/settings_main/settings_main.o"
+	@echo "... main/src/settings/settings_main/settings_main.i"
+	@echo "... main/src/settings/settings_main/settings_main.s"
+	@echo "... main/src/settings/settings_reset/settings_reset.o"
+	@echo "... main/src/settings/settings_reset/settings_reset.i"
+	@echo "... main/src/settings/settings_reset/settings_reset.s"
+	@echo "... main/src/settings/settings_security/settings_security.o"
+	@echo "... main/src/settings/settings_security/settings_security.i"
+	@echo "... main/src/settings/settings_security/settings_security.s"
+	@echo "... main/src/startup/startup_done/startup_done.o"
+	@echo "... main/src/startup/startup_done/startup_done.i"
+	@echo "... main/src/startup/startup_done/startup_done.s"
+	@echo "... main/src/startup/startup_language/startup_language.o"
+	@echo "... main/src/startup/startup_language/startup_language.i"
+	@echo "... main/src/startup/startup_language/startup_language.s"
+	@echo "... main/src/startup/startup_pin/startup_enter_pin.o"
+	@echo "... main/src/startup/startup_pin/startup_enter_pin.i"
+	@echo "... main/src/startup/startup_pin/startup_enter_pin.s"
+	@echo "... main/src/startup/startup_pin/startup_set_pin.o"
+	@echo "... main/src/startup/startup_pin/startup_set_pin.i"
+	@echo "... main/src/startup/startup_pin/startup_set_pin.s"
+	@echo "... main/src/startup/startup_quick_start/startup_quick_start.o"
+	@echo "... main/src/startup/startup_quick_start/startup_quick_start.i"
+	@echo "... main/src/startup/startup_quick_start/startup_quick_start.s"
+	@echo "... main/src/startup/startup_ready_check/startup_ready_check.o"
+	@echo "... main/src/startup/startup_ready_check/startup_ready_check.i"
+	@echo "... main/src/startup/startup_ready_check/startup_ready_check.s"
+	@echo "... main/src/startup/startup_recovery/startup_recovery.o"
+	@echo "... main/src/startup/startup_recovery/startup_recovery.i"
+	@echo "... main/src/startup/startup_recovery/startup_recovery.s"
+	@echo "... main/src/startup/startup_screen/startup_screen.o"
+	@echo "... main/src/startup/startup_screen/startup_screen.i"
+	@echo "... main/src/startup/startup_screen/startup_screen.s"
+	@echo "... main/src/startup/startup_verification/startup_verification.o"
+	@echo "... main/src/startup/startup_verification/startup_verification.i"
+	@echo "... main/src/startup/startup_verification/startup_verification.s"
 	@echo "... main/src/tip.o"
 	@echo "... main/src/tip.i"
 	@echo "... main/src/tip.s"

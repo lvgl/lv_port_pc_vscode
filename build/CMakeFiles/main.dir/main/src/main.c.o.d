@@ -514,22 +514,9 @@ CMakeFiles/main.dir/main/src/main.c.o: \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/demos/../lvgl.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/demos/widgets/lv_demo_widgets.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/demos/widgets/../lv_demos.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_comm/guide_comm.h \
+  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/comm/gui_comm.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_va_list.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/sys/stdio.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/secure/_stdio.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_connect/guide_connect.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_pin/guide_enter_pin.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_general/guide_general.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_guide/guide_guide.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_language/guide_language.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_menu/guide_menu.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_quick_start/guide_quick_start.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_ready_check/guide_ready_check.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_recovery/guide_recovery.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_screen/guide_screen.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_settings/guide_settings.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_pin/guide_set_pin.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_verification/guide_verification.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/secure/_stdio.h

@@ -12,6 +12,8 @@ typedef struct
 	lv_obj_t* bg_cont;
 } guide_recovery_t;
 
+
+
 extern void guide_recovery_start(void);
 extern void guide_recovery_stop(void);
 

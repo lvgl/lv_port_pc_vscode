@@ -16,7 +16,7 @@
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
 
-#include "guide_comm.h"
+#include "gui_comm.h"
 
 // 声明 tip.c 和 guide.c 中的函数
 extern void load_tips_screen();
@@ -115,8 +115,10 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  */
 void load_main_screen() {
 
-	extern void guide_screen_start(void);
-	guide_screen_start();
+	extern void startup_screen_start(void);
+	startup_screen_start();
+//	extern void menu_main_start(void);
+//	menu_main_start();
 	return;
 
     /* 创建主屏幕 */

@@ -396,7 +396,7 @@ CMakeFiles/main.dir/main/src/guide/guide_recovery/guide_recovery.c.o: \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../stdlib/builtin/../../misc/lv_types.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../tick/lv_tick.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../layouts/lv_layout.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_comm/guide_comm.h \
+  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/comm/gui_comm.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_va_list.h \
@@ -408,16 +408,4 @@ CMakeFiles/main.dir/main/src/guide/guide_recovery/guide_recovery.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_off_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_ssize_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/secure/_stdio.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/secure/_common.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_connect/guide_connect.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_pin/guide_enter_pin.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_general/guide_general.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_guide/guide_guide.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_language/guide_language.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_menu/guide_menu.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_quick_start/guide_quick_start.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_ready_check/guide_ready_check.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_screen/guide_screen.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_settings/guide_settings.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_pin/guide_set_pin.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/main/src/guide/guide_verification/guide_verification.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/secure/_common.h

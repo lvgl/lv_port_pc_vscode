@@ -34,21 +34,35 @@ add_executable(main
     main/src/tip.c  # 确保添加 tip.c 文件
     main/src/guide.c  # 确保添加 guide.c 文件
     
-    main/src/guide/guide_comm/guide_comm.c
-    main/src/guide/guide_connect/guide_connect.c
-    main/src/guide/guide_done/guide_done.c
-    main/src/guide/guide_general/guide_general.c
-    main/src/guide/guide_guide/guide_guide.c
-    main/src/guide/guide_language/guide_language.c
-    main/src/guide/guide_menu/guide_menu.c
-    main/src/guide/guide_pin/guide_set_pin.c
-    main/src/guide/guide_pin/guide_enter_pin.c
-    main/src/guide/guide_quick_start/guide_quick_start.c
-    main/src/guide/guide_ready_check/guide_ready_check.c
+    main/src/comm/gui_comm.c
+    main/src/comm/gui_comm.h
+	
+    main/src/connect/connect_main/connect_main.c
+    main/src/connect/connect_reset/connect_reset.c
+	
+    main/src/general/general_lock/general_lock.c
+    main/src/general/general_main/general_main.c
+	
+    main/src/guide/guide_main/guide_main.c
     main/src/guide/guide_recovery/guide_recovery.c
-    main/src/guide/guide_screen/guide_screen.c
-    main/src/guide/guide_settings/guide_settings.c
-    main/src/guide/guide_verification/guide_verification.c
+    main/src/guide/guide_tutorial/guide_tutorial.c
+	
+    main/src/menu/menu_main.c
+	
+    main/src/settings/settings_main/settings_main.c
+    main/src/settings/settings_about/settings_about.c
+    main/src/settings/settings_security/settings_security.c
+    main/src/settings/settings_reset/settings_reset.c
+	
+    main/src/startup/startup_done/startup_done.c
+    main/src/startup/startup_language/startup_language.c
+    main/src/startup/startup_pin/startup_set_pin.c
+    main/src/startup/startup_pin/startup_enter_pin.c
+    main/src/startup/startup_quick_start/startup_quick_start.c
+    main/src/startup/startup_ready_check/startup_ready_check.c
+    main/src/startup/startup_recovery/startup_recovery.c
+    main/src/startup/startup_screen/startup_screen.c
+    main/src/startup/startup_verification/startup_verification.c
 
     main/img/img_backgroud.c 
     main/img/img_imgbtn_cancle_15x15.c 
@@ -92,20 +106,32 @@ add_executable(main
 	
 )
 
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_comm)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_connect)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_done)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_general)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_guide)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_language)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_menu)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_pin)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_quick_start)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_ready_check)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/comm)
+
+include_directories(${PROJECT_SOURCE_DIR}/main/src/connect/connect_main)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/connect/connect_reset)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/general/general_lock)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/general/general_main)
+
+include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_main)
 include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_recovery)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_screen)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_settings)
-include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_verification)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/guide/guide_tutorial)
+
+include_directories(${PROJECT_SOURCE_DIR}/main/src/menu)
+
+include_directories(${PROJECT_SOURCE_DIR}/main/src/settings/settings_about)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/settings/settings_main)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/settings/settings_security)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/settings/settings_reset)
+
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_done)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_language)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_pin)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_quick_start)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_ready_check)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_recovery)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_screen)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_verification)
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
