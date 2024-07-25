@@ -9,7 +9,7 @@
 
 static startup_screen_t* p_startup_screen = NULL;
 
-extern void startup_enter_pin_start(void);
+extern void startup_enter_pin_start(app_index_t app_index);
 
 
 static void startup_screen_scroll_cb(lv_event_t* e)
@@ -30,7 +30,7 @@ static void startup_screen_scroll_cb(lv_event_t* e)
             lv_obj_set_pos(p_startup_screen->scroll_img, 116, 263);
             lv_obj_align_to(p_startup_screen->scroll_label, p_startup_screen->scroll_img, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
             startup_screen_stop();
-        	startup_enter_pin_start();
+        	startup_enter_pin_start(APP_STARTUP);
             return;
         }
         lv_obj_set_pos(p_startup_screen->scroll_img, 116, 263 + p_startup_screen->move_y);

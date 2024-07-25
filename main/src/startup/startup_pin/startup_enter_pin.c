@@ -6,7 +6,9 @@
 #include "startup_enter_pin.h"
 #include "gui_comm.h"
 
-extern void startup_language_start(void);
+
+extern void startup_language_start(app_index_t app_index);
+extern void startup_set_pin_start(app_index_t app_index);
 static void startup_wrong_pin_bg_cont(lv_obj_t* parent);
 static void startup_enter_pin_bg_cont(lv_obj_t* parent);
 
@@ -22,9 +24,15 @@ static void startup_keypad_ok_cb(lv_event_t* e)
         //这里暂时用666666代替
         if (0 == lv_strcmp(p_startup_enter_pin->pin, "666666"))
         {
-            //gui_app_run_subpage("startup", "language", NULL);
+			if(APP_STARTUP == p_startup_enter_pin->app_index)
+			{
+	        	startup_language_start(APP_STARTUP);
+	        }
+			if(APP_SETTINGS == p_startup_enter_pin->app_index)
+	        {
+	        	startup_set_pin_start(APP_SETTINGS);
+	        }
 	        startup_enter_pin_stop();
-	        startup_language_start();
         }
         else
         {
@@ -135,12 +143,13 @@ static void startup_wrong_pin_bg_cont(lv_obj_t* parent)
     lv_obj_center(label_close);
 }
 
-void startup_enter_pin_start(void)
+void startup_enter_pin_start(app_index_t app_index)
 {
     p_startup_enter_pin = (startup_enter_pin_t*)lv_malloc(sizeof(startup_enter_pin_t));
     LV_ASSERT(p_startup_enter_pin);
     lv_memset(p_startup_enter_pin, 0, sizeof(startup_enter_pin_t));
 
+	p_startup_enter_pin->app_index = app_index;
     p_startup_enter_pin->bg_cont = gui_comm_draw_bg();
     startup_enter_pin_bg_cont(p_startup_enter_pin->bg_cont);
 }

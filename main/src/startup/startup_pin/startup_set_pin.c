@@ -6,6 +6,8 @@
 #include "gui_comm.h"
 
 extern void startup_quick_start_start(void);
+extern void settings_security_start(void);
+
 
 static startup_set_pin_t* p_startup_set_pin = NULL;
 
@@ -30,9 +32,16 @@ static void startup_keypad_ok_cb(lv_event_t* e)
         {
             if (0 == lv_strcmp(p_startup_set_pin->set_pin, p_startup_set_pin->confirm_pin))
             {
-                //gui_app_run_subpage("startup", "quick_start", NULL);
-                startup_set_pin_stop();
-        		startup_quick_start_start();
+				
+				if(APP_STARTUP == p_startup_set_pin->app_index)
+				{
+					startup_quick_start_start();
+				}
+				if(APP_SETTINGS == p_startup_set_pin->app_index)
+				{
+					settings_security_start();
+				}
+				startup_set_pin_stop();
             }
             else
             {
@@ -126,12 +135,13 @@ static void startup_set_pin_bg_cont(lv_obj_t* parent)
     p_startup_set_pin->pin_label = pin_label;
 }
 
-void startup_set_pin_start(void)
+void startup_set_pin_start(app_index_t app_index)
 {
     p_startup_set_pin = (startup_set_pin_t*)lv_malloc(sizeof(startup_set_pin_t));
     LV_ASSERT(p_startup_set_pin);
     lv_memset(p_startup_set_pin, 0, sizeof(startup_set_pin_t));
 
+	p_startup_set_pin->app_index = app_index;
     p_startup_set_pin->bg_cont = gui_comm_draw_bg();
     startup_set_pin_bg_cont(p_startup_set_pin->bg_cont);
 }

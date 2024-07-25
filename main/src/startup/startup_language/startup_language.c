@@ -29,10 +29,10 @@ static gui_comm_imgbtn_desc_t startup_language_desc_table[] =
     {"Filipino", 20, 606},
     {"বাংলা", 20, 636},
 };
-extern void startup_set_pin_start(void);
+extern void general_main_start(void);
+extern void startup_set_pin_start(app_index_t app_index);
 
 static startup_language_t* p_startup_language = NULL;
-
 
 static void startup_language_event_handler(lv_event_t* e)
 {
@@ -41,14 +41,22 @@ static void startup_language_event_handler(lv_event_t* e)
     if (LV_EVENT_SHORT_CLICKED == event)
     {
         printf("setting language:%s\n", (char *)e->user_data);
-        //gui_app_run_subpage("startup", "set_pin", NULL);
+        /*这里保存一下当前的语言*/
+		if(APP_GENERAL == p_startup_language->app_index)
+		{
+        	general_main_start();
+		}
+		else if(APP_STARTUP == p_startup_language->app_index)
+		{
+	        startup_set_pin_start(APP_STARTUP);
+        }
         startup_language_stop();
-        startup_set_pin_start();
     }
 }
 static void startup_language_bg_cont(lv_obj_t* parent)
 {
-    gui_comm_draw_title(parent, "Language", NULL);
+	gui_comm_draw_title(parent, "Language", NULL);
+	    
     for (int i = 0; i < sizeof(startup_language_desc_table) / sizeof(gui_comm_imgbtn_desc_t); i++)
     {
         lv_obj_t* btn = lv_obj_create(parent);
@@ -68,13 +76,13 @@ static void startup_language_bg_cont(lv_obj_t* parent)
     }
 }
 
-
-void startup_language_start(void)
+void startup_language_start(app_index_t app_index)
 {
     p_startup_language = (startup_language_t*)lv_malloc(sizeof(startup_language_t));
     LV_ASSERT(p_startup_language);
     lv_memset(p_startup_language, 0, sizeof(startup_language_t));
 
+	p_startup_language->app_index = app_index;
     p_startup_language->bg_cont = gui_comm_draw_bg();
 	lv_obj_add_flag(p_startup_language->bg_cont, LV_OBJ_FLAG_SCROLLABLE | LV_OBJ_FLAG_SCROLL_ELASTIC);
     startup_language_bg_cont(p_startup_language->bg_cont);

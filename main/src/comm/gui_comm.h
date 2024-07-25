@@ -50,6 +50,17 @@ LV_IMG_DECLARE(img_guide_back);
 LV_IMG_DECLARE(img_screen_shape);
 
 
+enum 
+{	
+	APP_STARTUP,
+	APP_MAIN,
+	APP_SETTINGS,
+	APP_GENERAL,
+	APP_CONNECT,
+	APP_GUIDE,
+};
+typedef uint8_t app_index_t;
+
 typedef struct
 {
     const char *str;

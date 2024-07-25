@@ -8,6 +8,7 @@
 
 extern void menu_main_start(void);
 extern void general_lock_start(void);
+extern void startup_language_start(app_index_t app_index);
 
 static general_main_t* p_general_main = NULL;
 
@@ -15,8 +16,7 @@ static gui_comm_imgbtn_desc_t gui_comm_imgbtn_num_table[] =
 {
     {"Auto-Lock", 20, 66},
     {"Language", 20, 96},
-    {"Brighness", 20, 126},
-    {"Lock Screen", 20, 156},
+    {"Lock Screen", 20, 126},
 };
 
 static void title_cb(lv_event_t* e)
@@ -42,6 +42,10 @@ static void general_main_word_handler(lv_event_t* e)
 		if(0 == lv_strcmp((char*)e->user_data, "Auto-Lock"))
 		{
 			general_lock_start();
+		}
+		else if(0 == lv_strcmp((char*)e->user_data, "Language"))
+		{
+			startup_language_start(APP_GENERAL);
 		}
     }
 }

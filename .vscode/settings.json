@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "lvgl.h": "c",
+    "string.h": "c"
+  }
+}

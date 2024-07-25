@@ -6,6 +6,7 @@
 
 
 #include <lvgl.h>
+#include "gui_comm.h"
 
 enum
 {
@@ -20,12 +21,13 @@ typedef struct
 	lv_obj_t* title_label;
 	lv_obj_t* pin_label;
 
+	app_index_t app_index;
 	startup_set_pin_mode_t mode;
 	char set_pin[8];
 	char confirm_pin[8];
 } startup_set_pin_t;
 
-extern void startup_set_pin_start(void);
+extern void startup_set_pin_start(app_index_t app_index);
 extern void startup_set_pin_stop(void);
 
 #endif /* __STARTUP_SET_PIN_H__ */
