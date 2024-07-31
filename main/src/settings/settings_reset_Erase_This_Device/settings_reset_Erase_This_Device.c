@@ -1,15 +1,14 @@
 ﻿/*********************
- * settings_reset.c
  *      INCLUDES
  *********************/
 
-#include "settings_reset.h"
+#include "settings_reset_Erase_This_Device.h"
 #include "gui_comm.h"
 
 extern void settings_security_start(void);
 
 
-static settings_reset_t* p_settings_reset = NULL;
+static settings_reset_Erase_t* p_settings_reset = NULL;
 
 static void confirm_cb(lv_event_t* e)
 {
@@ -85,9 +84,9 @@ static void settings_reset_bg_cont(lv_obj_t* parent)
 
 void settings_reset_start(void)
 {
-    p_settings_reset = (settings_reset_t*)lv_malloc(sizeof(settings_reset_t));
+    p_settings_reset = (settings_reset_Erase_t*)lv_malloc(sizeof(settings_reset_Erase_t));
     LV_ASSERT(p_settings_reset);
-    lv_memset(p_settings_reset, 0, sizeof(settings_reset_t));
+    lv_memset(p_settings_reset, 0, sizeof(settings_reset_Erase_t));
 
     p_settings_reset->bg_cont = gui_comm_draw_bg();
     settings_reset_bg_cont(p_settings_reset->bg_cont);
