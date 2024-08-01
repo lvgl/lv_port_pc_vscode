@@ -348,7 +348,7 @@
 	[
 		{
 			"backtrace" : 3,
-			"id" : "lvgl_demos::@b16ffba5fedc7c547903"
+			"id" : "lvgl::@b16ffba5fedc7c547903"
 		},
 		{
 			"backtrace" : 3,
@@ -360,7 +360,7 @@
 		},
 		{
 			"backtrace" : 3,
-			"id" : "lvgl::@b16ffba5fedc7c547903"
+			"id" : "lvgl_demos::@b16ffba5fedc7c547903"
 		}
 	],
 	"id" : "pin::@6890427a1f51a3e7e1df",
