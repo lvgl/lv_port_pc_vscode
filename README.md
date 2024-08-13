@@ -21,9 +21,14 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 You can download SDL from https://www.libsdl.org/
 
 #### Linux 
-Copy this in the Terminal:
-```bash
+Copy below in the Terminal:  
+For Ubuntu
+```bash 
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
+```
+For ArchLinux  
+```bash 
+sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base-devel gcc make
 ```
 
 ## Usage
@@ -35,6 +40,13 @@ sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 3. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
 ![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
 4. Click the Play button or hit F5 to start debugging.
+   
+* ***ArchLinux User***  
+VSCode does not officially provide an installation package under Arch, you need to use the AUR manager `paru` to install it.  
+The command is as follows:
+```bash
+paru -S visual-studio-code-bin
+```
 
 ### CMake
 This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
