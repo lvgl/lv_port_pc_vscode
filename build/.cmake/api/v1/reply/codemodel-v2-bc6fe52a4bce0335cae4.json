@@ -6,7 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"childIndexes" : 
 					[
 						1
 					],
