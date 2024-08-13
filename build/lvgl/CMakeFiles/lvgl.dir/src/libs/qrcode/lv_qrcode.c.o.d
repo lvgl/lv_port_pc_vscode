@@ -398,4 +398,5 @@ lvgl/CMakeFiles/lvgl.dir/src/libs/qrcode/lv_qrcode.c.o: \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../stdlib/builtin/../../misc/lv_ll.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../stdlib/builtin/../../misc/lv_types.h \
   /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../tick/lv_tick.h \
-  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../layouts/lv_layout.h
+  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/core/../layouts/lv_layout.h \
+  /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/lvgl/src/libs/qrcode/qrcodegen.h

@@ -7,7 +7,9 @@
 
 extern void settings_main_start(void);
 extern void settings_reset_start(void);
-extern void startup_enter_pin_start(app_index_t app_index);
+extern void settings_change_pin_start(void);
+
+
 
 static settings_security_t* p_settings_security = NULL;
 
@@ -39,7 +41,7 @@ static void settings_security_word_handler(lv_event_t* e)
         settings_security_stop();
 		if(0 == lv_strcmp((char*)e->user_data, "Change Password"))
 		{
-			startup_enter_pin_start(APP_SETTINGS);
+			settings_change_pin_start();
 		}
 		else if(0 == lv_strcmp((char*)e->user_data, "Reset Device"))
 		{

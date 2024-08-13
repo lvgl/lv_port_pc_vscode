@@ -10,10 +10,11 @@
 typedef struct
 {
 	lv_obj_t* bg_cont;
-	lv_obj_t* label_describe1;
-	lv_obj_t* label_describe2;
+	lv_obj_t* choosen_btn;
+	lv_obj_t* label_describe;
 
-	uint8_t page_id;
+	int lock_time;
+
 } general_lock_t;
 
 

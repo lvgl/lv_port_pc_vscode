@@ -4,6 +4,7 @@
 
 #include "startup_language.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
 static gui_comm_imgbtn_desc_t startup_language_desc_table[] =
 {
@@ -30,7 +31,7 @@ static gui_comm_imgbtn_desc_t startup_language_desc_table[] =
     {"বাংলা", 20, 636},
 };
 extern void general_main_start(void);
-extern void startup_set_pin_start(app_index_t app_index);
+extern void startup_quick_start_start(void);
 
 static startup_language_t* p_startup_language = NULL;
 
@@ -41,14 +42,14 @@ static void startup_language_event_handler(lv_event_t* e)
     if (LV_EVENT_SHORT_CLICKED == event)
     {
         printf("setting language:%s\n", (char *)e->user_data);
-        /*这里保存一下当前的语言*/
+		gui_data_set_language((char *)e->user_data);
 		if(APP_GENERAL == p_startup_language->app_index)
 		{
         	general_main_start();
 		}
 		else if(APP_STARTUP == p_startup_language->app_index)
 		{
-	        startup_set_pin_start(APP_STARTUP);
+	        startup_quick_start_start();
         }
         startup_language_stop();
     }

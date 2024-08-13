@@ -17,6 +17,7 @@
 #include "lvgl/demos/lv_demos.h"
 
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
 // 声明 tip.c 和 guide.c 中的函数
 extern void load_tips_screen();
@@ -114,83 +115,18 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  * 加载主屏幕
  */
 void load_main_screen() {
+	gui_data_init();
 
-    extern void startup_screen_start(void);
-	startup_screen_start();
+//	extern void view_transaction_main_start(void);
+//	view_transaction_main_start();
+	extern void menu_main_start(void);
+	menu_main_start();
+
 //	extern void menu_main_start(void);
 //	menu_main_start();
+//	extern void view_transaction_main_start(void);
+//	view_transaction_main_start();
+
 	return;
-
-    /* 创建主屏幕 */
-    lv_obj_t * scr = lv_scr_act();
-
-    /* 清空当前屏幕 */
-    lv_obj_clean(scr);
-
-    /* 创建一个用于放置方块的网格 */
-    static lv_coord_t col_dsc[] = {80, LV_GRID_FR(1), 80, LV_GRID_TEMPLATE_LAST};  // 每个方块80px，中间间隙均分
-    static lv_coord_t row_dsc[] = {70, LV_GRID_FR(1), 70, LV_GRID_FR(1), 70, LV_GRID_TEMPLATE_LAST};  // 每个方块70px，中间间隙均分
-
-    lv_obj_t * grid = lv_obj_create(scr);
-    lv_obj_set_size(grid, 240, 320);  // 宽度为240px，高度为320px
-    lv_obj_center(grid);
-    lv_obj_set_layout(grid, LV_LAYOUT_GRID);
-    lv_obj_set_grid_dsc_array(grid, col_dsc, row_dsc);
-
-    /* 创建容器的样式并设置背景为黑色 */
-    static lv_style_t style_container;
-    lv_style_init(&style_container);
-    lv_style_set_bg_color(&style_container, lv_color_black());  /* 设置背景颜色为黑色 */
-    lv_obj_add_style(grid, &style_container, 0);  /* 将样式应用到容器上 */
-
-    /* 创建方块的样式 */
-    static lv_style_t style_block;
-    lv_style_init(&style_block);
-    lv_style_set_bg_color(&style_block, lv_color_hex(0xD8D8D8));  /* 灰色背景 */
-    lv_style_set_radius(&style_block, 10);  /* 圆角 */
-
-    /* 更新按钮文本数组以移除不需要的按钮 */
-    const char *btn_texts[3][2] = {
-        {"Settings", "Tips"},
-        {"Guide", NULL},  // 将 "Button 4" 更改为 NULL
-        {NULL, NULL}      // 将 "Button 5" 和 "Button 6" 更改为 NULL
-    };
-
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 2; j++) {
-            if (btn_texts[i][j] != NULL) {  // 只有当存在有效文本时才创建按钮
-                lv_obj_t * block = lv_btn_create(grid);
-                lv_obj_set_size(block, 80, 70);  // 设置宽度为80px，高度为70px
-                lv_obj_add_style(block, &style_block, 0);
-                lv_obj_set_grid_cell(block, LV_GRID_ALIGN_CENTER, j * 2, 1, LV_GRID_ALIGN_CENTER, i * 2, 1);
-
-                /* 创建标签并设置样式 */
-                lv_obj_t * label = lv_label_create(block);
-                lv_label_set_text(label, btn_texts[i][j]);
-                lv_obj_set_style_text_color(label, lv_color_black(), 0);  // 设置文字颜色为黑色
-                lv_obj_center(label);  // 使文字在按钮中居中
-
-                /* 如果是Settings按钮，添加事件处理 */
-                if (strcmp(btn_texts[i][j], "Settings") == 0) {
-                    lv_obj_add_event_cb(block, settings_btn_event_handler, LV_EVENT_CLICKED, NULL);
-                }
-                /* 如果是Tips按钮，添加事件处理 */
-                else if (strcmp(btn_texts[i][j], "Tips") == 0) {
-                    add_tips_button_event(block);
-                }
-                /* 如果是Guide按钮，添加事件处理 */
-                else if (strcmp(btn_texts[i][j], "Guide") == 0) {
-                    add_guide_button_event(block);
-                }
-            }
-        }
-    }
 }
 
-/**
- * 设置按钮点击事件处理函数
- */
-static void settings_btn_event_handler(lv_event_t * e)
-{
-    load_settings_screen(); // 调用函数加载 settings 屏幕
-}

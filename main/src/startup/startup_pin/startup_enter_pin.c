@@ -5,12 +5,16 @@
 
 #include "startup_enter_pin.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
+
+extern void settings_erase_start(void);
 
 extern void startup_language_start(app_index_t app_index);
 extern void startup_set_pin_start(app_index_t app_index);
 static void startup_wrong_pin_bg_cont(lv_obj_t* parent);
 static void startup_enter_pin_bg_cont(lv_obj_t* parent);
+
 
 static startup_enter_pin_t* p_startup_enter_pin = NULL;
 
@@ -20,18 +24,12 @@ static void startup_keypad_ok_cb(lv_event_t* e)
 
     if (LV_EVENT_SHORT_CLICKED == event)
     {
-        //if (0 == lv_strcmp(data->pin, "666666")) 这里应该要去获取PIN码，然后判断是否正确
-        //这里暂时用666666代替
-        if (0 == lv_strcmp(p_startup_enter_pin->pin, "666666"))
+        if (0 == lv_strcmp(p_startup_enter_pin->pin, gui_data_get_pin()))
         {
-			if(APP_STARTUP == p_startup_enter_pin->app_index)
-			{
-	        	startup_language_start(APP_STARTUP);
-	        }
-			if(APP_SETTINGS == p_startup_enter_pin->app_index)
-	        {
-	        	startup_set_pin_start(APP_SETTINGS);
-	        }
+        	if(p_startup_enter_pin->app_index == APP_SETTINGS_ERASE)
+        		settings_erase_start();
+        	else
+		        startup_set_pin_start(p_startup_enter_pin->app_index);
 	        startup_enter_pin_stop();
         }
         else
@@ -86,14 +84,22 @@ static void startup_wrong_btn_cb(lv_event_t* e)
 static void startup_enter_pin_bg_cont(lv_obj_t* parent)
 {
     lv_obj_clean(parent);
-    gui_comm_draw_keypad(parent, startup_keypad_num_cb, startup_keypad_ok_cb, startup_keypad_cancle_cb);
+    gui_comm_draw_keypad_num(parent, startup_keypad_num_cb, startup_keypad_ok_cb, startup_keypad_cancle_cb);
 
     lv_obj_t* tip_label = lv_label_create(parent);
     lv_obj_set_style_text_color(tip_label, lv_color_hex(0xffffff), 0);
     lv_obj_set_style_text_font(tip_label, &lv_font_montserrat_20, 0);
     lv_label_set_long_mode(tip_label, LV_LABEL_LONG_DOT);
     lv_obj_set_width(tip_label, 200);
-    lv_label_set_text(tip_label, "Enter PIN");
+
+    if(APP_STARTUP_CREATE_WALLET == p_startup_enter_pin->app_index || 
+    	APP_STARTUP_IMPORT_WALLET == p_startup_enter_pin->app_index)
+    	lv_label_set_text(tip_label, "Enter New PIN");
+    else if(APP_SETTINGS_PIN == p_startup_enter_pin->app_index)
+    	lv_label_set_text(tip_label, "Enter Old PIN");
+    else if(APP_SETTINGS_ERASE == p_startup_enter_pin->app_index)
+    	lv_label_set_text(tip_label, "Enter PIN");
+    	
     lv_obj_set_style_text_align(tip_label, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_align(tip_label, LV_ALIGN_TOP_MID, 0, 30);
     lv_obj_update_layout(tip_label);

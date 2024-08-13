@@ -1,9 +1,5 @@
 /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/main.dir
 /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/run.dir
-/Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/pin.dir
-/Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/run_pin.dir
-/Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/wallet.dir
-/Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/run_wallet.dir
 /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/edit_cache.dir
 /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/rebuild_cache.dir
 /Users/jackielee/Documents/工作流/lv_sim_vscode_sdl/build/CMakeFiles/list_install_components.dir

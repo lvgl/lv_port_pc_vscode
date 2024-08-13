@@ -6,7 +6,7 @@
 #include "gui_comm.h"
 
 extern void startup_set_pin_start(app_index_t app_index);
-extern void startup_ready_check_start(void);
+extern void startup_language_start(app_index_t app_index);
 
 static startup_quick_start_t* p_startup_quick_start = NULL;
 
@@ -17,7 +17,7 @@ static void title_cb(lv_event_t* e)
     if (LV_EVENT_SHORT_CLICKED == event)
     {
         startup_quick_start_stop();
-        startup_set_pin_start(APP_STARTUP);
+        startup_language_start(APP_STARTUP);
     }
 }
 
@@ -27,10 +27,8 @@ static void startup_create_wallet_event_handler(lv_event_t* e)
 
     if (LV_EVENT_SHORT_CLICKED == event)
     {
-        printf("%s\n", __func__);
-        //gui_app_run_subpage("startup", "ready_check", NULL);
         startup_quick_start_stop();
-        startup_ready_check_start();
+        startup_set_pin_start(APP_STARTUP_CREATE_WALLET);
     }
 }
 
@@ -40,7 +38,8 @@ static void startup_import_wallet_event_handler(lv_event_t* e)
 
     if (LV_EVENT_SHORT_CLICKED == event)
     {
-        printf("%s\n", __func__);
+        startup_quick_start_stop();
+        startup_set_pin_start(APP_STARTUP_IMPORT_WALLET);
     }
 }
 

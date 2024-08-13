@@ -188,58 +188,6 @@ run/fast:
 .PHONY : run/fast
 
 #=============================================================================
-# Target rules for targets named pin
-
-# Build rule for target.
-pin: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pin
-.PHONY : pin
-
-# fast build rule for target.
-pin/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/build
-.PHONY : pin/fast
-
-#=============================================================================
-# Target rules for targets named run_pin
-
-# Build rule for target.
-run_pin: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_pin
-.PHONY : run_pin
-
-# fast build rule for target.
-run_pin/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_pin.dir/build.make CMakeFiles/run_pin.dir/build
-.PHONY : run_pin/fast
-
-#=============================================================================
-# Target rules for targets named wallet
-
-# Build rule for target.
-wallet: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wallet
-.PHONY : wallet
-
-# fast build rule for target.
-wallet/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/build
-.PHONY : wallet/fast
-
-#=============================================================================
-# Target rules for targets named run_wallet
-
-# Build rule for target.
-run_wallet: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_wallet
-.PHONY : run_wallet
-
-# fast build rule for target.
-run_wallet/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_wallet.dir/build.make CMakeFiles/run_wallet.dir/build
-.PHONY : run_wallet/fast
-
-#=============================================================================
 # Target rules for targets named lvgl
 
 # Build rule for target.
@@ -291,6 +239,30 @@ lvgl_demos/fast:
 	$(MAKE) $(MAKESILENT) -f lvgl/CMakeFiles/lvgl_demos.dir/build.make lvgl/CMakeFiles/lvgl_demos.dir/build
 .PHONY : lvgl_demos/fast
 
+main/img/img_alert.o: main/img/img_alert.c.o
+.PHONY : main/img/img_alert.o
+
+# target to build an object file
+main/img/img_alert.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_alert.c.o
+.PHONY : main/img/img_alert.c.o
+
+main/img/img_alert.i: main/img/img_alert.c.i
+.PHONY : main/img/img_alert.i
+
+# target to preprocess a source file
+main/img/img_alert.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_alert.c.i
+.PHONY : main/img/img_alert.c.i
+
+main/img/img_alert.s: main/img/img_alert.c.s
+.PHONY : main/img/img_alert.s
+
+# target to generate assembly for a file
+main/img/img_alert.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_alert.c.s
+.PHONY : main/img/img_alert.c.s
+
 main/img/img_backgroud.o: main/img/img_backgroud.c.o
 .PHONY : main/img/img_backgroud.o
 
@@ -314,6 +286,366 @@ main/img/img_backgroud.s: main/img/img_backgroud.c.s
 main/img/img_backgroud.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_backgroud.c.s
 .PHONY : main/img/img_backgroud.c.s
+
+main/img/img_bg1.o: main/img/img_bg1.c.o
+.PHONY : main/img/img_bg1.o
+
+# target to build an object file
+main/img/img_bg1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1.c.o
+.PHONY : main/img/img_bg1.c.o
+
+main/img/img_bg1.i: main/img/img_bg1.c.i
+.PHONY : main/img/img_bg1.i
+
+# target to preprocess a source file
+main/img/img_bg1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1.c.i
+.PHONY : main/img/img_bg1.c.i
+
+main/img/img_bg1.s: main/img/img_bg1.c.s
+.PHONY : main/img/img_bg1.s
+
+# target to generate assembly for a file
+main/img/img_bg1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1.c.s
+.PHONY : main/img/img_bg1.c.s
+
+main/img/img_bg1_small.o: main/img/img_bg1_small.c.o
+.PHONY : main/img/img_bg1_small.o
+
+# target to build an object file
+main/img/img_bg1_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1_small.c.o
+.PHONY : main/img/img_bg1_small.c.o
+
+main/img/img_bg1_small.i: main/img/img_bg1_small.c.i
+.PHONY : main/img/img_bg1_small.i
+
+# target to preprocess a source file
+main/img/img_bg1_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1_small.c.i
+.PHONY : main/img/img_bg1_small.c.i
+
+main/img/img_bg1_small.s: main/img/img_bg1_small.c.s
+.PHONY : main/img/img_bg1_small.s
+
+# target to generate assembly for a file
+main/img/img_bg1_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg1_small.c.s
+.PHONY : main/img/img_bg1_small.c.s
+
+main/img/img_bg2.o: main/img/img_bg2.c.o
+.PHONY : main/img/img_bg2.o
+
+# target to build an object file
+main/img/img_bg2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2.c.o
+.PHONY : main/img/img_bg2.c.o
+
+main/img/img_bg2.i: main/img/img_bg2.c.i
+.PHONY : main/img/img_bg2.i
+
+# target to preprocess a source file
+main/img/img_bg2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2.c.i
+.PHONY : main/img/img_bg2.c.i
+
+main/img/img_bg2.s: main/img/img_bg2.c.s
+.PHONY : main/img/img_bg2.s
+
+# target to generate assembly for a file
+main/img/img_bg2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2.c.s
+.PHONY : main/img/img_bg2.c.s
+
+main/img/img_bg2_small.o: main/img/img_bg2_small.c.o
+.PHONY : main/img/img_bg2_small.o
+
+# target to build an object file
+main/img/img_bg2_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2_small.c.o
+.PHONY : main/img/img_bg2_small.c.o
+
+main/img/img_bg2_small.i: main/img/img_bg2_small.c.i
+.PHONY : main/img/img_bg2_small.i
+
+# target to preprocess a source file
+main/img/img_bg2_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2_small.c.i
+.PHONY : main/img/img_bg2_small.c.i
+
+main/img/img_bg2_small.s: main/img/img_bg2_small.c.s
+.PHONY : main/img/img_bg2_small.s
+
+# target to generate assembly for a file
+main/img/img_bg2_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg2_small.c.s
+.PHONY : main/img/img_bg2_small.c.s
+
+main/img/img_bg3.o: main/img/img_bg3.c.o
+.PHONY : main/img/img_bg3.o
+
+# target to build an object file
+main/img/img_bg3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3.c.o
+.PHONY : main/img/img_bg3.c.o
+
+main/img/img_bg3.i: main/img/img_bg3.c.i
+.PHONY : main/img/img_bg3.i
+
+# target to preprocess a source file
+main/img/img_bg3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3.c.i
+.PHONY : main/img/img_bg3.c.i
+
+main/img/img_bg3.s: main/img/img_bg3.c.s
+.PHONY : main/img/img_bg3.s
+
+# target to generate assembly for a file
+main/img/img_bg3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3.c.s
+.PHONY : main/img/img_bg3.c.s
+
+main/img/img_bg3_small.o: main/img/img_bg3_small.c.o
+.PHONY : main/img/img_bg3_small.o
+
+# target to build an object file
+main/img/img_bg3_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3_small.c.o
+.PHONY : main/img/img_bg3_small.c.o
+
+main/img/img_bg3_small.i: main/img/img_bg3_small.c.i
+.PHONY : main/img/img_bg3_small.i
+
+# target to preprocess a source file
+main/img/img_bg3_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3_small.c.i
+.PHONY : main/img/img_bg3_small.c.i
+
+main/img/img_bg3_small.s: main/img/img_bg3_small.c.s
+.PHONY : main/img/img_bg3_small.s
+
+# target to generate assembly for a file
+main/img/img_bg3_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg3_small.c.s
+.PHONY : main/img/img_bg3_small.c.s
+
+main/img/img_bg4.o: main/img/img_bg4.c.o
+.PHONY : main/img/img_bg4.o
+
+# target to build an object file
+main/img/img_bg4.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4.c.o
+.PHONY : main/img/img_bg4.c.o
+
+main/img/img_bg4.i: main/img/img_bg4.c.i
+.PHONY : main/img/img_bg4.i
+
+# target to preprocess a source file
+main/img/img_bg4.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4.c.i
+.PHONY : main/img/img_bg4.c.i
+
+main/img/img_bg4.s: main/img/img_bg4.c.s
+.PHONY : main/img/img_bg4.s
+
+# target to generate assembly for a file
+main/img/img_bg4.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4.c.s
+.PHONY : main/img/img_bg4.c.s
+
+main/img/img_bg4_small.o: main/img/img_bg4_small.c.o
+.PHONY : main/img/img_bg4_small.o
+
+# target to build an object file
+main/img/img_bg4_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4_small.c.o
+.PHONY : main/img/img_bg4_small.c.o
+
+main/img/img_bg4_small.i: main/img/img_bg4_small.c.i
+.PHONY : main/img/img_bg4_small.i
+
+# target to preprocess a source file
+main/img/img_bg4_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4_small.c.i
+.PHONY : main/img/img_bg4_small.c.i
+
+main/img/img_bg4_small.s: main/img/img_bg4_small.c.s
+.PHONY : main/img/img_bg4_small.s
+
+# target to generate assembly for a file
+main/img/img_bg4_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg4_small.c.s
+.PHONY : main/img/img_bg4_small.c.s
+
+main/img/img_bg5.o: main/img/img_bg5.c.o
+.PHONY : main/img/img_bg5.o
+
+# target to build an object file
+main/img/img_bg5.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5.c.o
+.PHONY : main/img/img_bg5.c.o
+
+main/img/img_bg5.i: main/img/img_bg5.c.i
+.PHONY : main/img/img_bg5.i
+
+# target to preprocess a source file
+main/img/img_bg5.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5.c.i
+.PHONY : main/img/img_bg5.c.i
+
+main/img/img_bg5.s: main/img/img_bg5.c.s
+.PHONY : main/img/img_bg5.s
+
+# target to generate assembly for a file
+main/img/img_bg5.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5.c.s
+.PHONY : main/img/img_bg5.c.s
+
+main/img/img_bg5_small.o: main/img/img_bg5_small.c.o
+.PHONY : main/img/img_bg5_small.o
+
+# target to build an object file
+main/img/img_bg5_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5_small.c.o
+.PHONY : main/img/img_bg5_small.c.o
+
+main/img/img_bg5_small.i: main/img/img_bg5_small.c.i
+.PHONY : main/img/img_bg5_small.i
+
+# target to preprocess a source file
+main/img/img_bg5_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5_small.c.i
+.PHONY : main/img/img_bg5_small.c.i
+
+main/img/img_bg5_small.s: main/img/img_bg5_small.c.s
+.PHONY : main/img/img_bg5_small.s
+
+# target to generate assembly for a file
+main/img/img_bg5_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg5_small.c.s
+.PHONY : main/img/img_bg5_small.c.s
+
+main/img/img_bg6.o: main/img/img_bg6.c.o
+.PHONY : main/img/img_bg6.o
+
+# target to build an object file
+main/img/img_bg6.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6.c.o
+.PHONY : main/img/img_bg6.c.o
+
+main/img/img_bg6.i: main/img/img_bg6.c.i
+.PHONY : main/img/img_bg6.i
+
+# target to preprocess a source file
+main/img/img_bg6.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6.c.i
+.PHONY : main/img/img_bg6.c.i
+
+main/img/img_bg6.s: main/img/img_bg6.c.s
+.PHONY : main/img/img_bg6.s
+
+# target to generate assembly for a file
+main/img/img_bg6.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6.c.s
+.PHONY : main/img/img_bg6.c.s
+
+main/img/img_bg6_small.o: main/img/img_bg6_small.c.o
+.PHONY : main/img/img_bg6_small.o
+
+# target to build an object file
+main/img/img_bg6_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6_small.c.o
+.PHONY : main/img/img_bg6_small.c.o
+
+main/img/img_bg6_small.i: main/img/img_bg6_small.c.i
+.PHONY : main/img/img_bg6_small.i
+
+# target to preprocess a source file
+main/img/img_bg6_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6_small.c.i
+.PHONY : main/img/img_bg6_small.c.i
+
+main/img/img_bg6_small.s: main/img/img_bg6_small.c.s
+.PHONY : main/img/img_bg6_small.s
+
+# target to generate assembly for a file
+main/img/img_bg6_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg6_small.c.s
+.PHONY : main/img/img_bg6_small.c.s
+
+main/img/img_bg7.o: main/img/img_bg7.c.o
+.PHONY : main/img/img_bg7.o
+
+# target to build an object file
+main/img/img_bg7.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7.c.o
+.PHONY : main/img/img_bg7.c.o
+
+main/img/img_bg7.i: main/img/img_bg7.c.i
+.PHONY : main/img/img_bg7.i
+
+# target to preprocess a source file
+main/img/img_bg7.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7.c.i
+.PHONY : main/img/img_bg7.c.i
+
+main/img/img_bg7.s: main/img/img_bg7.c.s
+.PHONY : main/img/img_bg7.s
+
+# target to generate assembly for a file
+main/img/img_bg7.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7.c.s
+.PHONY : main/img/img_bg7.c.s
+
+main/img/img_bg7_small.o: main/img/img_bg7_small.c.o
+.PHONY : main/img/img_bg7_small.o
+
+# target to build an object file
+main/img/img_bg7_small.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7_small.c.o
+.PHONY : main/img/img_bg7_small.c.o
+
+main/img/img_bg7_small.i: main/img/img_bg7_small.c.i
+.PHONY : main/img/img_bg7_small.i
+
+# target to preprocess a source file
+main/img/img_bg7_small.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7_small.c.i
+.PHONY : main/img/img_bg7_small.c.i
+
+main/img/img_bg7_small.s: main/img/img_bg7_small.c.s
+.PHONY : main/img/img_bg7_small.s
+
+# target to generate assembly for a file
+main/img/img_bg7_small.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_bg7_small.c.s
+.PHONY : main/img/img_bg7_small.c.s
+
+main/img/img_chosen.o: main/img/img_chosen.c.o
+.PHONY : main/img/img_chosen.o
+
+# target to build an object file
+main/img/img_chosen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_chosen.c.o
+.PHONY : main/img/img_chosen.c.o
+
+main/img/img_chosen.i: main/img/img_chosen.c.i
+.PHONY : main/img/img_chosen.i
+
+# target to preprocess a source file
+main/img/img_chosen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_chosen.c.i
+.PHONY : main/img/img_chosen.c.i
+
+main/img/img_chosen.s: main/img/img_chosen.c.s
+.PHONY : main/img/img_chosen.s
+
+# target to generate assembly for a file
+main/img/img_chosen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_chosen.c.s
+.PHONY : main/img/img_chosen.c.s
 
 main/img/img_guide_back.o: main/img/img_guide_back.c.o
 .PHONY : main/img/img_guide_back.o
@@ -386,6 +718,1326 @@ main/img/img_imgbtn_ok_12x9.s: main/img/img_imgbtn_ok_12x9.c.s
 main/img/img_imgbtn_ok_12x9.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_imgbtn_ok_12x9.c.s
 .PHONY : main/img/img_imgbtn_ok_12x9.c.s
+
+main/img/img_keypad_222222_a.o: main/img/img_keypad_222222_a.c.o
+.PHONY : main/img/img_keypad_222222_a.o
+
+# target to build an object file
+main/img/img_keypad_222222_a.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_a.c.o
+.PHONY : main/img/img_keypad_222222_a.c.o
+
+main/img/img_keypad_222222_a.i: main/img/img_keypad_222222_a.c.i
+.PHONY : main/img/img_keypad_222222_a.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_a.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_a.c.i
+.PHONY : main/img/img_keypad_222222_a.c.i
+
+main/img/img_keypad_222222_a.s: main/img/img_keypad_222222_a.c.s
+.PHONY : main/img/img_keypad_222222_a.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_a.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_a.c.s
+.PHONY : main/img/img_keypad_222222_a.c.s
+
+main/img/img_keypad_222222_b.o: main/img/img_keypad_222222_b.c.o
+.PHONY : main/img/img_keypad_222222_b.o
+
+# target to build an object file
+main/img/img_keypad_222222_b.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_b.c.o
+.PHONY : main/img/img_keypad_222222_b.c.o
+
+main/img/img_keypad_222222_b.i: main/img/img_keypad_222222_b.c.i
+.PHONY : main/img/img_keypad_222222_b.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_b.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_b.c.i
+.PHONY : main/img/img_keypad_222222_b.c.i
+
+main/img/img_keypad_222222_b.s: main/img/img_keypad_222222_b.c.s
+.PHONY : main/img/img_keypad_222222_b.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_b.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_b.c.s
+.PHONY : main/img/img_keypad_222222_b.c.s
+
+main/img/img_keypad_222222_c.o: main/img/img_keypad_222222_c.c.o
+.PHONY : main/img/img_keypad_222222_c.o
+
+# target to build an object file
+main/img/img_keypad_222222_c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_c.c.o
+.PHONY : main/img/img_keypad_222222_c.c.o
+
+main/img/img_keypad_222222_c.i: main/img/img_keypad_222222_c.c.i
+.PHONY : main/img/img_keypad_222222_c.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_c.c.i
+.PHONY : main/img/img_keypad_222222_c.c.i
+
+main/img/img_keypad_222222_c.s: main/img/img_keypad_222222_c.c.s
+.PHONY : main/img/img_keypad_222222_c.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_c.c.s
+.PHONY : main/img/img_keypad_222222_c.c.s
+
+main/img/img_keypad_222222_d.o: main/img/img_keypad_222222_d.c.o
+.PHONY : main/img/img_keypad_222222_d.o
+
+# target to build an object file
+main/img/img_keypad_222222_d.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_d.c.o
+.PHONY : main/img/img_keypad_222222_d.c.o
+
+main/img/img_keypad_222222_d.i: main/img/img_keypad_222222_d.c.i
+.PHONY : main/img/img_keypad_222222_d.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_d.c.i
+.PHONY : main/img/img_keypad_222222_d.c.i
+
+main/img/img_keypad_222222_d.s: main/img/img_keypad_222222_d.c.s
+.PHONY : main/img/img_keypad_222222_d.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_d.c.s
+.PHONY : main/img/img_keypad_222222_d.c.s
+
+main/img/img_keypad_222222_e.o: main/img/img_keypad_222222_e.c.o
+.PHONY : main/img/img_keypad_222222_e.o
+
+# target to build an object file
+main/img/img_keypad_222222_e.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_e.c.o
+.PHONY : main/img/img_keypad_222222_e.c.o
+
+main/img/img_keypad_222222_e.i: main/img/img_keypad_222222_e.c.i
+.PHONY : main/img/img_keypad_222222_e.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_e.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_e.c.i
+.PHONY : main/img/img_keypad_222222_e.c.i
+
+main/img/img_keypad_222222_e.s: main/img/img_keypad_222222_e.c.s
+.PHONY : main/img/img_keypad_222222_e.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_e.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_e.c.s
+.PHONY : main/img/img_keypad_222222_e.c.s
+
+main/img/img_keypad_222222_f.o: main/img/img_keypad_222222_f.c.o
+.PHONY : main/img/img_keypad_222222_f.o
+
+# target to build an object file
+main/img/img_keypad_222222_f.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_f.c.o
+.PHONY : main/img/img_keypad_222222_f.c.o
+
+main/img/img_keypad_222222_f.i: main/img/img_keypad_222222_f.c.i
+.PHONY : main/img/img_keypad_222222_f.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_f.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_f.c.i
+.PHONY : main/img/img_keypad_222222_f.c.i
+
+main/img/img_keypad_222222_f.s: main/img/img_keypad_222222_f.c.s
+.PHONY : main/img/img_keypad_222222_f.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_f.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_f.c.s
+.PHONY : main/img/img_keypad_222222_f.c.s
+
+main/img/img_keypad_222222_g.o: main/img/img_keypad_222222_g.c.o
+.PHONY : main/img/img_keypad_222222_g.o
+
+# target to build an object file
+main/img/img_keypad_222222_g.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_g.c.o
+.PHONY : main/img/img_keypad_222222_g.c.o
+
+main/img/img_keypad_222222_g.i: main/img/img_keypad_222222_g.c.i
+.PHONY : main/img/img_keypad_222222_g.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_g.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_g.c.i
+.PHONY : main/img/img_keypad_222222_g.c.i
+
+main/img/img_keypad_222222_g.s: main/img/img_keypad_222222_g.c.s
+.PHONY : main/img/img_keypad_222222_g.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_g.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_g.c.s
+.PHONY : main/img/img_keypad_222222_g.c.s
+
+main/img/img_keypad_222222_h.o: main/img/img_keypad_222222_h.c.o
+.PHONY : main/img/img_keypad_222222_h.o
+
+# target to build an object file
+main/img/img_keypad_222222_h.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_h.c.o
+.PHONY : main/img/img_keypad_222222_h.c.o
+
+main/img/img_keypad_222222_h.i: main/img/img_keypad_222222_h.c.i
+.PHONY : main/img/img_keypad_222222_h.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_h.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_h.c.i
+.PHONY : main/img/img_keypad_222222_h.c.i
+
+main/img/img_keypad_222222_h.s: main/img/img_keypad_222222_h.c.s
+.PHONY : main/img/img_keypad_222222_h.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_h.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_h.c.s
+.PHONY : main/img/img_keypad_222222_h.c.s
+
+main/img/img_keypad_222222_i.o: main/img/img_keypad_222222_i.c.o
+.PHONY : main/img/img_keypad_222222_i.o
+
+# target to build an object file
+main/img/img_keypad_222222_i.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_i.c.o
+.PHONY : main/img/img_keypad_222222_i.c.o
+
+main/img/img_keypad_222222_i.i: main/img/img_keypad_222222_i.c.i
+.PHONY : main/img/img_keypad_222222_i.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_i.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_i.c.i
+.PHONY : main/img/img_keypad_222222_i.c.i
+
+main/img/img_keypad_222222_i.s: main/img/img_keypad_222222_i.c.s
+.PHONY : main/img/img_keypad_222222_i.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_i.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_i.c.s
+.PHONY : main/img/img_keypad_222222_i.c.s
+
+main/img/img_keypad_222222_j.o: main/img/img_keypad_222222_j.c.o
+.PHONY : main/img/img_keypad_222222_j.o
+
+# target to build an object file
+main/img/img_keypad_222222_j.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_j.c.o
+.PHONY : main/img/img_keypad_222222_j.c.o
+
+main/img/img_keypad_222222_j.i: main/img/img_keypad_222222_j.c.i
+.PHONY : main/img/img_keypad_222222_j.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_j.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_j.c.i
+.PHONY : main/img/img_keypad_222222_j.c.i
+
+main/img/img_keypad_222222_j.s: main/img/img_keypad_222222_j.c.s
+.PHONY : main/img/img_keypad_222222_j.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_j.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_j.c.s
+.PHONY : main/img/img_keypad_222222_j.c.s
+
+main/img/img_keypad_222222_k.o: main/img/img_keypad_222222_k.c.o
+.PHONY : main/img/img_keypad_222222_k.o
+
+# target to build an object file
+main/img/img_keypad_222222_k.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_k.c.o
+.PHONY : main/img/img_keypad_222222_k.c.o
+
+main/img/img_keypad_222222_k.i: main/img/img_keypad_222222_k.c.i
+.PHONY : main/img/img_keypad_222222_k.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_k.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_k.c.i
+.PHONY : main/img/img_keypad_222222_k.c.i
+
+main/img/img_keypad_222222_k.s: main/img/img_keypad_222222_k.c.s
+.PHONY : main/img/img_keypad_222222_k.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_k.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_k.c.s
+.PHONY : main/img/img_keypad_222222_k.c.s
+
+main/img/img_keypad_222222_l.o: main/img/img_keypad_222222_l.c.o
+.PHONY : main/img/img_keypad_222222_l.o
+
+# target to build an object file
+main/img/img_keypad_222222_l.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_l.c.o
+.PHONY : main/img/img_keypad_222222_l.c.o
+
+main/img/img_keypad_222222_l.i: main/img/img_keypad_222222_l.c.i
+.PHONY : main/img/img_keypad_222222_l.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_l.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_l.c.i
+.PHONY : main/img/img_keypad_222222_l.c.i
+
+main/img/img_keypad_222222_l.s: main/img/img_keypad_222222_l.c.s
+.PHONY : main/img/img_keypad_222222_l.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_l.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_l.c.s
+.PHONY : main/img/img_keypad_222222_l.c.s
+
+main/img/img_keypad_222222_m.o: main/img/img_keypad_222222_m.c.o
+.PHONY : main/img/img_keypad_222222_m.o
+
+# target to build an object file
+main/img/img_keypad_222222_m.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_m.c.o
+.PHONY : main/img/img_keypad_222222_m.c.o
+
+main/img/img_keypad_222222_m.i: main/img/img_keypad_222222_m.c.i
+.PHONY : main/img/img_keypad_222222_m.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_m.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_m.c.i
+.PHONY : main/img/img_keypad_222222_m.c.i
+
+main/img/img_keypad_222222_m.s: main/img/img_keypad_222222_m.c.s
+.PHONY : main/img/img_keypad_222222_m.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_m.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_m.c.s
+.PHONY : main/img/img_keypad_222222_m.c.s
+
+main/img/img_keypad_222222_n.o: main/img/img_keypad_222222_n.c.o
+.PHONY : main/img/img_keypad_222222_n.o
+
+# target to build an object file
+main/img/img_keypad_222222_n.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_n.c.o
+.PHONY : main/img/img_keypad_222222_n.c.o
+
+main/img/img_keypad_222222_n.i: main/img/img_keypad_222222_n.c.i
+.PHONY : main/img/img_keypad_222222_n.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_n.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_n.c.i
+.PHONY : main/img/img_keypad_222222_n.c.i
+
+main/img/img_keypad_222222_n.s: main/img/img_keypad_222222_n.c.s
+.PHONY : main/img/img_keypad_222222_n.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_n.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_n.c.s
+.PHONY : main/img/img_keypad_222222_n.c.s
+
+main/img/img_keypad_222222_o.o: main/img/img_keypad_222222_o.c.o
+.PHONY : main/img/img_keypad_222222_o.o
+
+# target to build an object file
+main/img/img_keypad_222222_o.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_o.c.o
+.PHONY : main/img/img_keypad_222222_o.c.o
+
+main/img/img_keypad_222222_o.i: main/img/img_keypad_222222_o.c.i
+.PHONY : main/img/img_keypad_222222_o.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_o.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_o.c.i
+.PHONY : main/img/img_keypad_222222_o.c.i
+
+main/img/img_keypad_222222_o.s: main/img/img_keypad_222222_o.c.s
+.PHONY : main/img/img_keypad_222222_o.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_o.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_o.c.s
+.PHONY : main/img/img_keypad_222222_o.c.s
+
+main/img/img_keypad_222222_p.o: main/img/img_keypad_222222_p.c.o
+.PHONY : main/img/img_keypad_222222_p.o
+
+# target to build an object file
+main/img/img_keypad_222222_p.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_p.c.o
+.PHONY : main/img/img_keypad_222222_p.c.o
+
+main/img/img_keypad_222222_p.i: main/img/img_keypad_222222_p.c.i
+.PHONY : main/img/img_keypad_222222_p.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_p.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_p.c.i
+.PHONY : main/img/img_keypad_222222_p.c.i
+
+main/img/img_keypad_222222_p.s: main/img/img_keypad_222222_p.c.s
+.PHONY : main/img/img_keypad_222222_p.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_p.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_p.c.s
+.PHONY : main/img/img_keypad_222222_p.c.s
+
+main/img/img_keypad_222222_q.o: main/img/img_keypad_222222_q.c.o
+.PHONY : main/img/img_keypad_222222_q.o
+
+# target to build an object file
+main/img/img_keypad_222222_q.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_q.c.o
+.PHONY : main/img/img_keypad_222222_q.c.o
+
+main/img/img_keypad_222222_q.i: main/img/img_keypad_222222_q.c.i
+.PHONY : main/img/img_keypad_222222_q.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_q.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_q.c.i
+.PHONY : main/img/img_keypad_222222_q.c.i
+
+main/img/img_keypad_222222_q.s: main/img/img_keypad_222222_q.c.s
+.PHONY : main/img/img_keypad_222222_q.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_q.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_q.c.s
+.PHONY : main/img/img_keypad_222222_q.c.s
+
+main/img/img_keypad_222222_r.o: main/img/img_keypad_222222_r.c.o
+.PHONY : main/img/img_keypad_222222_r.o
+
+# target to build an object file
+main/img/img_keypad_222222_r.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_r.c.o
+.PHONY : main/img/img_keypad_222222_r.c.o
+
+main/img/img_keypad_222222_r.i: main/img/img_keypad_222222_r.c.i
+.PHONY : main/img/img_keypad_222222_r.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_r.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_r.c.i
+.PHONY : main/img/img_keypad_222222_r.c.i
+
+main/img/img_keypad_222222_r.s: main/img/img_keypad_222222_r.c.s
+.PHONY : main/img/img_keypad_222222_r.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_r.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_r.c.s
+.PHONY : main/img/img_keypad_222222_r.c.s
+
+main/img/img_keypad_222222_s.o: main/img/img_keypad_222222_s.c.o
+.PHONY : main/img/img_keypad_222222_s.o
+
+# target to build an object file
+main/img/img_keypad_222222_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_s.c.o
+.PHONY : main/img/img_keypad_222222_s.c.o
+
+main/img/img_keypad_222222_s.i: main/img/img_keypad_222222_s.c.i
+.PHONY : main/img/img_keypad_222222_s.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_s.c.i
+.PHONY : main/img/img_keypad_222222_s.c.i
+
+main/img/img_keypad_222222_s.s: main/img/img_keypad_222222_s.c.s
+.PHONY : main/img/img_keypad_222222_s.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_s.c.s
+.PHONY : main/img/img_keypad_222222_s.c.s
+
+main/img/img_keypad_222222_t.o: main/img/img_keypad_222222_t.c.o
+.PHONY : main/img/img_keypad_222222_t.o
+
+# target to build an object file
+main/img/img_keypad_222222_t.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_t.c.o
+.PHONY : main/img/img_keypad_222222_t.c.o
+
+main/img/img_keypad_222222_t.i: main/img/img_keypad_222222_t.c.i
+.PHONY : main/img/img_keypad_222222_t.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_t.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_t.c.i
+.PHONY : main/img/img_keypad_222222_t.c.i
+
+main/img/img_keypad_222222_t.s: main/img/img_keypad_222222_t.c.s
+.PHONY : main/img/img_keypad_222222_t.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_t.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_t.c.s
+.PHONY : main/img/img_keypad_222222_t.c.s
+
+main/img/img_keypad_222222_u.o: main/img/img_keypad_222222_u.c.o
+.PHONY : main/img/img_keypad_222222_u.o
+
+# target to build an object file
+main/img/img_keypad_222222_u.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_u.c.o
+.PHONY : main/img/img_keypad_222222_u.c.o
+
+main/img/img_keypad_222222_u.i: main/img/img_keypad_222222_u.c.i
+.PHONY : main/img/img_keypad_222222_u.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_u.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_u.c.i
+.PHONY : main/img/img_keypad_222222_u.c.i
+
+main/img/img_keypad_222222_u.s: main/img/img_keypad_222222_u.c.s
+.PHONY : main/img/img_keypad_222222_u.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_u.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_u.c.s
+.PHONY : main/img/img_keypad_222222_u.c.s
+
+main/img/img_keypad_222222_v.o: main/img/img_keypad_222222_v.c.o
+.PHONY : main/img/img_keypad_222222_v.o
+
+# target to build an object file
+main/img/img_keypad_222222_v.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_v.c.o
+.PHONY : main/img/img_keypad_222222_v.c.o
+
+main/img/img_keypad_222222_v.i: main/img/img_keypad_222222_v.c.i
+.PHONY : main/img/img_keypad_222222_v.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_v.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_v.c.i
+.PHONY : main/img/img_keypad_222222_v.c.i
+
+main/img/img_keypad_222222_v.s: main/img/img_keypad_222222_v.c.s
+.PHONY : main/img/img_keypad_222222_v.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_v.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_v.c.s
+.PHONY : main/img/img_keypad_222222_v.c.s
+
+main/img/img_keypad_222222_w.o: main/img/img_keypad_222222_w.c.o
+.PHONY : main/img/img_keypad_222222_w.o
+
+# target to build an object file
+main/img/img_keypad_222222_w.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_w.c.o
+.PHONY : main/img/img_keypad_222222_w.c.o
+
+main/img/img_keypad_222222_w.i: main/img/img_keypad_222222_w.c.i
+.PHONY : main/img/img_keypad_222222_w.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_w.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_w.c.i
+.PHONY : main/img/img_keypad_222222_w.c.i
+
+main/img/img_keypad_222222_w.s: main/img/img_keypad_222222_w.c.s
+.PHONY : main/img/img_keypad_222222_w.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_w.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_w.c.s
+.PHONY : main/img/img_keypad_222222_w.c.s
+
+main/img/img_keypad_222222_x.o: main/img/img_keypad_222222_x.c.o
+.PHONY : main/img/img_keypad_222222_x.o
+
+# target to build an object file
+main/img/img_keypad_222222_x.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_x.c.o
+.PHONY : main/img/img_keypad_222222_x.c.o
+
+main/img/img_keypad_222222_x.i: main/img/img_keypad_222222_x.c.i
+.PHONY : main/img/img_keypad_222222_x.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_x.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_x.c.i
+.PHONY : main/img/img_keypad_222222_x.c.i
+
+main/img/img_keypad_222222_x.s: main/img/img_keypad_222222_x.c.s
+.PHONY : main/img/img_keypad_222222_x.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_x.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_x.c.s
+.PHONY : main/img/img_keypad_222222_x.c.s
+
+main/img/img_keypad_222222_y.o: main/img/img_keypad_222222_y.c.o
+.PHONY : main/img/img_keypad_222222_y.o
+
+# target to build an object file
+main/img/img_keypad_222222_y.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_y.c.o
+.PHONY : main/img/img_keypad_222222_y.c.o
+
+main/img/img_keypad_222222_y.i: main/img/img_keypad_222222_y.c.i
+.PHONY : main/img/img_keypad_222222_y.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_y.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_y.c.i
+.PHONY : main/img/img_keypad_222222_y.c.i
+
+main/img/img_keypad_222222_y.s: main/img/img_keypad_222222_y.c.s
+.PHONY : main/img/img_keypad_222222_y.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_y.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_y.c.s
+.PHONY : main/img/img_keypad_222222_y.c.s
+
+main/img/img_keypad_222222_z.o: main/img/img_keypad_222222_z.c.o
+.PHONY : main/img/img_keypad_222222_z.o
+
+# target to build an object file
+main/img/img_keypad_222222_z.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_z.c.o
+.PHONY : main/img/img_keypad_222222_z.c.o
+
+main/img/img_keypad_222222_z.i: main/img/img_keypad_222222_z.c.i
+.PHONY : main/img/img_keypad_222222_z.i
+
+# target to preprocess a source file
+main/img/img_keypad_222222_z.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_z.c.i
+.PHONY : main/img/img_keypad_222222_z.c.i
+
+main/img/img_keypad_222222_z.s: main/img/img_keypad_222222_z.c.s
+.PHONY : main/img/img_keypad_222222_z.s
+
+# target to generate assembly for a file
+main/img/img_keypad_222222_z.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_222222_z.c.s
+.PHONY : main/img/img_keypad_222222_z.c.s
+
+main/img/img_keypad_666666_a.o: main/img/img_keypad_666666_a.c.o
+.PHONY : main/img/img_keypad_666666_a.o
+
+# target to build an object file
+main/img/img_keypad_666666_a.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_a.c.o
+.PHONY : main/img/img_keypad_666666_a.c.o
+
+main/img/img_keypad_666666_a.i: main/img/img_keypad_666666_a.c.i
+.PHONY : main/img/img_keypad_666666_a.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_a.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_a.c.i
+.PHONY : main/img/img_keypad_666666_a.c.i
+
+main/img/img_keypad_666666_a.s: main/img/img_keypad_666666_a.c.s
+.PHONY : main/img/img_keypad_666666_a.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_a.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_a.c.s
+.PHONY : main/img/img_keypad_666666_a.c.s
+
+main/img/img_keypad_666666_b.o: main/img/img_keypad_666666_b.c.o
+.PHONY : main/img/img_keypad_666666_b.o
+
+# target to build an object file
+main/img/img_keypad_666666_b.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_b.c.o
+.PHONY : main/img/img_keypad_666666_b.c.o
+
+main/img/img_keypad_666666_b.i: main/img/img_keypad_666666_b.c.i
+.PHONY : main/img/img_keypad_666666_b.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_b.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_b.c.i
+.PHONY : main/img/img_keypad_666666_b.c.i
+
+main/img/img_keypad_666666_b.s: main/img/img_keypad_666666_b.c.s
+.PHONY : main/img/img_keypad_666666_b.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_b.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_b.c.s
+.PHONY : main/img/img_keypad_666666_b.c.s
+
+main/img/img_keypad_666666_c.o: main/img/img_keypad_666666_c.c.o
+.PHONY : main/img/img_keypad_666666_c.o
+
+# target to build an object file
+main/img/img_keypad_666666_c.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_c.c.o
+.PHONY : main/img/img_keypad_666666_c.c.o
+
+main/img/img_keypad_666666_c.i: main/img/img_keypad_666666_c.c.i
+.PHONY : main/img/img_keypad_666666_c.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_c.c.i
+.PHONY : main/img/img_keypad_666666_c.c.i
+
+main/img/img_keypad_666666_c.s: main/img/img_keypad_666666_c.c.s
+.PHONY : main/img/img_keypad_666666_c.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_c.c.s
+.PHONY : main/img/img_keypad_666666_c.c.s
+
+main/img/img_keypad_666666_d.o: main/img/img_keypad_666666_d.c.o
+.PHONY : main/img/img_keypad_666666_d.o
+
+# target to build an object file
+main/img/img_keypad_666666_d.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_d.c.o
+.PHONY : main/img/img_keypad_666666_d.c.o
+
+main/img/img_keypad_666666_d.i: main/img/img_keypad_666666_d.c.i
+.PHONY : main/img/img_keypad_666666_d.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_d.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_d.c.i
+.PHONY : main/img/img_keypad_666666_d.c.i
+
+main/img/img_keypad_666666_d.s: main/img/img_keypad_666666_d.c.s
+.PHONY : main/img/img_keypad_666666_d.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_d.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_d.c.s
+.PHONY : main/img/img_keypad_666666_d.c.s
+
+main/img/img_keypad_666666_e.o: main/img/img_keypad_666666_e.c.o
+.PHONY : main/img/img_keypad_666666_e.o
+
+# target to build an object file
+main/img/img_keypad_666666_e.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_e.c.o
+.PHONY : main/img/img_keypad_666666_e.c.o
+
+main/img/img_keypad_666666_e.i: main/img/img_keypad_666666_e.c.i
+.PHONY : main/img/img_keypad_666666_e.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_e.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_e.c.i
+.PHONY : main/img/img_keypad_666666_e.c.i
+
+main/img/img_keypad_666666_e.s: main/img/img_keypad_666666_e.c.s
+.PHONY : main/img/img_keypad_666666_e.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_e.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_e.c.s
+.PHONY : main/img/img_keypad_666666_e.c.s
+
+main/img/img_keypad_666666_f.o: main/img/img_keypad_666666_f.c.o
+.PHONY : main/img/img_keypad_666666_f.o
+
+# target to build an object file
+main/img/img_keypad_666666_f.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_f.c.o
+.PHONY : main/img/img_keypad_666666_f.c.o
+
+main/img/img_keypad_666666_f.i: main/img/img_keypad_666666_f.c.i
+.PHONY : main/img/img_keypad_666666_f.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_f.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_f.c.i
+.PHONY : main/img/img_keypad_666666_f.c.i
+
+main/img/img_keypad_666666_f.s: main/img/img_keypad_666666_f.c.s
+.PHONY : main/img/img_keypad_666666_f.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_f.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_f.c.s
+.PHONY : main/img/img_keypad_666666_f.c.s
+
+main/img/img_keypad_666666_g.o: main/img/img_keypad_666666_g.c.o
+.PHONY : main/img/img_keypad_666666_g.o
+
+# target to build an object file
+main/img/img_keypad_666666_g.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_g.c.o
+.PHONY : main/img/img_keypad_666666_g.c.o
+
+main/img/img_keypad_666666_g.i: main/img/img_keypad_666666_g.c.i
+.PHONY : main/img/img_keypad_666666_g.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_g.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_g.c.i
+.PHONY : main/img/img_keypad_666666_g.c.i
+
+main/img/img_keypad_666666_g.s: main/img/img_keypad_666666_g.c.s
+.PHONY : main/img/img_keypad_666666_g.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_g.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_g.c.s
+.PHONY : main/img/img_keypad_666666_g.c.s
+
+main/img/img_keypad_666666_h.o: main/img/img_keypad_666666_h.c.o
+.PHONY : main/img/img_keypad_666666_h.o
+
+# target to build an object file
+main/img/img_keypad_666666_h.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_h.c.o
+.PHONY : main/img/img_keypad_666666_h.c.o
+
+main/img/img_keypad_666666_h.i: main/img/img_keypad_666666_h.c.i
+.PHONY : main/img/img_keypad_666666_h.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_h.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_h.c.i
+.PHONY : main/img/img_keypad_666666_h.c.i
+
+main/img/img_keypad_666666_h.s: main/img/img_keypad_666666_h.c.s
+.PHONY : main/img/img_keypad_666666_h.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_h.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_h.c.s
+.PHONY : main/img/img_keypad_666666_h.c.s
+
+main/img/img_keypad_666666_i.o: main/img/img_keypad_666666_i.c.o
+.PHONY : main/img/img_keypad_666666_i.o
+
+# target to build an object file
+main/img/img_keypad_666666_i.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_i.c.o
+.PHONY : main/img/img_keypad_666666_i.c.o
+
+main/img/img_keypad_666666_i.i: main/img/img_keypad_666666_i.c.i
+.PHONY : main/img/img_keypad_666666_i.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_i.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_i.c.i
+.PHONY : main/img/img_keypad_666666_i.c.i
+
+main/img/img_keypad_666666_i.s: main/img/img_keypad_666666_i.c.s
+.PHONY : main/img/img_keypad_666666_i.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_i.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_i.c.s
+.PHONY : main/img/img_keypad_666666_i.c.s
+
+main/img/img_keypad_666666_j.o: main/img/img_keypad_666666_j.c.o
+.PHONY : main/img/img_keypad_666666_j.o
+
+# target to build an object file
+main/img/img_keypad_666666_j.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_j.c.o
+.PHONY : main/img/img_keypad_666666_j.c.o
+
+main/img/img_keypad_666666_j.i: main/img/img_keypad_666666_j.c.i
+.PHONY : main/img/img_keypad_666666_j.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_j.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_j.c.i
+.PHONY : main/img/img_keypad_666666_j.c.i
+
+main/img/img_keypad_666666_j.s: main/img/img_keypad_666666_j.c.s
+.PHONY : main/img/img_keypad_666666_j.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_j.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_j.c.s
+.PHONY : main/img/img_keypad_666666_j.c.s
+
+main/img/img_keypad_666666_k.o: main/img/img_keypad_666666_k.c.o
+.PHONY : main/img/img_keypad_666666_k.o
+
+# target to build an object file
+main/img/img_keypad_666666_k.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_k.c.o
+.PHONY : main/img/img_keypad_666666_k.c.o
+
+main/img/img_keypad_666666_k.i: main/img/img_keypad_666666_k.c.i
+.PHONY : main/img/img_keypad_666666_k.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_k.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_k.c.i
+.PHONY : main/img/img_keypad_666666_k.c.i
+
+main/img/img_keypad_666666_k.s: main/img/img_keypad_666666_k.c.s
+.PHONY : main/img/img_keypad_666666_k.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_k.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_k.c.s
+.PHONY : main/img/img_keypad_666666_k.c.s
+
+main/img/img_keypad_666666_l.o: main/img/img_keypad_666666_l.c.o
+.PHONY : main/img/img_keypad_666666_l.o
+
+# target to build an object file
+main/img/img_keypad_666666_l.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_l.c.o
+.PHONY : main/img/img_keypad_666666_l.c.o
+
+main/img/img_keypad_666666_l.i: main/img/img_keypad_666666_l.c.i
+.PHONY : main/img/img_keypad_666666_l.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_l.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_l.c.i
+.PHONY : main/img/img_keypad_666666_l.c.i
+
+main/img/img_keypad_666666_l.s: main/img/img_keypad_666666_l.c.s
+.PHONY : main/img/img_keypad_666666_l.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_l.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_l.c.s
+.PHONY : main/img/img_keypad_666666_l.c.s
+
+main/img/img_keypad_666666_m.o: main/img/img_keypad_666666_m.c.o
+.PHONY : main/img/img_keypad_666666_m.o
+
+# target to build an object file
+main/img/img_keypad_666666_m.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_m.c.o
+.PHONY : main/img/img_keypad_666666_m.c.o
+
+main/img/img_keypad_666666_m.i: main/img/img_keypad_666666_m.c.i
+.PHONY : main/img/img_keypad_666666_m.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_m.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_m.c.i
+.PHONY : main/img/img_keypad_666666_m.c.i
+
+main/img/img_keypad_666666_m.s: main/img/img_keypad_666666_m.c.s
+.PHONY : main/img/img_keypad_666666_m.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_m.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_m.c.s
+.PHONY : main/img/img_keypad_666666_m.c.s
+
+main/img/img_keypad_666666_n.o: main/img/img_keypad_666666_n.c.o
+.PHONY : main/img/img_keypad_666666_n.o
+
+# target to build an object file
+main/img/img_keypad_666666_n.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_n.c.o
+.PHONY : main/img/img_keypad_666666_n.c.o
+
+main/img/img_keypad_666666_n.i: main/img/img_keypad_666666_n.c.i
+.PHONY : main/img/img_keypad_666666_n.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_n.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_n.c.i
+.PHONY : main/img/img_keypad_666666_n.c.i
+
+main/img/img_keypad_666666_n.s: main/img/img_keypad_666666_n.c.s
+.PHONY : main/img/img_keypad_666666_n.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_n.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_n.c.s
+.PHONY : main/img/img_keypad_666666_n.c.s
+
+main/img/img_keypad_666666_o.o: main/img/img_keypad_666666_o.c.o
+.PHONY : main/img/img_keypad_666666_o.o
+
+# target to build an object file
+main/img/img_keypad_666666_o.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_o.c.o
+.PHONY : main/img/img_keypad_666666_o.c.o
+
+main/img/img_keypad_666666_o.i: main/img/img_keypad_666666_o.c.i
+.PHONY : main/img/img_keypad_666666_o.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_o.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_o.c.i
+.PHONY : main/img/img_keypad_666666_o.c.i
+
+main/img/img_keypad_666666_o.s: main/img/img_keypad_666666_o.c.s
+.PHONY : main/img/img_keypad_666666_o.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_o.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_o.c.s
+.PHONY : main/img/img_keypad_666666_o.c.s
+
+main/img/img_keypad_666666_p.o: main/img/img_keypad_666666_p.c.o
+.PHONY : main/img/img_keypad_666666_p.o
+
+# target to build an object file
+main/img/img_keypad_666666_p.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_p.c.o
+.PHONY : main/img/img_keypad_666666_p.c.o
+
+main/img/img_keypad_666666_p.i: main/img/img_keypad_666666_p.c.i
+.PHONY : main/img/img_keypad_666666_p.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_p.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_p.c.i
+.PHONY : main/img/img_keypad_666666_p.c.i
+
+main/img/img_keypad_666666_p.s: main/img/img_keypad_666666_p.c.s
+.PHONY : main/img/img_keypad_666666_p.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_p.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_p.c.s
+.PHONY : main/img/img_keypad_666666_p.c.s
+
+main/img/img_keypad_666666_q.o: main/img/img_keypad_666666_q.c.o
+.PHONY : main/img/img_keypad_666666_q.o
+
+# target to build an object file
+main/img/img_keypad_666666_q.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_q.c.o
+.PHONY : main/img/img_keypad_666666_q.c.o
+
+main/img/img_keypad_666666_q.i: main/img/img_keypad_666666_q.c.i
+.PHONY : main/img/img_keypad_666666_q.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_q.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_q.c.i
+.PHONY : main/img/img_keypad_666666_q.c.i
+
+main/img/img_keypad_666666_q.s: main/img/img_keypad_666666_q.c.s
+.PHONY : main/img/img_keypad_666666_q.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_q.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_q.c.s
+.PHONY : main/img/img_keypad_666666_q.c.s
+
+main/img/img_keypad_666666_r.o: main/img/img_keypad_666666_r.c.o
+.PHONY : main/img/img_keypad_666666_r.o
+
+# target to build an object file
+main/img/img_keypad_666666_r.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_r.c.o
+.PHONY : main/img/img_keypad_666666_r.c.o
+
+main/img/img_keypad_666666_r.i: main/img/img_keypad_666666_r.c.i
+.PHONY : main/img/img_keypad_666666_r.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_r.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_r.c.i
+.PHONY : main/img/img_keypad_666666_r.c.i
+
+main/img/img_keypad_666666_r.s: main/img/img_keypad_666666_r.c.s
+.PHONY : main/img/img_keypad_666666_r.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_r.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_r.c.s
+.PHONY : main/img/img_keypad_666666_r.c.s
+
+main/img/img_keypad_666666_s.o: main/img/img_keypad_666666_s.c.o
+.PHONY : main/img/img_keypad_666666_s.o
+
+# target to build an object file
+main/img/img_keypad_666666_s.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_s.c.o
+.PHONY : main/img/img_keypad_666666_s.c.o
+
+main/img/img_keypad_666666_s.i: main/img/img_keypad_666666_s.c.i
+.PHONY : main/img/img_keypad_666666_s.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_s.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_s.c.i
+.PHONY : main/img/img_keypad_666666_s.c.i
+
+main/img/img_keypad_666666_s.s: main/img/img_keypad_666666_s.c.s
+.PHONY : main/img/img_keypad_666666_s.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_s.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_s.c.s
+.PHONY : main/img/img_keypad_666666_s.c.s
+
+main/img/img_keypad_666666_t.o: main/img/img_keypad_666666_t.c.o
+.PHONY : main/img/img_keypad_666666_t.o
+
+# target to build an object file
+main/img/img_keypad_666666_t.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_t.c.o
+.PHONY : main/img/img_keypad_666666_t.c.o
+
+main/img/img_keypad_666666_t.i: main/img/img_keypad_666666_t.c.i
+.PHONY : main/img/img_keypad_666666_t.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_t.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_t.c.i
+.PHONY : main/img/img_keypad_666666_t.c.i
+
+main/img/img_keypad_666666_t.s: main/img/img_keypad_666666_t.c.s
+.PHONY : main/img/img_keypad_666666_t.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_t.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_t.c.s
+.PHONY : main/img/img_keypad_666666_t.c.s
+
+main/img/img_keypad_666666_u.o: main/img/img_keypad_666666_u.c.o
+.PHONY : main/img/img_keypad_666666_u.o
+
+# target to build an object file
+main/img/img_keypad_666666_u.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_u.c.o
+.PHONY : main/img/img_keypad_666666_u.c.o
+
+main/img/img_keypad_666666_u.i: main/img/img_keypad_666666_u.c.i
+.PHONY : main/img/img_keypad_666666_u.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_u.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_u.c.i
+.PHONY : main/img/img_keypad_666666_u.c.i
+
+main/img/img_keypad_666666_u.s: main/img/img_keypad_666666_u.c.s
+.PHONY : main/img/img_keypad_666666_u.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_u.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_u.c.s
+.PHONY : main/img/img_keypad_666666_u.c.s
+
+main/img/img_keypad_666666_v.o: main/img/img_keypad_666666_v.c.o
+.PHONY : main/img/img_keypad_666666_v.o
+
+# target to build an object file
+main/img/img_keypad_666666_v.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_v.c.o
+.PHONY : main/img/img_keypad_666666_v.c.o
+
+main/img/img_keypad_666666_v.i: main/img/img_keypad_666666_v.c.i
+.PHONY : main/img/img_keypad_666666_v.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_v.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_v.c.i
+.PHONY : main/img/img_keypad_666666_v.c.i
+
+main/img/img_keypad_666666_v.s: main/img/img_keypad_666666_v.c.s
+.PHONY : main/img/img_keypad_666666_v.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_v.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_v.c.s
+.PHONY : main/img/img_keypad_666666_v.c.s
+
+main/img/img_keypad_666666_w.o: main/img/img_keypad_666666_w.c.o
+.PHONY : main/img/img_keypad_666666_w.o
+
+# target to build an object file
+main/img/img_keypad_666666_w.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_w.c.o
+.PHONY : main/img/img_keypad_666666_w.c.o
+
+main/img/img_keypad_666666_w.i: main/img/img_keypad_666666_w.c.i
+.PHONY : main/img/img_keypad_666666_w.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_w.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_w.c.i
+.PHONY : main/img/img_keypad_666666_w.c.i
+
+main/img/img_keypad_666666_w.s: main/img/img_keypad_666666_w.c.s
+.PHONY : main/img/img_keypad_666666_w.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_w.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_w.c.s
+.PHONY : main/img/img_keypad_666666_w.c.s
+
+main/img/img_keypad_666666_x.o: main/img/img_keypad_666666_x.c.o
+.PHONY : main/img/img_keypad_666666_x.o
+
+# target to build an object file
+main/img/img_keypad_666666_x.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_x.c.o
+.PHONY : main/img/img_keypad_666666_x.c.o
+
+main/img/img_keypad_666666_x.i: main/img/img_keypad_666666_x.c.i
+.PHONY : main/img/img_keypad_666666_x.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_x.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_x.c.i
+.PHONY : main/img/img_keypad_666666_x.c.i
+
+main/img/img_keypad_666666_x.s: main/img/img_keypad_666666_x.c.s
+.PHONY : main/img/img_keypad_666666_x.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_x.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_x.c.s
+.PHONY : main/img/img_keypad_666666_x.c.s
+
+main/img/img_keypad_666666_y.o: main/img/img_keypad_666666_y.c.o
+.PHONY : main/img/img_keypad_666666_y.o
+
+# target to build an object file
+main/img/img_keypad_666666_y.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_y.c.o
+.PHONY : main/img/img_keypad_666666_y.c.o
+
+main/img/img_keypad_666666_y.i: main/img/img_keypad_666666_y.c.i
+.PHONY : main/img/img_keypad_666666_y.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_y.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_y.c.i
+.PHONY : main/img/img_keypad_666666_y.c.i
+
+main/img/img_keypad_666666_y.s: main/img/img_keypad_666666_y.c.s
+.PHONY : main/img/img_keypad_666666_y.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_y.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_y.c.s
+.PHONY : main/img/img_keypad_666666_y.c.s
+
+main/img/img_keypad_666666_z.o: main/img/img_keypad_666666_z.c.o
+.PHONY : main/img/img_keypad_666666_z.o
+
+# target to build an object file
+main/img/img_keypad_666666_z.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_z.c.o
+.PHONY : main/img/img_keypad_666666_z.c.o
+
+main/img/img_keypad_666666_z.i: main/img/img_keypad_666666_z.c.i
+.PHONY : main/img/img_keypad_666666_z.i
+
+# target to preprocess a source file
+main/img/img_keypad_666666_z.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_z.c.i
+.PHONY : main/img/img_keypad_666666_z.c.i
+
+main/img/img_keypad_666666_z.s: main/img/img_keypad_666666_z.c.s
+.PHONY : main/img/img_keypad_666666_z.s
+
+# target to generate assembly for a file
+main/img/img_keypad_666666_z.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_666666_z.c.s
+.PHONY : main/img/img_keypad_666666_z.c.s
+
+main/img/img_keypad_back.o: main/img/img_keypad_back.c.o
+.PHONY : main/img/img_keypad_back.o
+
+# target to build an object file
+main/img/img_keypad_back.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_back.c.o
+.PHONY : main/img/img_keypad_back.c.o
+
+main/img/img_keypad_back.i: main/img/img_keypad_back.c.i
+.PHONY : main/img/img_keypad_back.i
+
+# target to preprocess a source file
+main/img/img_keypad_back.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_back.c.i
+.PHONY : main/img/img_keypad_back.c.i
+
+main/img/img_keypad_back.s: main/img/img_keypad_back.c.s
+.PHONY : main/img/img_keypad_back.s
+
+# target to generate assembly for a file
+main/img/img_keypad_back.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_back.c.s
+.PHONY : main/img/img_keypad_back.c.s
+
+main/img/img_keypad_confirm.o: main/img/img_keypad_confirm.c.o
+.PHONY : main/img/img_keypad_confirm.o
+
+# target to build an object file
+main/img/img_keypad_confirm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_confirm.c.o
+.PHONY : main/img/img_keypad_confirm.c.o
+
+main/img/img_keypad_confirm.i: main/img/img_keypad_confirm.c.i
+.PHONY : main/img/img_keypad_confirm.i
+
+# target to preprocess a source file
+main/img/img_keypad_confirm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_confirm.c.i
+.PHONY : main/img/img_keypad_confirm.c.i
+
+main/img/img_keypad_confirm.s: main/img/img_keypad_confirm.c.s
+.PHONY : main/img/img_keypad_confirm.s
+
+# target to generate assembly for a file
+main/img/img_keypad_confirm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_keypad_confirm.c.s
+.PHONY : main/img/img_keypad_confirm.c.s
+
+main/img/img_left_pressed_61fc5a_14x26.o: main/img/img_left_pressed_61fc5a_14x26.c.o
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.o
+
+# target to build an object file
+main/img/img_left_pressed_61fc5a_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_61fc5a_14x26.c.o
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.c.o
+
+main/img/img_left_pressed_61fc5a_14x26.i: main/img/img_left_pressed_61fc5a_14x26.c.i
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.i
+
+# target to preprocess a source file
+main/img/img_left_pressed_61fc5a_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_61fc5a_14x26.c.i
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.c.i
+
+main/img/img_left_pressed_61fc5a_14x26.s: main/img/img_left_pressed_61fc5a_14x26.c.s
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.s
+
+# target to generate assembly for a file
+main/img/img_left_pressed_61fc5a_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_61fc5a_14x26.c.s
+.PHONY : main/img/img_left_pressed_61fc5a_14x26.c.s
 
 main/img/img_left_pressed_8f7ff0_16x40.o: main/img/img_left_pressed_8f7ff0_16x40.c.o
 .PHONY : main/img/img_left_pressed_8f7ff0_16x40.o
@@ -482,6 +2134,54 @@ main/img/img_left_pressed_ff593c_16x40.s: main/img/img_left_pressed_ff593c_16x40
 main/img/img_left_pressed_ff593c_16x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_ff593c_16x40.c.s
 .PHONY : main/img/img_left_pressed_ff593c_16x40.c.s
+
+main/img/img_left_pressed_ffef4b_14x26.o: main/img/img_left_pressed_ffef4b_14x26.c.o
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.o
+
+# target to build an object file
+main/img/img_left_pressed_ffef4b_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_ffef4b_14x26.c.o
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.c.o
+
+main/img/img_left_pressed_ffef4b_14x26.i: main/img/img_left_pressed_ffef4b_14x26.c.i
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.i
+
+# target to preprocess a source file
+main/img/img_left_pressed_ffef4b_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_ffef4b_14x26.c.i
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.c.i
+
+main/img/img_left_pressed_ffef4b_14x26.s: main/img/img_left_pressed_ffef4b_14x26.c.s
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.s
+
+# target to generate assembly for a file
+main/img/img_left_pressed_ffef4b_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_pressed_ffef4b_14x26.c.s
+.PHONY : main/img/img_left_pressed_ffef4b_14x26.c.s
+
+main/img/img_left_released_10e807_14x26.o: main/img/img_left_released_10e807_14x26.c.o
+.PHONY : main/img/img_left_released_10e807_14x26.o
+
+# target to build an object file
+main/img/img_left_released_10e807_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_10e807_14x26.c.o
+.PHONY : main/img/img_left_released_10e807_14x26.c.o
+
+main/img/img_left_released_10e807_14x26.i: main/img/img_left_released_10e807_14x26.c.i
+.PHONY : main/img/img_left_released_10e807_14x26.i
+
+# target to preprocess a source file
+main/img/img_left_released_10e807_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_10e807_14x26.c.i
+.PHONY : main/img/img_left_released_10e807_14x26.c.i
+
+main/img/img_left_released_10e807_14x26.s: main/img/img_left_released_10e807_14x26.c.s
+.PHONY : main/img/img_left_released_10e807_14x26.s
+
+# target to generate assembly for a file
+main/img/img_left_released_10e807_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_10e807_14x26.c.s
+.PHONY : main/img/img_left_released_10e807_14x26.c.s
 
 main/img/img_left_released_6c6cf4_14x26.o: main/img/img_left_released_6c6cf4_14x26.c.o
 .PHONY : main/img/img_left_released_6c6cf4_14x26.o
@@ -603,6 +2303,30 @@ main/img/img_left_released_888888_16x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_888888_16x40.c.s
 .PHONY : main/img/img_left_released_888888_16x40.c.s
 
+main/img/img_left_released_f7e100_14x26.o: main/img/img_left_released_f7e100_14x26.c.o
+.PHONY : main/img/img_left_released_f7e100_14x26.o
+
+# target to build an object file
+main/img/img_left_released_f7e100_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_f7e100_14x26.c.o
+.PHONY : main/img/img_left_released_f7e100_14x26.c.o
+
+main/img/img_left_released_f7e100_14x26.i: main/img/img_left_released_f7e100_14x26.c.i
+.PHONY : main/img/img_left_released_f7e100_14x26.i
+
+# target to preprocess a source file
+main/img/img_left_released_f7e100_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_f7e100_14x26.c.i
+.PHONY : main/img/img_left_released_f7e100_14x26.c.i
+
+main/img/img_left_released_f7e100_14x26.s: main/img/img_left_released_f7e100_14x26.c.s
+.PHONY : main/img/img_left_released_f7e100_14x26.s
+
+# target to generate assembly for a file
+main/img/img_left_released_f7e100_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_left_released_f7e100_14x26.c.s
+.PHONY : main/img/img_left_released_f7e100_14x26.c.s
+
 main/img/img_left_released_ff2600_16x40.o: main/img/img_left_released_ff2600_16x40.c.o
 .PHONY : main/img/img_left_released_ff2600_16x40.o
 
@@ -723,6 +2447,30 @@ main/img/img_menu_settings.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_menu_settings.c.s
 .PHONY : main/img/img_menu_settings.c.s
 
+main/img/img_mid_pressed_61fc5a_4x26.o: main/img/img_mid_pressed_61fc5a_4x26.c.o
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.o
+
+# target to build an object file
+main/img/img_mid_pressed_61fc5a_4x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_61fc5a_4x26.c.o
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.c.o
+
+main/img/img_mid_pressed_61fc5a_4x26.i: main/img/img_mid_pressed_61fc5a_4x26.c.i
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.i
+
+# target to preprocess a source file
+main/img/img_mid_pressed_61fc5a_4x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_61fc5a_4x26.c.i
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.c.i
+
+main/img/img_mid_pressed_61fc5a_4x26.s: main/img/img_mid_pressed_61fc5a_4x26.c.s
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.s
+
+# target to generate assembly for a file
+main/img/img_mid_pressed_61fc5a_4x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_61fc5a_4x26.c.s
+.PHONY : main/img/img_mid_pressed_61fc5a_4x26.c.s
+
 main/img/img_mid_pressed_8f7ff0_4x40.o: main/img/img_mid_pressed_8f7ff0_4x40.c.o
 .PHONY : main/img/img_mid_pressed_8f7ff0_4x40.o
 
@@ -818,6 +2566,54 @@ main/img/img_mid_pressed_ff593c_4x40.s: main/img/img_mid_pressed_ff593c_4x40.c.s
 main/img/img_mid_pressed_ff593c_4x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_ff593c_4x40.c.s
 .PHONY : main/img/img_mid_pressed_ff593c_4x40.c.s
+
+main/img/img_mid_pressed_ffef4b_4x26.o: main/img/img_mid_pressed_ffef4b_4x26.c.o
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.o
+
+# target to build an object file
+main/img/img_mid_pressed_ffef4b_4x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_ffef4b_4x26.c.o
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.c.o
+
+main/img/img_mid_pressed_ffef4b_4x26.i: main/img/img_mid_pressed_ffef4b_4x26.c.i
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.i
+
+# target to preprocess a source file
+main/img/img_mid_pressed_ffef4b_4x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_ffef4b_4x26.c.i
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.c.i
+
+main/img/img_mid_pressed_ffef4b_4x26.s: main/img/img_mid_pressed_ffef4b_4x26.c.s
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.s
+
+# target to generate assembly for a file
+main/img/img_mid_pressed_ffef4b_4x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_pressed_ffef4b_4x26.c.s
+.PHONY : main/img/img_mid_pressed_ffef4b_4x26.c.s
+
+main/img/img_mid_released_10e807_4x26.o: main/img/img_mid_released_10e807_4x26.c.o
+.PHONY : main/img/img_mid_released_10e807_4x26.o
+
+# target to build an object file
+main/img/img_mid_released_10e807_4x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_10e807_4x26.c.o
+.PHONY : main/img/img_mid_released_10e807_4x26.c.o
+
+main/img/img_mid_released_10e807_4x26.i: main/img/img_mid_released_10e807_4x26.c.i
+.PHONY : main/img/img_mid_released_10e807_4x26.i
+
+# target to preprocess a source file
+main/img/img_mid_released_10e807_4x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_10e807_4x26.c.i
+.PHONY : main/img/img_mid_released_10e807_4x26.c.i
+
+main/img/img_mid_released_10e807_4x26.s: main/img/img_mid_released_10e807_4x26.c.s
+.PHONY : main/img/img_mid_released_10e807_4x26.s
+
+# target to generate assembly for a file
+main/img/img_mid_released_10e807_4x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_10e807_4x26.c.s
+.PHONY : main/img/img_mid_released_10e807_4x26.c.s
 
 main/img/img_mid_released_6c6cf4_16x80.o: main/img/img_mid_released_6c6cf4_16x80.c.o
 .PHONY : main/img/img_mid_released_6c6cf4_16x80.o
@@ -939,6 +2735,30 @@ main/img/img_mid_released_888888_4x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_888888_4x40.c.s
 .PHONY : main/img/img_mid_released_888888_4x40.c.s
 
+main/img/img_mid_released_f7e100_4x26.o: main/img/img_mid_released_f7e100_4x26.c.o
+.PHONY : main/img/img_mid_released_f7e100_4x26.o
+
+# target to build an object file
+main/img/img_mid_released_f7e100_4x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_f7e100_4x26.c.o
+.PHONY : main/img/img_mid_released_f7e100_4x26.c.o
+
+main/img/img_mid_released_f7e100_4x26.i: main/img/img_mid_released_f7e100_4x26.c.i
+.PHONY : main/img/img_mid_released_f7e100_4x26.i
+
+# target to preprocess a source file
+main/img/img_mid_released_f7e100_4x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_f7e100_4x26.c.i
+.PHONY : main/img/img_mid_released_f7e100_4x26.c.i
+
+main/img/img_mid_released_f7e100_4x26.s: main/img/img_mid_released_f7e100_4x26.c.s
+.PHONY : main/img/img_mid_released_f7e100_4x26.s
+
+# target to generate assembly for a file
+main/img/img_mid_released_f7e100_4x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_f7e100_4x26.c.s
+.PHONY : main/img/img_mid_released_f7e100_4x26.c.s
+
 main/img/img_mid_released_ff2600_4x40.o: main/img/img_mid_released_ff2600_4x40.c.o
 .PHONY : main/img/img_mid_released_ff2600_4x40.o
 
@@ -962,6 +2782,54 @@ main/img/img_mid_released_ff2600_4x40.s: main/img/img_mid_released_ff2600_4x40.c
 main/img/img_mid_released_ff2600_4x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_mid_released_ff2600_4x40.c.s
 .PHONY : main/img/img_mid_released_ff2600_4x40.c.s
+
+main/img/img_name.o: main/img/img_name.c.o
+.PHONY : main/img/img_name.o
+
+# target to build an object file
+main/img/img_name.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_name.c.o
+.PHONY : main/img/img_name.c.o
+
+main/img/img_name.i: main/img/img_name.c.i
+.PHONY : main/img/img_name.i
+
+# target to preprocess a source file
+main/img/img_name.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_name.c.i
+.PHONY : main/img/img_name.c.i
+
+main/img/img_name.s: main/img/img_name.c.s
+.PHONY : main/img/img_name.s
+
+# target to generate assembly for a file
+main/img/img_name.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_name.c.s
+.PHONY : main/img/img_name.c.s
+
+main/img/img_right_pressed_61fc5a_14x26.o: main/img/img_right_pressed_61fc5a_14x26.c.o
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.o
+
+# target to build an object file
+main/img/img_right_pressed_61fc5a_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_61fc5a_14x26.c.o
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.c.o
+
+main/img/img_right_pressed_61fc5a_14x26.i: main/img/img_right_pressed_61fc5a_14x26.c.i
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.i
+
+# target to preprocess a source file
+main/img/img_right_pressed_61fc5a_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_61fc5a_14x26.c.i
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.c.i
+
+main/img/img_right_pressed_61fc5a_14x26.s: main/img/img_right_pressed_61fc5a_14x26.c.s
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.s
+
+# target to generate assembly for a file
+main/img/img_right_pressed_61fc5a_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_61fc5a_14x26.c.s
+.PHONY : main/img/img_right_pressed_61fc5a_14x26.c.s
 
 main/img/img_right_pressed_8f7ff0_16x40.o: main/img/img_right_pressed_8f7ff0_16x40.c.o
 .PHONY : main/img/img_right_pressed_8f7ff0_16x40.o
@@ -1058,6 +2926,54 @@ main/img/img_right_pressed_ff593c_16x40.s: main/img/img_right_pressed_ff593c_16x
 main/img/img_right_pressed_ff593c_16x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_ff593c_16x40.c.s
 .PHONY : main/img/img_right_pressed_ff593c_16x40.c.s
+
+main/img/img_right_pressed_ffef4b_14x26.o: main/img/img_right_pressed_ffef4b_14x26.c.o
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.o
+
+# target to build an object file
+main/img/img_right_pressed_ffef4b_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_ffef4b_14x26.c.o
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.c.o
+
+main/img/img_right_pressed_ffef4b_14x26.i: main/img/img_right_pressed_ffef4b_14x26.c.i
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.i
+
+# target to preprocess a source file
+main/img/img_right_pressed_ffef4b_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_ffef4b_14x26.c.i
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.c.i
+
+main/img/img_right_pressed_ffef4b_14x26.s: main/img/img_right_pressed_ffef4b_14x26.c.s
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.s
+
+# target to generate assembly for a file
+main/img/img_right_pressed_ffef4b_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_pressed_ffef4b_14x26.c.s
+.PHONY : main/img/img_right_pressed_ffef4b_14x26.c.s
+
+main/img/img_right_released_10e807_14x26.o: main/img/img_right_released_10e807_14x26.c.o
+.PHONY : main/img/img_right_released_10e807_14x26.o
+
+# target to build an object file
+main/img/img_right_released_10e807_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_10e807_14x26.c.o
+.PHONY : main/img/img_right_released_10e807_14x26.c.o
+
+main/img/img_right_released_10e807_14x26.i: main/img/img_right_released_10e807_14x26.c.i
+.PHONY : main/img/img_right_released_10e807_14x26.i
+
+# target to preprocess a source file
+main/img/img_right_released_10e807_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_10e807_14x26.c.i
+.PHONY : main/img/img_right_released_10e807_14x26.c.i
+
+main/img/img_right_released_10e807_14x26.s: main/img/img_right_released_10e807_14x26.c.s
+.PHONY : main/img/img_right_released_10e807_14x26.s
+
+# target to generate assembly for a file
+main/img/img_right_released_10e807_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_10e807_14x26.c.s
+.PHONY : main/img/img_right_released_10e807_14x26.c.s
 
 main/img/img_right_released_6c6cf4_14x26.o: main/img/img_right_released_6c6cf4_14x26.c.o
 .PHONY : main/img/img_right_released_6c6cf4_14x26.o
@@ -1179,6 +3095,30 @@ main/img/img_right_released_888888_16x40.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_888888_16x40.c.s
 .PHONY : main/img/img_right_released_888888_16x40.c.s
 
+main/img/img_right_released_f7e100_14x26.o: main/img/img_right_released_f7e100_14x26.c.o
+.PHONY : main/img/img_right_released_f7e100_14x26.o
+
+# target to build an object file
+main/img/img_right_released_f7e100_14x26.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_f7e100_14x26.c.o
+.PHONY : main/img/img_right_released_f7e100_14x26.c.o
+
+main/img/img_right_released_f7e100_14x26.i: main/img/img_right_released_f7e100_14x26.c.i
+.PHONY : main/img/img_right_released_f7e100_14x26.i
+
+# target to preprocess a source file
+main/img/img_right_released_f7e100_14x26.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_f7e100_14x26.c.i
+.PHONY : main/img/img_right_released_f7e100_14x26.c.i
+
+main/img/img_right_released_f7e100_14x26.s: main/img/img_right_released_f7e100_14x26.c.s
+.PHONY : main/img/img_right_released_f7e100_14x26.s
+
+# target to generate assembly for a file
+main/img/img_right_released_f7e100_14x26.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_right_released_f7e100_14x26.c.s
+.PHONY : main/img/img_right_released_f7e100_14x26.c.s
+
 main/img/img_right_released_ff2600_16x40.o: main/img/img_right_released_ff2600_16x40.c.o
 .PHONY : main/img/img_right_released_ff2600_16x40.o
 
@@ -1227,6 +3167,222 @@ main/img/img_screen_shape.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_screen_shape.c.s
 .PHONY : main/img/img_screen_shape.c.s
 
+main/img/img_screen_shoosen.o: main/img/img_screen_shoosen.c.o
+.PHONY : main/img/img_screen_shoosen.o
+
+# target to build an object file
+main/img/img_screen_shoosen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_screen_shoosen.c.o
+.PHONY : main/img/img_screen_shoosen.c.o
+
+main/img/img_screen_shoosen.i: main/img/img_screen_shoosen.c.i
+.PHONY : main/img/img_screen_shoosen.i
+
+# target to preprocess a source file
+main/img/img_screen_shoosen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_screen_shoosen.c.i
+.PHONY : main/img/img_screen_shoosen.c.i
+
+main/img/img_screen_shoosen.s: main/img/img_screen_shoosen.c.s
+.PHONY : main/img/img_screen_shoosen.s
+
+# target to generate assembly for a file
+main/img/img_screen_shoosen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_screen_shoosen.c.s
+.PHONY : main/img/img_screen_shoosen.c.s
+
+main/img/img_slider_knob_1.o: main/img/img_slider_knob_1.c.o
+.PHONY : main/img/img_slider_knob_1.o
+
+# target to build an object file
+main/img/img_slider_knob_1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_1.c.o
+.PHONY : main/img/img_slider_knob_1.c.o
+
+main/img/img_slider_knob_1.i: main/img/img_slider_knob_1.c.i
+.PHONY : main/img/img_slider_knob_1.i
+
+# target to preprocess a source file
+main/img/img_slider_knob_1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_1.c.i
+.PHONY : main/img/img_slider_knob_1.c.i
+
+main/img/img_slider_knob_1.s: main/img/img_slider_knob_1.c.s
+.PHONY : main/img/img_slider_knob_1.s
+
+# target to generate assembly for a file
+main/img/img_slider_knob_1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_1.c.s
+.PHONY : main/img/img_slider_knob_1.c.s
+
+main/img/img_slider_knob_2.o: main/img/img_slider_knob_2.c.o
+.PHONY : main/img/img_slider_knob_2.o
+
+# target to build an object file
+main/img/img_slider_knob_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_2.c.o
+.PHONY : main/img/img_slider_knob_2.c.o
+
+main/img/img_slider_knob_2.i: main/img/img_slider_knob_2.c.i
+.PHONY : main/img/img_slider_knob_2.i
+
+# target to preprocess a source file
+main/img/img_slider_knob_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_2.c.i
+.PHONY : main/img/img_slider_knob_2.c.i
+
+main/img/img_slider_knob_2.s: main/img/img_slider_knob_2.c.s
+.PHONY : main/img/img_slider_knob_2.s
+
+# target to generate assembly for a file
+main/img/img_slider_knob_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_2.c.s
+.PHONY : main/img/img_slider_knob_2.c.s
+
+main/img/img_slider_knob_3.o: main/img/img_slider_knob_3.c.o
+.PHONY : main/img/img_slider_knob_3.o
+
+# target to build an object file
+main/img/img_slider_knob_3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_3.c.o
+.PHONY : main/img/img_slider_knob_3.c.o
+
+main/img/img_slider_knob_3.i: main/img/img_slider_knob_3.c.i
+.PHONY : main/img/img_slider_knob_3.i
+
+# target to preprocess a source file
+main/img/img_slider_knob_3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_3.c.i
+.PHONY : main/img/img_slider_knob_3.c.i
+
+main/img/img_slider_knob_3.s: main/img/img_slider_knob_3.c.s
+.PHONY : main/img/img_slider_knob_3.s
+
+# target to generate assembly for a file
+main/img/img_slider_knob_3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_3.c.s
+.PHONY : main/img/img_slider_knob_3.c.s
+
+main/img/img_slider_knob_4.o: main/img/img_slider_knob_4.c.o
+.PHONY : main/img/img_slider_knob_4.o
+
+# target to build an object file
+main/img/img_slider_knob_4.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_4.c.o
+.PHONY : main/img/img_slider_knob_4.c.o
+
+main/img/img_slider_knob_4.i: main/img/img_slider_knob_4.c.i
+.PHONY : main/img/img_slider_knob_4.i
+
+# target to preprocess a source file
+main/img/img_slider_knob_4.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_4.c.i
+.PHONY : main/img/img_slider_knob_4.c.i
+
+main/img/img_slider_knob_4.s: main/img/img_slider_knob_4.c.s
+.PHONY : main/img/img_slider_knob_4.s
+
+# target to generate assembly for a file
+main/img/img_slider_knob_4.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_slider_knob_4.c.s
+.PHONY : main/img/img_slider_knob_4.c.s
+
+main/img/img_startup_arrow.o: main/img/img_startup_arrow.c.o
+.PHONY : main/img/img_startup_arrow.o
+
+# target to build an object file
+main/img/img_startup_arrow.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_startup_arrow.c.o
+.PHONY : main/img/img_startup_arrow.c.o
+
+main/img/img_startup_arrow.i: main/img/img_startup_arrow.c.i
+.PHONY : main/img/img_startup_arrow.i
+
+# target to preprocess a source file
+main/img/img_startup_arrow.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_startup_arrow.c.i
+.PHONY : main/img/img_startup_arrow.c.i
+
+main/img/img_startup_arrow.s: main/img/img_startup_arrow.c.s
+.PHONY : main/img/img_startup_arrow.s
+
+# target to generate assembly for a file
+main/img/img_startup_arrow.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_startup_arrow.c.s
+.PHONY : main/img/img_startup_arrow.c.s
+
+main/img/img_success.o: main/img/img_success.c.o
+.PHONY : main/img/img_success.o
+
+# target to build an object file
+main/img/img_success.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_success.c.o
+.PHONY : main/img/img_success.c.o
+
+main/img/img_success.i: main/img/img_success.c.i
+.PHONY : main/img/img_success.i
+
+# target to preprocess a source file
+main/img/img_success.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_success.c.i
+.PHONY : main/img/img_success.c.i
+
+main/img/img_success.s: main/img/img_success.c.s
+.PHONY : main/img/img_success.s
+
+# target to generate assembly for a file
+main/img/img_success.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_success.c.s
+.PHONY : main/img/img_success.c.s
+
+main/img/img_unchosen.o: main/img/img_unchosen.c.o
+.PHONY : main/img/img_unchosen.o
+
+# target to build an object file
+main/img/img_unchosen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_unchosen.c.o
+.PHONY : main/img/img_unchosen.c.o
+
+main/img/img_unchosen.i: main/img/img_unchosen.c.i
+.PHONY : main/img/img_unchosen.i
+
+# target to preprocess a source file
+main/img/img_unchosen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_unchosen.c.i
+.PHONY : main/img/img_unchosen.c.i
+
+main/img/img_unchosen.s: main/img/img_unchosen.c.s
+.PHONY : main/img/img_unchosen.s
+
+# target to generate assembly for a file
+main/img/img_unchosen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_unchosen.c.s
+.PHONY : main/img/img_unchosen.c.s
+
+main/img/img_waiting.o: main/img/img_waiting.c.o
+.PHONY : main/img/img_waiting.o
+
+# target to build an object file
+main/img/img_waiting.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_waiting.c.o
+.PHONY : main/img/img_waiting.c.o
+
+main/img/img_waiting.i: main/img/img_waiting.c.i
+.PHONY : main/img/img_waiting.i
+
+# target to preprocess a source file
+main/img/img_waiting.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_waiting.c.i
+.PHONY : main/img/img_waiting.c.i
+
+main/img/img_waiting.s: main/img/img_waiting.c.s
+.PHONY : main/img/img_waiting.s
+
+# target to generate assembly for a file
+main/img/img_waiting.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/img/img_waiting.c.s
+.PHONY : main/img/img_waiting.c.s
+
 main/src/comm/gui_comm.o: main/src/comm/gui_comm.c.o
 .PHONY : main/src/comm/gui_comm.o
 
@@ -1250,6 +3406,30 @@ main/src/comm/gui_comm.s: main/src/comm/gui_comm.c.s
 main/src/comm/gui_comm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_comm.c.s
 .PHONY : main/src/comm/gui_comm.c.s
+
+main/src/comm/gui_data_comm.o: main/src/comm/gui_data_comm.c.o
+.PHONY : main/src/comm/gui_data_comm.o
+
+# target to build an object file
+main/src/comm/gui_data_comm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_data_comm.c.o
+.PHONY : main/src/comm/gui_data_comm.c.o
+
+main/src/comm/gui_data_comm.i: main/src/comm/gui_data_comm.c.i
+.PHONY : main/src/comm/gui_data_comm.i
+
+# target to preprocess a source file
+main/src/comm/gui_data_comm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_data_comm.c.i
+.PHONY : main/src/comm/gui_data_comm.c.i
+
+main/src/comm/gui_data_comm.s: main/src/comm/gui_data_comm.c.s
+.PHONY : main/src/comm/gui_data_comm.s
+
+# target to generate assembly for a file
+main/src/comm/gui_data_comm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/comm/gui_data_comm.c.s
+.PHONY : main/src/comm/gui_data_comm.c.s
 
 main/src/connect/connect_main/connect_main.o: main/src/connect/connect_main/connect_main.c.o
 .PHONY : main/src/connect/connect_main/connect_main.o
@@ -1299,6 +3479,30 @@ main/src/connect/connect_reset/connect_reset.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/connect/connect_reset/connect_reset.c.s
 .PHONY : main/src/connect/connect_reset/connect_reset.c.s
 
+main/src/general/general_homescreen/general_homescreen.o: main/src/general/general_homescreen/general_homescreen.c.o
+.PHONY : main/src/general/general_homescreen/general_homescreen.o
+
+# target to build an object file
+main/src/general/general_homescreen/general_homescreen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_homescreen/general_homescreen.c.o
+.PHONY : main/src/general/general_homescreen/general_homescreen.c.o
+
+main/src/general/general_homescreen/general_homescreen.i: main/src/general/general_homescreen/general_homescreen.c.i
+.PHONY : main/src/general/general_homescreen/general_homescreen.i
+
+# target to preprocess a source file
+main/src/general/general_homescreen/general_homescreen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_homescreen/general_homescreen.c.i
+.PHONY : main/src/general/general_homescreen/general_homescreen.c.i
+
+main/src/general/general_homescreen/general_homescreen.s: main/src/general/general_homescreen/general_homescreen.c.s
+.PHONY : main/src/general/general_homescreen/general_homescreen.s
+
+# target to generate assembly for a file
+main/src/general/general_homescreen/general_homescreen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_homescreen/general_homescreen.c.s
+.PHONY : main/src/general/general_homescreen/general_homescreen.c.s
+
 main/src/general/general_lock/general_lock.o: main/src/general/general_lock/general_lock.c.o
 .PHONY : main/src/general/general_lock/general_lock.o
 
@@ -1347,29 +3551,29 @@ main/src/general/general_main/general_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_main/general_main.c.s
 .PHONY : main/src/general/general_main/general_main.c.s
 
-main/src/guide.o: main/src/guide.c.o
-.PHONY : main/src/guide.o
+main/src/general/general_shutdown/general_shutdown.o: main/src/general/general_shutdown/general_shutdown.c.o
+.PHONY : main/src/general/general_shutdown/general_shutdown.o
 
 # target to build an object file
-main/src/guide.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide.c.o
-.PHONY : main/src/guide.c.o
+main/src/general/general_shutdown/general_shutdown.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_shutdown/general_shutdown.c.o
+.PHONY : main/src/general/general_shutdown/general_shutdown.c.o
 
-main/src/guide.i: main/src/guide.c.i
-.PHONY : main/src/guide.i
+main/src/general/general_shutdown/general_shutdown.i: main/src/general/general_shutdown/general_shutdown.c.i
+.PHONY : main/src/general/general_shutdown/general_shutdown.i
 
 # target to preprocess a source file
-main/src/guide.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide.c.i
-.PHONY : main/src/guide.c.i
+main/src/general/general_shutdown/general_shutdown.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_shutdown/general_shutdown.c.i
+.PHONY : main/src/general/general_shutdown/general_shutdown.c.i
 
-main/src/guide.s: main/src/guide.c.s
-.PHONY : main/src/guide.s
+main/src/general/general_shutdown/general_shutdown.s: main/src/general/general_shutdown/general_shutdown.c.s
+.PHONY : main/src/general/general_shutdown/general_shutdown.s
 
 # target to generate assembly for a file
-main/src/guide.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/guide.c.s
-.PHONY : main/src/guide.c.s
+main/src/general/general_shutdown/general_shutdown.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/general/general_shutdown/general_shutdown.c.s
+.PHONY : main/src/general/general_shutdown/general_shutdown.c.s
 
 main/src/guide/guide_main/guide_main.o: main/src/guide/guide_main/guide_main.c.o
 .PHONY : main/src/guide/guide_main/guide_main.o
@@ -1497,8 +3701,6 @@ main/src/mouse_cursor_icon.o: main/src/mouse_cursor_icon.c.o
 # target to build an object file
 main/src/mouse_cursor_icon.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/mouse_cursor_icon.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/mouse_cursor_icon.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/mouse_cursor_icon.c.o
 .PHONY : main/src/mouse_cursor_icon.c.o
 
 main/src/mouse_cursor_icon.i: main/src/mouse_cursor_icon.c.i
@@ -1507,8 +3709,6 @@ main/src/mouse_cursor_icon.i: main/src/mouse_cursor_icon.c.i
 # target to preprocess a source file
 main/src/mouse_cursor_icon.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/mouse_cursor_icon.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/mouse_cursor_icon.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/mouse_cursor_icon.c.i
 .PHONY : main/src/mouse_cursor_icon.c.i
 
 main/src/mouse_cursor_icon.s: main/src/mouse_cursor_icon.c.s
@@ -1517,57 +3717,7 @@ main/src/mouse_cursor_icon.s: main/src/mouse_cursor_icon.c.s
 # target to generate assembly for a file
 main/src/mouse_cursor_icon.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/mouse_cursor_icon.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/mouse_cursor_icon.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/mouse_cursor_icon.c.s
 .PHONY : main/src/mouse_cursor_icon.c.s
-
-main/src/pin.o: main/src/pin.c.o
-.PHONY : main/src/pin.o
-
-# target to build an object file
-main/src/pin.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/pin.c.o
-.PHONY : main/src/pin.c.o
-
-main/src/pin.i: main/src/pin.c.i
-.PHONY : main/src/pin.i
-
-# target to preprocess a source file
-main/src/pin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/pin.c.i
-.PHONY : main/src/pin.c.i
-
-main/src/pin.s: main/src/pin.c.s
-.PHONY : main/src/pin.s
-
-# target to generate assembly for a file
-main/src/pin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pin.dir/build.make CMakeFiles/pin.dir/main/src/pin.c.s
-.PHONY : main/src/pin.c.s
-
-main/src/settings.o: main/src/settings.c.o
-.PHONY : main/src/settings.o
-
-# target to build an object file
-main/src/settings.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings.c.o
-.PHONY : main/src/settings.c.o
-
-main/src/settings.i: main/src/settings.c.i
-.PHONY : main/src/settings.i
-
-# target to preprocess a source file
-main/src/settings.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings.c.i
-.PHONY : main/src/settings.c.i
-
-main/src/settings.s: main/src/settings.c.s
-.PHONY : main/src/settings.s
-
-# target to generate assembly for a file
-main/src/settings.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings.c.s
-.PHONY : main/src/settings.c.s
 
 main/src/settings/settings_about/settings_about.o: main/src/settings/settings_about/settings_about.c.o
 .PHONY : main/src/settings/settings_about/settings_about.o
@@ -1617,29 +3767,125 @@ main/src/settings/settings_main/settings_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_main/settings_main.c.s
 .PHONY : main/src/settings/settings_main/settings_main.c.s
 
-main/src/settings/settings_reset/settings_reset.o: main/src/settings/settings_reset/settings_reset.c.o
-.PHONY : main/src/settings/settings_reset/settings_reset.o
+main/src/settings/settings_security/settings_change_pin.o: main/src/settings/settings_security/settings_change_pin.c.o
+.PHONY : main/src/settings/settings_security/settings_change_pin.o
 
 # target to build an object file
-main/src/settings/settings_reset/settings_reset.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.o
-.PHONY : main/src/settings/settings_reset/settings_reset.c.o
+main/src/settings/settings_security/settings_change_pin.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_change_pin.c.o
+.PHONY : main/src/settings/settings_security/settings_change_pin.c.o
 
-main/src/settings/settings_reset/settings_reset.i: main/src/settings/settings_reset/settings_reset.c.i
-.PHONY : main/src/settings/settings_reset/settings_reset.i
+main/src/settings/settings_security/settings_change_pin.i: main/src/settings/settings_security/settings_change_pin.c.i
+.PHONY : main/src/settings/settings_security/settings_change_pin.i
 
 # target to preprocess a source file
-main/src/settings/settings_reset/settings_reset.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.i
-.PHONY : main/src/settings/settings_reset/settings_reset.c.i
+main/src/settings/settings_security/settings_change_pin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_change_pin.c.i
+.PHONY : main/src/settings/settings_security/settings_change_pin.c.i
 
-main/src/settings/settings_reset/settings_reset.s: main/src/settings/settings_reset/settings_reset.c.s
-.PHONY : main/src/settings/settings_reset/settings_reset.s
+main/src/settings/settings_security/settings_change_pin.s: main/src/settings/settings_security/settings_change_pin.c.s
+.PHONY : main/src/settings/settings_security/settings_change_pin.s
 
 # target to generate assembly for a file
-main/src/settings/settings_reset/settings_reset.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_reset/settings_reset.c.s
-.PHONY : main/src/settings/settings_reset/settings_reset.c.s
+main/src/settings/settings_security/settings_change_pin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_change_pin.c.s
+.PHONY : main/src/settings/settings_security/settings_change_pin.c.s
+
+main/src/settings/settings_security/settings_complete.o: main/src/settings/settings_security/settings_complete.c.o
+.PHONY : main/src/settings/settings_security/settings_complete.o
+
+# target to build an object file
+main/src/settings/settings_security/settings_complete.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_complete.c.o
+.PHONY : main/src/settings/settings_security/settings_complete.c.o
+
+main/src/settings/settings_security/settings_complete.i: main/src/settings/settings_security/settings_complete.c.i
+.PHONY : main/src/settings/settings_security/settings_complete.i
+
+# target to preprocess a source file
+main/src/settings/settings_security/settings_complete.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_complete.c.i
+.PHONY : main/src/settings/settings_security/settings_complete.c.i
+
+main/src/settings/settings_security/settings_complete.s: main/src/settings/settings_security/settings_complete.c.s
+.PHONY : main/src/settings/settings_security/settings_complete.s
+
+# target to generate assembly for a file
+main/src/settings/settings_security/settings_complete.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_complete.c.s
+.PHONY : main/src/settings/settings_security/settings_complete.c.s
+
+main/src/settings/settings_security/settings_erase.o: main/src/settings/settings_security/settings_erase.c.o
+.PHONY : main/src/settings/settings_security/settings_erase.o
+
+# target to build an object file
+main/src/settings/settings_security/settings_erase.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_erase.c.o
+.PHONY : main/src/settings/settings_security/settings_erase.c.o
+
+main/src/settings/settings_security/settings_erase.i: main/src/settings/settings_security/settings_erase.c.i
+.PHONY : main/src/settings/settings_security/settings_erase.i
+
+# target to preprocess a source file
+main/src/settings/settings_security/settings_erase.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_erase.c.i
+.PHONY : main/src/settings/settings_security/settings_erase.c.i
+
+main/src/settings/settings_security/settings_erase.s: main/src/settings/settings_security/settings_erase.c.s
+.PHONY : main/src/settings/settings_security/settings_erase.s
+
+# target to generate assembly for a file
+main/src/settings/settings_security/settings_erase.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_erase.c.s
+.PHONY : main/src/settings/settings_security/settings_erase.c.s
+
+main/src/settings/settings_security/settings_pin_changed.o: main/src/settings/settings_security/settings_pin_changed.c.o
+.PHONY : main/src/settings/settings_security/settings_pin_changed.o
+
+# target to build an object file
+main/src/settings/settings_security/settings_pin_changed.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_pin_changed.c.o
+.PHONY : main/src/settings/settings_security/settings_pin_changed.c.o
+
+main/src/settings/settings_security/settings_pin_changed.i: main/src/settings/settings_security/settings_pin_changed.c.i
+.PHONY : main/src/settings/settings_security/settings_pin_changed.i
+
+# target to preprocess a source file
+main/src/settings/settings_security/settings_pin_changed.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_pin_changed.c.i
+.PHONY : main/src/settings/settings_security/settings_pin_changed.c.i
+
+main/src/settings/settings_security/settings_pin_changed.s: main/src/settings/settings_security/settings_pin_changed.c.s
+.PHONY : main/src/settings/settings_security/settings_pin_changed.s
+
+# target to generate assembly for a file
+main/src/settings/settings_security/settings_pin_changed.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_pin_changed.c.s
+.PHONY : main/src/settings/settings_security/settings_pin_changed.c.s
+
+main/src/settings/settings_security/settings_reset.o: main/src/settings/settings_security/settings_reset.c.o
+.PHONY : main/src/settings/settings_security/settings_reset.o
+
+# target to build an object file
+main/src/settings/settings_security/settings_reset.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_reset.c.o
+.PHONY : main/src/settings/settings_security/settings_reset.c.o
+
+main/src/settings/settings_security/settings_reset.i: main/src/settings/settings_security/settings_reset.c.i
+.PHONY : main/src/settings/settings_security/settings_reset.i
+
+# target to preprocess a source file
+main/src/settings/settings_security/settings_reset.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_reset.c.i
+.PHONY : main/src/settings/settings_security/settings_reset.c.i
+
+main/src/settings/settings_security/settings_reset.s: main/src/settings/settings_security/settings_reset.c.s
+.PHONY : main/src/settings/settings_security/settings_reset.s
+
+# target to generate assembly for a file
+main/src/settings/settings_security/settings_reset.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/settings/settings_security/settings_reset.c.s
+.PHONY : main/src/settings/settings_security/settings_reset.c.s
 
 main/src/settings/settings_security/settings_security.o: main/src/settings/settings_security/settings_security.c.o
 .PHONY : main/src/settings/settings_security/settings_security.o
@@ -1688,6 +3934,102 @@ main/src/startup/startup_done/startup_done.s: main/src/startup/startup_done/star
 main/src/startup/startup_done/startup_done.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_done/startup_done.c.s
 .PHONY : main/src/startup/startup_done/startup_done.c.s
+
+main/src/startup/startup_import/startup_import_abort.o: main/src/startup/startup_import/startup_import_abort.c.o
+.PHONY : main/src/startup/startup_import/startup_import_abort.o
+
+# target to build an object file
+main/src/startup/startup_import/startup_import_abort.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_abort.c.o
+.PHONY : main/src/startup/startup_import/startup_import_abort.c.o
+
+main/src/startup/startup_import/startup_import_abort.i: main/src/startup/startup_import/startup_import_abort.c.i
+.PHONY : main/src/startup/startup_import/startup_import_abort.i
+
+# target to preprocess a source file
+main/src/startup/startup_import/startup_import_abort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_abort.c.i
+.PHONY : main/src/startup/startup_import/startup_import_abort.c.i
+
+main/src/startup/startup_import/startup_import_abort.s: main/src/startup/startup_import/startup_import_abort.c.s
+.PHONY : main/src/startup/startup_import/startup_import_abort.s
+
+# target to generate assembly for a file
+main/src/startup/startup_import/startup_import_abort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_abort.c.s
+.PHONY : main/src/startup/startup_import/startup_import_abort.c.s
+
+main/src/startup/startup_import/startup_import_ready.o: main/src/startup/startup_import/startup_import_ready.c.o
+.PHONY : main/src/startup/startup_import/startup_import_ready.o
+
+# target to build an object file
+main/src/startup/startup_import/startup_import_ready.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_ready.c.o
+.PHONY : main/src/startup/startup_import/startup_import_ready.c.o
+
+main/src/startup/startup_import/startup_import_ready.i: main/src/startup/startup_import/startup_import_ready.c.i
+.PHONY : main/src/startup/startup_import/startup_import_ready.i
+
+# target to preprocess a source file
+main/src/startup/startup_import/startup_import_ready.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_ready.c.i
+.PHONY : main/src/startup/startup_import/startup_import_ready.c.i
+
+main/src/startup/startup_import/startup_import_ready.s: main/src/startup/startup_import/startup_import_ready.c.s
+.PHONY : main/src/startup/startup_import/startup_import_ready.s
+
+# target to generate assembly for a file
+main/src/startup/startup_import/startup_import_ready.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_ready.c.s
+.PHONY : main/src/startup/startup_import/startup_import_ready.c.s
+
+main/src/startup/startup_import/startup_import_wallet.o: main/src/startup/startup_import/startup_import_wallet.c.o
+.PHONY : main/src/startup/startup_import/startup_import_wallet.o
+
+# target to build an object file
+main/src/startup/startup_import/startup_import_wallet.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_wallet.c.o
+.PHONY : main/src/startup/startup_import/startup_import_wallet.c.o
+
+main/src/startup/startup_import/startup_import_wallet.i: main/src/startup/startup_import/startup_import_wallet.c.i
+.PHONY : main/src/startup/startup_import/startup_import_wallet.i
+
+# target to preprocess a source file
+main/src/startup/startup_import/startup_import_wallet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_wallet.c.i
+.PHONY : main/src/startup/startup_import/startup_import_wallet.c.i
+
+main/src/startup/startup_import/startup_import_wallet.s: main/src/startup/startup_import/startup_import_wallet.c.s
+.PHONY : main/src/startup/startup_import/startup_import_wallet.s
+
+# target to generate assembly for a file
+main/src/startup/startup_import/startup_import_wallet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_wallet.c.s
+.PHONY : main/src/startup/startup_import/startup_import_wallet.c.s
+
+main/src/startup/startup_import/startup_import_word.o: main/src/startup/startup_import/startup_import_word.c.o
+.PHONY : main/src/startup/startup_import/startup_import_word.o
+
+# target to build an object file
+main/src/startup/startup_import/startup_import_word.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_word.c.o
+.PHONY : main/src/startup/startup_import/startup_import_word.c.o
+
+main/src/startup/startup_import/startup_import_word.i: main/src/startup/startup_import/startup_import_word.c.i
+.PHONY : main/src/startup/startup_import/startup_import_word.i
+
+# target to preprocess a source file
+main/src/startup/startup_import/startup_import_word.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_word.c.i
+.PHONY : main/src/startup/startup_import/startup_import_word.c.i
+
+main/src/startup/startup_import/startup_import_word.s: main/src/startup/startup_import/startup_import_word.c.s
+.PHONY : main/src/startup/startup_import/startup_import_word.s
+
+# target to generate assembly for a file
+main/src/startup/startup_import/startup_import_word.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_import/startup_import_word.c.s
+.PHONY : main/src/startup/startup_import/startup_import_word.c.s
 
 main/src/startup/startup_language/startup_language.o: main/src/startup/startup_language/startup_language.c.o
 .PHONY : main/src/startup/startup_language/startup_language.o
@@ -1881,53 +4223,125 @@ main/src/startup/startup_verification/startup_verification.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/startup/startup_verification/startup_verification.c.s
 .PHONY : main/src/startup/startup_verification/startup_verification.c.s
 
-main/src/tip.o: main/src/tip.c.o
-.PHONY : main/src/tip.o
+main/src/view/view_addr/view_addr_main.o: main/src/view/view_addr/view_addr_main.c.o
+.PHONY : main/src/view/view_addr/view_addr_main.o
 
 # target to build an object file
-main/src/tip.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/tip.c.o
-.PHONY : main/src/tip.c.o
+main/src/view/view_addr/view_addr_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_addr/view_addr_main.c.o
+.PHONY : main/src/view/view_addr/view_addr_main.c.o
 
-main/src/tip.i: main/src/tip.c.i
-.PHONY : main/src/tip.i
+main/src/view/view_addr/view_addr_main.i: main/src/view/view_addr/view_addr_main.c.i
+.PHONY : main/src/view/view_addr/view_addr_main.i
 
 # target to preprocess a source file
-main/src/tip.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/tip.c.i
-.PHONY : main/src/tip.c.i
+main/src/view/view_addr/view_addr_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_addr/view_addr_main.c.i
+.PHONY : main/src/view/view_addr/view_addr_main.c.i
 
-main/src/tip.s: main/src/tip.c.s
-.PHONY : main/src/tip.s
+main/src/view/view_addr/view_addr_main.s: main/src/view/view_addr/view_addr_main.c.s
+.PHONY : main/src/view/view_addr/view_addr_main.s
 
 # target to generate assembly for a file
-main/src/tip.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/tip.c.s
-.PHONY : main/src/tip.c.s
+main/src/view/view_addr/view_addr_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_addr/view_addr_main.c.s
+.PHONY : main/src/view/view_addr/view_addr_main.c.s
 
-main/src/wallet.o: main/src/wallet.c.o
-.PHONY : main/src/wallet.o
+main/src/view/view_transaction/view_transaction_confirm.o: main/src/view/view_transaction/view_transaction_confirm.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.o
 
 # target to build an object file
-main/src/wallet.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/wallet.c.o
-.PHONY : main/src/wallet.c.o
+main/src/view/view_transaction/view_transaction_confirm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_confirm.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.c.o
 
-main/src/wallet.i: main/src/wallet.c.i
-.PHONY : main/src/wallet.i
+main/src/view/view_transaction/view_transaction_confirm.i: main/src/view/view_transaction/view_transaction_confirm.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.i
 
 # target to preprocess a source file
-main/src/wallet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/wallet.c.i
-.PHONY : main/src/wallet.c.i
+main/src/view/view_transaction/view_transaction_confirm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_confirm.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.c.i
 
-main/src/wallet.s: main/src/wallet.c.s
-.PHONY : main/src/wallet.s
+main/src/view/view_transaction/view_transaction_confirm.s: main/src/view/view_transaction/view_transaction_confirm.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.s
 
 # target to generate assembly for a file
-main/src/wallet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wallet.dir/build.make CMakeFiles/wallet.dir/main/src/wallet.c.s
-.PHONY : main/src/wallet.c.s
+main/src/view/view_transaction/view_transaction_confirm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_confirm.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_confirm.c.s
+
+main/src/view/view_transaction/view_transaction_main.o: main/src/view/view_transaction/view_transaction_main.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_main.o
+
+# target to build an object file
+main/src/view/view_transaction/view_transaction_main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_main.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_main.c.o
+
+main/src/view/view_transaction/view_transaction_main.i: main/src/view/view_transaction/view_transaction_main.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_main.i
+
+# target to preprocess a source file
+main/src/view/view_transaction/view_transaction_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_main.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_main.c.i
+
+main/src/view/view_transaction/view_transaction_main.s: main/src/view/view_transaction/view_transaction_main.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_main.s
+
+# target to generate assembly for a file
+main/src/view/view_transaction/view_transaction_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_main.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_main.c.s
+
+main/src/view/view_transaction/view_transaction_success.o: main/src/view/view_transaction/view_transaction_success.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_success.o
+
+# target to build an object file
+main/src/view/view_transaction/view_transaction_success.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_success.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_success.c.o
+
+main/src/view/view_transaction/view_transaction_success.i: main/src/view/view_transaction/view_transaction_success.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_success.i
+
+# target to preprocess a source file
+main/src/view/view_transaction/view_transaction_success.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_success.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_success.c.i
+
+main/src/view/view_transaction/view_transaction_success.s: main/src/view/view_transaction/view_transaction_success.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_success.s
+
+# target to generate assembly for a file
+main/src/view/view_transaction/view_transaction_success.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_success.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_success.c.s
+
+main/src/view/view_transaction/view_transaction_waiting.o: main/src/view/view_transaction/view_transaction_waiting.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.o
+
+# target to build an object file
+main/src/view/view_transaction/view_transaction_waiting.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_waiting.c.o
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.c.o
+
+main/src/view/view_transaction/view_transaction_waiting.i: main/src/view/view_transaction/view_transaction_waiting.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.i
+
+# target to preprocess a source file
+main/src/view/view_transaction/view_transaction_waiting.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_waiting.c.i
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.c.i
+
+main/src/view/view_transaction/view_transaction_waiting.s: main/src/view/view_transaction/view_transaction_waiting.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.s
+
+# target to generate assembly for a file
+main/src/view/view_transaction/view_transaction_waiting.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main/src/view/view_transaction/view_transaction_waiting.c.s
+.PHONY : main/src/view/view_transaction/view_transaction_waiting.c.s
 
 # Help Target
 help:
@@ -1942,18 +4356,62 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run"
-	@echo "... run_pin"
-	@echo "... run_wallet"
 	@echo "... lvgl"
 	@echo "... lvgl_demos"
 	@echo "... lvgl_examples"
 	@echo "... lvgl_thorvg"
 	@echo "... main"
-	@echo "... pin"
-	@echo "... wallet"
+	@echo "... main/img/img_alert.o"
+	@echo "... main/img/img_alert.i"
+	@echo "... main/img/img_alert.s"
 	@echo "... main/img/img_backgroud.o"
 	@echo "... main/img/img_backgroud.i"
 	@echo "... main/img/img_backgroud.s"
+	@echo "... main/img/img_bg1.o"
+	@echo "... main/img/img_bg1.i"
+	@echo "... main/img/img_bg1.s"
+	@echo "... main/img/img_bg1_small.o"
+	@echo "... main/img/img_bg1_small.i"
+	@echo "... main/img/img_bg1_small.s"
+	@echo "... main/img/img_bg2.o"
+	@echo "... main/img/img_bg2.i"
+	@echo "... main/img/img_bg2.s"
+	@echo "... main/img/img_bg2_small.o"
+	@echo "... main/img/img_bg2_small.i"
+	@echo "... main/img/img_bg2_small.s"
+	@echo "... main/img/img_bg3.o"
+	@echo "... main/img/img_bg3.i"
+	@echo "... main/img/img_bg3.s"
+	@echo "... main/img/img_bg3_small.o"
+	@echo "... main/img/img_bg3_small.i"
+	@echo "... main/img/img_bg3_small.s"
+	@echo "... main/img/img_bg4.o"
+	@echo "... main/img/img_bg4.i"
+	@echo "... main/img/img_bg4.s"
+	@echo "... main/img/img_bg4_small.o"
+	@echo "... main/img/img_bg4_small.i"
+	@echo "... main/img/img_bg4_small.s"
+	@echo "... main/img/img_bg5.o"
+	@echo "... main/img/img_bg5.i"
+	@echo "... main/img/img_bg5.s"
+	@echo "... main/img/img_bg5_small.o"
+	@echo "... main/img/img_bg5_small.i"
+	@echo "... main/img/img_bg5_small.s"
+	@echo "... main/img/img_bg6.o"
+	@echo "... main/img/img_bg6.i"
+	@echo "... main/img/img_bg6.s"
+	@echo "... main/img/img_bg6_small.o"
+	@echo "... main/img/img_bg6_small.i"
+	@echo "... main/img/img_bg6_small.s"
+	@echo "... main/img/img_bg7.o"
+	@echo "... main/img/img_bg7.i"
+	@echo "... main/img/img_bg7.s"
+	@echo "... main/img/img_bg7_small.o"
+	@echo "... main/img/img_bg7_small.i"
+	@echo "... main/img/img_bg7_small.s"
+	@echo "... main/img/img_chosen.o"
+	@echo "... main/img/img_chosen.i"
+	@echo "... main/img/img_chosen.s"
 	@echo "... main/img/img_guide_back.o"
 	@echo "... main/img/img_guide_back.i"
 	@echo "... main/img/img_guide_back.s"
@@ -1963,6 +4421,171 @@ help:
 	@echo "... main/img/img_imgbtn_ok_12x9.o"
 	@echo "... main/img/img_imgbtn_ok_12x9.i"
 	@echo "... main/img/img_imgbtn_ok_12x9.s"
+	@echo "... main/img/img_keypad_222222_a.o"
+	@echo "... main/img/img_keypad_222222_a.i"
+	@echo "... main/img/img_keypad_222222_a.s"
+	@echo "... main/img/img_keypad_222222_b.o"
+	@echo "... main/img/img_keypad_222222_b.i"
+	@echo "... main/img/img_keypad_222222_b.s"
+	@echo "... main/img/img_keypad_222222_c.o"
+	@echo "... main/img/img_keypad_222222_c.i"
+	@echo "... main/img/img_keypad_222222_c.s"
+	@echo "... main/img/img_keypad_222222_d.o"
+	@echo "... main/img/img_keypad_222222_d.i"
+	@echo "... main/img/img_keypad_222222_d.s"
+	@echo "... main/img/img_keypad_222222_e.o"
+	@echo "... main/img/img_keypad_222222_e.i"
+	@echo "... main/img/img_keypad_222222_e.s"
+	@echo "... main/img/img_keypad_222222_f.o"
+	@echo "... main/img/img_keypad_222222_f.i"
+	@echo "... main/img/img_keypad_222222_f.s"
+	@echo "... main/img/img_keypad_222222_g.o"
+	@echo "... main/img/img_keypad_222222_g.i"
+	@echo "... main/img/img_keypad_222222_g.s"
+	@echo "... main/img/img_keypad_222222_h.o"
+	@echo "... main/img/img_keypad_222222_h.i"
+	@echo "... main/img/img_keypad_222222_h.s"
+	@echo "... main/img/img_keypad_222222_i.o"
+	@echo "... main/img/img_keypad_222222_i.i"
+	@echo "... main/img/img_keypad_222222_i.s"
+	@echo "... main/img/img_keypad_222222_j.o"
+	@echo "... main/img/img_keypad_222222_j.i"
+	@echo "... main/img/img_keypad_222222_j.s"
+	@echo "... main/img/img_keypad_222222_k.o"
+	@echo "... main/img/img_keypad_222222_k.i"
+	@echo "... main/img/img_keypad_222222_k.s"
+	@echo "... main/img/img_keypad_222222_l.o"
+	@echo "... main/img/img_keypad_222222_l.i"
+	@echo "... main/img/img_keypad_222222_l.s"
+	@echo "... main/img/img_keypad_222222_m.o"
+	@echo "... main/img/img_keypad_222222_m.i"
+	@echo "... main/img/img_keypad_222222_m.s"
+	@echo "... main/img/img_keypad_222222_n.o"
+	@echo "... main/img/img_keypad_222222_n.i"
+	@echo "... main/img/img_keypad_222222_n.s"
+	@echo "... main/img/img_keypad_222222_o.o"
+	@echo "... main/img/img_keypad_222222_o.i"
+	@echo "... main/img/img_keypad_222222_o.s"
+	@echo "... main/img/img_keypad_222222_p.o"
+	@echo "... main/img/img_keypad_222222_p.i"
+	@echo "... main/img/img_keypad_222222_p.s"
+	@echo "... main/img/img_keypad_222222_q.o"
+	@echo "... main/img/img_keypad_222222_q.i"
+	@echo "... main/img/img_keypad_222222_q.s"
+	@echo "... main/img/img_keypad_222222_r.o"
+	@echo "... main/img/img_keypad_222222_r.i"
+	@echo "... main/img/img_keypad_222222_r.s"
+	@echo "... main/img/img_keypad_222222_s.o"
+	@echo "... main/img/img_keypad_222222_s.i"
+	@echo "... main/img/img_keypad_222222_s.s"
+	@echo "... main/img/img_keypad_222222_t.o"
+	@echo "... main/img/img_keypad_222222_t.i"
+	@echo "... main/img/img_keypad_222222_t.s"
+	@echo "... main/img/img_keypad_222222_u.o"
+	@echo "... main/img/img_keypad_222222_u.i"
+	@echo "... main/img/img_keypad_222222_u.s"
+	@echo "... main/img/img_keypad_222222_v.o"
+	@echo "... main/img/img_keypad_222222_v.i"
+	@echo "... main/img/img_keypad_222222_v.s"
+	@echo "... main/img/img_keypad_222222_w.o"
+	@echo "... main/img/img_keypad_222222_w.i"
+	@echo "... main/img/img_keypad_222222_w.s"
+	@echo "... main/img/img_keypad_222222_x.o"
+	@echo "... main/img/img_keypad_222222_x.i"
+	@echo "... main/img/img_keypad_222222_x.s"
+	@echo "... main/img/img_keypad_222222_y.o"
+	@echo "... main/img/img_keypad_222222_y.i"
+	@echo "... main/img/img_keypad_222222_y.s"
+	@echo "... main/img/img_keypad_222222_z.o"
+	@echo "... main/img/img_keypad_222222_z.i"
+	@echo "... main/img/img_keypad_222222_z.s"
+	@echo "... main/img/img_keypad_666666_a.o"
+	@echo "... main/img/img_keypad_666666_a.i"
+	@echo "... main/img/img_keypad_666666_a.s"
+	@echo "... main/img/img_keypad_666666_b.o"
+	@echo "... main/img/img_keypad_666666_b.i"
+	@echo "... main/img/img_keypad_666666_b.s"
+	@echo "... main/img/img_keypad_666666_c.o"
+	@echo "... main/img/img_keypad_666666_c.i"
+	@echo "... main/img/img_keypad_666666_c.s"
+	@echo "... main/img/img_keypad_666666_d.o"
+	@echo "... main/img/img_keypad_666666_d.i"
+	@echo "... main/img/img_keypad_666666_d.s"
+	@echo "... main/img/img_keypad_666666_e.o"
+	@echo "... main/img/img_keypad_666666_e.i"
+	@echo "... main/img/img_keypad_666666_e.s"
+	@echo "... main/img/img_keypad_666666_f.o"
+	@echo "... main/img/img_keypad_666666_f.i"
+	@echo "... main/img/img_keypad_666666_f.s"
+	@echo "... main/img/img_keypad_666666_g.o"
+	@echo "... main/img/img_keypad_666666_g.i"
+	@echo "... main/img/img_keypad_666666_g.s"
+	@echo "... main/img/img_keypad_666666_h.o"
+	@echo "... main/img/img_keypad_666666_h.i"
+	@echo "... main/img/img_keypad_666666_h.s"
+	@echo "... main/img/img_keypad_666666_i.o"
+	@echo "... main/img/img_keypad_666666_i.i"
+	@echo "... main/img/img_keypad_666666_i.s"
+	@echo "... main/img/img_keypad_666666_j.o"
+	@echo "... main/img/img_keypad_666666_j.i"
+	@echo "... main/img/img_keypad_666666_j.s"
+	@echo "... main/img/img_keypad_666666_k.o"
+	@echo "... main/img/img_keypad_666666_k.i"
+	@echo "... main/img/img_keypad_666666_k.s"
+	@echo "... main/img/img_keypad_666666_l.o"
+	@echo "... main/img/img_keypad_666666_l.i"
+	@echo "... main/img/img_keypad_666666_l.s"
+	@echo "... main/img/img_keypad_666666_m.o"
+	@echo "... main/img/img_keypad_666666_m.i"
+	@echo "... main/img/img_keypad_666666_m.s"
+	@echo "... main/img/img_keypad_666666_n.o"
+	@echo "... main/img/img_keypad_666666_n.i"
+	@echo "... main/img/img_keypad_666666_n.s"
+	@echo "... main/img/img_keypad_666666_o.o"
+	@echo "... main/img/img_keypad_666666_o.i"
+	@echo "... main/img/img_keypad_666666_o.s"
+	@echo "... main/img/img_keypad_666666_p.o"
+	@echo "... main/img/img_keypad_666666_p.i"
+	@echo "... main/img/img_keypad_666666_p.s"
+	@echo "... main/img/img_keypad_666666_q.o"
+	@echo "... main/img/img_keypad_666666_q.i"
+	@echo "... main/img/img_keypad_666666_q.s"
+	@echo "... main/img/img_keypad_666666_r.o"
+	@echo "... main/img/img_keypad_666666_r.i"
+	@echo "... main/img/img_keypad_666666_r.s"
+	@echo "... main/img/img_keypad_666666_s.o"
+	@echo "... main/img/img_keypad_666666_s.i"
+	@echo "... main/img/img_keypad_666666_s.s"
+	@echo "... main/img/img_keypad_666666_t.o"
+	@echo "... main/img/img_keypad_666666_t.i"
+	@echo "... main/img/img_keypad_666666_t.s"
+	@echo "... main/img/img_keypad_666666_u.o"
+	@echo "... main/img/img_keypad_666666_u.i"
+	@echo "... main/img/img_keypad_666666_u.s"
+	@echo "... main/img/img_keypad_666666_v.o"
+	@echo "... main/img/img_keypad_666666_v.i"
+	@echo "... main/img/img_keypad_666666_v.s"
+	@echo "... main/img/img_keypad_666666_w.o"
+	@echo "... main/img/img_keypad_666666_w.i"
+	@echo "... main/img/img_keypad_666666_w.s"
+	@echo "... main/img/img_keypad_666666_x.o"
+	@echo "... main/img/img_keypad_666666_x.i"
+	@echo "... main/img/img_keypad_666666_x.s"
+	@echo "... main/img/img_keypad_666666_y.o"
+	@echo "... main/img/img_keypad_666666_y.i"
+	@echo "... main/img/img_keypad_666666_y.s"
+	@echo "... main/img/img_keypad_666666_z.o"
+	@echo "... main/img/img_keypad_666666_z.i"
+	@echo "... main/img/img_keypad_666666_z.s"
+	@echo "... main/img/img_keypad_back.o"
+	@echo "... main/img/img_keypad_back.i"
+	@echo "... main/img/img_keypad_back.s"
+	@echo "... main/img/img_keypad_confirm.o"
+	@echo "... main/img/img_keypad_confirm.i"
+	@echo "... main/img/img_keypad_confirm.s"
+	@echo "... main/img/img_left_pressed_61fc5a_14x26.o"
+	@echo "... main/img/img_left_pressed_61fc5a_14x26.i"
+	@echo "... main/img/img_left_pressed_61fc5a_14x26.s"
 	@echo "... main/img/img_left_pressed_8f7ff0_16x40.o"
 	@echo "... main/img/img_left_pressed_8f7ff0_16x40.i"
 	@echo "... main/img/img_left_pressed_8f7ff0_16x40.s"
@@ -1975,6 +4598,12 @@ help:
 	@echo "... main/img/img_left_pressed_ff593c_16x40.o"
 	@echo "... main/img/img_left_pressed_ff593c_16x40.i"
 	@echo "... main/img/img_left_pressed_ff593c_16x40.s"
+	@echo "... main/img/img_left_pressed_ffef4b_14x26.o"
+	@echo "... main/img/img_left_pressed_ffef4b_14x26.i"
+	@echo "... main/img/img_left_pressed_ffef4b_14x26.s"
+	@echo "... main/img/img_left_released_10e807_14x26.o"
+	@echo "... main/img/img_left_released_10e807_14x26.i"
+	@echo "... main/img/img_left_released_10e807_14x26.s"
 	@echo "... main/img/img_left_released_6c6cf4_14x26.o"
 	@echo "... main/img/img_left_released_6c6cf4_14x26.i"
 	@echo "... main/img/img_left_released_6c6cf4_14x26.s"
@@ -1990,6 +4619,9 @@ help:
 	@echo "... main/img/img_left_released_888888_16x40.o"
 	@echo "... main/img/img_left_released_888888_16x40.i"
 	@echo "... main/img/img_left_released_888888_16x40.s"
+	@echo "... main/img/img_left_released_f7e100_14x26.o"
+	@echo "... main/img/img_left_released_f7e100_14x26.i"
+	@echo "... main/img/img_left_released_f7e100_14x26.s"
 	@echo "... main/img/img_left_released_ff2600_16x40.o"
 	@echo "... main/img/img_left_released_ff2600_16x40.i"
 	@echo "... main/img/img_left_released_ff2600_16x40.s"
@@ -2005,6 +4637,9 @@ help:
 	@echo "... main/img/img_menu_settings.o"
 	@echo "... main/img/img_menu_settings.i"
 	@echo "... main/img/img_menu_settings.s"
+	@echo "... main/img/img_mid_pressed_61fc5a_4x26.o"
+	@echo "... main/img/img_mid_pressed_61fc5a_4x26.i"
+	@echo "... main/img/img_mid_pressed_61fc5a_4x26.s"
 	@echo "... main/img/img_mid_pressed_8f7ff0_4x40.o"
 	@echo "... main/img/img_mid_pressed_8f7ff0_4x40.i"
 	@echo "... main/img/img_mid_pressed_8f7ff0_4x40.s"
@@ -2017,6 +4652,12 @@ help:
 	@echo "... main/img/img_mid_pressed_ff593c_4x40.o"
 	@echo "... main/img/img_mid_pressed_ff593c_4x40.i"
 	@echo "... main/img/img_mid_pressed_ff593c_4x40.s"
+	@echo "... main/img/img_mid_pressed_ffef4b_4x26.o"
+	@echo "... main/img/img_mid_pressed_ffef4b_4x26.i"
+	@echo "... main/img/img_mid_pressed_ffef4b_4x26.s"
+	@echo "... main/img/img_mid_released_10e807_4x26.o"
+	@echo "... main/img/img_mid_released_10e807_4x26.i"
+	@echo "... main/img/img_mid_released_10e807_4x26.s"
 	@echo "... main/img/img_mid_released_6c6cf4_16x80.o"
 	@echo "... main/img/img_mid_released_6c6cf4_16x80.i"
 	@echo "... main/img/img_mid_released_6c6cf4_16x80.s"
@@ -2032,9 +4673,18 @@ help:
 	@echo "... main/img/img_mid_released_888888_4x40.o"
 	@echo "... main/img/img_mid_released_888888_4x40.i"
 	@echo "... main/img/img_mid_released_888888_4x40.s"
+	@echo "... main/img/img_mid_released_f7e100_4x26.o"
+	@echo "... main/img/img_mid_released_f7e100_4x26.i"
+	@echo "... main/img/img_mid_released_f7e100_4x26.s"
 	@echo "... main/img/img_mid_released_ff2600_4x40.o"
 	@echo "... main/img/img_mid_released_ff2600_4x40.i"
 	@echo "... main/img/img_mid_released_ff2600_4x40.s"
+	@echo "... main/img/img_name.o"
+	@echo "... main/img/img_name.i"
+	@echo "... main/img/img_name.s"
+	@echo "... main/img/img_right_pressed_61fc5a_14x26.o"
+	@echo "... main/img/img_right_pressed_61fc5a_14x26.i"
+	@echo "... main/img/img_right_pressed_61fc5a_14x26.s"
 	@echo "... main/img/img_right_pressed_8f7ff0_16x40.o"
 	@echo "... main/img/img_right_pressed_8f7ff0_16x40.i"
 	@echo "... main/img/img_right_pressed_8f7ff0_16x40.s"
@@ -2047,6 +4697,12 @@ help:
 	@echo "... main/img/img_right_pressed_ff593c_16x40.o"
 	@echo "... main/img/img_right_pressed_ff593c_16x40.i"
 	@echo "... main/img/img_right_pressed_ff593c_16x40.s"
+	@echo "... main/img/img_right_pressed_ffef4b_14x26.o"
+	@echo "... main/img/img_right_pressed_ffef4b_14x26.i"
+	@echo "... main/img/img_right_pressed_ffef4b_14x26.s"
+	@echo "... main/img/img_right_released_10e807_14x26.o"
+	@echo "... main/img/img_right_released_10e807_14x26.i"
+	@echo "... main/img/img_right_released_10e807_14x26.s"
 	@echo "... main/img/img_right_released_6c6cf4_14x26.o"
 	@echo "... main/img/img_right_released_6c6cf4_14x26.i"
 	@echo "... main/img/img_right_released_6c6cf4_14x26.s"
@@ -2062,30 +4718,66 @@ help:
 	@echo "... main/img/img_right_released_888888_16x40.o"
 	@echo "... main/img/img_right_released_888888_16x40.i"
 	@echo "... main/img/img_right_released_888888_16x40.s"
+	@echo "... main/img/img_right_released_f7e100_14x26.o"
+	@echo "... main/img/img_right_released_f7e100_14x26.i"
+	@echo "... main/img/img_right_released_f7e100_14x26.s"
 	@echo "... main/img/img_right_released_ff2600_16x40.o"
 	@echo "... main/img/img_right_released_ff2600_16x40.i"
 	@echo "... main/img/img_right_released_ff2600_16x40.s"
 	@echo "... main/img/img_screen_shape.o"
 	@echo "... main/img/img_screen_shape.i"
 	@echo "... main/img/img_screen_shape.s"
+	@echo "... main/img/img_screen_shoosen.o"
+	@echo "... main/img/img_screen_shoosen.i"
+	@echo "... main/img/img_screen_shoosen.s"
+	@echo "... main/img/img_slider_knob_1.o"
+	@echo "... main/img/img_slider_knob_1.i"
+	@echo "... main/img/img_slider_knob_1.s"
+	@echo "... main/img/img_slider_knob_2.o"
+	@echo "... main/img/img_slider_knob_2.i"
+	@echo "... main/img/img_slider_knob_2.s"
+	@echo "... main/img/img_slider_knob_3.o"
+	@echo "... main/img/img_slider_knob_3.i"
+	@echo "... main/img/img_slider_knob_3.s"
+	@echo "... main/img/img_slider_knob_4.o"
+	@echo "... main/img/img_slider_knob_4.i"
+	@echo "... main/img/img_slider_knob_4.s"
+	@echo "... main/img/img_startup_arrow.o"
+	@echo "... main/img/img_startup_arrow.i"
+	@echo "... main/img/img_startup_arrow.s"
+	@echo "... main/img/img_success.o"
+	@echo "... main/img/img_success.i"
+	@echo "... main/img/img_success.s"
+	@echo "... main/img/img_unchosen.o"
+	@echo "... main/img/img_unchosen.i"
+	@echo "... main/img/img_unchosen.s"
+	@echo "... main/img/img_waiting.o"
+	@echo "... main/img/img_waiting.i"
+	@echo "... main/img/img_waiting.s"
 	@echo "... main/src/comm/gui_comm.o"
 	@echo "... main/src/comm/gui_comm.i"
 	@echo "... main/src/comm/gui_comm.s"
+	@echo "... main/src/comm/gui_data_comm.o"
+	@echo "... main/src/comm/gui_data_comm.i"
+	@echo "... main/src/comm/gui_data_comm.s"
 	@echo "... main/src/connect/connect_main/connect_main.o"
 	@echo "... main/src/connect/connect_main/connect_main.i"
 	@echo "... main/src/connect/connect_main/connect_main.s"
 	@echo "... main/src/connect/connect_reset/connect_reset.o"
 	@echo "... main/src/connect/connect_reset/connect_reset.i"
 	@echo "... main/src/connect/connect_reset/connect_reset.s"
+	@echo "... main/src/general/general_homescreen/general_homescreen.o"
+	@echo "... main/src/general/general_homescreen/general_homescreen.i"
+	@echo "... main/src/general/general_homescreen/general_homescreen.s"
 	@echo "... main/src/general/general_lock/general_lock.o"
 	@echo "... main/src/general/general_lock/general_lock.i"
 	@echo "... main/src/general/general_lock/general_lock.s"
 	@echo "... main/src/general/general_main/general_main.o"
 	@echo "... main/src/general/general_main/general_main.i"
 	@echo "... main/src/general/general_main/general_main.s"
-	@echo "... main/src/guide.o"
-	@echo "... main/src/guide.i"
-	@echo "... main/src/guide.s"
+	@echo "... main/src/general/general_shutdown/general_shutdown.o"
+	@echo "... main/src/general/general_shutdown/general_shutdown.i"
+	@echo "... main/src/general/general_shutdown/general_shutdown.s"
 	@echo "... main/src/guide/guide_main/guide_main.o"
 	@echo "... main/src/guide/guide_main/guide_main.i"
 	@echo "... main/src/guide/guide_main/guide_main.s"
@@ -2104,27 +4796,45 @@ help:
 	@echo "... main/src/mouse_cursor_icon.o"
 	@echo "... main/src/mouse_cursor_icon.i"
 	@echo "... main/src/mouse_cursor_icon.s"
-	@echo "... main/src/pin.o"
-	@echo "... main/src/pin.i"
-	@echo "... main/src/pin.s"
-	@echo "... main/src/settings.o"
-	@echo "... main/src/settings.i"
-	@echo "... main/src/settings.s"
 	@echo "... main/src/settings/settings_about/settings_about.o"
 	@echo "... main/src/settings/settings_about/settings_about.i"
 	@echo "... main/src/settings/settings_about/settings_about.s"
 	@echo "... main/src/settings/settings_main/settings_main.o"
 	@echo "... main/src/settings/settings_main/settings_main.i"
 	@echo "... main/src/settings/settings_main/settings_main.s"
-	@echo "... main/src/settings/settings_reset/settings_reset.o"
-	@echo "... main/src/settings/settings_reset/settings_reset.i"
-	@echo "... main/src/settings/settings_reset/settings_reset.s"
+	@echo "... main/src/settings/settings_security/settings_change_pin.o"
+	@echo "... main/src/settings/settings_security/settings_change_pin.i"
+	@echo "... main/src/settings/settings_security/settings_change_pin.s"
+	@echo "... main/src/settings/settings_security/settings_complete.o"
+	@echo "... main/src/settings/settings_security/settings_complete.i"
+	@echo "... main/src/settings/settings_security/settings_complete.s"
+	@echo "... main/src/settings/settings_security/settings_erase.o"
+	@echo "... main/src/settings/settings_security/settings_erase.i"
+	@echo "... main/src/settings/settings_security/settings_erase.s"
+	@echo "... main/src/settings/settings_security/settings_pin_changed.o"
+	@echo "... main/src/settings/settings_security/settings_pin_changed.i"
+	@echo "... main/src/settings/settings_security/settings_pin_changed.s"
+	@echo "... main/src/settings/settings_security/settings_reset.o"
+	@echo "... main/src/settings/settings_security/settings_reset.i"
+	@echo "... main/src/settings/settings_security/settings_reset.s"
 	@echo "... main/src/settings/settings_security/settings_security.o"
 	@echo "... main/src/settings/settings_security/settings_security.i"
 	@echo "... main/src/settings/settings_security/settings_security.s"
 	@echo "... main/src/startup/startup_done/startup_done.o"
 	@echo "... main/src/startup/startup_done/startup_done.i"
 	@echo "... main/src/startup/startup_done/startup_done.s"
+	@echo "... main/src/startup/startup_import/startup_import_abort.o"
+	@echo "... main/src/startup/startup_import/startup_import_abort.i"
+	@echo "... main/src/startup/startup_import/startup_import_abort.s"
+	@echo "... main/src/startup/startup_import/startup_import_ready.o"
+	@echo "... main/src/startup/startup_import/startup_import_ready.i"
+	@echo "... main/src/startup/startup_import/startup_import_ready.s"
+	@echo "... main/src/startup/startup_import/startup_import_wallet.o"
+	@echo "... main/src/startup/startup_import/startup_import_wallet.i"
+	@echo "... main/src/startup/startup_import/startup_import_wallet.s"
+	@echo "... main/src/startup/startup_import/startup_import_word.o"
+	@echo "... main/src/startup/startup_import/startup_import_word.i"
+	@echo "... main/src/startup/startup_import/startup_import_word.s"
 	@echo "... main/src/startup/startup_language/startup_language.o"
 	@echo "... main/src/startup/startup_language/startup_language.i"
 	@echo "... main/src/startup/startup_language/startup_language.s"
@@ -2149,12 +4859,21 @@ help:
 	@echo "... main/src/startup/startup_verification/startup_verification.o"
 	@echo "... main/src/startup/startup_verification/startup_verification.i"
 	@echo "... main/src/startup/startup_verification/startup_verification.s"
-	@echo "... main/src/tip.o"
-	@echo "... main/src/tip.i"
-	@echo "... main/src/tip.s"
-	@echo "... main/src/wallet.o"
-	@echo "... main/src/wallet.i"
-	@echo "... main/src/wallet.s"
+	@echo "... main/src/view/view_addr/view_addr_main.o"
+	@echo "... main/src/view/view_addr/view_addr_main.i"
+	@echo "... main/src/view/view_addr/view_addr_main.s"
+	@echo "... main/src/view/view_transaction/view_transaction_confirm.o"
+	@echo "... main/src/view/view_transaction/view_transaction_confirm.i"
+	@echo "... main/src/view/view_transaction/view_transaction_confirm.s"
+	@echo "... main/src/view/view_transaction/view_transaction_main.o"
+	@echo "... main/src/view/view_transaction/view_transaction_main.i"
+	@echo "... main/src/view/view_transaction/view_transaction_main.s"
+	@echo "... main/src/view/view_transaction/view_transaction_success.o"
+	@echo "... main/src/view/view_transaction/view_transaction_success.i"
+	@echo "... main/src/view/view_transaction/view_transaction_success.s"
+	@echo "... main/src/view/view_transaction/view_transaction_waiting.o"
+	@echo "... main/src/view/view_transaction/view_transaction_waiting.i"
+	@echo "... main/src/view/view_transaction/view_transaction_waiting.s"
 .PHONY : help
 
 

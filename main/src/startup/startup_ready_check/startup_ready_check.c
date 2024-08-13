@@ -4,6 +4,7 @@
 
 #include "startup_ready_check.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
 
 extern void startup_quick_start_start(void);
@@ -27,11 +28,13 @@ static void title_cb(lv_event_t* e)
 static void startup_btn_event_handler(lv_event_t* e)
 {
     lv_event_code_t event = lv_event_get_code(e);
-
     if (LV_EVENT_SHORT_CLICKED == event)
     {
-        printf("%s: %s\n", __func__, (char *)e->user_data);
-        //gui_app_run_subpage("startup", "recovery", e->user_data);
+		int ret = atoi(e->user_data);
+
+		printf("%s, ret : %d\n", (char *)e->user_data, ret);
+		gui_data_set_word_num((uint8_t)ret);
+		
         startup_ready_check_stop();
         startup_recovery_start();
     }

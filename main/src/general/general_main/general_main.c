@@ -4,11 +4,16 @@
 
 #include "general_main.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
 
 extern void menu_main_start(void);
 extern void general_lock_start(void);
+extern void general_shutdown_start(void);
+extern void general_homescreen_start(void);
 extern void startup_language_start(app_index_t app_index);
+
+
 
 static general_main_t* p_general_main = NULL;
 
@@ -16,7 +21,9 @@ static gui_comm_imgbtn_desc_t gui_comm_imgbtn_num_table[] =
 {
     {"Auto-Lock", 20, 66},
     {"Language", 20, 96},
-    {"Lock Screen", 20, 126},
+    {"Shutdown", 20, 126},
+    {"Homescreen", 20, 156},
+    {"Lock Screen", 20, 186},
 };
 
 static void title_cb(lv_event_t* e)
@@ -47,6 +54,17 @@ static void general_main_word_handler(lv_event_t* e)
 		{
 			startup_language_start(APP_GENERAL);
 		}
+		else if(0 == lv_strcmp((char*)e->user_data, "Shutdown"))
+		{
+			general_shutdown_start();
+		}
+		else if(0 == lv_strcmp((char*)e->user_data, "Homescreen"))
+		{
+			general_homescreen_start();
+		}
+		else if(0 == lv_strcmp((char*)e->user_data, "Lock Screen"))
+		{
+		}
     }
 }
 
@@ -75,7 +93,7 @@ static void general_main_bg_cont(lv_obj_t* parent)
             lv_obj_t* labe_detail = lv_label_create(img_btn);
 			lv_obj_set_style_text_color(labe_detail, lv_color_hex(0xffffff), 0);
 			lv_obj_set_style_text_font(labe_detail, &lv_font_montserrat_12, 0);
-            lv_label_set_text(labe_detail, "10 minutes");
+            lv_label_set_text_fmt(labe_detail, "%d minutes", gui_data_get_lock_time());
             lv_obj_align(labe_detail, LV_ALIGN_RIGHT_MID, -17, 2);
         }
         else if (1 == i)
@@ -83,7 +101,7 @@ static void general_main_bg_cont(lv_obj_t* parent)
             lv_obj_t* labe_detail = lv_label_create(img_btn);
 			lv_obj_set_style_text_color(labe_detail, lv_color_hex(0xffffff), 0);
 			lv_obj_set_style_text_font(labe_detail, &lv_font_montserrat_12, 0);
-            lv_label_set_text(labe_detail, "English");
+            lv_label_set_text_fmt(labe_detail, "%s", gui_data_get_language());
             lv_obj_align(labe_detail, LV_ALIGN_RIGHT_MID, -17, 2);
         }
         else if (2 == i)
@@ -91,7 +109,7 @@ static void general_main_bg_cont(lv_obj_t* parent)
             lv_obj_t* labe_detail = lv_label_create(img_btn);
 			lv_obj_set_style_text_color(labe_detail, lv_color_hex(0xffffff), 0);
 			lv_obj_set_style_text_font(labe_detail, &lv_font_montserrat_12, 0);
-            lv_label_set_text(labe_detail, "50%");
+            lv_label_set_text_fmt(labe_detail, "%d minutes", gui_data_get_shutdown_time());
             lv_obj_align(labe_detail, LV_ALIGN_RIGHT_MID, -17, 2);
         }
         else

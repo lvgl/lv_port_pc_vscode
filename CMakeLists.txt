@@ -29,19 +29,20 @@ target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS
 # 添加 main 目标
 add_executable(main 
     main/src/main.c 
-    main/src/settings.c 
     main/src/mouse_cursor_icon.c
-    main/src/tip.c  # 确保添加 tip.c 文件
-    main/src/guide.c  # 确保添加 guide.c 文件
     
     main/src/comm/gui_comm.c
     main/src/comm/gui_comm.h
+    main/src/comm/gui_data_comm.c
+    main/src/comm/gui_data_comm.h
 	
     main/src/connect/connect_main/connect_main.c
     main/src/connect/connect_reset/connect_reset.c
 	
     main/src/general/general_lock/general_lock.c
     main/src/general/general_main/general_main.c
+    main/src/general/general_shutdown/general_shutdown.c
+    main/src/general/general_homescreen/general_homescreen.c
 	
     main/src/guide/guide_main/guide_main.c
     main/src/guide/guide_recovery/guide_recovery.c
@@ -52,7 +53,11 @@ add_executable(main
     main/src/settings/settings_main/settings_main.c
     main/src/settings/settings_about/settings_about.c
     main/src/settings/settings_security/settings_security.c
-    main/src/settings/settings_reset/settings_reset.c
+    main/src/settings/settings_security/settings_reset.c
+    main/src/settings/settings_security/settings_erase.c
+    main/src/settings/settings_security/settings_complete.c
+    main/src/settings/settings_security/settings_pin_changed.c
+    main/src/settings/settings_security/settings_change_pin.c
 	
     main/src/startup/startup_done/startup_done.c
     main/src/startup/startup_language/startup_language.c
@@ -63,6 +68,17 @@ add_executable(main
     main/src/startup/startup_recovery/startup_recovery.c
     main/src/startup/startup_screen/startup_screen.c
     main/src/startup/startup_verification/startup_verification.c
+    main/src/startup/startup_import/startup_import_abort.c
+    main/src/startup/startup_import/startup_import_wallet.c
+    main/src/startup/startup_import/startup_import_word.c
+    main/src/startup/startup_import/startup_import_ready.c
+    
+    main/src/view/view_transaction/view_transaction_main.c
+    main/src/view/view_transaction/view_transaction_confirm.c
+    main/src/view/view_transaction/view_transaction_waiting.c
+    main/src/view/view_transaction/view_transaction_success.c
+    
+    main/src/view/view_addr/view_addr_main.c
 
     main/img/img_backgroud.c 
     main/img/img_imgbtn_cancle_15x15.c 
@@ -103,7 +119,100 @@ add_executable(main
     main/img/img_right_released_ff2600_16x40.c 
     main/img/img_guide_back.c 
     main/img/img_screen_shape.c 
-	
+    main/img/img_slider_knob_1.c 
+    main/img/img_slider_knob_2.c 
+    main/img/img_slider_knob_3.c 
+    main/img/img_slider_knob_4.c 
+    main/img/img_success.c 
+    main/img/img_unchosen.c 
+    main/img/img_right_pressed_ffef4b_14x26.c 
+    main/img/img_right_released_10e807_14x26.c 
+    main/img/img_right_released_f7e100_14x26.c 
+    main/img/img_mid_released_f7e100_4x26.c 
+    main/img/img_right_pressed_61fc5a_14x26.c 
+    main/img/img_mid_released_10e807_4x26.c 
+    main/img/img_left_released_10e807_14x26.c 
+    main/img/img_left_released_f7e100_14x26.c 
+    main/img/img_mid_pressed_61fc5a_4x26.c 
+    main/img/img_mid_pressed_ffef4b_4x26.c 
+    main/img/img_keypad_back.c 
+    main/img/img_keypad_confirm.c 
+    main/img/img_left_pressed_61fc5a_14x26.c 
+    main/img/img_left_pressed_ffef4b_14x26.c 
+    main/img/img_chosen.c 
+    main/img/img_alert.c 
+    main/img/img_waiting.c 	
+    main/img/img_keypad_666666_q.c
+    main/img/img_keypad_666666_w.c
+    main/img/img_keypad_666666_e.c
+    main/img/img_keypad_666666_r.c
+    main/img/img_keypad_666666_t.c
+    main/img/img_keypad_666666_y.c
+    main/img/img_keypad_666666_u.c
+    main/img/img_keypad_666666_i.c
+    main/img/img_keypad_666666_o.c
+    main/img/img_keypad_666666_p.c
+    main/img/img_keypad_666666_a.c
+    main/img/img_keypad_666666_s.c
+    main/img/img_keypad_666666_d.c
+    main/img/img_keypad_666666_f.c
+    main/img/img_keypad_666666_g.c
+    main/img/img_keypad_666666_h.c
+    main/img/img_keypad_666666_j.c
+    main/img/img_keypad_666666_k.c
+    main/img/img_keypad_666666_l.c
+    main/img/img_keypad_666666_z.c
+    main/img/img_keypad_666666_x.c
+    main/img/img_keypad_666666_c.c
+    main/img/img_keypad_666666_v.c
+    main/img/img_keypad_666666_b.c
+    main/img/img_keypad_666666_n.c
+    main/img/img_keypad_666666_m.c
+    main/img/img_keypad_222222_q.c
+    main/img/img_keypad_222222_w.c
+    main/img/img_keypad_222222_e.c
+    main/img/img_keypad_222222_r.c
+    main/img/img_keypad_222222_t.c
+    main/img/img_keypad_222222_y.c
+    main/img/img_keypad_222222_u.c
+    main/img/img_keypad_222222_i.c
+    main/img/img_keypad_222222_o.c
+    main/img/img_keypad_222222_p.c
+    main/img/img_keypad_222222_a.c
+    main/img/img_keypad_222222_s.c
+    main/img/img_keypad_222222_d.c
+    main/img/img_keypad_222222_f.c
+    main/img/img_keypad_222222_g.c
+    main/img/img_keypad_222222_h.c
+    main/img/img_keypad_222222_j.c
+    main/img/img_keypad_222222_k.c
+    main/img/img_keypad_222222_l.c
+    main/img/img_keypad_222222_z.c
+    main/img/img_keypad_222222_x.c
+    main/img/img_keypad_222222_c.c
+    main/img/img_keypad_222222_v.c
+    main/img/img_keypad_222222_b.c
+    main/img/img_keypad_222222_n.c
+    main/img/img_keypad_222222_m.c
+    main/img/img_startup_arrow.c    
+    main/img/img_screen_shoosen.c    
+    main/img/img_name.c
+
+
+    main/img/img_bg1.c
+    main/img/img_bg2.c
+    main/img/img_bg3.c
+    main/img/img_bg4.c
+    main/img/img_bg5.c
+    main/img/img_bg6.c    
+    main/img/img_bg7.c
+    main/img/img_bg1_small.c
+    main/img/img_bg2_small.c
+    main/img/img_bg3_small.c
+    main/img/img_bg4_small.c
+    main/img/img_bg5_small.c
+    main/img/img_bg6_small.c    
+    main/img/img_bg7_small.c
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/main/src/comm)
@@ -133,30 +242,13 @@ include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_recovery)
 include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_screen)
 include_directories(${PROJECT_SOURCE_DIR}/main/src/startup/startup_verification)
 
+include_directories(${PROJECT_SOURCE_DIR}/main/src/view/view_addr)
+include_directories(${PROJECT_SOURCE_DIR}/main/src/view/view_transaction)
+
+
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 add_custom_target(run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
-
-# 添加 pin 目标
-add_executable(pin main/src/pin.c main/src/mouse_cursor_icon.c)
-
-target_compile_definitions(pin PRIVATE LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(pin lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-add_custom_target(run_pin COMMAND ${EXECUTABLE_OUTPUT_PATH}/pin DEPENDS pin)
-
-# 移除 settings 目标
-# add_executable(settings main/src/settings.c main/src/mouse_cursor_icon.c)
-
-# target_compile_definitions(settings PRIVATE LV_CONF_INCLUDE_SIMPLE)
-# target_link_libraries(settings lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-# add_custom_target(run_settings COMMAND ${EXECUTABLE_OUTPUT_PATH}/settings DEPENDS settings)
-
-# 添加 wallet 目标
-add_executable(wallet main/src/wallet.c main/src/mouse_cursor_icon.c)
-
-target_compile_definitions(wallet PRIVATE LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(wallet lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-add_custom_target(run_wallet COMMAND ${EXECUTABLE_OUTPUT_PATH}/wallet DEPENDS wallet)
 
 if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")

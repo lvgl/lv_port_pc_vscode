@@ -5,17 +5,17 @@
 
 #include "startup_screen.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
 
 static startup_screen_t* p_startup_screen = NULL;
 
-extern void startup_enter_pin_start(app_index_t app_index);
+extern void startup_language_start(app_index_t app_index);
 
 
 static void startup_screen_scroll_cb(lv_event_t* e)
 {
     lv_event_code_t event = lv_event_get_code(e);
-    //printf("event: %s\n", lv_event_code_to_name(event));
     if (LV_EVENT_PRESSING == event)
     {
         lv_indev_t* indev = lv_indev_get_act();
@@ -26,11 +26,10 @@ static void startup_screen_scroll_cb(lv_event_t* e)
 
         if (p_startup_screen->move_y < -100)
         {
-            //gui_app_run_subpage("startup", "set_pin", NULL);
             lv_obj_set_pos(p_startup_screen->scroll_img, 116, 263);
             lv_obj_align_to(p_startup_screen->scroll_label, p_startup_screen->scroll_img, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
             startup_screen_stop();
-        	startup_enter_pin_start(APP_STARTUP);
+        	startup_language_start(APP_STARTUP);
             return;
         }
         lv_obj_set_pos(p_startup_screen->scroll_img, 116, 263 + p_startup_screen->move_y);
@@ -46,13 +45,18 @@ static void startup_screen_scroll_cb(lv_event_t* e)
 static void startup_screen_bg_cont(lv_obj_t* parent)
 {
     lv_obj_t* bg_img = lv_img_create(parent);
-    lv_img_set_src(bg_img, &img_backgroud);
+    lv_img_set_src(bg_img, gui_data_get_bg_src());
     lv_obj_center(bg_img);
 
+    lv_obj_t* img_name = lv_img_create(parent);
+    lv_img_set_src(img_name, &img_name);
+    lv_obj_center(img_name);
+
     lv_obj_t* scroll_img = lv_img_create(parent);
-    lv_img_set_src(scroll_img, &img_screen_shape);
+    lv_img_set_src(scroll_img, &img_startup_arrow);
     lv_obj_set_pos(scroll_img, 116, 263);
     p_startup_screen->scroll_img = scroll_img;
+	
 
     lv_obj_t* scroll_label = lv_label_create(parent);
     lv_label_set_text(scroll_label, "Swipe up to show apps");

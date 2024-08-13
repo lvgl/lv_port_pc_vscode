@@ -4,9 +4,14 @@
 
 #include "startup_set_pin.h"
 #include "gui_comm.h"
+#include "gui_data_comm.h"
 
-extern void startup_quick_start_start(void);
+extern void startup_ready_check_start(void);
+extern void startup_import_abort_start(void);
 extern void settings_security_start(void);
+extern void settings_pin_changed_start(void);
+
+
 
 
 static startup_set_pin_t* p_startup_set_pin = NULL;
@@ -32,20 +37,29 @@ static void startup_keypad_ok_cb(lv_event_t* e)
         {
             if (0 == lv_strcmp(p_startup_set_pin->set_pin, p_startup_set_pin->confirm_pin))
             {
-				
-				if(APP_STARTUP == p_startup_set_pin->app_index)
+				gui_data_set_pin(p_startup_set_pin->set_pin);
+				if(APP_STARTUP_CREATE_WALLET == p_startup_set_pin->app_index)
 				{
-					startup_quick_start_start();
+					startup_ready_check_start();
 				}
-				if(APP_SETTINGS == p_startup_set_pin->app_index)
+				else if(APP_STARTUP_IMPORT_WALLET == p_startup_set_pin->app_index)
 				{
-					settings_security_start();
+					startup_import_abort_start();
+				}
+				else if(APP_SETTINGS_PIN == p_startup_set_pin->app_index)
+				{
+					settings_pin_changed_start();
 				}
 				startup_set_pin_stop();
             }
             else
             {
-                lv_label_set_text(p_startup_set_pin->title_label, "Set PIN");
+			    if(APP_STARTUP_CREATE_WALLET == p_startup_set_pin->app_index || 
+			    	APP_STARTUP_IMPORT_WALLET == p_startup_set_pin->app_index)
+			    	lv_label_set_text(p_startup_set_pin->title_label, "Enter New Pin");
+			    else if(APP_SETTINGS_PIN == p_startup_set_pin->app_index)
+			    	lv_label_set_text(p_startup_set_pin->title_label, "Set New PIN");
+
                 p_startup_set_pin->mode = STARTUP_SET_PIN_MODE_SET;
                 lv_memset(p_startup_set_pin->set_pin, 0, sizeof(p_startup_set_pin->set_pin));
                 lv_memset(p_startup_set_pin->confirm_pin, 0, sizeof(p_startup_set_pin->confirm_pin));
@@ -64,20 +78,24 @@ static void startup_keypad_cancle_cb(lv_event_t* e)
         if (STARTUP_SET_PIN_MODE_SET == p_startup_set_pin->mode)
         {
             uint8_t ter_len = lv_strlen(p_startup_set_pin->set_pin);
-            p_startup_set_pin->set_pin[ter_len - 1] = 0;
-            lv_label_set_text(p_startup_set_pin->pin_label, p_startup_set_pin->set_pin);
-
-            if (ter_len == 1)
-                lv_obj_add_flag(p_startup_set_pin->pin_label, LV_OBJ_FLAG_HIDDEN);
+            if(ter_len)
+            {
+	            p_startup_set_pin->set_pin[ter_len - 1] = 0;
+	            lv_label_set_text(p_startup_set_pin->pin_label, p_startup_set_pin->set_pin);
+	            if (ter_len == 1)
+	                lv_obj_add_flag(p_startup_set_pin->pin_label, LV_OBJ_FLAG_HIDDEN);
+			}
         }
         else if (STARTUP_SET_PIN_MODE_CONFIRM == p_startup_set_pin->mode)
         {
             uint8_t ter_len = lv_strlen(p_startup_set_pin->confirm_pin);
-            p_startup_set_pin->confirm_pin[ter_len - 1] = 0;
-            lv_label_set_text(p_startup_set_pin->pin_label, p_startup_set_pin->confirm_pin);
-
-            if (ter_len == 1)
-                lv_obj_add_flag(p_startup_set_pin->pin_label, LV_OBJ_FLAG_HIDDEN);
+            if(ter_len)
+            {
+	            p_startup_set_pin->confirm_pin[ter_len - 1] = 0;
+	            lv_label_set_text(p_startup_set_pin->pin_label, p_startup_set_pin->confirm_pin);
+	            if (ter_len == 1)
+	                lv_obj_add_flag(p_startup_set_pin->pin_label, LV_OBJ_FLAG_HIDDEN);
+			}
         }
     }
 }
@@ -110,14 +128,19 @@ static void startup_keypad_num_cb(lv_event_t* e)
 static void startup_set_pin_bg_cont(lv_obj_t* parent)
 {
     lv_obj_clean(parent);
-    gui_comm_draw_keypad(parent, startup_keypad_num_cb, startup_keypad_ok_cb, startup_keypad_cancle_cb);
+    gui_comm_draw_keypad_num(parent, startup_keypad_num_cb, startup_keypad_ok_cb, startup_keypad_cancle_cb);
 
     lv_obj_t* title_label = lv_label_create(parent);
 	lv_obj_set_style_text_font(title_label, &lv_font_montserrat_20, 0);
 	lv_obj_set_style_text_color(title_label, lv_color_hex(0xffffff), 0);
     lv_label_set_long_mode(title_label, LV_LABEL_LONG_DOT);
     lv_obj_set_width(title_label, 200);
-    lv_label_set_text(title_label, "Set PIN");
+    if(APP_STARTUP_CREATE_WALLET == p_startup_set_pin->app_index || 
+    	APP_STARTUP_IMPORT_WALLET == p_startup_set_pin->app_index)
+    	lv_label_set_text(title_label, "Enter New Pin");
+    else if(APP_SETTINGS_PIN == p_startup_set_pin->app_index)
+    	lv_label_set_text(title_label, "Set New PIN");
+    	
     lv_obj_set_style_text_align(title_label, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_align(title_label, LV_ALIGN_TOP_MID, 0, 30);
     lv_obj_update_layout(title_label);
