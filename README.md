@@ -41,7 +41,7 @@ sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base
 ![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
 4. Click the Play button or hit F5 to start debugging.
    
-* ***ArchLinux User***  
+**ArchLinux User**  
 VSCode does not officially provide an installation package under Arch, you need to use the AUR manager `paru` to install it.  
 The command is as follows:
 ```bash
