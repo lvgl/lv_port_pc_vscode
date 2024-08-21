@@ -92,6 +92,36 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         -Wstrict-aliasing
     )
 
-    target_compile_options(main PRIVATE -fsanitize=address,leak,undefined)
-    target_link_options(main PRIVATE -fsanitize=address,leak,undefined)
+    # Check if the compiler supports -fsanitize=leak, -fsanitize=address, and -fsanitize=undefined
+    include(CheckCXXCompilerFlag)
+
+    check_cxx_compiler_flag("-fsanitize=leak" HAS_SANITIZE_LEAK)
+    check_cxx_compiler_flag("-fsanitize=address" HAS_SANITIZE_ADDRESS)
+    check_cxx_compiler_flag("-fsanitize=undefined" HAS_SANITIZE_UNDEFINED)
+
+    # Prepare the list of sanitizers
+    set(SANITIZERS "")
+    if (HAS_SANITIZE_ADDRESS)
+        set(SANITIZERS "${SANITIZERS},address")
+    endif()
+
+    if (HAS_SANITIZE_UNDEFINED)
+        set(SANITIZERS "${SANITIZERS},undefined")
+    endif()
+
+    if (HAS_SANITIZE_LEAK)
+        set(SANITIZERS "${SANITIZERS},leak")
+    endif()
+
+    # Remove leading comma if there are any sanitizers
+    string(REGEX REPLACE "^," "" SANITIZERS "${SANITIZERS}")
+
+    # Add the sanitizers to the compile options if any are supported
+    if (SANITIZERS)
+        message(STATUS "Sanitizers enabled: ${SANITIZERS}")
+        target_compile_options(main PRIVATE -fsanitize=${SANITIZERS})
+        target_link_options(main PRIVATE -fsanitize=${SANITIZERS})
+    else()
+        message(STATUS "Sanitizers not enabled")
+    endif()
 endif()
