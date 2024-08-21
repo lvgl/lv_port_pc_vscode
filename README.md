@@ -61,12 +61,15 @@ paru -S visual-studio-code-bin
 
 Apple's default clang does not support the `-fsanitize=leak` flag. you need to install `llvm` from homebrew:
 
-`brew install llvm`
+1. `brew install llvm`
 
-then cmd+shift+p and run `Cmake: select a kit`, then `[Scan for kits]`
-then cmd+shift+p and run `Cmake: select a kit`, select the version of clang you just installed from homebrew (it should say `Using compilers C=/opt/homebrew/opt/llvm/bin/clang ...`)
+2. cmd+shift+p and run `Cmake: select a kit`, then `[Scan for kits]`
 
-then reconfigure by running cmd+shift+p `Cmake: Configure` and build using step 4 above
+3. then cmd+shift+p and run `Cmake: select a kit`, select the version of clang you just installed from homebrew (it should say `Using compilers C=/opt/homebrew/opt/llvm/bin/clang ...`)
+
+4. reconfigure by running cmd+shift+p `Cmake: Configure`
+
+5. build using [step 4 above](#visual-studio-code)
 
 ### CMake
 
