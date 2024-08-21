@@ -59,7 +59,16 @@ paru -S visual-studio-code-bin
 
 #### macOS
 
-Apple's default clang does not support the `-fsanitize=leak` flag. you need to install `llvm` from homebrew:
+Apple's default clang does not support the `-fsanitize=leak` flag. You might see this error when building:
+
+```clang
+clang: error: unsupported option '-fsanitize=leak' for target 'arm64-apple-darwin23.5.0'
+make[2]: *** [CMakeFiles/main.dir/main/src/main.c.o] Error 1
+make[1]: *** [CMakeFiles/main.dir/all] Error 2
+make: *** [all] Error 2
+```
+
+to fix, do the following:
 
 1. `brew install llvm`
 
