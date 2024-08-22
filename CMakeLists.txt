@@ -92,6 +92,11 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         -Wstrict-aliasing
     )
 
-    target_compile_options(main PRIVATE -fsanitize=address,leak,undefined)
-    target_link_options(main PRIVATE -fsanitize=address,leak,undefined)
+    if(CMAKE_SYSTEM_PROCESSOR STREQUAL "arm64")
+        target_compile_options(main PRIVATE -fsanitize=address,undefined)
+        target_link_options(main PRIVATE -fsanitize=address,undefined)
+    else()
+        target_compile_options(main PRIVATE -fsanitize=address,leak,undefined)
+        target_link_options(main PRIVATE -fsanitize=address,leak,undefined)
+    endif()
 endif()
