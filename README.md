@@ -11,6 +11,7 @@ The project can use **SDL** but it can be easily relaced by any other built-in L
 ## Get started
 
 ### Get the PC project
+
 Clone the PC project and the related sub modules:
 
 ```bash
@@ -18,38 +19,64 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
 ### Install SDL and build tools
+
 You can download SDL from https://www.libsdl.org/
 
-#### Linux 
-Copy below in the Terminal:  
+#### Linux
+
+Copy below in the Terminal:
 For Ubuntu
-```bash 
+
+```bash
 sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
 ```
-For ArchLinux  
-```bash 
+
+For ArchLinux
+
+```bash
 sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base-devel gcc make
 ```
 
 ## Usage
 
 ### Visual Studio Code
+
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
-1. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
-2. Install the recommended plugins
-3. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
+2. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
+3. Install the recommended plugins
+4. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
 ![image](https://github.com/lvgl/lv_port_pc_vscode/assets/7599318/f527b235-5718-4949-b5f0-bd807b3a64ba)
-4. Click the Play button or hit F5 to start debugging.
-   
-**ArchLinux User**  
-VSCode does not officially provide an installation package under Arch, you need to use the AUR manager `paru` to install it.  
+5. Click the Play button or hit F5 to start debugging.
+
+#### ArchLinux User
+
+VSCode does not officially provide an installation package under Arch, you need to use the AUR manager `paru` to install it.
 The command is as follows:
+
 ```bash
 paru -S visual-studio-code-bin
 ```
 
+#### macOS
+
+Apple's default clang does not support the `-fsanitize=leak` flag.
+
+to build using the latest version of clang from homebrew, do the following:
+
+1. `brew install llvm`
+
+2. cmd+shift+p and run `Cmake: select a kit`, then `[Scan for kits]`
+
+3. then cmd+shift+p and run `Cmake: select a kit`, select the version of clang you just installed from homebrew (it should say `Using compilers C=/opt/homebrew/opt/llvm/bin/clang ...`)
+
+4. reconfigure by running cmd+shift+p `Cmake: Configure`
+
+5. build using [step 4 above](#visual-studio-code)
+
 ### CMake
+
 This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
+
 ```bash
 mkdir build
 cd build
@@ -62,6 +89,7 @@ make -j
 There are also FreeType and FFmpeg support. You can install these according to the followings:
 
 ### Linux
+
 ```bash
 # FreeType support
 wget https://kumisystems.dl.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
