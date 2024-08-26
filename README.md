@@ -1,6 +1,18 @@
-# Simulator project for LVGL embedded GUI Library
+# Simulator project for LVGL embedded GUI Library running on FreeROS
 
 The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
+
+## Changes from original repo
+Embedded systems often operate under a real-time operating system (RTOS) like FreeRTOS, which efficiently manages tasks and resources. To better simulate the behavior of such systems in a development environment, I decided to integrate FreeRTOS into this simulator. This addition allows us to more accurately emulate the execution environment of embedded systems running on an RTOS.
+
+### What We've Accomplished:
+Integration of FreeRTOS: We added FreeRTOS as a submodule and configured the build system to include the necessary source files and headers.
+
+- Task Creation: A basic FreeRTOS task was implemented to initialize and run LVGL within the simulated environment.
+- Scheduler Integration: The FreeRTOS scheduler was incorporated to manage the execution of tasks, simulating a real-time environment.
+- LVGL Task Execution: We refactored the original code to run LVGL in a dedicated FreeRTOS task, allowing periodic handling through the FreeRTOS scheduling mechanism.
+
+This setup provides a more realistic development and testing environment, closely mirroring the conditions of an actual embedded system running FreeRTOS.
 
 This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
 
