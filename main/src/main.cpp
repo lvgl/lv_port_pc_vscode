@@ -1,11 +1,13 @@
 #include "FreeRTOS.h"
 #include "task.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include <cstdlib>
+#include <cstdio>
 #include <unistd.h>
-#include "lvgl/lvgl.h"
-#include "lvgl/examples/lv_examples.h"
-#include "lvgl/demos/lv_demos.h"
+extern "C" {
+    #include "lvgl/lvgl.h"
+    #include "lvgl/examples/lv_examples.h"
+    #include "lvgl/demos/lv_demos.h"
+}
 
 // Malloc failed hook
 void vApplicationMallocFailedHook( void )
@@ -17,10 +19,10 @@ void vApplicationMallocFailedHook( void )
 
 
 // Idle hook
-void vApplicationIdleHook(void) {}
+extern "C" void vApplicationIdleHook(void) {}
 
 // Stack overflow hook
-void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
     // Handle the stack overflow here, perhaps by halting the system
     printf("Stack overflow in task %s\n", pcTaskName);
@@ -28,7 +30,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 }
 
 // Tick hook
-void vApplicationTickHook(void) {}
+extern "C" void vApplicationTickHook(void) {}
 
 /* Prototypes */
 static lv_display_t * hal_init(int32_t w, int32_t h);

@@ -44,7 +44,7 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.c main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES})
+add_executable(main main/src/main.cpp main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES})
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread freertos_config)
