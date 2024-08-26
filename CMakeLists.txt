@@ -1,14 +1,34 @@
 cmake_minimum_required(VERSION 3.10)
 project(lvgl)
 
+# FreeRTOS Konfiguration hinzufügen
+add_library(freertos_config INTERFACE)
+target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
+target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
+
+# FreeRTOS als Submodule hinzufügen
+add_subdirectory(FreeRTOS)
+
+# FreeRTOS-Includes
+include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
+include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+include_directories(${PROJECT_SOURCE_DIR}/config)
+
+# FreeRTOS-Quellen hinzufügen
+file(GLOB FREERTOS_SOURCES
+    "FreeRTOS/*.c"
+    "FreeRTOS/portable/MemMang/heap_4.c"
+    "FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
+)
+
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)
 option(LV_USE_FFMPEG "Use libffmpeg to display video using lv_ffmpeg" OFF)
 option(LV_USE_FREETYPE "Use freetype lib" OFF)
 
-set(CMAKE_C_STANDARD 99)#C99 # lvgl officially support C99 and above
-set(CMAKE_CXX_STANDARD 17)#C17
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
@@ -24,17 +44,15 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.c main/src/mouse_cursor_icon.c)
+add_executable(main main/src/main.c main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES})
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-add_custom_target (run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
+target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread freertos_config)
+
+add_custom_target(run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
 
 if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-    # Need to install libsdl2-image-dev
-    # `sudo apt install libsdl2-image-dev`
-    # `brew install sdl2_image`
     find_package(SDL2_image REQUIRED)
     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
     target_link_libraries(main ${SDL2_IMAGE_LIBRARIES})
@@ -47,9 +65,6 @@ if(LV_USE_LIBPNG)
 endif(LV_USE_LIBPNG)
 
 if(LV_USE_LIBJPEG_TURBO)
-    # Need to install libjpeg-turbo8-dev
-    # `sudo apt install libjpeg-turbo8-dev`
-    # `brew install libjpeg-turbo`
     find_package(JPEG REQUIRED)
     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
     target_link_libraries(main ${JPEG_LIBRARIES})
