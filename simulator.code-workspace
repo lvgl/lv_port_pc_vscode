@@ -24,6 +24,10 @@
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
 		"cmake.configureOnOpen": true,
+		"files.associations": {
+			"glob.h": "c",
+			"lvgl.h": "c"
+		},
 	},
 	// tasks.json section
 	"tasks": {
