@@ -41,6 +41,8 @@ extern "C" {
     #include "lvgl/demos/lv_demos.h"
 }
 
+#include "ui.h"
+
 typedef enum {
     TASK_LVGL,
     TASK_ANOTHER_TASK,   // Füge hier weitere Tasks hinzu
@@ -226,6 +228,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
 void lvgl_task(void *pvParameters)
 {
     printf("Start LVGL\n");
+    printf("UI state: %s", (UI_ENABLE) ? "ON" : "OFF" ); 
 
     lv_init();
 

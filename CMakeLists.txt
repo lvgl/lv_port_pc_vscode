@@ -22,6 +22,10 @@ file(GLOB FREERTOS_SOURCES
     "FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
 )
 
+# SquareLineStudio UI files
+include_directories(${PROJECT_SOURCE_DIR}/UI)
+file(GLOB UI_SOURCES "${PROJECT_SOURCE_DIR}/UI/*.c" "${PROJECT_SOURCE_DIR}/UI/*.h")
+
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)
@@ -45,7 +49,7 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.cpp main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES})
+add_executable(main main/src/main.cpp main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES} ${UI_SOURCES})
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread freertos_config)
