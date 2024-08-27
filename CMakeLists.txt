@@ -5,6 +5,7 @@ project(lvgl)
 add_library(freertos_config INTERFACE)
 target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
 target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
+add_definitions(-DFREERTOS_PORT=GCC_POSIX)
 
 # FreeRTOS als Submodule hinzufügen
 add_subdirectory(FreeRTOS)
