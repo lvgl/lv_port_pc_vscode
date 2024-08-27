@@ -1,0 +1,52 @@
+{
+    "name": "Simulator project for LVGL embedded GUI Library",
+    "maintainer": "LVGL",
+    "hostOperatingsystem": [
+        "Linux",
+        "Windows",
+        "MacOS"
+    ],
+    "environment": [
+        "VSCode",
+        "SDL"
+    ],
+    "description": "The LVGL is written mainly for microcontrollers and embedded systems, however you can run the library on your PC as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system. The project can use SDL but it can be easily relaced by any other built-in LVGL dirvers.",
+    "settings": [
+        {
+            "type": "dropdown",
+            "label": "Color Depth",
+            "options": [
+                {
+                    "name": "16 (RGB565)",
+                    "value": "16"
+                },
+                {
+                    "name": "24 (RGB565)",
+                    "value": "24"
+                },
+                {
+                    "name": "32 (RGB565)",
+                    "value": "32"
+                }
+            ],
+            "actions": [
+                {
+                    "toReplace": "#define LV_COLOR_DEPTH \\d+",
+                    "newContent": "#define LV_COLOR_DEPTH {value}",
+                    "filePath": "lv_conf.h"
+                }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "label": "Show performance monitor",
+            "actions": [
+                {
+                    "toReplace": "#define LV_USE_PERF_MONITOR .*",
+                    "newContent": "#define LV_USE_PERF_MONITOR {value}",
+                    "filePath": "lv_conf.h"
+                }
+            ]
+        }
+    ]
+}
