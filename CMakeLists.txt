@@ -33,6 +33,9 @@ file(GLOB UI_SOURCES
     "${PROJECT_SOURCE_DIR}/UI/ui_helpers.c"
 )
 
+# Main include files of project
+include_directories(${PROJECT_SOURCE_DIR}/main/inc)
+
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)

@@ -30,17 +30,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-#include "FreeRTOS.h"
-#include "task.h"
-#include <cstdlib>
-#include <cstdio>
-#include <unistd.h>
+
+#include "glob.h"
+
 extern "C" {
     #include "lvgl/lvgl.h"
     #include "ui.h"
 }
-
-
 
 typedef enum {
     TASK_LVGL,
@@ -226,21 +222,21 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  */
 void lvgl_task(void *pvParameters)
 {
-    printf("Start LVGL\n"); 
+    printf("Start LVGL\n");
 
     lv_init();
-
     hal_init(320, 480);
-
-    ui_init( ); 
+    ui_init();
 
     printf("LVGL is running\n");
 
-    while (1) {
-        lv_timer_handler();
-        vTaskDelay(pdMS_TO_TICKS(5));
+    while (1) 
+    {
+        lv_timer_handler(); // LVGL-Handling
+        vTaskDelay(pdMS_TO_TICKS(5)); // Kurze Pause für den RTOS-Scheduler
     }
 }
+
 
 void another_task(void *pvParameters)
 {
@@ -272,18 +268,18 @@ int main(int argc, char **argv)
 
     xTaskCreate( lvgl_task,
                  "LVGL Task",
-                 8192,
+                 16384,
                  NULL,
                  1,
                  &task_handles.handles[TASK_LVGL]);
 
     xTaskCreate(
-        another_task,
-        "Another Task",
-        4096,
-        NULL,
-        1,
-        &task_handles.handles[TASK_ANOTHER_TASK]);
+                 another_task,
+                 "Another Task",
+                 4096,
+                 NULL,
+                 2,
+                 &task_handles.handles[TASK_ANOTHER_TASK]);
 
     // Start Scheduler
     vTaskStartScheduler();
