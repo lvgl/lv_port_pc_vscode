@@ -51,6 +51,15 @@ sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base
 
 ## Usage
 
+### FreeRTOS configuration
+To correctly configure the project, the RTOS (Real-Time Operating System) requires a significant amount of heap memory, especially when debugging an SDL (Simple DirectMedia Layer) window application. In this project, the heap memory has been experimentally set to **512 MB**.
+
+```c
+#define configTOTAL_HEAP_SIZE ( ( size_t ) ( 512 * 1024 * 1024 ) )  // 512 MB Heap
+```
+This configuration ensures that the SDL window is displayed in a timely manner. If this value is reduced, it may cause significant delays in the SDL window's appearance. If the allocated heap memory is too small, the window may fail to appear altogether.
+Therefore, it is crucial to allocate sufficient heap memory to ensure smooth execution and debugging experience.
+
 ### Visual Studio Code
 
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
@@ -120,3 +129,15 @@ git checkout release/6.0
 make
 sudo make install
 ```
+
+## Load GUI Design from SquareLine Studio
+
+### UI Path Configuration
+
+The UI path in the CMake file is set up so that the export path for your SquareLine project can be directly set to this project. This allows seamless integration of your UI designs into the project without requiring additional steps.
+
+### LVGL Task Execution
+
+The LVGL task will execute the following function:
+
+```c ui_init(); ```
