@@ -37,6 +37,17 @@ void ui_Screen1_screen_init(void)
     lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label2, "Hello World");
 
+    ui_Dropdown1 = lv_dropdown_create(ui_Screen1);
+    lv_dropdown_set_options(ui_Dropdown1, "Option 1\nOption 2\nOption 3");
+    lv_obj_set_width(ui_Dropdown1, 226);
+    lv_obj_set_height(ui_Dropdown1, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Dropdown1, 5);
+    lv_obj_set_y(ui_Dropdown1, -152);
+    lv_obj_set_align(ui_Dropdown1, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Dropdown1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+
+
+
     lv_obj_add_event_cb(ui_Button1, ui_event_Button1, LV_EVENT_ALL, NULL);
 
 }

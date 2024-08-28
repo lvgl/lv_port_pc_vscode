@@ -12,6 +12,7 @@ extern "C" {
 
 #include "lvgl/lvgl.h"
 
+
 #include "ui_helpers.h"
 #include "ui_events.h"
 
@@ -22,6 +23,7 @@ void ui_event_Button1(lv_event_t * e);
 extern lv_obj_t * ui_Button1;
 extern lv_obj_t * ui_Label1;
 extern lv_obj_t * ui_Label2;
+extern lv_obj_t * ui_Dropdown1;
 extern lv_obj_t * ui____initial_actions0;
 
 
