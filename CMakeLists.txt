@@ -24,7 +24,14 @@ file(GLOB FREERTOS_SOURCES
 
 # SquareLineStudio UI files
 include_directories(${PROJECT_SOURCE_DIR}/UI)
-file(GLOB UI_SOURCES "${PROJECT_SOURCE_DIR}/UI/*.c" "${PROJECT_SOURCE_DIR}/UI/*.h")
+file(GLOB UI_SOURCES 
+    "${PROJECT_SOURCE_DIR}/UI/*.c" 
+    "${PROJECT_SOURCE_DIR}/UI/*.h" 
+    "${PROJECT_SOURCE_DIR}/UI/screens/ui_Screen1.c"
+    "${PROJECT_SOURCE_DIR}/UI/ui.c"
+    "${PROJECT_SOURCE_DIR}/UI/components/ui_comp_hook.c"
+    "${PROJECT_SOURCE_DIR}/UI/ui_helpers.c"
+)
 
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)

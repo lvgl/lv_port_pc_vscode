@@ -37,11 +37,10 @@
 #include <unistd.h>
 extern "C" {
     #include "lvgl/lvgl.h"
-    #include "lvgl/examples/lv_examples.h"
-    #include "lvgl/demos/lv_demos.h"
+    #include "ui.h"
 }
 
-#include "ui.h"
+
 
 typedef enum {
     TASK_LVGL,
@@ -227,14 +226,13 @@ static lv_display_t * hal_init(int32_t w, int32_t h)
  */
 void lvgl_task(void *pvParameters)
 {
-    printf("Start LVGL\n");
-    printf("UI state: %s", (UI_ENABLE) ? "ON" : "OFF" ); 
+    printf("Start LVGL\n"); 
 
     lv_init();
 
     hal_init(320, 480);
 
-    lv_demo_widgets();
+    ui_init( ); 
 
     printf("LVGL is running\n");
 
