@@ -1,8 +1,8 @@
 #ifndef GLOB_H
 #define GLOB_H
 
-#include <cstdlib>
-#include <cstdio>
+#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 
 

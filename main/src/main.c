@@ -33,10 +33,10 @@
 
 #include "glob.h"
 
-extern "C" {
+
     #include "lvgl/lvgl.h"
     #include "ui.h"
-}
+
 
 typedef enum {
     TASK_LVGL,
@@ -78,7 +78,7 @@ void vApplicationMallocFailedHook( void )
  * @param	None
  * @return 	None
  */
-extern "C" void vApplicationIdleHook(void) {}
+void vApplicationIdleHook(void) {}
 
 // ........................................................................................................
 /*
@@ -91,7 +91,7 @@ extern "C" void vApplicationIdleHook(void) {}
  * @param	pcTaskName   Name of the task that caused the stack overflow
  * @return 	None
  */
-extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
     printf("Stack overflow in task %s\n", pcTaskName);
     for(;;);
@@ -107,7 +107,7 @@ extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskNa
  * @param	None
  * @return 	None
  */
-extern "C" void vApplicationTickHook(void) {}
+void vApplicationTickHook(void) {}
 
 // ........................................................................................................
 /*
@@ -224,13 +224,11 @@ void lvgl_task(void *pvParameters)
 {
     printf("Start LVGL\n");
 
-    lv_init();
-    hal_init(320, 480);
-    ui_init();
+
 
     printf("LVGL is running\n");
 
-    while (1) 
+    while (1)
     {
         lv_timer_handler(); // LVGL-Handling
         vTaskDelay(pdMS_TO_TICKS(5)); // Kurze Pause für den RTOS-Scheduler
@@ -263,6 +261,10 @@ int main(int argc, char **argv)
 {
     (void)argc; /*Unused*/
     (void)argv; /*Unused*/
+
+    lv_init();
+    hal_init(320, 480);
+    ui_init();
 
     printf("Start FreeRTOS\n");
 
