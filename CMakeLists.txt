@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
-project(lvgl)
+project(lvgl C CXX)
+
+# Setze den richtigen FreeRTOS-Port für dein System (Posix in WSL)
+set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
 
 # FreeRTOS Konfiguration hinzufügen
 add_library(freertos_config INTERFACE)
 target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
 target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
-add_definitions(-DFREERTOS_PORT=GCC_POSIX)
+add_definitions(-DFREERTOS_PORT=${FREERTOS_PORT})
 
 # FreeRTOS als Submodule hinzufügen
 add_subdirectory(FreeRTOS)
@@ -17,20 +20,9 @@ include_directories(${PROJECT_SOURCE_DIR}/config)
 
 # FreeRTOS-Quellen hinzufügen
 file(GLOB FREERTOS_SOURCES
-    "FreeRTOS/*.c"
-    "FreeRTOS/portable/MemMang/heap_4.c"
-    "FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
-)
-
-# SquareLineStudio UI files
-include_directories(${PROJECT_SOURCE_DIR}/UI)
-file(GLOB UI_SOURCES
-    "${PROJECT_SOURCE_DIR}/UI/*.c"
-    "${PROJECT_SOURCE_DIR}/UI/*.h"
-    "${PROJECT_SOURCE_DIR}/UI/screens/ui_Screen1.c"
-    "${PROJECT_SOURCE_DIR}/UI/ui.c"
-    "${PROJECT_SOURCE_DIR}/UI/components/ui_comp_hook.c"
-    "${PROJECT_SOURCE_DIR}/UI/ui_helpers.c"
+    "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
+    "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
+    "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
 )
 
 # Main include files of project
@@ -49,7 +41,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
-find_package(SDL2 REQUIRED SDL2)
+find_package(SDL2 REQUIRED)
+
+# Entferne ARM-spezifische Kompilierungs- und Linker-Optionen
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=native")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 
 add_compile_definitions($<$<BOOL:${LV_USE_DRAW_SDL}>:LV_USE_DRAW_SDL=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_LIBPNG}>:LV_USE_LIBPNG=1>)
@@ -59,7 +55,13 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.c main/src/mouse_cursor_icon.c main/src/FreeRTOS_Posix_Port.c ${FREERTOS_SOURCES} ${UI_SOURCES})
+# Executable erstellen und Quellcodes hinzufügen
+add_executable(main
+    ${PROJECT_SOURCE_DIR}/main/src/main.c
+    ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
+    ${PROJECT_SOURCE_DIR}/main/src/FreeRTOS_Posix_Port.c
+    ${FREERTOS_SOURCES}
+)
 
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread freertos_config)
@@ -71,29 +73,29 @@ if(LV_USE_DRAW_SDL)
     find_package(SDL2_image REQUIRED)
     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
     target_link_libraries(main ${SDL2_IMAGE_LIBRARIES})
-endif(LV_USE_DRAW_SDL)
+endif()
 
 if(LV_USE_LIBPNG)
     find_package(PNG REQUIRED)
-    target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIR})
-    target_link_libraries(main ${PNG_LIBRARY})
-endif(LV_USE_LIBPNG)
+    target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIRS})
+    target_link_libraries(main ${PNG_LIBRARIES})
+endif()
 
 if(LV_USE_LIBJPEG_TURBO)
     find_package(JPEG REQUIRED)
     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
     target_link_libraries(main ${JPEG_LIBRARIES})
-endif(LV_USE_LIBJPEG_TURBO)
+endif()
 
 if(LV_USE_FFMPEG)
     target_link_libraries(main avformat avcodec avutil swscale z)
-endif(LV_USE_FFMPEG)
+endif()
 
 if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
-    target_link_libraries(main ${FREETYPE_LIBRARIES})
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
-endif(LV_USE_FREETYPE)
+    target_link_libraries(main ${FREETYPE_LIBRARIES})
+endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_options(lvgl PRIVATE
