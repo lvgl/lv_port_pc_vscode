@@ -174,7 +174,7 @@ void another_task(void *pvParameters)
     }
 }
 
-void freertos_main( void )
+void freertos_main( void *pvParameters )
 {
 
     printf("Start FreeRTOS\n");
