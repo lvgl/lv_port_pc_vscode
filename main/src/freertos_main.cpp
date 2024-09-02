@@ -1,30 +1,19 @@
 /**
- * @file Freertos main file
- * @brief Main file for FreeRTOS tasks and hooks.
+ * @file    Freertos main file
+ * @author  MootSeeker
+ * @date    2024-09-02
+ * @brief   Main file for FreeRTOS tasks and hooks.
+ * @license MIT License
  */
 
 #include "lvgl/src/osal/lv_os.h"
 
 #if LV_USE_OS == LV_OS_FREERTOS
 
-#include "lvgl/examples/lv_examples.h"
+#include "lvgl.h"
 #include <cstdio>  // For printf in C++
 
-// Task identifiers used for managing FreeRTOS tasks
-enum TaskIdentifier_t {
-    TASK_LVGL,          // Task for LVGL rendering and management
-    TASK_ANOTHER_TASK,  // Additional task (extend as needed)
-    TASK_MAX            // Count of tasks, should always be the last item
-};
-
-// Structure to hold handles for created tasks
-struct TaskHandles_t {
-    lv_thread_t lvgl_thread;  // LVGL thread handle
-    TaskHandle_t another_task_handle;  // Another task handle
-};
-
-// Global instance of task handles
-TaskHandles_t task_handles;
+TaskHandle_t xHandle = NULL;
 
 // ........................................................................................................
 /**
@@ -94,19 +83,20 @@ extern "C" void vApplicationTickHook(void) {}
  */
 void create_hello_world_screen()
 {
-    // Create a new screen
-    lv_obj_t *screen = lv_obj_create(nullptr);
+   lv_obj_t *screen = lv_obj_create(NULL);
+    if (screen == NULL) {
+        printf("Error: Failed to create screen object\n");
+        return;
+    }
 
-    // Create a label object on the screen
     lv_obj_t *label = lv_label_create(screen);
+    if (label == NULL) {
+        printf("Error: Failed to create label object\n");
+        return;
+    }
 
-    // Set the text of the label to "Hello, World!"
     lv_label_set_text(label, "Hello, World!");
-
-    // Position the label in the center of the screen
     lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-
-    // Activate the new screen
     lv_scr_load(screen);
 }
 
@@ -123,7 +113,7 @@ void create_hello_world_screen()
 void lvgl_task(void *pvParameters)
 {
     // Show simple hello world screen
-    create_hello_world_screen(); 
+    create_hello_world_screen();
 
     while (true)
     {
@@ -165,15 +155,14 @@ extern "C" void freertos_main()
     // Initialisiere LVGL und andere Ressourcen
 
     // Erstelle den LVGL-Task
-    lv_thread_prio_t prio = static_cast<lv_thread_prio_t>(tskIDLE_PRIORITY + 1);
-    if (lv_thread_init(&task_handles.lvgl_thread, prio, lvgl_task, 16384, nullptr) != LV_RESULT_OK) {
+    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, NULL, 1, &xHandle) != pdPASS) {
         printf("Fehler beim Erstellen des LVGL-Tasks\n");
         // Fehlerbehandlung
     }
 
     // Erstelle einen weiteren Task
-    if (xTaskCreate(another_task, "Another Task", 4096, nullptr, 1, &task_handles.another_task_handle) != pdPASS) {
-        printf("Fehler beim Erstellen eines weiteren Tasks\n"); 
+    if (xTaskCreate(another_task, "Another Task", 1024, NULL, 1, NULL) != pdPASS) {
+        printf("Fehler beim Erstellen eines weiteren Tasks\n");
         // Fehlerbehandlung
     }
 
