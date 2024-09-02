@@ -3,25 +3,25 @@
  * @brief Main file for FreeRTOS tasks and hooks.
  */
 
+#include "lvgl/src/osal/lv_os.h"
+
 #if LV_USE_OS == LV_OS_FREERTOS
 
-#include "glob.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
+#include <cstdio>  // For printf in C++
 
 // Task identifiers used for managing FreeRTOS tasks
-typedef enum {
+enum TaskIdentifier_t {
     TASK_LVGL,          // Task for LVGL rendering and management
     TASK_ANOTHER_TASK,  // Additional task (extend as needed)
     TASK_MAX            // Count of tasks, should always be the last item
-} TaskIdentifier_t;
+};
 
 // Structure to hold handles for created tasks
-typedef struct {
-    TaskHandle_t handles[TASK_MAX];
-} TaskHandles_t;
+struct TaskHandles_t {
+    lv_thread_t lvgl_thread;  // LVGL thread handle
+    TaskHandle_t another_task_handle;  // Another task handle
+};
 
 // Global instance of task handles
 TaskHandles_t task_handles;
@@ -36,7 +36,7 @@ TaskHandles_t task_handles;
  * @param   None
  * @return  None
  */
-void vApplicationMallocFailedHook(void)
+extern "C" void vApplicationMallocFailedHook(void)
 {
     printf("Malloc failed! Available heap: %ld bytes\n", xPortGetFreeHeapSize());
     for( ;; );
@@ -52,7 +52,7 @@ void vApplicationMallocFailedHook(void)
  * @param   None
  * @return  None
  */
-void vApplicationIdleHook(void) {}
+extern "C" void vApplicationIdleHook(void) {}
 
 // ........................................................................................................
 /**
@@ -65,7 +65,7 @@ void vApplicationIdleHook(void) {}
  * @param   pcTaskName   Name of the task that caused the stack overflow
  * @return  None
  */
-void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
     printf("Stack overflow in task %s\n", pcTaskName);
     for(;;);
@@ -81,70 +81,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
  * @param   None
  * @return  None
  */
-void vApplicationTickHook(void) {}
-
-// ........................................................................................................
-/**
- * @brief   Get idle task memory
- *
- * This function provides the memory required for the idle task. It must be implemented by the user
- * when static allocation is enabled (configSUPPORT_STATIC_ALLOCATION).
- *
- * @param   ppxIdleTaskTCBBuffer   Pointer to the TCB buffer for the idle task
- * @param   ppxIdleTaskStackBuffer Pointer to the stack buffer for the idle task
- * @param   pulIdleTaskStackSize   Pointer to the size of the idle task stack
- * @return  None
- */
-void vApplicationGetIdleTaskMemory(StaticTask_t** ppxIdleTaskTCBBuffer,
-                                   StackType_t** ppxIdleTaskStackBuffer,
-                                   uint32_t* pulIdleTaskStackSize)
-{
-    static StaticTask_t xIdleTaskTCB;
-    static StackType_t uxIdleTaskStack[128];  // Example size
-
-    *ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
-    *ppxIdleTaskStackBuffer = uxIdleTaskStack;
-    *pulIdleTaskStackSize = 128;  // Example size
-}
-
-// ........................................................................................................
-/**
- * @brief   Get timer task memory
- *
- * This function provides the memory required for the timer task. It must be implemented by the user
- * when static allocation is enabled (configSUPPORT_STATIC_ALLOCATION).
- *
- * @param   ppxTimerTaskTCBBuffer   Pointer to the TCB buffer for the timer task
- * @param   ppxTimerTaskStackBuffer Pointer to the stack buffer for the timer task
- * @param   pulTimerTaskStackSize   Pointer to the size of the timer task stack
- * @return  None
- */
-void vApplicationGetTimerTaskMemory(StaticTask_t** ppxTimerTaskTCBBuffer,
-                                    StackType_t** ppxTimerTaskStackBuffer,
-                                    uint32_t* pulTimerTaskStackSize)
-{
-    static StaticTask_t xTimerTaskTCB;
-    static StackType_t uxTimerTaskStack[256];  // Example size
-
-    *ppxTimerTaskTCBBuffer = &xTimerTaskTCB;
-    *ppxTimerTaskStackBuffer = uxTimerTaskStack;
-    *pulTimerTaskStackSize = 256;  // Example size
-}
-
-// ........................................................................................................
-/**
- * @brief   Daemon task startup hook
- *
- * This function is called before the daemon task starts running. It can be used to perform
- * initialization tasks that need to be completed before the daemon task executes.
- *
- * @param   None
- * @return  None
- */
-void vApplicationDaemonTaskStartupHook(void)
-{
-    // Initialization code here
-}
+extern "C" void vApplicationTickHook(void) {}
 
 // ........................................................................................................
 /**
@@ -155,10 +92,10 @@ void vApplicationDaemonTaskStartupHook(void)
  * @param   None
  * @return  None
  */
-void create_hello_world_screen(void)
+void create_hello_world_screen()
 {
     // Create a new screen
-    lv_obj_t *screen = lv_obj_create(NULL);
+    lv_obj_t *screen = lv_obj_create(nullptr);
 
     // Create a label object on the screen
     lv_obj_t *label = lv_label_create(screen);
@@ -188,7 +125,7 @@ void lvgl_task(void *pvParameters)
     // Show simple hello world screen
     create_hello_world_screen(); 
 
-    while (1)
+    while (true)
     {
         lv_timer_handler(); // Handle LVGL tasks
         vTaskDelay(pdMS_TO_TICKS(5)); // Short delay for the RTOS scheduler
@@ -207,7 +144,7 @@ void lvgl_task(void *pvParameters)
 void another_task(void *pvParameters)
 {
     // Create some load
-    while (1)
+    while (true)
     {
         printf("Second Task is running :)\n");
         vTaskDelay(pdMS_TO_TICKS(500));
@@ -223,21 +160,26 @@ void another_task(void *pvParameters)
  * @param   None
  * @return  None
  */
-void freertos_main(void)
+extern "C" void freertos_main()
 {
-    // Create LVGL task 
-    if (xTaskCreate(lvgl_task, "LVGL Task", 16384, NULL, 1, &task_handles.handles[TASK_LVGL]) != pdPASS) {
-        printf("Failed to create LVGL Task\n");
-        // Error handling, e.g., stop the program or take other measures
+    // Initialisiere LVGL und andere Ressourcen
+
+    // Erstelle den LVGL-Task
+    lv_thread_prio_t prio = static_cast<lv_thread_prio_t>(tskIDLE_PRIORITY + 1);
+    if (lv_thread_init(&task_handles.lvgl_thread, prio, lvgl_task, 16384, nullptr) != LV_RESULT_OK) {
+        printf("Fehler beim Erstellen des LVGL-Tasks\n");
+        // Fehlerbehandlung
     }
 
-    // Create a second demo task
-    if (xTaskCreate(another_task, "Another Task", 4096, NULL, 1, &task_handles.handles[TASK_ANOTHER_TASK]) != pdPASS) {
-        printf("Failed to create Another Task\n"); 
+    // Erstelle einen weiteren Task
+    if (xTaskCreate(another_task, "Another Task", 4096, nullptr, 1, &task_handles.another_task_handle) != pdPASS) {
+        printf("Fehler beim Erstellen eines weiteren Tasks\n"); 
+        // Fehlerbehandlung
     }
 
-    // Start Scheduler
+    // Starte den Scheduler
     vTaskStartScheduler();
 }
+
 
 #endif

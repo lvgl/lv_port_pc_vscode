@@ -9,6 +9,7 @@
  *********************/
 #define _DEFAULT_SOURCE /* needed for usleep() */
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
 #include "lvgl/lvgl.h"
@@ -40,6 +41,8 @@ static lv_display_t * hal_init(int32_t w, int32_t h);
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+
+extern void freertos_main(void);
 
 /*********************
  *      DEFINES

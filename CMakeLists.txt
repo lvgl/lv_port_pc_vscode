@@ -72,7 +72,7 @@ target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS
 # Create the main executable and add source files
 add_executable(main
     ${PROJECT_SOURCE_DIR}/main/src/main.c
-    ${PROJECT_SOURCE_DIR}/main/src/freertos_main.c
+    ${PROJECT_SOURCE_DIR}/main/src/freertos_main.cpp
     ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
     ${PROJECT_SOURCE_DIR}/main/src/FreeRTOS_Posix_Port.c
     ${FREERTOS_SOURCES}
