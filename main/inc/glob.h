@@ -11,7 +11,7 @@
 
 
 
-
+void freertos_main( void ); 
 
 
 #endif
