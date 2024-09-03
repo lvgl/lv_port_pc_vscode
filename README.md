@@ -2,26 +2,14 @@
 
 The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
-## Changes from original repo
-Embedded systems often operate under a real-time operating system (RTOS) like FreeRTOS, which efficiently manages tasks and resources. To better simulate the behavior of such systems in a development environment, I decided to integrate FreeRTOS into this simulator. This addition allows us to more accurately emulate the execution environment of embedded systems running on an RTOS.
-
-### What We've Accomplished:
-Integration of FreeRTOS: We added FreeRTOS as a submodule and configured the build system to include the necessary source files and headers.
+## (RT)OS support
+Works with any OS like pthred, Windows, FreeRTOS, etc. It has build in support for FreeRTOS. 
 
 - Task Creation: A basic FreeRTOS task was implemented to initialize and run LVGL within the simulated environment.
 - Scheduler Integration: The FreeRTOS scheduler was incorporated to manage the execution of tasks, simulating a real-time environment.
 - LVGL Task Execution: We refactored the original code to run LVGL in a dedicated FreeRTOS task, allowing periodic handling through the FreeRTOS scheduling mechanism.
 
-This setup provides a more realistic development and testing environment, closely mirroring the conditions of an actual embedded system running FreeRTOS.
-
-This project is configured for [VSCode](https://code.visualstudio.com) and only tested on Linux, although this may work on OSx or WSL. It requires a working version of GCC, GDB and make in your path.
-
-To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file.
-
-The project can use **SDL** but it can be easily relaced by any other built-in LVGL dirvers.
-
 ## Get started
-
 ### Get the PC project
 
 Clone the PC project and the related sub modules:
@@ -50,16 +38,6 @@ sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base
 ```
 
 ## Usage
-
-### FreeRTOS configuration
-To correctly configure the project, the RTOS (Real-Time Operating System) requires a significant amount of heap memory, especially when debugging an SDL (Simple DirectMedia Layer) window application. In this project, the heap memory has been experimentally set to **512 MB**.
-
-```c
-#define configTOTAL_HEAP_SIZE ( ( size_t ) ( 512 * 1024 * 1024 ) )  // 512 MB Heap
-```
-This configuration ensures that the SDL window is displayed in a timely manner. If this value is reduced, it may cause significant delays in the SDL window's appearance. If the allocated heap memory is too small, the window may fail to appear altogether.
-Therefore, it is crucial to allocate sufficient heap memory to ensure smooth execution and debugging experience.
-
 ### Visual Studio Code
 
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
@@ -93,6 +71,18 @@ to build using the latest version of clang from homebrew, do the following:
 4. reconfigure by running cmd+shift+p `Cmake: Configure`
 
 5. build using [step 4 above](#visual-studio-code)
+
+### FreeRTOS configuration
+To correctly configure the project, the RTOS (Real-Time Operating System) requires a significant amount of heap memory, especially when debugging an SDL (Simple DirectMedia Layer) window application. In this project, the heap memory has been experimentally set to **512 MB**.
+
+```c
+#define configTOTAL_HEAP_SIZE ( ( size_t ) ( 512 * 1024 * 1024 ) )  // 512 MB Heap
+```
+This configuration ensures that the SDL window is displayed in a timely manner. If this value is reduced, it may cause significant delays in the SDL window's appearance. If the allocated heap memory is too small, the window may fail to appear altogether.
+Therefore, it is crucial to allocate sufficient heap memory to ensure smooth execution and debugging experience.
+
+### Enable FreeRTOS 
+To enable the rtos part of this project select in lv_conf.h `#define LV_USE_OS   LV_OS_NONE` to `#define LV_USE_OS  LV_OS_FREERTOS`
 
 ### CMake
 
@@ -130,14 +120,13 @@ make
 sudo make install
 ```
 
-## Load GUI Design from SquareLine Studio
+## Test
+This project is configured for [VSCode](https://code.visualstudio.com) and is tested on: 
+- Ubuntu Linux 
+- Windows WSL (Ubuntu Linux)
 
-### UI Path Configuration
+It requires a working version of GCC, GDB and make in your path.
 
-The UI path in the CMake file is set up so that the export path for your SquareLine project can be directly set to this project. This allows seamless integration of your UI designs into the project without requiring additional steps.
+To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file.
 
-### LVGL Task Execution
-
-The LVGL task will execute the following function:
-
-```c ui_init(); ```
+The project can use **SDL** but it can be easily relaced by any other built-in LVGL dirvers.
