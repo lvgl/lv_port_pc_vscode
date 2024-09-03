@@ -13,8 +13,6 @@
 #include "lvgl.h"
 #include <cstdio>  // For printf in C++
 
-TaskHandle_t xHandle = NULL;
-
 // ........................................................................................................
 /**
  * @brief   Malloc failed hook
@@ -83,20 +81,29 @@ extern "C" void vApplicationTickHook(void) {}
  */
 void create_hello_world_screen()
 {
-   lv_obj_t *screen = lv_obj_create(NULL);
-    if (screen == NULL) {
+    /* Create a new screen object */
+    lv_obj_t *screen = lv_obj_create(NULL);
+    if (screen == NULL){
         printf("Error: Failed to create screen object\n");
+        /* Return if screen creation fails */
         return;
     }
 
+    /* Create a new label object on the screen */
     lv_obj_t *label = lv_label_create(screen);
-    if (label == NULL) {
+    if (label == NULL){
         printf("Error: Failed to create label object\n");
+        /* Return if label creation fails */
         return;
     }
 
+    /* Set the text of the label to "Hello, World!" */
     lv_label_set_text(label, "Hello, World!");
+
+    /* Align the label to the center of the screen */
     lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+
+    /* Load the created screen and make it visible */
     lv_scr_load(screen);
 }
 
@@ -112,13 +119,12 @@ void create_hello_world_screen()
  */
 void lvgl_task(void *pvParameters)
 {
-    // Show simple hello world screen
+    /* Show simple hello world screen */
     create_hello_world_screen();
 
-    while (true)
-    {
-        lv_timer_handler(); // Handle LVGL tasks
-        vTaskDelay(pdMS_TO_TICKS(5)); // Short delay for the RTOS scheduler
+    while (true){
+        lv_timer_handler(); /* Handle LVGL tasks */
+        vTaskDelay(pdMS_TO_TICKS(5)); /* Short delay for the RTOS scheduler */
     }
 }
 
@@ -133,10 +139,10 @@ void lvgl_task(void *pvParameters)
  */
 void another_task(void *pvParameters)
 {
-    // Create some load
-    while (true)
-    {
+    /* Create some load in an infinite loop */
+    while (true){
         printf("Second Task is running :)\n");
+        /* Delay the task for 500 milliseconds */
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
@@ -152,23 +158,22 @@ void another_task(void *pvParameters)
  */
 extern "C" void freertos_main()
 {
-    // Initialisiere LVGL und andere Ressourcen
+    /* Initialize LVGL (Light and Versatile Graphics Library) and other resources */
 
-    // Erstelle den LVGL-Task
-    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, NULL, 1, &xHandle) != pdPASS) {
-        printf("Fehler beim Erstellen des LVGL-Tasks\n");
-        // Fehlerbehandlung
+    /* Create the LVGL task */
+    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, nullptr, 1, nullptr) != pdPASS) {
+        printf("Error creating LVGL task\n");
+        /* Error handling */
     }
 
-    // Erstelle einen weiteren Task
-    if (xTaskCreate(another_task, "Another Task", 1024, NULL, 1, NULL) != pdPASS) {
-        printf("Fehler beim Erstellen eines weiteren Tasks\n");
-        // Fehlerbehandlung
+    /* Create another task */
+    if (xTaskCreate(another_task, "Another Task", 1024, nullptr, 1, nullptr) != pdPASS) {
+        printf("Error creating another task\n");
+        /* Error handling */
     }
 
-    // Starte den Scheduler
+    /* Start the scheduler */
     vTaskStartScheduler();
 }
-
 
 #endif
