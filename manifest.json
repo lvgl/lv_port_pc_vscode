@@ -38,8 +38,19 @@
             ]
         },
         {
-            "type": "checkbox",
+            "type": "dropdown",
             "label": "Show performance monitor",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "1",
+                    "default": "true"
+                },
+                {
+                    "name": "No",
+                    "value": "0"
+                }
+            ],
             "actions": [
                 {
                     "toReplace": "#define LV_USE_PERF_MONITOR .*",
