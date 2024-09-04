@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 
   #elif LV_USE_OS == LV_OS_FREERTOS
 
-  // Run FreeRTOS and create lvgl task
+  /* Run FreeRTOS and create lvgl task */
   freertos_main();  
 
   #endif
