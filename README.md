@@ -6,13 +6,6 @@ This project is pre-configured for VSCode and should work work on Windows, Linux
 
 The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
-## (RT)OS support
-Works with any OS like pthred, Windows, FreeRTOS, etc. It has build in support for FreeRTOS. 
-
-- Task Creation: A basic FreeRTOS task was implemented to initialize and run LVGL within the simulated environment.
-- Scheduler Integration: The FreeRTOS scheduler was incorporated to manage the execution of tasks, simulating a real-time environment.
-- LVGL Task Execution: We refactored the original code to run LVGL in a dedicated FreeRTOS task, allowing periodic handling through the FreeRTOS scheduling mechanism.
-
 ## Get started
 ### Get the PC project
 
@@ -123,6 +116,8 @@ git checkout release/6.0
 make
 sudo make install
 ```
+### (RT)OS support
+Works with any OS like pthred, Windows, FreeRTOS, etc. It has build in support for FreeRTOS. 
 
 ## Test
 This project is configured for [VSCode](https://code.visualstudio.com) and is tested on: 
