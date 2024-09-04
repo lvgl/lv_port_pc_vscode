@@ -15,7 +15,6 @@ typedef struct Event
     pthread_mutex_t mutex;    /* Mutex to protect access to the condition variable */
 } Event_t;
 
-// ........................................................................................................
 /**
  * @brief   Create an event object
  *
