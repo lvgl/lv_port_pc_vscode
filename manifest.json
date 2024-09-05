@@ -13,7 +13,7 @@
     "description": "LVGL is written mainly for microcontrollers and embedded systems, however you can run the library on your PC as well without any embedded hardware. The code written on PC can be simply copied when you are using an embedded system. The project can use SDL but it can be easily replaced by any other built-in LVGL drivers.",    
     "shortDescription": "VSCode-based project to run LVGL on PC.",
     "urlToClone": "https://github.com/lvgl/lv_port_pc_vscode",
-    "logo": "https://raw.githubusercontent.com/lvgl-private/project_creator_data/master/meta/images/vscode/logo.svg",
+    "logo": "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/vscode/logo.svg",
     "branches": [
         "release/v9.2"
     ],
