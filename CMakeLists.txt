@@ -9,20 +9,20 @@ option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS
 if(USE_FREERTOS)
     message(STATUS "FreeRTOS is enabled")
 
-    # FreeRTOS-Integration, wenn USE_FREERTOS aktiviert ist
+    # FreeRTOS integration when USE_FREERTOS is enabled
     add_library(freertos_config INTERFACE)
     target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
     target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
 
-    # FreeRTOS als Subdirectory hinzufügen
+    # Add FreeRTOS as a subdirectory
     add_subdirectory(FreeRTOS)
 
-    # FreeRTOS-spezifische Include-Verzeichnisse
+    # FreeRTOS-specific include directories
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
     include_directories(${PROJECT_SOURCE_DIR}/config)
 
-    # FreeRTOS-Quellen hinzufügen
+    # Add FreeRTOS sources
     file(GLOB FREERTOS_SOURCES
         "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
         "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
@@ -30,7 +30,7 @@ if(USE_FREERTOS)
     )
 else()
     message(STATUS "FreeRTOS is disabled")
-    set(FREERTOS_SOURCES "")  # Keine FreeRTOS-Quellen, wenn FreeRTOS deaktiviert ist
+    set(FREERTOS_SOURCES "")  # No FreeRTOS sources if FreeRTOS is disabled
 endif()
 
 # Main include files of the project
@@ -69,16 +69,16 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-# Main executable erstellen, abhängig von der FreeRTOS-Option
+# Create the main executable, depending on the FreeRTOS option
 if(USE_FREERTOS)
     add_executable(main
         ${PROJECT_SOURCE_DIR}/main/src/main.c
         ${PROJECT_SOURCE_DIR}/main/src/freertos_main.cpp
         ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
         ${PROJECT_SOURCE_DIR}/main/src/FreeRTOS_Posix_Port.c
-        ${FREERTOS_SOURCES}  # Nur hinzufügen, wenn USE_FREERTOS aktiviert ist
+        ${FREERTOS_SOURCES}  # Add only if USE_FREERTOS is enabled
     )
-    # FreeRTOS-Bibliotheken verlinken
+    # Link FreeRTOS libraries
     target_link_libraries(main freertos_config FreeRTOS)
 else()
     add_executable(main
@@ -91,7 +91,7 @@ endif()
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 
-# Nur freertos_config verlinken, wenn FreeRTOS-Verzeichnis existiert
+# Only link freertos_config if the FreeRTOS directory exists
 if(USE_FREERTOS)
     target_link_libraries(main freertos_config)
 endif()
