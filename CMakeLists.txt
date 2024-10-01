@@ -1,70 +1,139 @@
 cmake_minimum_required(VERSION 3.10)
-project(lvgl)
+project(lvgl C CXX)
 
+# Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
+set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+
+option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS 
+
+if(USE_FREERTOS)
+    message(STATUS "FreeRTOS is enabled")
+
+    # FreeRTOS integration when USE_FREERTOS is enabled
+    add_library(freertos_config INTERFACE)
+    target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
+    target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
+
+    # Add FreeRTOS as a subdirectory
+    add_subdirectory(FreeRTOS)
+
+    # FreeRTOS-specific include directories
+    include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
+    include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+    include_directories(${PROJECT_SOURCE_DIR}/config)
+
+    # Add FreeRTOS sources
+    file(GLOB FREERTOS_SOURCES
+        "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
+        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
+        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
+    )
+else()
+    message(STATUS "FreeRTOS is disabled")
+    set(FREERTOS_SOURCES "")  # No FreeRTOS sources if FreeRTOS is disabled
+endif()
+
+# Main include files of the project
+include_directories(${PROJECT_SOURCE_DIR}/main/inc)
+
+# Define options for LVGL with default values (OFF)
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)
 option(LV_USE_FFMPEG "Use libffmpeg to display video using lv_ffmpeg" OFF)
-option(LV_USE_FREETYPE "Use freetype lib" OFF)
+option(LV_USE_FREETYPE "Use freetype library" OFF)
 
-set(CMAKE_C_STANDARD 99)#C99 # lvgl officially support C99 and above
-set(CMAKE_CXX_STANDARD 17)#C17
+# Set C and C++ standards
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Set the output path for the executable
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
-find_package(SDL2 REQUIRED SDL2)
+# Find and include SDL2 library
+find_package(SDL2 REQUIRED)
 
+# Remove ARM-specific compile and linker options
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=native")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+
+# Add compile definitions based on the selected options
 add_compile_definitions($<$<BOOL:${LV_USE_DRAW_SDL}>:LV_USE_DRAW_SDL=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_LIBPNG}>:LV_USE_LIBPNG=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_LIBJPEG_TURBO}>:LV_USE_LIBJPEG_TURBO=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 
+# Add LVGL subdirectory
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-add_executable(main main/src/main.c main/src/mouse_cursor_icon.c)
+# Create the main executable, depending on the FreeRTOS option
+if(USE_FREERTOS)
+    add_executable(main
+        ${PROJECT_SOURCE_DIR}/main/src/main.c
+        ${PROJECT_SOURCE_DIR}/main/src/freertos_main.cpp
+        ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
+        ${PROJECT_SOURCE_DIR}/main/src/FreeRTOS_Posix_Port.c
+        ${FREERTOS_SOURCES}  # Add only if USE_FREERTOS is enabled
+    )
+    # Link FreeRTOS libraries
+    target_link_libraries(main freertos_config FreeRTOS)
+else()
+    add_executable(main
+        ${PROJECT_SOURCE_DIR}/main/src/main.c
+        ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
+    )
+endif()
 
+# Define LVGL configuration as a simple include
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-add_custom_target (run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
 
+# Only link freertos_config if the FreeRTOS directory exists
+if(USE_FREERTOS)
+    target_link_libraries(main freertos_config)
+endif()
+
+# Custom target to run the executable
+add_custom_target(run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
+
+# Conditionally include and link SDL2_image if LV_USE_DRAW_SDL is enabled
 if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-    # Need to install libsdl2-image-dev
-    # `sudo apt install libsdl2-image-dev`
-    # `brew install sdl2_image`
     find_package(SDL2_image REQUIRED)
     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
     target_link_libraries(main ${SDL2_IMAGE_LIBRARIES})
-endif(LV_USE_DRAW_SDL)
+endif()
 
+# Conditionally include and link libpng if LV_USE_LIBPNG is enabled
 if(LV_USE_LIBPNG)
     find_package(PNG REQUIRED)
-    target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIR})
-    target_link_libraries(main ${PNG_LIBRARY})
-endif(LV_USE_LIBPNG)
+    target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIRS})
+    target_link_libraries(main ${PNG_LIBRARIES})
+endif()
 
+# Conditionally include and link libjpeg-turbo if LV_USE_LIBJPEG_TURBO is enabled
 if(LV_USE_LIBJPEG_TURBO)
-    # Need to install libjpeg-turbo8-dev
-    # `sudo apt install libjpeg-turbo8-dev`
-    # `brew install libjpeg-turbo`
     find_package(JPEG REQUIRED)
     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
     target_link_libraries(main ${JPEG_LIBRARIES})
-endif(LV_USE_LIBJPEG_TURBO)
+endif()
 
+# Conditionally include and link FFmpeg libraries if LV_USE_FFMPEG is enabled
 if(LV_USE_FFMPEG)
     target_link_libraries(main avformat avcodec avutil swscale z)
-endif(LV_USE_FFMPEG)
+endif()
 
+# Conditionally include and link FreeType if LV_USE_FREETYPE is enabled
 if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
-    target_link_libraries(main ${FREETYPE_LIBRARIES})
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
-endif(LV_USE_FREETYPE)
+    target_link_libraries(main ${FREETYPE_LIBRARIES})
+endif()
 
+# Apply additional compile options if the build type is Debug
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug mode enabled")
 
@@ -81,7 +150,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         # -Wmissing-prototypes
         -Wpointer-arith
         -Wmultichar
-        -Wno-pedantic # ignored for now, we convert functions to pointers for propertis table.
+        -Wno-pedantic # ignored for now, we convert functions to pointers for properties table.
         -Wreturn-type
         -Wshadow
         -Wshift-negative-value
