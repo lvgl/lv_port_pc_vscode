@@ -1,8 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 project(lvgl C CXX)
 
-# Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
-set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+# output compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+    # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
+    set(FREERTOS_PORT MSVC_MINGW CACHE STRING "Port for FreeRTOS on Posix environment")
+else()
+    # Set the correct FreeRTOS port for your system (e.g., Mingw-w64 for Windows)
+    set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+endif()
 
 unset(USE_FREERTOS CACHE)
 
@@ -21,14 +29,16 @@ if(USE_FREERTOS)
 
     # FreeRTOS-specific include directories
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
-    include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+    if(CMAKE_SYSTEM_NAME MATCHES "Windows")
+        include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MSVC-MingW)
+    else()
+        include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+    endif()
     include_directories(${PROJECT_SOURCE_DIR}/config)
 
     # Add FreeRTOS sources
     file(GLOB FREERTOS_SOURCES
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
         "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
     )
 else()
     message(STATUS "FreeRTOS is disabled")
@@ -81,7 +91,7 @@ if(USE_FREERTOS)
         ${FREERTOS_SOURCES}  # Add only if USE_FREERTOS is enabled
     )
     # Link FreeRTOS libraries
-    target_link_libraries(main freertos_config FreeRTOS)
+    target_link_libraries(main freertos_config freertos_kernel freertos_kernel_port)
 else()
     add_executable(main
         ${PROJECT_SOURCE_DIR}/main/src/main.c

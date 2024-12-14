@@ -2,7 +2,7 @@
 
 [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
-This project is pre-configured for VSCode and should work work on Windows, Linux and MacOs as well. FreeRTOS is also included and can be optionally enabled to better simulate embedded system's behavior.  
+This project is pre-configured for VSCode and should work work on Windows, Linux and MacOs as well. FreeRTOS is also included and can be optionally enabled to better simulate embedded system's behavior.
 
 
 ## Get started
@@ -31,6 +31,32 @@ For ArchLinux
 
 ```bash
 sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base-devel gcc make
+```
+
+#### Windows
+
+For Windows 10
+
+* Install `cmake`
+* Download `mingw-w64` gcc toolchain and add it to environment PATH `[1]`
+* Download `SDL2` and add it to environment PATH `[2]`
+
+**Tips:**
+
+`[1]` If you have no idea to install Mingw-w6, please refer this link to install Mingw-w64 https://code.visualstudio.com/docs/cpp/config-mingw
+
+`[2]`
+For example to configure SDL2 in Windows OS
+
+Download SDL2-devel-2.30.9-mingw.tar.gz from
+```
+https://github.com/libsdl-org/SDL/releases/tag/release-2.30.9
+```
+
+Unzip SDL2-devel-2.30.9-mingw.zip then set environment path:
+```
+D:\program_files\SDL2-2.30.9\x86_64-w64-mingw32\lib\cmake\SDL2
+D:\program_files\SDL2-2.30.9\x86_64-w64-mingw32\bin
 ```
 
 ## Usage
@@ -77,19 +103,48 @@ To correctly configure the project, the RTOS (Real-Time Operating System) requir
 This configuration ensures that the SDL window is displayed in a timely manner. If this value is reduced, it may cause significant delays in the SDL window's appearance. If the allocated heap memory is too small, the window may fail to appear altogether.
 Therefore, it is crucial to allocate sufficient heap memory to ensure smooth execution and debugging experience.
 
-### Enable FreeRTOS 
+### Enable FreeRTOS
 To enable the rtos part of this project select in lv_conf.h `#define LV_USE_OS   LV_OS_NONE` to `#define LV_USE_OS  LV_OS_FREERTOS`
 Additionaly you have to enable the compilation of all FreeRTOS Files by turn on `option(USE_FREERTOS "Enable FreeRTOS" OFF) ` in the CMakeLists.txt file.
+
+For windows
+
+* Disable `USE_FREERTOS_TASK_NOTIFY` in `lvgl\src\osal\lv_freertos.h` `#define USE_FREERTOS_TASK_NOTIFY 1` to `#define USE_FREERTOS_TASK_NOTIFY 0`, because enable `USE_FREERTOS_TASK_NOTIFY` will cause software crash in windows.
+
+```diff
+--- a/src/osal/lv_freertos.h
++++ b/src/osal/lv_freertos.h
+@@ -43,7 +43,7 @@ extern "C" {
+  *
+  * RTOS task notifications can only be used when there is only one task that can be the recipient of the event.
+  */
+-#define USE_FREERTOS_TASK_NOTIFY 1
++#define USE_FREERTOS_TASK_NOTIFY 0
+
+ /**********************
+  *      TYPEDEFS
+```
 
 ### CMake
 
 This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
+
+For unix like OS
 
 ```bash
 mkdir build
 cd build
 cmake ..
 make -j
+```
+
+For Windows
+
+```cmd
+mkdir build
+cd build
+cmake .. -G"MinGW Makefiles"
+cmake --build . -j10
 ```
 
 ## Optional library
@@ -117,12 +172,13 @@ make
 sudo make install
 ```
 ### (RT)OS support
-Works with any OS like pthred, Windows, FreeRTOS, etc. It has build in support for FreeRTOS. 
+Works with any OS like pthred, Windows, FreeRTOS, etc. It has build in support for FreeRTOS.
 
 ## Test
-This project is configured for [VSCode](https://code.visualstudio.com) and is tested on: 
-- Ubuntu Linux 
+This project is configured for [VSCode](https://code.visualstudio.com) and is tested on:
+- Ubuntu Linux
 - Windows WSL (Ubuntu Linux)
+- Windows 10
 
 It requires a working version of GCC, GDB and make in your path.
 
