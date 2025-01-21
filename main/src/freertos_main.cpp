@@ -175,13 +175,13 @@ extern "C" void freertos_main()
     /* Initialize LVGL (Light and Versatile Graphics Library) and other resources */
 
     /* Create the LVGL task */
-    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, nullptr, 1, nullptr) != pdPASS) {
+    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, nullptr, 3, nullptr) != pdPASS) {
         printf("Error creating LVGL task\n");
         /* Error handling */
     }
 
     /* Create another task */
-    if (xTaskCreate(another_task, "Another Task", 1024, nullptr, 1, nullptr) != pdPASS) {
+    if (xTaskCreate(another_task, "Another Task", 1024, nullptr, 3, nullptr) != pdPASS) {
         printf("Error creating another task\n");
         /* Error handling */
     }
