@@ -2,10 +2,21 @@
 
 [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems, however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
 
-This project is pre-configured for VSCode and should work work on Windows, Linux and MacOs as well. FreeRTOS is also included and can be optionally enabled to better simulate embedded system's behavior.  
-
+This project is pre-configured for VSCode and should work work on Windows, Linux and MacOs as well. FreeRTOS is also included and can be optionally enabled to better simulate embedded system's behavior. 
 
 ## Get started
+
+### Install SDL and the build tools
+
+- **Windows (vcpkg):** `vcpkg install sdl2`  (`vcpkg` can be installed from [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)) Also install either MinGW or another compier and `cmake`.
+- **macOS (Homebrew):** `brew install sdl2 cmake make`  
+- **Linux:**  
+  - **Debian/Ubuntu:** `sudo apt install build-essential cmake libsdl2-dev`  
+  - **Arch:** `sudo pacman -S base-devel cmake sdl2`  
+  - **Fedora:** `sudo dnf install @development-tools cmake SDL2-devel`  
+- **Manual Installation of SDL:** Download from [SDL’s website](https://github.com/libsdl-org/SDL/releases) and place headers/libraries in your project.
+- **Verify Installation:** `sdl2-config --version`, `cmake --version`, `gcc --version`, `g++ --version` (should return the installed version).  
+
 ### Get the PC project
 
 Clone the PC project and the related sub modules:
@@ -14,26 +25,8 @@ Clone the PC project and the related sub modules:
 git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 ```
 
-### Install SDL and build tools
-
-You can download SDL from https://www.libsdl.org/
-
-#### Linux
-
-Copy below in the Terminal:
-For Ubuntu
-
-```bash
-sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev cmake
-```
-
-For ArchLinux
-
-```bash
-sudo pacman -Syu && sudo pacman -S sdl2 libsdl2-devel sdl2_mixer sdl2-devel base-devel gcc make
-```
-
 ## Usage
+
 ### Visual Studio Code
 
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
