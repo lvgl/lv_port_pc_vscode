@@ -15,7 +15,11 @@
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
+#ifdef __MINGW32__
+#include <SDL2/SDL.h>
+#else
 #include "glob.h"
+#endif
 
 /*********************
  *      DEFINES
@@ -34,7 +38,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h);
  *  STATIC VARIABLES
  **********************/
 
-/********************** 
+/**********************
  *      MACROS
  **********************/
 
@@ -72,11 +76,12 @@ int main(int argc, char **argv)
   /*Initialize LVGL*/
   lv_init();
 
+  #if LV_USE_OS == LV_OS_NONE
+
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
+  /*In FreeRTOS, move hal_init to lvgl_task to avoid SDL2 stuck when running in windows OS*/
   hal_init(320, 480);
 
-  #if LV_USE_OS == LV_OS_NONE
- 
   lv_demo_widgets();
 
   while(1) {
@@ -89,7 +94,7 @@ int main(int argc, char **argv)
   #elif LV_USE_OS == LV_OS_FREERTOS
 
   /* Run FreeRTOS and create lvgl task */
-  freertos_main();  
+  freertos_main();
 
   #endif
 
