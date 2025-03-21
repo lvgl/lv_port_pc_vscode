@@ -81,7 +81,7 @@ if(USE_FREERTOS)
         ${FREERTOS_SOURCES}  # Add only if USE_FREERTOS is enabled
     )
     # Link FreeRTOS libraries
-    target_link_libraries(main freertos_config FreeRTOS)
+    target_link_libraries(main freertos_config freertos_kernel)
 else()
     add_executable(main
         ${PROJECT_SOURCE_DIR}/main/src/main.c
