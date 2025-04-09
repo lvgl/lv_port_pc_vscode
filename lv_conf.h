@@ -558,7 +558,9 @@
 #define LV_USE_MATRIX           1
 
 /** Include `lvgl_private.h` in `lvgl.h` to access internal data and functions by default */
-#define LV_USE_PRIVATE_API      0
+#ifndef LV_USE_PRIVATE_API
+    #define LV_USE_PRIVATE_API  0
+#endif
 
 /*==================
  *   FONT USAGE
@@ -1321,6 +1323,13 @@
     #define LV_DEMO_MUSIC_AUTO_PLAY 0
 #endif
 
+/** Vector graphic demo */
+#define LV_USE_DEMO_VECTOR_GRAPHIC  0
+
+/*---------------------------
+ * Demos from lvgl/lv_demos
+  ---------------------------*/
+
 /** Flex layout demo */
 #define LV_USE_DEMO_FLEX_LAYOUT     1
 
@@ -1332,9 +1341,6 @@
 
 /** Demonstrate scroll settings */
 #define LV_USE_DEMO_SCROLL          1
-
-/** Vector graphic demo */
-#define LV_USE_DEMO_VECTOR_GRAPHIC  0
 
 /*E-bike demo with Lottie animations (if LV_USE_LOTTIE is enabled)*/
 #define LV_USE_DEMO_EBIKE           0
