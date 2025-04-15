@@ -15,7 +15,6 @@
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
-#include "glob.h"
 
 /*********************
  *      DEFINES
@@ -34,7 +33,7 @@ static lv_display_t * hal_init(int32_t w, int32_t h);
  *  STATIC VARIABLES
  **********************/
 
-/********************** 
+/**********************
  *      MACROS
  **********************/
 
@@ -76,7 +75,7 @@ int main(int argc, char **argv)
   hal_init(320, 480);
 
   #if LV_USE_OS == LV_OS_NONE
- 
+
   lv_demo_widgets();
 
   while(1) {
@@ -89,7 +88,7 @@ int main(int argc, char **argv)
   #elif LV_USE_OS == LV_OS_FREERTOS
 
   /* Run FreeRTOS and create lvgl task */
-  freertos_main();  
+  freertos_main();
 
   #endif
 
