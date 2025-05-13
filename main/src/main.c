@@ -76,6 +76,12 @@ int main(int argc, char **argv)
 
   #if LV_USE_OS == LV_OS_NONE
 
+  /* Run the default demo */
+  /* To try a different demo or example, replace this with one of: */
+  /* - lv_demo_benchmark(); */
+  /* - lv_demo_stress(); */
+  /* - lv_example_label_1(); */
+  /* - etc. */
   lv_demo_widgets();
 
   while(1) {
