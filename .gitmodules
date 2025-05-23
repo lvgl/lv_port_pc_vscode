@@ -3,4 +3,4 @@
 	url = https://github.com/lvgl/lv_drivers.git
 [submodule "lvgl"]
 	path = lvgl
-	url = https://github.com/lvgl/lvgl.git
+	url = https://github.com/fhybj/lvgl_fork.git
