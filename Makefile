@@ -5,8 +5,8 @@
 #
 
 # select underlaying LCGL display driver (SDL2 || X11)
-LV_DRIVER          := X11
-#LV_DRIVER          := SDL2
+# LV_DRIVER          := X11
+LV_DRIVER          := SDL2
 
 PROJECT 			?= lvgl-demo
 MAKEFLAGS 			:= -j $(shell nproc)
