@@ -8,6 +8,9 @@ PROJECT(lvgl-demo VERSION 1.0 LANGUAGES C)
 SET(CMAKE_C_STANDARD 11)
 SET(CMAKE_C_STANDARD_REQUIRED ON)
 
+# compile_commands.json配置
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # 配置编译选项
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g")
 
@@ -38,7 +41,7 @@ ENDIF()
 # 可选库支持
 OPTION(USE_FREETYPE "Use FreeType library" OFF)
 OPTION(USE_FFMPEG "Use FFmpeg library" OFF)
-OPTION(USE_RLOTTIE "Use rlottie library" OFF)
+OPTION(USE_RLOTTIE "Use rlottie library" ON)
 
 IF(USE_RLOTTIE)
     ADD_DEFINITIONS(-D LV_USE_RLOTTIE=1)

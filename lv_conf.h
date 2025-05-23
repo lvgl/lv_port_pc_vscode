@@ -549,7 +549,7 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h"*/
 #define LV_USE_GIF 0
 
 /*QR code library*/
-#define LV_USE_QRCODE 0
+#define LV_USE_QRCODE 1
 
 /*FreeType library*/
 #define LV_USE_FREETYPE 0
@@ -568,8 +568,14 @@ e.g. "stm32f769xx.h" or "stm32f429xx.h"*/
     #endif
 #endif
 
+/* Tiny TTF library */
+#define LV_USE_TINY_TTF 1
+#ifdef LV_USE_TINY_TTF
+    #define LV_TINY_TTF_FILE_SUPPORT 1
+#endif
+
 /*Rlottie library*/
-#define LV_USE_RLOTTIE 0
+#define LV_USE_RLOTTIE 1
 
 /*FFmpeg library for image decoding and playing videos
  *Supports all major image formats so do not enable other image decoder with it*/

@@ -22,12 +22,13 @@
 		"files.trimTrailingWhitespace": true,
 		"files.insertFinalNewline": true,
 		"files.trimFinalNewlines": true,
-		"cmake.configureOnOpen": false,
+		"cmake.configureOnOpen": true,
 		"files.associations": {
-			"lv_demos.h": "c",
-			"lvgl.h": "c",
-			"lv_drv_conf.h": "c",
-			"stdlib.h": "c"
+			"iostream": "cpp",
+			"intrinsics.h": "c",
+			"ostream": "cpp",
+			"vector": "cpp",
+			"lv_examples.h": "c"
 		},
 	},
 	// tasks.json section
@@ -36,7 +37,13 @@
 		"tasks": [
 			{
 				"label": "Build",
-				"command": "make",
+				"command": "cmake",
+				"args": [
+					"--build",
+					"${workspaceFolder}/build",
+					"--target",
+					"demo"
+				],
 				"group": {
 					"kind": "build",
 					"isDefault": true
@@ -61,15 +68,76 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"name": "Debug LVGL demo with gdb",
-				"type": "cppdbg",
+				"name": "Debug LVGL demo with lldb",
+				"type": "lldb",
 				"request": "launch",
-			        "program": "${workspaceFolder}/build/bin/demo",
+				"program": "${workspaceFolder}/build/demo",
 				"args": [],
-				"cwd": "${fileDirname}",
+				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
 				"stopAtEntry": false,
-			},
-		],
+				"MIMode": "lldb"
+			}
+		]
 	},
+	// Setting
+	"settings":{
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/*.code-search": true,
+			"**/.vscode": true,
+			"**/.cache": true
+		},
+		"files.associations": {
+			"iostream": "cpp",
+			"intrinsics.h": "c",
+			"ostream": "cpp",
+			"vector": "cpp"
+		},
+		"editor.formatOnPaste": false, // 关闭粘贴时触发格式化
+		"editor.formatOnSave": false, // 关闭保存时触发格式化
+		"editor.formatOnType": false, // 关闭输入时触发格式化
+		// 关闭 C/C++ Extension Pack 插件的提示 防止其与clangd冲突
+		"C_Cpp.errorSquiggles": "Disabled",
+		"C_Cpp.intelliSenseEngineFallback": "Disabled",
+		"C_Cpp.intelliSenseEngine": "Disabled",
+		"C_Cpp.autocomplete": "Disabled", // So you don't get autocomplete from both extensions.
+		// 指向clangd路径
+		"clangd.arguments": [
+			// compelie_commands.json 文件的目录位置
+			"--compile-commands-dir=${custom.workspaceFolder}/build",
+			// 让 Clangd 生成更详细的日志
+			"--log=verbose",
+			// 输出的 JSON 文件更美观
+			"--pretty",
+			// 全局补全
+			"--all-scopes-completion",
+			// 建议风格：打包(重载函数只会给出一个建议）相反可以设置为detailed
+			"--completion-style=bundled",
+			// 跨文件重命名变量
+			"--cross-file-rename",
+			// 允许补充头文件 iwyu, 不允许 never
+			"--header-insertion=never",
+			// 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
+			"--header-insertion-decorators",
+			// 在后台自动分析文件 基于 complie_commands
+			"--background-index",
+			// 启用 Clang-Tidy 以提供「静态检查」
+			"--clang-tidy",
+			// Clang-Tidy 静态检查的参数，指出按照哪些规则进行静态检查
+			// 参数后部分的*表示通配符
+			// 在参数前加入-，如-modernize-use-trailing-return-type，将会禁用某一规则
+			"--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
+			// 默认格式化风格: 谷歌开源项目代码指南
+			"--fallback-style=file",
+			// 同时开启的任务数量
+			"-j=2",
+			// pch优化的位置(memory 或 disk，选择memory会增加内存开销，但会提升性能)
+			"--pch-storage=disk",
+			// 启用这项时，补全函数时，将会给参数提供占位符
+			// 我选择禁用
+			"--function-arg-placeholders=false"
+		],
+	}
 }
