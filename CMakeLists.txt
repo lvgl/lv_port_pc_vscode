@@ -93,6 +93,11 @@ endif()
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 
+# Platform configuration
+if(CMAKE_HOST_WIN32)
+    target_link_libraries(main -mconsole)
+endif()
+
 # Only link freertos_config if the FreeRTOS directory exists
 if(USE_FREERTOS)
     target_link_libraries(main freertos_config)
