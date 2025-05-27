@@ -7,7 +7,10 @@
 /*********************
  *      INCLUDES
  *********************/
-#define _DEFAULT_SOURCE /* needed for usleep() */
+#ifndef _DEFAULT_SOURCE
+  #define _DEFAULT_SOURCE /* needed for usleep() */
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
