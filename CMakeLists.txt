@@ -135,6 +135,16 @@ if(LV_USE_FREETYPE)
     target_link_libraries(main ${FREETYPE_LIBRARIES})
 endif()
 
+# On Windows, GUI applications do not show a console by default,
+# which hides log output. This ensures a console is available for logging.
+if (WIN32)
+    if (MSVC)
+        target_link_options(main PRIVATE "/SUBSYSTEM:CONSOLE")
+    else()
+        target_link_options(main PRIVATE "-mconsole")
+    endif()
+endif()
+
 # Apply additional compile options if the build type is Debug
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug mode enabled")
