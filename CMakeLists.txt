@@ -91,11 +91,11 @@ endif()
 
 # Define LVGL configuration as a simple include
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
-target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 
-# Platform configuration
-if(CMAKE_HOST_WIN32)
-    target_link_libraries(main -mconsole)
+if(MSVC)
+    target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
+else()
+    target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
 endif()
 
 # Only link freertos_config if the FreeRTOS directory exists
@@ -138,6 +138,16 @@ if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
     target_link_libraries(main ${FREETYPE_LIBRARIES})
+endif()
+
+# On Windows, GUI applications do not show a console by default,
+# which hides log output. This ensures a console is available for logging.
+if (WIN32)
+    if (MSVC)
+        target_link_options(main PRIVATE "/SUBSYSTEM:CONSOLE")
+    else()
+        target_link_options(main PRIVATE "-mconsole")
+    endif()
 endif()
 
 # Apply additional compile options if the build type is Debug

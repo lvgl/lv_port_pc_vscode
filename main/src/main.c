@@ -7,11 +7,18 @@
 /*********************
  *      INCLUDES
  *********************/
-#define _DEFAULT_SOURCE /* needed for usleep() */
+#ifndef _DEFAULT_SOURCE
+  #define _DEFAULT_SOURCE /* needed for usleep() */
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <pthread.h>
+#ifdef _MSC_VER
+  #include <Windows.h>
+#else
+  #include <unistd.h>
+  #include <pthread.h>
+#endif
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
@@ -88,7 +95,11 @@ int main(int argc, char **argv)
     /* Periodically call the lv_task handler.
      * It could be done in a timer interrupt or an OS task too.*/
     lv_timer_handler();
+#ifdef _MSC_VER
+    Sleep(5);
+#else
     usleep(5 * 1000);
+#endif
   }
 
   #elif LV_USE_OS == LV_OS_FREERTOS
