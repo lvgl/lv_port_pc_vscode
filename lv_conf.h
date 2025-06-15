@@ -1,6 +1,6 @@
 /**
  * @file lv_conf.h
- * Configuration file for v9.3.0-dev
+ * Configuration file for v9.3.0
  */
 
 /*
@@ -356,6 +356,11 @@
 /** Draw using cached OpenGLES textures */
 #define LV_USE_DRAW_OPENGLES 0
 
+/** Draw using espressif PPA accelerator */
+#define LV_USE_PPA  0
+#if LV_USE_PPA
+    #define LV_USE_PPA_IMG 0
+#endif
 /*=======================
  * FEATURE CONFIGURATION
  *=======================*/
@@ -698,12 +703,15 @@
  *  - lv_dropdown_t    :  Options set to "Option 1", "Option 2", "Option 3", else no values are set.
  *  - lv_roller_t      :  Options set to "Option 1", "Option 2", "Option 3", "Option 4", "Option 5", else no values are set.
  *  - lv_label_t       :  Text set to "Text", else empty string.
+ *  - lv_arclabel_t   :  Text set to "Arced Text", else empty string.
  * */
 #define LV_WIDGETS_HAS_DEFAULT_VALUE  1
 
 #define LV_USE_ANIMIMG    1
 
 #define LV_USE_ARC        1
+
+#define LV_USE_ARCLABEL  1
 
 #define LV_USE_BAR        1
 
@@ -957,7 +965,8 @@
 #if LV_USE_TINY_TTF
     /* Enable loading TTF data from files */
     #define LV_TINY_TTF_FILE_SUPPORT 0
-    #define LV_TINY_TTF_CACHE_GLYPH_CNT 256
+    #define LV_TINY_TTF_CACHE_GLYPH_CNT 128
+    #define LV_TINY_TTF_CACHE_KERNING_CNT 256
 #endif
 
 /** Rlottie library */
@@ -1187,8 +1196,12 @@
 /** Use Wayland to open a window and handle input on Linux or BSD desktops */
 #define LV_USE_WAYLAND          0
 #if LV_USE_WAYLAND
-    #define LV_WAYLAND_WINDOW_DECORATIONS   0    /**< Draw client side window decorations only necessary on Mutter/GNOME */
-    #define LV_WAYLAND_WL_SHELL             0    /**< Use the legacy wl_shell protocol instead of the default XDG shell */
+    #define LV_WAYLAND_BUF_COUNT            1    /**< Use 1 for single buffer with partial render mode or 2 for double buffer with full render mode*/
+    #define LV_WAYLAND_USE_DMABUF           0    /**< Use DMA buffers for frame buffers. Requires LV_DRAW_USE_G2D */
+    #define LV_WAYLAND_RENDER_MODE          LV_DISPLAY_RENDER_MODE_PARTIAL   /**< DMABUF supports LV_DISPLAY_RENDER_MODE_FULL and LV_DISPLAY_RENDER_MODE_DIRECT*/
+                                                                             /**< When LV_WAYLAND_USE_DMABUF is disabled, only LV_DISPLAY_RENDER_MODE_PARTIAL is supported*/
+    #define LV_WAYLAND_WINDOW_DECORATIONS   0    /**< Draw client side window decorations only necessary on Mutter/GNOME. Not supported using DMABUF*/
+    #define LV_WAYLAND_WL_SHELL             0    /**< Use the legacy wl_shell protocol instead of the default XDG shell*/
 #endif
 
 /** Driver for /dev/fb */
@@ -1238,7 +1251,7 @@
      * shared across sub-systems and libraries using the Linux DMA-BUF API.
      * The GBM library aims to provide a platform independent memory management system
      * it supports the major GPU vendors - This option requires linking with libgbm */
-    #define LV_LINUX_DRM_GBM_BUFFERS 0
+    #define LV_USE_LINUX_DRM_GBM_BUFFERS 0
 #endif
 
 /** Interface for TFT_eSPI */
@@ -1283,6 +1296,9 @@
     /* Only used for partial. */
     #define LV_ST_LTDC_USE_DMA2D_FLUSH 0
 #endif
+
+/** Driver for NXP ELCDIF */
+#define LV_USE_NXP_ELCDIF   0
 
 /** LVGL Windows backend */
 #define LV_USE_WINDOWS    0
