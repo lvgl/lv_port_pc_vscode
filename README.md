@@ -29,7 +29,7 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 
 ### Visual Studio Code
 
-1. Be sure you have installed [SDL and the build tools](#install-sdl-and-build-tools)
+1. Be sure you have installed [SDL and the build tools](#install-sdl-and-the-build-tools)
 2. Open the project by double clicking on `simulator.code-workspace` or opening it with `File/Open Workspace from File`
 3. Install the recommended plugins
 4. Click the Run and Debug page on the left, and select `Debug LVGL demo with gdb` from the drop-down on the top. Like this:
