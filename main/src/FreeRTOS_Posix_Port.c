@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>
 
 /* Structure representing an event, consisting of a condition variable and a mutex */
 typedef struct Event
@@ -31,8 +30,8 @@ Event_t *event_create(void)
     Event_t *event = (Event_t *)malloc(sizeof(Event_t));  /* Allocate memory for the event */
     if (event)  /* Check if allocation was successful */
     {
-        pthread_cond_init(&event->cond, NULL);
-        pthread_mutex_init(&event->mutex, NULL);
+        pthread_cond_init(&event->cond, NULL);  /* Initialize the condition variable */
+        pthread_mutex_init(&event->mutex, NULL);  /* Initialize the mutex */
         event->signaled = false;
     }
     return event;  /* Return the created event object */
