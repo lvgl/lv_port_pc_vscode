@@ -6,11 +6,11 @@
  * @license MIT License
  */
 
-#include "lvgl/src/osal/lv_os.h"
+#include "lvgl.h"
+#include "hal/hal.h"
 
 #if LV_USE_OS == LV_OS_FREERTOS
 
-#include "lvgl.h"
 #include <cstdio>  // For printf in C++
 
 // ........................................................................................................
@@ -119,6 +119,12 @@ void create_hello_world_screen()
  */
 void lvgl_task(void *pvParameters)
 {
+    /*Initialize LVGL*/
+    lv_init();
+
+    /*Initialize the HAL (display, input devices, tick) for LVGL*/
+    sdl_hal_init(320, 480);
+
     /* Show simple hello world screen */
     create_hello_world_screen();
 
