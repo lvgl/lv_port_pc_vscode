@@ -65,38 +65,20 @@ add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
+set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
+set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
+
 # Create the main executable, depending on the FreeRTOS option
 if(USE_FREERTOS)
-    add_executable(main
-        ${PROJECT_SOURCE_DIR}/main/src/main.c
-        ${PROJECT_SOURCE_DIR}/main/src/hal/hal.c
-        ${PROJECT_SOURCE_DIR}/main/src/freertos_main.cpp
-        ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
-        ${PROJECT_SOURCE_DIR}/main/src/FreeRTOS_Posix_Port.c
-        ${FREERTOS_SOURCES}  # Add only if USE_FREERTOS is enabled
-    )
-    # Link FreeRTOS libraries
-    target_link_libraries(main freertos_config freertos_kernel)
+    list(APPEND MAIN_SOURCES src/freertos_main.c src/freertos/freertos_posix_port.c ${FREERTOS_SOURCES})
+    list(APPEND MAIN_LIBS freertos_config freertos_kernel)
 else()
-    add_executable(main
-        ${PROJECT_SOURCE_DIR}/main/src/main.c
-        ${PROJECT_SOURCE_DIR}/main/src/hal/hal.c
-        ${PROJECT_SOURCE_DIR}/main/src/mouse_cursor_icon.c
-    )
+    list(APPEND MAIN_SOURCES src/main.c)
 endif()
 
-# Define LVGL configuration as a simple include
-target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 
-if(MSVC)
-    target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
-else()
-    target_link_libraries(main lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES} m pthread)
-endif()
-
-# Only link freertos_config if the FreeRTOS directory exists
-if(USE_FREERTOS)
-    target_link_libraries(main freertos_config)
+if(NOT MSVC)
+    list(APPEND MAIN_LIBS m pthread)
 endif()
 
 # Custom target to run the executable
@@ -107,34 +89,38 @@ if(LV_USE_DRAW_SDL)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
     find_package(SDL2_image REQUIRED)
     target_include_directories(lvgl PUBLIC ${SDL2_IMAGE_INCLUDE_DIRS})
-    target_link_libraries(main ${SDL2_IMAGE_LIBRARIES})
+    list(APPEND MAIN_LIBS ${SDL2_IMAGE_LIBRARIES})
 endif()
 
 # Conditionally include and link libpng if LV_USE_LIBPNG is enabled
 if(LV_USE_LIBPNG)
     find_package(PNG REQUIRED)
     target_include_directories(lvgl PUBLIC ${PNG_INCLUDE_DIRS})
-    target_link_libraries(main ${PNG_LIBRARIES})
+    list(APPEND MAIN_LIBS ${PNG_LIBRARIES})
 endif()
 
 # Conditionally include and link libjpeg-turbo if LV_USE_LIBJPEG_TURBO is enabled
 if(LV_USE_LIBJPEG_TURBO)
     find_package(JPEG REQUIRED)
     target_include_directories(lvgl PUBLIC ${JPEG_INCLUDE_DIRS})
-    target_link_libraries(main ${JPEG_LIBRARIES})
+    list(APPEND MAIN_LIBS ${JPEG_LIBRARIES})
 endif()
 
 # Conditionally include and link FFmpeg libraries if LV_USE_FFMPEG is enabled
 if(LV_USE_FFMPEG)
-    target_link_libraries(main avformat avcodec avutil swscale z)
+    list(APPEND MAIN_LIBS avformat avcodec avutil swscale z)
 endif()
 
 # Conditionally include and link FreeType if LV_USE_FREETYPE is enabled
 if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
-    target_link_libraries(main ${FREETYPE_LIBRARIES})
+    list(APPEND MAIN_LIBS ${FREETYPE_LIBRARIES})
 endif()
+
+add_executable(main ${MAIN_SOURCES})
+target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
+target_link_libraries(main ${MAIN_LIBS})
 
 # On Windows, GUI applications do not show a console by default,
 # which hides log output. This ensures a console is available for logging.

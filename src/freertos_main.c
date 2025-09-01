@@ -6,12 +6,12 @@
  * @license MIT License
  */
 
-#include "lvgl.h"
-#include "hal/hal.h"
+#include "lvgl/lvgl.h"
 
 #if LV_USE_OS == LV_OS_FREERTOS
 
-#include <cstdio>  // For printf in C++
+#include "hal/hal.h"
+#include <stdio.h>
 
 // ........................................................................................................
 /**
@@ -23,7 +23,7 @@
  * @param   None
  * @return  None
  */
-extern "C" void vApplicationMallocFailedHook(void)
+void vApplicationMallocFailedHook(void)
 {
     printf("Malloc failed! Available heap: %ld bytes\n", xPortGetFreeHeapSize());
     for( ;; );
@@ -39,7 +39,7 @@ extern "C" void vApplicationMallocFailedHook(void)
  * @param   None
  * @return  None
  */
-extern "C" void vApplicationIdleHook(void) {}
+void vApplicationIdleHook(void) {}
 
 // ........................................................................................................
 /**
@@ -52,7 +52,7 @@ extern "C" void vApplicationIdleHook(void) {}
  * @param   pcTaskName   Name of the task that caused the stack overflow
  * @return  None
  */
-extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
     printf("Stack overflow in task %s\n", pcTaskName);
     for(;;);
@@ -68,7 +68,7 @@ extern "C" void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskNa
  * @param   None
  * @return  None
  */
-extern "C" void vApplicationTickHook(void) {}
+void vApplicationTickHook(void) {}
 
 // ........................................................................................................
 /**
@@ -119,12 +119,12 @@ void create_hello_world_screen()
  */
 void lvgl_task(void *pvParameters)
 {
+
     /*Initialize LVGL*/
     lv_init();
 
     /*Initialize the HAL (display, input devices, tick) for LVGL*/
     sdl_hal_init(320, 480);
-
     /* Show simple hello world screen */
     create_hello_world_screen();
 
@@ -162,18 +162,20 @@ void another_task(void *pvParameters)
  * @param   None
  * @return  None
  */
-extern "C" void freertos_main()
+int main(int argc, char **argv)
 {
+    LV_UNUSED(argc);
+    LV_UNUSED(argv);
     /* Initialize LVGL (Light and Versatile Graphics Library) and other resources */
 
     /* Create the LVGL task */
-    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, nullptr, 1, nullptr) != pdPASS) {
+    if (xTaskCreate(lvgl_task, "LVGL Task", 4096, NULL, 1, NULL) != pdPASS) {
         printf("Error creating LVGL task\n");
         /* Error handling */
     }
 
     /* Create another task */
-    if (xTaskCreate(another_task, "Another Task", 1024, nullptr, 1, nullptr) != pdPASS) {
+    if (xTaskCreate(another_task, "Another Task", 1024, NULL, 1, NULL) != pdPASS) {
         printf("Error creating another task\n");
         /* Error handling */
     }

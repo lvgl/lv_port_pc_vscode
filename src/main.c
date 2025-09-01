@@ -1,12 +1,12 @@
-
 /**
- * @file main
+ * @file main.c
  *
  */
 
 /*********************
  *      INCLUDES
  *********************/
+
 #ifndef _DEFAULT_SOURCE
   #define _DEFAULT_SOURCE /* needed for usleep() */
 #endif
@@ -50,7 +50,41 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-extern void freertos_main(void);
+/**********************
+ *   STATIC FUNCTIONS
+ **********************/
+/**
+ * @file main
+ *
+ */
+
+/*********************
+ *      INCLUDES
+ *********************/
+
+/*********************
+ *      DEFINES
+ *********************/
+
+/**********************
+ *      TYPEDEFS
+ **********************/
+
+/**********************
+ *  STATIC PROTOTYPES
+ **********************/
+
+/**********************
+ *  STATIC VARIABLES
+ **********************/
+
+/**********************
+ *      MACROS
+ **********************/
+
+/**********************
+ *   GLOBAL FUNCTIONS
+ **********************/
 
 /*********************
  *      DEFINES
@@ -72,13 +106,12 @@ extern void freertos_main(void);
  *   GLOBAL FUNCTIONS
  **********************/
 
+#if LV_USE_OS != LV_OS_FREERTOS
+
 int main(int argc, char **argv)
 {
   (void)argc; /*Unused*/
   (void)argv; /*Unused*/
-
-
-  #if LV_USE_OS == LV_OS_NONE
 
   /*Initialize LVGL*/
   lv_init();
@@ -97,24 +130,24 @@ int main(int argc, char **argv)
   while(1) {
     /* Periodically call the lv_task handler.
      * It could be done in a timer interrupt or an OS task too.*/
-    lv_timer_handler();
+    uint32_t sleep_time_ms = lv_timer_handler();
+    if(sleep_time_ms == LV_NO_TIMER_READY){
+	sleep_time_ms =  LV_DEF_REFR_PERIOD;
+    }
 #ifdef _MSC_VER
-    Sleep(5);
+    Sleep(sleep_time_ms);
 #else
-    usleep(5 * 1000);
+    usleep(sleep_time_ms * 1000);
 #endif
   }
-
-  #elif LV_USE_OS == LV_OS_FREERTOS
-
-  /* Run FreeRTOS and create lvgl task */
-  freertos_main();
-
-  #endif
 
   return 0;
 }
 
+
+#endif
+
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+
