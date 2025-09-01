@@ -7,12 +7,14 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /* Structure representing an event, consisting of a condition variable and a mutex */
 typedef struct Event
 {
     pthread_cond_t cond;      /* Condition variable used to signal the event */
     pthread_mutex_t mutex;    /* Mutex to protect access to the condition variable */
+    bool signaled;   // auto-reset flag to avoid lost wakeups
 } Event_t;
 
 /**
@@ -30,6 +32,7 @@ Event_t *event_create(void)
     {
         pthread_cond_init(&event->cond, NULL);  /* Initialize the condition variable */
         pthread_mutex_init(&event->mutex, NULL);  /* Initialize the mutex */
+        event->signaled = false;
     }
     return event;  /* Return the created event object */
 }
@@ -67,6 +70,7 @@ void event_signal(Event_t *event)
     if (event)  /* Check if the event object is valid */
     {
         pthread_mutex_lock(&event->mutex);  /* Lock the mutex before signaling */
+        event->signaled = true;  /* set state first */
         pthread_cond_signal(&event->cond);  /* Signal the condition variable */
         pthread_mutex_unlock(&event->mutex);  /* Unlock the mutex after signaling */
     }
@@ -86,7 +90,10 @@ void event_wait(Event_t *event)
     if (event)  /* Check if the event object is valid */
     {
         pthread_mutex_lock(&event->mutex);  /* Lock the mutex before waiting */
-        pthread_cond_wait(&event->cond, &event->mutex);  /* Wait for the condition variable to be signaled */
+        while (!event->signaled) {  /* guard against spurious wakeups */
+            pthread_cond_wait(&event->cond, &event->mutex);  /* Wait for the condition variable to be signaled */
+        }
+        event->signaled = false;  /* auto-reset */
         pthread_mutex_unlock(&event->mutex);  /* Unlock the mutex after waiting */
     }
 }
