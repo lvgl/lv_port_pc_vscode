@@ -72,7 +72,12 @@ Therefore, it is crucial to allocate sufficient heap memory to ensure smooth exe
 
 ### Enable FreeRTOS 
 To enable the rtos part of this project select in lv_conf.h `#define LV_USE_OS   LV_OS_NONE` to `#define LV_USE_OS  LV_OS_FREERTOS`
-Additionaly you have to enable the compilation of all FreeRTOS Files by turn on `option(USE_FREERTOS "Enable FreeRTOS" OFF) ` in the CMakeLists.txt file.
+Additionaly you have to enable the compilation of all FreeRTOS Files by turning on the `option(USE_FREERTOS "Enable FreeRTOS" OFF)` in the CMakeLists.txt file or
+by enabling the same flag from the command line when bootstrapping `cmake`:
+
+```bash
+cmake -B build -DUSE_FREERTOS=ON
+```
 
 ### CMake
 

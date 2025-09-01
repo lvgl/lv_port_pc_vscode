@@ -4,8 +4,6 @@ project(lvgl C CXX)
 # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
 set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
 
-unset(USE_FREERTOS CACHE)
-
 option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS
 
 if(USE_FREERTOS)
