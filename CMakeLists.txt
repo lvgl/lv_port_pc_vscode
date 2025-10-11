@@ -8,6 +8,9 @@ unset(USE_FREERTOS CACHE)
 
 option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS
 
+# Use this option for custom LVGL project.
+option(USE_CUSTOM_PROJECT "Enable external custom LVGL project" OFF)
+
 if(USE_FREERTOS)
     message(STATUS "FreeRTOS is enabled")
 
@@ -187,4 +190,24 @@ if (ASAN)
 else()
     message(STATUS "AddressSanitizer disabled")
 endif()
+endif()
+
+# Conditionally include and link external LVGL project if USE_CUSTOM_PROJECT is enabled
+if (USE_CUSTOM_PROJECT)
+
+    set(CUSTOM_PROJECT_PATH "" CACHE PATH "Path to external custom LVGL project")
+
+    if(CUSTOM_PROJECT_PATH AND EXISTS "${CUSTOM_PROJECT_PATH}/CMakeLists.txt")
+        message(STATUS "Loading custom project from: ${CUSTOM_PROJECT_PATH}")
+
+        add_subdirectory("${CUSTOM_PROJECT_PATH}" "${CMAKE_BINARY_DIR}/custom_project")
+        if(TARGET custom_ui_lib)
+            target_link_libraries(main custom_ui_lib)
+            message(STATUS "Custom project loaded successfully")
+        else()
+            message(FATAL_ERROR "Target custom_ui_lib not found; ensure your custom project defines an alias named custom_ui_lib.")
+        endif()
+    else()
+         message(WARNING "USE_CUSTOM_PROJECT is ON but CUSTOM_PROJECT_PATH is invalid or CMakeLists.txt not found")
+    endif()
 endif()
