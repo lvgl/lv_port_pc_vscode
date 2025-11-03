@@ -8,7 +8,7 @@ This project is pre-configured for VSCode and should work work on Windows, Linux
 
 ### Install SDL and the build tools
 
-- **Windows (vcpkg):** `vcpkg install sdl2`  (`vcpkg` can be installed from [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)) Also install either MinGW or another compier and `cmake`.
+- **Windows (vcpkg):** `vcpkg install sdl2`  (`vcpkg` can be installed from [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)) Also install either MinGW or another compiler and `cmake`.
 - **macOS (Homebrew):** `brew install sdl2 cmake make`  
 - **Linux:**  
   - **Debian/Ubuntu:** `sudo apt install build-essential cmake libsdl2-dev`  
