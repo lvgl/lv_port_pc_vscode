@@ -327,6 +327,9 @@
     /** Disable linear gradient extension for some older versions of drivers. */
     #define LV_VG_LITE_DISABLE_LINEAR_GRADIENT_EXT 0
 
+    /** Maximum path dump print length (in points) */
+    #define LV_VG_LITE_PATH_DUMP_MAX_LEN 1000
+
     /** Enable usage of the LVGL's built-in vg_lite driver */
     #define LV_USE_VG_LITE_DRIVER  0
     #if LV_USE_VG_LITE_DRIVER
@@ -708,7 +711,7 @@
 /*==================
  * WIDGETS
  *================*/
-/* Documentation for widgets can be found here: https://docs.lvgl.io/master/details/widgets/index.html . */
+/* Documentation for widgets can be found here: https://docs.lvgl.io/master/widgets/index.html . */
 
 /** 1: Causes these widgets to be given default values at creation time.
  *  - lv_buttonmatrix_t:  Get default maps:  {"Btn1", "Btn2", "Btn3", "\n", "Btn4", "Btn5", ""}, else map not set.
@@ -816,7 +819,7 @@
 /*==================
  * THEMES
  *==================*/
-/* Documentation for themes can be found here: https://docs.lvgl.io/master/details/common-widget-features/styles/styles.html#themes . */
+/* Documentation for themes can be found here: https://docs.lvgl.io/master/common-widget-features/styles/styles.html#themes . */
 
 /** A simple, impressive and very complete theme */
 #define LV_USE_THEME_DEFAULT 1
@@ -840,7 +843,7 @@
 /*==================
  * LAYOUTS
  *==================*/
-/* Documentation for layouts can be found here: https://docs.lvgl.io/master/details/common-widget-features/layouts/index.html . */
+/* Documentation for layouts can be found here: https://docs.lvgl.io/master/common-widget-features/layouts/index.html . */
 
 /** A layout similar to Flexbox in CSS. */
 #define LV_USE_FLEX 1
@@ -851,13 +854,13 @@
 /*====================
  * 3RD PARTS LIBRARIES
  *====================*/
-/* Documentation for libraries can be found here: https://docs.lvgl.io/master/details/libs/index.html . */
+/* Documentation for libraries can be found here: https://docs.lvgl.io/master/libs/index.html . */
 
 /* File system interfaces for common APIs */
 
 /** Setting a default driver letter allows skipping the driver prefix in filepaths.
  *  Documentation about how to use the below driver-identifier letters can be found at
- *  https://docs.lvgl.io/master/details/main-modules/fs.html#lv-fs-identifier-letters . */
+ *  https://docs.lvgl.io/master/main-modules/fs.html#lv-fs-identifier-letters . */
 #define LV_FS_DEFAULT_DRIVER_LETTER '\0'
 
 /** API for fopen, fread, etc. */
@@ -999,7 +1002,9 @@
 #define LV_USE_GLTF  0
 
 /** Enable Vector Graphic APIs
- *  Requires `LV_USE_MATRIX = 1` */
+ *  Requires `LV_USE_MATRIX = 1`
+ *  and a rendering engine supporting vector graphics, e.g.
+ *  (LV_USE_DRAW_SW and LV_USE_THORVG) or LV_USE_DRAW_VG_LITE or LV_USE_NEMA_VG. */
 #define LV_USE_VECTOR_GRAPHIC  1
 
 /** Enable ThorVG (vector graphics library) from the src/libs folder.
@@ -1037,7 +1042,7 @@
 /*==================
  * OTHERS
  *==================*/
-/* Documentation for several of the below items can be found here: https://docs.lvgl.io/master/details/auxiliary-modules/index.html . */
+/* Documentation for several of the below items can be found here: https://docs.lvgl.io/master/auxiliary-modules/index.html . */
 
 /** 1: Enable API to take snapshot for object */
 #define LV_USE_SNAPSHOT 0
