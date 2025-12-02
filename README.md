@@ -151,3 +151,39 @@ It requires a working version of GCC, GDB and make in your path.
 To allow debugging inside VSCode you will also require a GDB [extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug) or other suitable debugger. All the requirements, build and debug settings have been pre-configured in the [.workspace](simulator.code-workspace) file.
 
 The project can use **SDL** but it can be easily relaced by any other built-in LVGL dirvers.
+
+## Integration with LVGL Pro
+
+This project supports integration with LVGL Pro projects for UI development.
+
+### Setup
+
+1. Configure CMake with your LVGL Pro project folder:
+
+```bash
+cmake -B build -DLVGL_PRO_PROJECT_DIR=<path-to-lvgl-pro-project>
+```
+
+Build your project:
+
+```bash
+cmake --build build
+```
+
+### Usage in Code
+
+In your main.c, include the UI header from your LVGL Pro project and replace the default demo with your screen.
+
+```c
+#include "ui.h"
+
+int main(void) {
+
+    /*Initialization code for LVGL*/
+    
+    /* Initialize the LVGL Pro UI */
+    ui_init("<path-to-lvgl-pro-project>");
+    
+    /* ... rest of your application ...*/
+}
+```

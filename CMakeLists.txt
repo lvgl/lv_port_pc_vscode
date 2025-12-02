@@ -4,6 +4,10 @@ project(lvgl C CXX)
 # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
 set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
 
+set(LVGL_PRO_PROJECT_DIR
+    ""
+    CACHE PATH "Path to LVGL Pro Project folder")
+
 option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS
 
 if(USE_FREERTOS)
@@ -116,6 +120,25 @@ if(LV_USE_FREETYPE)
     find_package(Freetype REQUIRED)
     target_include_directories(lvgl PUBLIC ${FREETYPE_INCLUDE_DIRS})
     list(APPEND MAIN_LIBS ${FREETYPE_LIBRARIES})
+endif()
+
+if(LVGL_PRO_PROJECT_DIR)
+  if(EXISTS "${LVGL_PRO_PROJECT_DIR}/CMakeLists.txt")
+    add_subdirectory(${LVGL_PRO_PROJECT_DIR} ui)
+    list(APPEND MAIN_LIBS lib-ui)
+
+    target_compile_definitions(lib-ui PUBLIC LV_LVGL_H_INCLUDE_SIMPLE)
+    target_include_directories(lib-ui PUBLIC
+      ${LVGL_PRO_PROJECT_DIR}  # local headers like ui.h, generated files, etc.
+      ${CMAKE_SOURCE_DIR}/lvgl # include "lvgl.h" works
+    )
+    message(STATUS "LVGL Pro Project enabled from: ${LVGL_PRO_PROJECT_DIR}")
+  else()
+    message(
+      WARNING
+        "LVGL_PRO_PROJECT_DIR specified but no CMakeLists.txt found at: ${LVGL_PRO_PROJECT_DIR}"
+    )
+  endif()
 endif()
 
 add_executable(main ${MAIN_SOURCES})
