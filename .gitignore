@@ -7,3 +7,6 @@ bin/
 
 # VSCode
 .vscode
+
+# MacOS file
+.DS_Store
