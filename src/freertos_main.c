@@ -8,6 +8,9 @@
 
 #include "lvgl/lvgl.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 #if LV_USE_OS == LV_OS_FREERTOS
 
 #include "hal/hal.h"
