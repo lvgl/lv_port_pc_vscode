@@ -327,6 +327,9 @@
     /** Remove VLC_OP_CLOSE path instruction (Workaround for NXP) **/
     #define LV_VG_LITE_DISABLE_VLC_OP_CLOSE 0
 
+    /** Disable blit rectangular offset to resolve certain hardware errors. */
+    #define LV_VG_LITE_DISABLE_BLIT_RECT_OFFSET 0
+
     /** Disable linear gradient extension for some older versions of drivers. */
     #define LV_VG_LITE_DISABLE_LINEAR_GRADIENT_EXT 0
 
@@ -404,6 +407,26 @@
      * Set it to 0 to disable write buffering.
      */
     #define LV_DRAW_EVE_WRITE_BUFFER_SIZE 2048
+#endif
+
+/** Use NanoVG Renderer
+ * - Requires LV_USE_NANOVG, LV_USE_MATRIX.
+ */
+#define LV_USE_DRAW_NANOVG 0
+#if LV_USE_DRAW_NANOVG
+    /** Select OpenGL backend for NanoVG:
+     * - LV_NANOVG_BACKEND_GL2:   OpenGL 2.0
+     * - LV_NANOVG_BACKEND_GL3:   OpenGL 3.0+
+     * - LV_NANOVG_BACKEND_GLES2: OpenGL ES 2.0
+     * - LV_NANOVG_BACKEND_GLES3: OpenGL ES 3.0+
+     */
+    #define LV_NANOVG_BACKEND   LV_NANOVG_BACKEND_GLES2
+
+    /** Draw image texture cache count. */
+    #define LV_NANOVG_IMAGE_CACHE_CNT 128
+
+    /** Draw letter texture cache count. */
+    #define LV_NANOVG_LETTER_CACHE_CNT 512
 #endif
 
 /*=======================
@@ -1017,6 +1040,9 @@
 /** Enable ThorVG by assuming that its installed and linked to the project
  *  Requires LV_USE_VECTOR_GRAPHIC */
 #define LV_USE_THORVG_EXTERNAL 0
+
+/** Enable NanoVG (vector graphics library) */
+#define LV_USE_NANOVG 0
 
 /** Use lvgl built-in LZ4 lib */
 #define LV_USE_LZ4_INTERNAL  1
