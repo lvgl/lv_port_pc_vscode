@@ -1,6 +1,6 @@
 #include "hal.h"
 
-
+#if LV_USE_SDL
 lv_display_t * sdl_hal_init(int32_t w, int32_t h)
 {
 
@@ -32,3 +32,29 @@ lv_display_t * sdl_hal_init(int32_t w, int32_t h)
 
   return disp;
 }
+#endif
+
+#if LV_USE_WINDOWS
+lv_display_t* win_hal_init(
+    const wchar_t* title,
+    int32_t hor_res,
+    int32_t ver_res,
+    int32_t zoom_level,
+    bool allow_dpi_override,
+    bool simulator_mode)
+{
+    lv_display_t* display = lv_windows_create_display(
+        title,
+        hor_res,
+        ver_res,
+        zoom_level,
+        allow_dpi_override,
+        simulator_mode);
+
+    lv_windows_acquire_pointer_indev(display);
+    lv_windows_acquire_keypad_indev(display);
+    lv_windows_acquire_encoder_indev(display);
+
+	return display;
+}
+#endif
