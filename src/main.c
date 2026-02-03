@@ -22,7 +22,9 @@
 #include "lvgl/lvgl.h"
 #include "lvgl/examples/lv_examples.h"
 #include "lvgl/demos/lv_demos.h"
-#include <SDL.h>
+#if LV_USE_SDL
+  #include <SDL.h>
+#endif
 
 #include "hal/hal.h"
 
@@ -61,7 +63,21 @@ int main(int argc, char **argv)
   lv_init();
 
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
+#if LV_USE_SDL
   sdl_hal_init(320, 480);
+#endif
+#if LV_USE_WINDOWS
+  int32_t zoom_level = 100;
+  bool allow_dpi_override = false;
+  bool simulator_mode = true;
+  win_hal_init(
+      L"LVGL Display", 
+      320, 
+      480, 
+      zoom_level,
+      allow_dpi_override, 
+      simulator_mode);
+#endif
 
   /* Run the default demo */
   /* To try a different demo or example, replace this with one of: */
@@ -79,7 +95,11 @@ int main(int argc, char **argv)
 	sleep_time_ms =  LV_DEF_REFR_PERIOD;
     }
 #ifdef _MSC_VER
+#if LV_USE_WINDOWS
+    lv_delay_ms(sleep_time_ms);
+#else
     Sleep(sleep_time_ms);
+#endif
 #else
     usleep(sleep_time_ms * 1000);
 #endif

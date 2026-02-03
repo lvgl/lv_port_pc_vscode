@@ -40,8 +40,11 @@ endif()
 # Main include files of the project
 include_directories(${PROJECT_SOURCE_DIR}/main/inc)
 
-# Define options for LVGL with default values (OFF)
-option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
+# Define options for LVGL with default values
+option(LV_USE_SDL "Use SDL backend." ON)
+if(LV_USE_SDL)
+    option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
+endif()
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)
 option(LV_USE_FFMPEG "Use libffmpeg to display video using lv_ffmpeg" OFF)
@@ -57,10 +60,14 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
 # Find and include SDL2 library
-find_package(SDL2 REQUIRED)
+if(LV_USE_SDL)
+    find_package(SDL2 REQUIRED)
+endif()
 
 # Add compile definitions based on the selected options
-add_compile_definitions($<$<BOOL:${LV_USE_DRAW_SDL}>:LV_USE_DRAW_SDL=1>)
+if(LV_USE_SDL)
+    add_compile_definitions($<$<BOOL:${LV_USE_DRAW_SDL}>:LV_USE_DRAW_SDL=1>)
+endif()
 add_compile_definitions($<$<BOOL:${LV_USE_LIBPNG}>:LV_USE_LIBPNG=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_LIBJPEG_TURBO}>:LV_USE_LIBJPEG_TURBO=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
@@ -145,13 +152,18 @@ add_executable(main ${MAIN_SOURCES})
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main ${MAIN_LIBS})
 
-# On Windows, GUI applications do not show a console by default,
-# which hides log output. This ensures a console is available for logging.
 if (WIN32)
+    # On Windows, GUI applications do not show a console by default,
+    # which hides log output. This ensures a console is available for logging.
     if (MSVC)
         target_link_options(main PRIVATE "/SUBSYSTEM:CONSOLE")
     else()
         target_link_options(main PRIVATE "-mconsole")
+    endif()
+    # On MSVC, we also need to enable some compiler options for UTF-8 support.
+    if (MSVC)
+        target_compile_options(lvgl PRIVATE "/utf-8")
+        target_compile_options(main PRIVATE "/utf-8")
     endif()
 endif()
 
@@ -159,6 +171,7 @@ endif()
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     message(STATUS "Debug mode enabled")
 
+if(NOT MSVC)
     target_compile_options(lvgl PRIVATE
         -pedantic-errors
         -Wall
@@ -184,6 +197,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         -Wfloat-conversion
         -Wstrict-aliasing
     )
+endif()
 
 if (ASAN)
     message(STATUS "AddressSanitizer enabled")
