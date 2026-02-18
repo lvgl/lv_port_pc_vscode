@@ -18,6 +18,7 @@ if(USE_FREERTOS)
     add_library(freertos_config INTERFACE)
     target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
     target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
+    add_compile_definitions(LV_USE_OS=LV_OS_FREERTOS)
 
     # Add FreeRTOS as a subdirectory
     add_subdirectory(FreeRTOS)
