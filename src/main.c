@@ -25,6 +25,7 @@
 #include <SDL.h>
 
 #include "hal/hal.h"
+#include "feedback.h"
 
 /*********************
  *      DEFINES
@@ -70,6 +71,7 @@ int main(int argc, char **argv)
   /* - lv_example_label_1(); */
   /* - etc. */
   lv_demo_widgets();
+  feedback_add_button(lv_screen_active());
 
   while(1) {
     /* Periodically call the lv_task handler.

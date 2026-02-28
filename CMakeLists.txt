@@ -56,8 +56,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
+if(WIN32 AND EXISTS "C:/vcpkg/installed/x64-mingw-dynamic")
+    list(APPEND CMAKE_PREFIX_PATH "C:/vcpkg/installed/x64-mingw-dynamic")
+endif()
+
 # Find and include SDL2 library
-find_package(SDL2 REQUIRED)
+find_package(SDL2 QUIET CONFIG)
+
+if(NOT SDL2_FOUND)
+    message(WARNING "SDL2 not found. The simulator executable target 'main' will be skipped.")
+endif()
 
 # Add compile definitions based on the selected options
 add_compile_definitions($<$<BOOL:${LV_USE_DRAW_SDL}>:LV_USE_DRAW_SDL=1>)
@@ -65,11 +73,23 @@ add_compile_definitions($<$<BOOL:${LV_USE_LIBPNG}>:LV_USE_LIBPNG=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_LIBJPEG_TURBO}>:LV_USE_LIBJPEG_TURBO=1>)
 add_compile_definitions($<$<BOOL:${LV_USE_FFMPEG}>:LV_USE_FFMPEG=1>)
 
+enable_testing()
+add_executable(feedback_logic_test tests/feedback_logic_test.c src/feedback_logic.c)
+target_include_directories(feedback_logic_test PRIVATE ${PROJECT_SOURCE_DIR}/src)
+add_test(NAME feedback_logic_test COMMAND feedback_logic_test)
+
+if(SDL2_FOUND)
+
 # Add LVGL subdirectory
 add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
-set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
+add_executable(feedback_ui_test tests/feedback_ui_test.c src/feedback.c src/feedback_logic.c)
+target_include_directories(feedback_ui_test PRIVATE ${PROJECT_SOURCE_DIR}/src)
+target_link_libraries(feedback_ui_test lvgl)
+add_test(NAME feedback_ui_test COMMAND feedback_ui_test)
+
+set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c src/feedback.c src/feedback_logic.c)
 set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
 
 # Create the main executable, depending on the FreeRTOS option
@@ -196,4 +216,6 @@ if (ASAN)
 else()
     message(STATUS "AddressSanitizer disabled")
 endif()
+endif()
+
 endif()

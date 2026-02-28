@@ -14,6 +14,7 @@
 #if LV_USE_OS == LV_OS_FREERTOS
 
 #include "hal/hal.h"
+#include "feedback.h"
 #include <stdio.h>
 
 // ........................................................................................................
@@ -105,6 +106,8 @@ void create_hello_world_screen()
 
     /* Align the label to the center of the screen */
     lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+
+    feedback_add_button(screen);
 
     /* Load the created screen and make it visible */
     lv_scr_load(screen);
