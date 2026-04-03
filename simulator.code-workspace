@@ -37,7 +37,8 @@
 				"label": "Build",
 				"command": "cmake",
 				"args": [
-					"--build", "${command:cmake.buildDirectory}"
+					"--build",
+					"${command:cmake.buildDirectory}"
 				],
 				"group": {
 					"kind": "build",
@@ -45,7 +46,10 @@
 				},
 				"problemMatcher": {
 					"owner": "cpp",
-					"fileLocation": ["relative", "${workspaceFolder}"],
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
 					"pattern": {
 						"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
 						"file": 1,
@@ -76,22 +80,15 @@
 				"name": "Debug LVGL demo with gdb",
 				"type": "cppdbg",
 				"request": "launch",
-		        "program": "${workspaceFolder}/bin/main",
+				"program": "${workspaceFolder}/bin/main.exe",
 				"args": [],
 				"cwd": "${workspaceFolder}",
 				"preLaunchTask": "Build",
 				"stopAtEntry": false,
-				"linux": {
+				"windows": {
 					"MIMode": "gdb",
-					"miDebuggerPath": "/usr/bin/gdb"
-				  },
-				  "osx": {
-					"MIMode": "lldb"
-				  },
-				  "windows": {
-					"MIMode": "gdb",
-					"miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
-				  }
+					"miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe"
+				}
 			},
 			{
 				"name": "Debug LVGL demo with LLVM",
