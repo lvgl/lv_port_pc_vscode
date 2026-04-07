@@ -44,7 +44,7 @@
       {
         "label": "CMake: Configure (Ninja UCRT64)",
         "type": "shell",
-        "command": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug",
+        "command": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DLV_USE_FREETYPE=ON",
         "options": {
           "cwd": "${workspaceFolder}"
         },
@@ -72,7 +72,7 @@
       {
         "label": "CMake: Rebuild (Ninja UCRT64)",
         "type": "shell",
-        "command": "cmake --fresh -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug && cmake --build build -j4",
+        "command": "cmake --fresh -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DLV_USE_FREETYPE=ON && cmake --build build -j4",
         "options": {
           "cwd": "${workspaceFolder}"
         },
