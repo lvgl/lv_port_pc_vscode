@@ -1,0 +1,34 @@
+{
+    "name": "fragment_conn_id_dual_left",
+    "desc": "帮助按钮类似的130*40按钮, 内置一个文本",
+    "type": "flex",
+    "properties": {
+        "style": "style-connector-dual-default-num-border"
+    },
+    "children": [
+        {
+            "name": "NoText",
+            "type": "label",
+            "properties": {
+                "text": "1",
+                "x_ofs": 55,
+                "y_ofs": 21,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-dual-default-num-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "←_dual_left",
+            "type": "label",
+            "properties": {
+                "text": "←",
+                "x_ofs": 50,
+                "y_ofs": 67,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-dual-default-character",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

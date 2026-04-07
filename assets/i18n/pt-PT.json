@@ -1,0 +1,527 @@
+{
+    "name": "pt-PT",
+    "label": "Português",
+    "icon": "A:./assets/images/Portugal.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Conecte primeiro"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Por favor, conecte o conector ao seu veículo antes de iniciar uma nova sessão."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Para carregamento rápido ao seu alcance, baixe o aplicativo Ioc."
+        },
+        {
+            "name": "charger_station",
+            "value": "ID do carregador: "
+        },
+        {
+            "name": "Idle",
+            "value": "Ocioso"
+        },
+        {
+            "name": "Help",
+            "value": "Ajuda"
+        },
+        {
+            "name": "conid",
+            "value": "ID do conector: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Período atual"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Próximo período"
+        },
+        {
+            "name": "Starting",
+            "value": "Iniciando"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Escaneie aqui para iniciar o carregamento"
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Acesse milhares de carregadores em todo o país. Use um único aplicativo para acessar dezenas de redes de carregamento."
+        },
+        {
+            "name": "Charging",
+            "value": "Carregando"
+        },
+        {
+            "name": "Power",
+            "value": "Poder"
+        },
+        {
+            "name": "SoC",
+            "value": "Estado de carga"
+        },
+        {
+            "name": "Energy",
+            "value": "Energia"
+        },
+        {
+            "name": "Duration",
+            "value": "Duração"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Custo estimado"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Dados detalhados"
+        },
+        {
+            "name": "State of charge",
+            "value": "Estado de carga"
+        },
+        {
+            "name": "Finished",
+            "value": "Acabado"
+        },
+        {
+            "name": "Start_time",
+            "value": "Hora de início"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Tempo de inatividade"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Por favor, mova seu veículo. O período de cortesia de 10 minutos foi excedido."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Custo de carregamento"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Taxa de inatividade"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Valor total"
+        },
+        {
+            "name": "Reserved",
+            "value": "Reservado"
+        },
+        {
+            "name": "Left",
+            "value": "Esquerda"
+        },
+        {
+            "name": "left",
+            "value": "esquerda"
+        },
+        {
+            "name": "Stopping",
+            "value": "Parando"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Erro na sessão de carregamento"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Código de erro: "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "O carregamento foi interrompido, por favor desconecte. Para iniciar uma nova sessão de carregamento, reconecte e pressione Continuar."
+        },
+        {
+            "name": "Continue",
+            "value": "Continuar"
+        },
+        {
+            "name": "Error",
+            "value": "erro"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Erro ao iniciar o carregamento"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Seu crédito não foi cobrado. Para iniciar uma nova sessão de carregamento, reconecte por favor."
+        },
+        {
+            "name": "Fault",
+            "value": "Culpa"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Falha no equipamento"
+        },
+        {
+            "name": "Other_error",
+            "value": "Outro erro: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Falha de bloqueio"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "Erro de comunicação EV"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Falha de aterramento"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Temperatura alta"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Erro interno"
+        },
+        {
+            "name": "Over Current",
+            "value": "Sobre corrente"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Sobre Voltagem"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Falha do medidor"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Falha do interruptor de alimentação"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Falha do leitor"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Falha de reinicialização"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Sob Voltagem"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Sinal fraco"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Empurrado de emergência"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Falha de troca de fase"
+        },
+        {
+            "name": "Other Error",
+            "value": "Outro Erro"
+        },
+        {
+            "name": "Door Opened",
+            "value": "porta está aberta"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "Disjuntor MCCB aberto"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Por favor, entre em contato com a equipe de manutenção."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Indisponível"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Fora de serviço"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Infelizmente, este carregador não está disponível. Por favor, verifique o aplicativo Ioc para encontrar outro carregador próximo ou entre em contato com o suporte ao cliente."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Conectar e Carregar"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "ou AutoCarga iniciando…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Autorizado"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "O carregamento está sendo interrompido"
+        },
+        {
+            "name": "Waiting",
+            "value": "Aguardando"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Aguarde na fila"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Aguardando outro conector compartilhar energia. O carregamento começará automaticamente quando o carregador estiver ocioso."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Tempo de carregamento e custo"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Energia fornecida e taxa de carregamento"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Estado de carga"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Carregadores balanceados"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Termos de uso"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Para carregamento rápido ao seu alcance, baixe o aplicativo Ioc."
+        },
+        {
+            "name": "content_help2",
+            "value": "O carregamento não pôde ser iniciado. Por favor, certifique-se de que seu veículo está corretamente conectado. Seu crédito não foi cobrado. Para iniciar uma nova sessão de carregamento, reconecte."
+        },
+        {
+            "name": "Close",
+            "value": "Fechar"
+        },
+        {
+            "name": "Back",
+            "value": "Voltar"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Falha na autorização"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Motivo da falha"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Escanear para fatura"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Escanear para recibo"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Por favor, insira o valor"
+        },
+        {
+            "name": "Confirm",
+            "value": "Confirmar"
+        },
+        {
+            "name": "Suspend",
+            "value": "Suspender"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Carregamento suspenso"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Dados detalhados"
+        },
+        {
+            "name": "Run_State",
+            "value": "Estado de execução"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Subestado"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Erro de código"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Status do conector"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Iniciar SoC"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Solicitar Voltagem"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Solicitar Corrente"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Voltagem oferecida"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Corrente oferecida"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Limite de saída"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Grupo de módulos"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Temperatura do conector"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Voltagem de saída"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Corrente de saída"
+        },
+        {
+            "name": "Processing",
+            "value": "Processando"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Isso pode levar alguns minutos"
+        },
+        {
+            "name": "Downloading",
+            "value": "Baixando"
+        },
+        {
+            "name": "Installing",
+            "value": "Instalando"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Nenhum conector selecionado"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Falha ao iniciar o carregamento"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Falha encontrada. Parar de carregar"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Por favor, comece a carregar em 1 minuto para o conector 1."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Por favor, comece a carregar em 1 minuto para o conector 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Por favor, comece a carregar em 1 minuto para o conector 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Por favor, comece a carregar em 1 minuto para o conector 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Por favor, comece a carregar em 1 minuto."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Não Permitir"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Deslize, insira ou toque seu cartão no PDV"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "falha na pré-autorização"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Pré autorização"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Pagamento falhou"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Pagamento liquidado"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "O PDV está processando a solicitação, aguarde"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS está ocupado, tente novamente mais tarde"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "Falha na máquina POS, entre em contato com a equipe"
+        },
+        {
+            "name": "ERROR",
+            "value": "ERRO"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Falha na autorização: bloqueada"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "A autorização falhou: expirou"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Falha na autorização: inválida"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Falha na autorização: TX simultânea"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "A autorização falhou: outro motivo"
+        },
+        {
+            "name": "Language",
+            "value": "Idioma"
+        }
+    ]
+}

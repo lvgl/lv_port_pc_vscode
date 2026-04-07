@@ -1,0 +1,141 @@
+{
+    "name": "fragment_home_info_card",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 300,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "qr_code_home",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 85,
+                "y_ofs": 20,
+                "size": 94,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "qr_code_prompt_home",
+            "desc": "二维码提示文本",
+            "type": "label",
+            "properties": {
+                "text": "Download Ioc APP for a faster experience.",
+                "width": 227,
+                "x_ofs": 18,
+                "y_ofs": 127,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "charger_station_img_home",
+            "desc": "充电桩状态图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 184,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_charging-station"
+            }
+        },
+        {
+            "name": "charger_station_label_home",
+            "desc": "充电桩状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Charger id:",
+                "x_ofs": 65,
+                "y_ofs": 185,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "contact_img_home",
+            "desc": "联系图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 208,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_contact"
+            }
+        },
+        {
+            "name": "contact_label_home",
+            "desc": "联系文本",
+            "type": "label",
+            "properties": {
+                "text": "0878-1058-4499",
+                "x_ofs": 65,
+                "y_ofs": 209,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "telephone_img_home",
+            "desc": "移动电话图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 232,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_telephone"
+            }
+        },
+        {
+            "name": "telephone_label_home",
+            "desc": "移动电话文本",
+            "type": "label",
+            "properties": {
+                "text": "(021)5088-6428",
+                "x_ofs": 65,
+                "y_ofs": 233,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "url_img_home",
+            "desc": "网址图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 256,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_url"
+            }
+        },
+        {
+            "name": "url_label_home",
+            "desc": "网址文本",
+            "type": "label",
+            "properties": {
+                "text": "Ioc.id",
+                "x_ofs": 65,
+                "y_ofs": 257,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

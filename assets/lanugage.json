@@ -1,0 +1,12 @@
+[
+    {
+        "namae" : "English",
+        "icon" : "A://assets/flag/english.png",
+        "text" : "English"
+    },
+    {
+        "namae" : "Chinise",
+        "icon" : "A://assets/flag/chinise.png",
+        "text" : "简体中文"
+    }
+]

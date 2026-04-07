@@ -1,0 +1,20 @@
+{
+    "name": "fragment_suspend_draw_icon",
+    "desc": "感叹号",
+    "type": "flex",
+    "properties": {
+        "style": "style-suspend-circle"
+    },
+    "children": [
+        {
+            "name": "symbol",
+            "type": "label",
+            "properties": {
+                "text": "!",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-draw_icon_symbol",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "name": "stopping",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "stopping_icon",
+            "type": "image",
+            "properties": {
+                "x_ofs": 316,
+                "y_ofs": 102,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_stopping"
+            }
+        },
+        {
+            "name": "stopping_title",
+            "desc": "暂停文本",
+            "type": "label",
+            "properties": {
+                "text": "Charging is stopping",
+                "x_ofs": 0,
+                "y_ofs": 268,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "stopping_reson",
+            "desc": "暂停原因",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "x_ofs": 0,
+                "y_ofs": 316,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "fragment_pre_authorization_num9",
+    "desc": "num9按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-num_button_pre_authorization"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "9",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

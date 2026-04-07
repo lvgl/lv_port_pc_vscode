@@ -1,0 +1,36 @@
+{
+    "name": "fragment_start_error_code",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 200,
+        "height": 40,
+        "style":"style-mid_container_top"
+    },
+    "children": [
+        {
+            "name": "label",
+            "desc": "错误码",
+            "type": "label",
+            "properties": {
+                "text": "Error code:",
+                "x":0,
+                "width": 130,
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_RIGHT"
+            }
+        },
+        {
+            "name": "value",
+            "desc": "错误码",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "x":130,
+                "width": 70,
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        }
+    ]
+}

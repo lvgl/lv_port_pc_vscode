@@ -1,0 +1,57 @@
+{
+    "name": "price_idle",
+    "desc": "空闲界面价格信息,包含当前时间段和下一时间段的价格,以及ocpp价格",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "x": 497,
+        "y": 140,
+        "style": "style-info_card"
+    },
+    "children": [
+        {
+            "name": "price_idle_current",
+            "type": "fragment",
+            "fragment_name" : "fragment_price_current",
+            "properties": {
+                "x":19,
+                "y":38
+            }
+        },
+        {
+            "name": "price_idle_divider",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 203,
+                "height": 1,
+                "x_ofs": 30,
+                "y_ofs": 140,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "price_idle_next",
+            "type": "fragment",
+            "fragment_name" : "fragment_price_next",
+            "properties": {
+                "x":19,
+                "y":168
+            }
+        },
+        {
+            "name": "ocpp_price",
+            "desc": "ocpp价格",
+            "type": "label",
+            "properties": {
+                "text": "0.15 $/kWh, idle fee after charging: 1 $/hr",
+                "width": 243,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

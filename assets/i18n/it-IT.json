@@ -1,0 +1,527 @@
+{
+    "name": "it-IT",
+    "label": "Italiano",
+    "icon": "A:./assets/images/Italy.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Collega prima"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Collega prima il connettore al veicolo prima di avviare una nuova sessione."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Per una ricarica rapida a portata di mano, scarica l'app Ioc."
+        },
+        {
+            "name": "charger_station",
+            "value": "ID del caricatore: "
+        },
+        {
+            "name": "Idle",
+            "value": "Inattivo"
+        },
+        {
+            "name": "Help",
+            "value": "Aiuto"
+        },
+        {
+            "name": "conid",
+            "value": "ID del connettore: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Periodo corrente"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Prossimo periodo"
+        },
+        {
+            "name": "Starting",
+            "value": "Di partenza"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Scansiona qui per iniziare la ricarica"
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Accedi a migliaia di stazioni di ricarica in tutto il paese. Usa un’unica app per accedere a decine di reti di ricarica."
+        },
+        {
+            "name": "Charging",
+            "value": "Ricarica"
+        },
+        {
+            "name": "Power",
+            "value": "Potere"
+        },
+        {
+            "name": "SoC",
+            "value": "Stato di carica"
+        },
+        {
+            "name": "Energy",
+            "value": "Energia"
+        },
+        {
+            "name": "Duration",
+            "value": "Durata"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Costo stimato"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Dati dettagliati"
+        },
+        {
+            "name": "State of charge",
+            "value": "Stato di carica"
+        },
+        {
+            "name": "Finished",
+            "value": "Finito"
+        },
+        {
+            "name": "Start_time",
+            "value": "Ora di inizio"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Tempo di inattività"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Si prega di spostare il veicolo. Il periodo di grazia di 10 minuti è scaduto."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Costo di ricarica"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Tariffa per inattività"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Importo totale"
+        },
+        {
+            "name": "Reserved",
+            "value": "Riservato"
+        },
+        {
+            "name": "Left",
+            "value": "Sinistra"
+        },
+        {
+            "name": "left",
+            "value": "restante"
+        },
+        {
+            "name": "Stopping",
+            "value": "Fermarsi"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Errore nella sessione di ricarica"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Codice errore: "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "La ricarica è stata interrotta, si prega di scollegare. Per iniziare una nuova sessione di ricarica, ricollegare e premere Continua."
+        },
+        {
+            "name": "Continue",
+            "value": "Continua"
+        },
+        {
+            "name": "Error",
+            "value": "Errore"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Errore nell’avvio della ricarica"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Il tuo credito non è stato addebitato. Per avviare una nuova sessione di ricarica, riconnetti il dispositivo."
+        },
+        {
+            "name": "Fault",
+            "value": "Colpa"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Guasto all’apparecchiatura"
+        },
+        {
+            "name": "Other_error",
+            "value": "Altro errore: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Blocco fallito"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "Errore di comunicazione EV"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Mancanza di terra"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Alta temperatura"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Errore interno"
+        },
+        {
+            "name": "Over Current",
+            "value": "Sopra la corrente"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Sopra la Voltaggio"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Guasto del misuratore"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Guasto dell'interruttore di alimentazione"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Errore del lettore"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Ripristina errore"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Sotto Voltaggio"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Segnale debole"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Emergenza spinta"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Errore di PhaseSwap"
+        },
+        {
+            "name": "Other Error",
+            "value": "Altro errore"
+        },
+        {
+            "name": "Door Opened",
+            "value": "la porta è aperta"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "Interruttore MCCB aperto"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Si prega di contattare il personale di manutenzione."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Non disponibile"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Fuori servizio"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Sfortunatamente, questo caricatore non è disponibile. Controlla l’app Ioc per trovare un altro caricatore vicino a te o contatta il servizio clienti."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Collega e ricarica"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "oppure Avvio AutoCarica…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Autorizzato"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "La ricarica si sta interrompendo"
+        },
+        {
+            "name": "Waiting",
+            "value": "In attesa"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Attendere in fila"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "In attesa che un altro connettore condivida energia, la ricarica inizierà automaticamente quando inattivo."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Tempo di ricarica e costo"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Energia erogata e tariffa di ricarica"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Stato di carica"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Caricatori bilanciati"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Termini di utilizzo"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Per una ricarica rapida a portata di mano, scarica l’app Ioc."
+        },
+        {
+            "name": "content_help2",
+            "value": "Impossibile avviare la ricarica. Assicurati che il veicolo sia correttamente collegato. Il tuo credito non è stato addebitato. Per avviare una nuova sessione di ricarica, riconnetti il dispositivo."
+        },
+        {
+            "name": "Close",
+            "value": "Chiudi"
+        },
+        {
+            "name": "Back",
+            "value": "Indietro"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Autorizzazione non riuscita"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Motivo del guasto"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Scansiona per la fattura"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Scansiona per la ricevuta"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Inserisci l’importo"
+        },
+        {
+            "name": "Confirm",
+            "value": "Conferma"
+        },
+        {
+            "name": "Suspend",
+            "value": "Sospendere"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Ricarica sospesa"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Dati dettagliati"
+        },
+        {
+            "name": "Run_State",
+            "value": "Stato di esecuzione"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Stato secondario"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Codice di errore"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Stato connettore"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Stato connettore"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Richiedi Voltaggio"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Richiedi Corrente"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Voltaggio offerta"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Corrente offerta"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Limite di uscita"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Gruppo di moduli"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Temperatura del connettore"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Voltaggio di uscita"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Corrente di uscita"
+        },
+        {
+            "name": "Processing",
+            "value": "Elaborazione in corso"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Potrebbe richiedere alcuni minuti"
+        },
+        {
+            "name": "Downloading",
+            "value": "Download in corso"
+        },
+        {
+            "name": "Installing",
+            "value": "Installazione"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Nessun connettore selezionato"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Impossibile avviare la ricarica"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Difetto riscontrato. Interrompi la ricarica"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Per favore, inizia a caricare entro 1 minuto per il connettore 1"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Per favore, inizia a caricare entro 1 minuto per il connettore 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Per favore, inizia a caricare entro 1 minuto per il connettore 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Per favore, inizia a caricare entro 1 minuto per il connettore 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Per favore, inizia a caricare entro 1 minuto."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Non permesso"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Scorri, inserisci o tocca la tua carta sul POS"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "pre-autorizzazione fallita"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Pre-autorizzazione regolata"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Pagamento fallito"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Pagamento saldato"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "Il POS sta elaborando la richiesta, attendere"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "Pos occupato, riprova più tardi"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "Errore POS, si prega di contattare il servizio"
+        },
+        {
+            "name": "ERROR",
+            "value": "ERRORE"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Autorizzazione non riuscita: bloccata"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Autorizzazione non riuscita: scaduta"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Autorizzazione non riuscita: non valida"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Autorizzazione non riuscita: TX simultanea"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Autorizzazione non riuscita: altro motivo"
+        },
+        {
+            "name": "Language",
+            "value": "Lingua"
+        }
+    ]
+}

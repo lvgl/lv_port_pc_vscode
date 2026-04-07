@@ -1,0 +1,57 @@
+{
+    "name": "fragment_reserved_info_card_no_price",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "left_time_label",
+            "desc": "预约剩余时间文本",
+            "type": "label",
+            "properties": {
+                "text": "Left",
+                "x_ofs": 0,
+                "y_ofs": -65,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "idle_time_value_reserved",
+            "desc": "拔枪剩余时间",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x_ofs": 0,
+                "y_ofs": -20,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "plug_noprice",
+            "desc": "先插枪",
+            "type": "label",
+            "properties": {
+                "text": "Plug in first",
+                "x_ofs": 0,
+                "y_ofs": 35,
+                "width": 235,
+                "height": 40,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

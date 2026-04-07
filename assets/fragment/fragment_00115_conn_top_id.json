@@ -1,0 +1,33 @@
+{
+    "name": "fragment_conn_top_id",
+    "desc": "中间卡片左上角枪号",
+    "type": "flex",
+    "properties": {
+        "style": "style-idle-num-border"
+    },
+    "children": [
+        {
+            "name": "conn_id_text",
+            "type": "label",
+            "properties": {
+                "text": "1",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-idle-num-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_type_icon",
+            "type": "image",
+            "properties": {
+                "src": "ccs2-dc_1connect",
+                "width": 56,
+                "height": 56,
+                "x_ofs": 7,
+                "y_ofs": 7,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "hidden": true
+            }
+        }
+    ]
+}
