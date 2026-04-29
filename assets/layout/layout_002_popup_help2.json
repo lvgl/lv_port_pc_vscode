@@ -1,0 +1,70 @@
+{
+    "name": "help2",
+    "desc": "help2弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 434,
+        "x": 70,
+        "y": 40,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "help2_title",
+            "desc": "帮助主题",
+            "type": "label",
+            "properties": {
+                "text": "Charging time and cost",
+                "x_ofs": 40,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label"
+            }
+        },
+        {
+            "name": "help2_split_line",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 580,
+                "height": 1,
+                "x": 40,
+                "y": 64,
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "help2_content",
+            "desc": "帮助内容",
+            "type": "label",
+            "properties": {
+                "text": "Charging could not be initiated. Please ensure your vehicle is plugged in correctly. Your credit has not been charged. To start a new charging session, please reconnect.",
+                "x_ofs": 40,
+                "y_ofs": 74,
+                "width": 580,
+                "height": 356,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt"
+            }
+        },
+        {
+            "name": "help2_close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 80,
+                "y": 364
+            }
+        },
+        {
+            "name": "help2_back_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 380,
+                "y": 364
+            }
+        }
+    ]
+}

@@ -1,0 +1,168 @@
+{
+    "name": "fragment_card_right_detailed_data",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "width": 280,
+        "height": 356,
+        "style":"style-help1_status_bar"
+    },
+    "children": [
+        {
+            "name": "offer_current",
+            "desc": "提供电流文本",
+            "type": "label",
+            "properties": {
+                "text": "Offer Current",
+                "x_ofs": 12,
+                "y_ofs": 10,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "offer_current_value",
+            "desc": "提供电流值",
+            "type": "label",
+            "properties": {
+                "text": "300.0A",
+                "x_ofs": 157,
+                "y_ofs": 10,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_limit",
+            "desc": "输出限制文本",
+            "type": "label",
+            "properties": {
+                "text": "Output Limit",
+                "x_ofs": 12,
+                "y_ofs": 54,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_limit_value",
+            "desc": "输出限制值",
+            "type": "label",
+            "properties": {
+                "text": "300.0A",
+                "x_ofs": 157,
+                "y_ofs": 54,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "comp_group",
+            "desc": "模块组文本",
+            "type": "label",
+            "properties": {
+                "text": "Comp Group",
+                "x_ofs": 12,
+                "y_ofs": 98,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "comp_group_value",
+            "desc": "模块组值",
+            "type": "label",
+            "properties": {
+                "text": "A+B",
+                "x_ofs": 157,
+                "y_ofs": 98,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_temperature",
+            "desc": "枪温度文本",
+            "type": "label",
+            "properties": {
+                "text": "Conn Temperature",
+                "x_ofs": 12,
+                "y_ofs": 142,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_temperature_value",
+            "desc": "枪温度值",
+            "type": "label",
+            "properties": {
+                "text": "34.0°",
+                "x_ofs": 157,
+                "y_ofs": 142,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_voltage",
+            "desc": "输出电压文本",
+            "type": "label",
+            "properties": {
+                "text": "Output Voltage",
+                "x_ofs": 12,
+                "y_ofs": 186,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_voltage_value",
+            "desc": "输出电压值",
+            "type": "label",
+            "properties": {
+                "text": "399.7V",
+                "x_ofs": 157,
+                "y_ofs": 186,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_current",
+            "desc": "输出电流文本",
+            "type": "label",
+            "properties": {
+                "text": "Output Current",
+                "x_ofs": 12,
+                "y_ofs": 230,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "output_current_value",
+            "desc": "输出电流值",
+            "type": "label",
+            "properties": {
+                "text": "119.6A",
+                "x_ofs": 157,
+                "y_ofs": 230,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

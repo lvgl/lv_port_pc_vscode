@@ -1,0 +1,20 @@
+{
+    "name": "fragment_conn_card_id",
+    "desc": "枪id, 内置一个文本",
+    "type": "flex",
+    "properties": {
+        "style": "style-connector-quad-default-num-border"
+    },
+    "children": [
+        {
+            "name": "NoText",
+            "type": "label",
+            "properties": {
+                "text": "1",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-num-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

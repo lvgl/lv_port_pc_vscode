@@ -1,0 +1,20 @@
+{
+    "name": "fragment_detailed_data_close",
+    "desc": "close按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-continue_button_session_error"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "Close",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-continue_label_session_error",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "name": "starting1_full",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "starting1_qr",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 174,
+                "y_ofs": 92,
+                "size": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "starting1_title",
+            "desc": "二维码下方提示文本",
+            "type": "label",
+            "properties": {
+                "text": "Scan here to start charging",
+                "x_ofs": 10,
+                "y_ofs": 110,
+                "width": 500,
+                "height": 40,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_label",
+                "to_obj": "main.starting1.qr_code_starting1",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "starting1_subtitle",
+            "desc": "插枪提示",
+            "type": "label",
+            "properties": {
+                "text": "Access thousands of chargers across multiple networks with one app. ",
+                "x_ofs": 31,
+                "y_ofs": 278,
+                "width": 416,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

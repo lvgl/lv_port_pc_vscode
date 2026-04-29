@@ -1,0 +1,527 @@
+{
+    "name": "fi-FI",
+    "label": "Suomi",
+    "icon": "A:./assets/images/Finland.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Liitä ensin"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Liitä ensin latausnippu ajoneeleesi ennen uuden latauskauden aloittamista."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Nopea lataus on helposti käsistäsi, lataa Ioc -sovellus."
+        },
+        {
+            "name": "charger_station",
+            "value": "Latausaseman tunniste: "
+        },
+        {
+            "name": "Idle",
+            "value": "Vapaa"
+        },
+        {
+            "name": "Help",
+            "value": "Apua"
+        },
+        {
+            "name": "conid",
+            "value": "Yhteyden tunniste: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Nykyinen jakso"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Seuraava jakso"
+        },
+        {
+            "name": "Starting",
+            "value": "Aloittaa"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Skannaa tästä aloittaaksesi latauksen."
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Pääset käyttämään tuhansia latausasemia koko maassa. Käytä yhtä sovellusta päästäksesi kymmeniin latausverkkoihin."
+        },
+        {
+            "name": "Charging",
+            "value": "Lataa"
+        },
+        {
+            "name": "Power",
+            "value": "Teho"
+        },
+        {
+            "name": "SoC",
+            "value": "Lataustila"
+        },
+        {
+            "name": "Energy",
+            "value": "Energia"
+        },
+        {
+            "name": "Duration",
+            "value": "Kesto"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Arvioitu kustannus"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Yksityiskohtainen tiedot"
+        },
+        {
+            "name": "State of charge",
+            "value": "Lataustila"
+        },
+        {
+            "name": "Finished",
+            "value": "Päättynyt"
+        },
+        {
+            "name": "Start_time",
+            "value": "Aloitusaika"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Keskitysaika"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Siirry autosi paikalta. 10 minuuttia kestänyt anteeksiantoperiodi on päättynyt."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Latauskustannus"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Keskitymismaksu"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Kokonaismäärä"
+        },
+        {
+            "name": "Reserved",
+            "value": "Varattu"
+        },
+        {
+            "name": "Left",
+            "value": "Jäljellä"
+        },
+        {
+            "name": "left",
+            "value": "jäljellä"
+        },
+        {
+            "name": "Stopping",
+            "value": "Pysähtyy"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Latauskausi virhe"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Virhekoodi:"
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "Lataus keskeytyi, irrota latausnippu. Aloittaaksesi uuden latauskauden, yhdistä uudelleen ja paina Jatka."
+        },
+        {
+            "name": "Continue",
+            "value": "Jatka"
+        },
+        {
+            "name": "Error",
+            "value": "Virhe"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Latauksen aloituskirjautuminen"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Krediittisi ei ole veloitettu. Aloittaaksesi uuden latauskauden, yhdistä uudelleen."
+        },
+        {
+            "name": "Fault",
+            "value": "Vika"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Laitevika"
+        },
+        {
+            "name": "Other_error",
+            "value": "Muu virhe: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Lukitusvirhe"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "Auton kommunikointivirhe"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Maavika"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Korkea lämpötila"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Sisäinen virhe"
+        },
+        {
+            "name": "Over Current",
+            "value": "Ylivirta"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Ylijännite"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Mittarivika"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Virtakytkimen vika"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Lukijan vika"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Vian kuittaus"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Alijännite"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Heikko signaali"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Hätäseis painettu"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Vaihejärjestysvika"
+        },
+        {
+            "name": "Other Error",
+            "value": "Muu virhe"
+        },
+        {
+            "name": "Door Opened",
+            "value": "ovi on auki"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "MCCB-kytkin avattu"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Ole hyvä ja ota yhteyttä huoltotyöntekijöihin."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Ei saatavilla"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Palvelu ei käytettävissä"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Valitettavasti tämä latausasema ei ole käytettävissä. Tarkista Ioc -sovellus löytääksesi lähellä olevan latausaseman tai ota yhteyttä asiakaspalveluun."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Plug & Charge"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "tai AutoCharge käynnistyy..."
+        },
+        {
+            "name": "Authorized",
+            "value": "Valtuutettu"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "Lataus keskeytyy"
+        },
+        {
+            "name": "Waiting",
+            "value": "Odotetaan"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Odotusjonossa"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Odotetaan toista latausnippua jaettavan vahvistuksen, lataus käynnistyy automaattisesti vapaana oleva."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Latausaika ja kustannukset"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Toimitettu energia ja latausnopeus"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Lataustila"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Tasapainotetut latajat"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Käyttöehdot"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Nopea lataus on helposti käsistäsi, lataa Ioc -sovellus."
+        },
+        {
+            "name": "content_help2",
+            "value": "Latausta ei voitu aloittaa. Varmista, että ajoneelasi on kytketty oikein. Krediittisi ei ole veloitettu. Aloittaaksesi uuden latauskauden, yhdistä uudelleen."
+        },
+        {
+            "name": "Close",
+            "value": "Sulje"
+        },
+        {
+            "name": "Back",
+            "value": "Takaisin"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Valtuutus epäonnistui"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Epäonnistumisen syy"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Skannaa laskulle"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Skannaa kuitille"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Anna määrä"
+        },
+        {
+            "name": "Confirm",
+            "value": "Vahvista"
+        },
+        {
+            "name": "Suspend",
+            "value": "Keskeytetään"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Latauksen keskeyttäminen"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Yksityiskohtainen tiedot"
+        },
+        {
+            "name": "Run_State",
+            "value": "Nykyinen tila"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Aliprosessi"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Virhekoodi"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Kaapeleiden tila"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Aloita SoC lataus"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Pyydetty jännite"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Pyydetty virta"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Syöttö jännite"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Syöttö virta"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Lähdön raja"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Moduuliryhmä"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Pistokkeen lämpötila"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Lähtöjännite"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Lähtövirta"
+        },
+        {
+            "name": "Processing",
+            "value": "Käsitellään"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Tämä saattaa kestää muutaman minuutin"
+        },
+        {
+            "name": "Downloading",
+            "value": "Lataa"
+        },
+        {
+            "name": "Installing",
+            "value": "Asentaa"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Kaapelia ei ole valittu"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Latauksen aloittaminen epäonnistui"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Havaittu vika. Lataus lopetetaan"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Aloita lataus 1 minuutin sisällä liittimelle 1"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Aloita lataus 1 minuutin sisällä liittimelle 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Aloita lataus 1 minuutin sisällä liittimelle 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Aloita lataus 1 minuutin sisällä liittimelle 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Aloita lataus 1 minuutin sisällä."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Ei lupaa"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Pyyhkäise, aseta tai napauta korttiasi myyntipisteessä"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "ennakkolupa epäonnistui"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Ennakkoluulotus"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Maksu epäonnistui"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Maksu suoritettu"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "POS käsittelee pyyntöä, odota"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS-kone on varattu, yritä myöhemmin uudelleen"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "POS -koneen epäonnistuminen, ota yhteyttä henkilökuntaan"
+        },
+        {
+            "name": "ERROR",
+            "value": "VIRHE"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Valtuutus epäonnistui: Ei käytössä"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Valtuutus epäonnistui: Vanhentunut"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Valtuutus epäonnistui: Virheellinen"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Valtuutus epäonnistui: Päällekkäinen veloitus"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Valtuutus epäonnistui: Muu syy"
+        },
+        {
+            "name": "Language",
+            "value": "Kieli"
+        }
+    ]
+}

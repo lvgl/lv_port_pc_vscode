@@ -1,0 +1,20 @@
+{
+    "name": "fragment_help2_back",
+    "desc": "back按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-continue_button_session_error"
+    },
+    "children": [
+        {
+            "name": "back_label_help2",
+            "type": "label",
+            "properties": {
+                "text": "Back",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-continue_label_session_error",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

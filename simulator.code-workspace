@@ -1,109 +1,134 @@
 {
-	// https://code.visualstudio.com/docs/editor/workspaces
-	// https://code.visualstudio.com/docs/editor/multi-root-workspaces
-	// https://code.visualstudio.com/docs/editor/variables-reference
-
-	"folders": [
-		{
-			"path": "."
-		},
-	],
-	// extensions.json section
-	"extensions": {
-		"recommendations": [
-			"ms-vscode.cpptools",              // common C/C++ support
-			"ms-vscode.cpptools-themes",       // general C/C++ theme
-			"ms-vscode.cmake-tools"            // cmake support
-		],
-		"unwantedRecommendations": [
-		]
-	},
-	// settings.json section
-	"settings": {
-		"files.trimTrailingWhitespace": true,
-		"files.insertFinalNewline": true,
-		"files.trimFinalNewlines": true,
-		"cmake.configureOnOpen": true,
-		"files.associations": {
-			"glob.h": "c",
-			"lvgl.h": "c"
-		},
-	},
-	// tasks.json section
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": [
-			{
-				"label": "Build",
-				"command": "cmake",
-				"args": [
-					"--build", "${command:cmake.buildDirectory}"
-				],
-				"group": {
-					"kind": "build",
-					"isDefault": true
-				},
-				"problemMatcher": {
-					"owner": "cpp",
-					"fileLocation": ["relative", "${workspaceFolder}"],
-					"pattern": {
-						"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-						"file": 1,
-						"line": 2,
-						"column": 3,
-						"severity": 4,
-						"message": 5
-					}
-				}
-			},
-			{
-				"label": "Build and Run",
-				"type": "shell",
-				"command": "${workspaceFolder}/bin/main",
-				"group": {
-					"kind": "test",
-					"isDefault": true
-				},
-				"dependsOn": "Build"
-			}
-		],
-	},
-	// launch.json section
-	"launch": {
-		"version": "0.2.0",
-		"configurations": [
-			{
-				"name": "Debug LVGL demo with gdb",
-				"type": "cppdbg",
-				"request": "launch",
-		        "program": "${workspaceFolder}/bin/main",
-				"args": [],
-				"cwd": "${workspaceFolder}",
-				"preLaunchTask": "Build",
-				"stopAtEntry": false,
-				"linux": {
-					"MIMode": "gdb",
-					"miDebuggerPath": "/usr/bin/gdb"
-				  },
-				  "osx": {
-					"MIMode": "lldb"
-				  },
-				  "windows": {
-					"MIMode": "gdb",
-					"miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
-				  }
-			},
-			{
-				"name": "Debug LVGL demo with LLVM",
-				"type": "cppdbg",
-				"request": "launch",
-		        "program": "${workspaceFolder}/bin/main",
-				"args": [],
-				"cwd": "${workspaceFolder}",
-				"preLaunchTask": "Build",
-				"stopAtEntry": false,
-				"MIMode": "lldb"
-			},
-		],
-	},
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.cpptools",
+      "ms-vscode.cpptools-themes",
+      "ms-vscode.cmake-tools"
+    ],
+    "unwantedRecommendations": []
+  },
+  "settings": {
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "files.associations": {
+      "glob.h": "c",
+      "lvgl.h": "c"
+    }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "windows": {
+      "options": {
+        "shell": {
+          "executable": "C:\\msys64\\usr\\bin\\bash.exe",
+          "args": [
+            "-lc"
+          ]
+        },
+        "env": {
+          "MSYSTEM": "UCRT64",
+          "CHERE_INVOKING": "1",
+          "PATH": "C:\\msys64\\ucrt64\\bin;C:\\msys64\\usr\\bin;${env:PATH}"
+        }
+      }
+    },
+    "tasks": [
+      {
+        "label": "CMake: Configure (Ninja UCRT64)",
+        "type": "shell",
+        "command": "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DLV_USE_FREETYPE=ON",
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+          "$gcc"
+        ],
+        "group": "build"
+      },
+      {
+        "label": "CMake: Build (Ninja UCRT64)",
+        "type": "shell",
+        "command": "cmake --build build -j4",
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "dependsOn": "CMake: Configure (Ninja UCRT64)",
+        "problemMatcher": [
+          "$gcc"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "CMake: Rebuild (Ninja UCRT64)",
+        "type": "shell",
+        "command": "cmake --fresh -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DLV_USE_FREETYPE=ON && cmake --build build -j4",
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
+      },
+      {
+        "label": "Run: main.exe",
+        "type": "shell",
+        "command": "./bin/main.exe",
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "dependsOn": "CMake: Build (Ninja UCRT64)",
+        "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug LVGL demo with gdb",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/main.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [
+          {
+            "name": "PATH",
+            "value": "C:\\msys64\\ucrt64\\bin;C:\\msys64\\usr\\bin;${env:PATH}"
+          },
+          {
+            "name": "MSYSTEM",
+            "value": "UCRT64"
+          },
+          {
+            "name": "CHERE_INVOKING",
+            "value": "1"
+          }
+        ],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+        "setupCommands": [
+          {
+            "description": "Enable pretty printing",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "CMake: Build (Ninja UCRT64)"
+      }
+    ]
+  }
 }

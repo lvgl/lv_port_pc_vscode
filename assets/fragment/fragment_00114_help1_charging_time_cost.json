@@ -1,0 +1,20 @@
+{
+    "name": "fragment_charging_time_cost_help1",
+    "desc": "充电详细信息",
+    "type": "button",
+    "properties": {
+        "style": "style-charging_time_cost"
+    },
+    "children": [
+        {
+            "name": "NoText_help1",
+            "type": "label",
+            "properties": {
+                "text": "Charging time and cost",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

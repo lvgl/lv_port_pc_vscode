@@ -1,0 +1,32 @@
+{
+    "name": "main-dark",
+    "version": "0.0.1",
+    "description": "main-dark theme",
+    "colors" :[
+        {"name": "primary", "value": "#005350"},
+        {"name": "state_idle_success", "value": "#F2C41A"},
+        {"name": "state_charging", "value": "#32D9D1"},
+        {"name": "state_reserve", "value": "#1677ff"},
+        {"name": "state_warn_suspend", "value": "#FAAD14"},
+        {"name": "state_fault", "value": "#FA4D4F"},
+        {"name": "state_unavaliable", "value": "#8C9AA4"},
+        {"name": "text_primary", "value": "#333333"},
+        {"name": "text_secondary", "value": "#999999"},
+        {"name": "split", "value": "#E7E7E7"},
+        {"name": "background_primary", "value": "#FFFFFF"},
+        {"name": "background_secondary", "value": "#F3F3F3"},
+        {"name": "background_prompt", "value": "#000000"}
+    ],
+    "fonts": [
+        {"name": "title", "family": "./assets/fonts/calibrib.ttf", "size": 24, "bold": true},
+        {"name": "button", "family": "./assets/fonts/calibrib.ttf", "size": 18, "bold": true},
+        {"name": "primary", "family": "./assets/fonts/calibri.ttf", "size": 16, "bold": false},
+        {"name": "num_notice", "family": "./assets/fonts/D-DIN-PRO-600-SemiBold.otf", "size": 28, "bold": true},
+        {"name": "num_primary", "family": "./assets/fonts/D-DIN-PRO-600-SemiBold.otf", "size": 18, "bold": true}
+    ],
+    "images": [
+        {"name": "logo", "path": "A:./assets/images/LOGO.png"},
+        {"name": "english", "path": "A:./assets/images/english.png"},
+        {"name": "ccs2-dc", "path": "A:./assets/images/CCS2-DC.png"}
+    ]
+}

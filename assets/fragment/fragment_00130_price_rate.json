@@ -1,0 +1,51 @@
+{
+    "name": "fragment_price_rate",
+    "desc": "当前时间段价格信息",
+    "type": "flex",
+    "properties": {
+        "width": 113,
+        "height": 102,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "price_kwh",
+            "desc": "当前时间段kwh计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/Kwh",
+                "x_ofs": 0,
+                "y_ofs": 0,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        },
+        {
+            "name": "price_hr",
+            "desc": "当前时间段hr计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/hr",
+                "x_ofs": 0,
+                "y_ofs": 27,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        },
+        {
+            "name": "price_times",
+            "desc": "当前时间段times计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/times",
+                "x_ofs": 0,
+                "y_ofs": 54,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        }
+    ]
+}

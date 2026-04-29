@@ -1,0 +1,27 @@
+{
+    "name": "fragment_popup_bill",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "width": 320,
+        "height": 340,
+        "style":"style-help1_status_bar"
+    },
+    "children": [
+        {
+            "name": "content",
+            "desc": "充电桩状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Faelliger Betrag:EUR1,01 Reservierungsgebuehr:0,00\nPreis pro kW: 0.01\nServicegebuehr:1,00\nNutzungsgebuehr:0,00\nEnergie: 0.017kWh\nDauer:00:01:04\nMwSt.19%:0,16\nNetto: 0,85\nBesuch: http://gitlab.iocharger.com\n22602/tourist/invoices/53sh",
+                "x_ofs": 20,
+                "y_ofs": 20,
+                "width": 280,
+                "height": 300,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        }
+    ]
+}

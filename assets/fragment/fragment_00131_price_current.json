@@ -1,0 +1,73 @@
+{
+    "name": "fragment_price_current",
+    "desc": "当前时间段价格信息",
+    "type": "flex",
+    "properties": {
+        "width": 244,
+        "height": 102,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "price_current_period_icon",
+            "desc": "当前时间段图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 38,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_current-time"
+            }
+        },
+        {
+            "name": "price_current_dot",
+            "desc": "当前时间段小圆点",
+            "type": "flex",
+            "properties": {
+                "width": 6,
+                "height": 6,
+                "x_ofs": 0,
+                "y_ofs": 37,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-idle-curtime-circle"
+            }
+        },
+        {
+            "name": "price_current_title",
+            "desc": "当前时间段文本",
+            "type": "label",
+            "properties": {
+                "text": "Current Period",
+                "x_ofs": 30,
+                "y_ofs": 64,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_current_time",
+            "desc": "当前时间段",
+            "type": "label",
+            "properties": {
+                "text": "13:00-14:00",
+                "x_ofs": 30,
+                "y_ofs": 92,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_current_rate",
+            "type": "fragment",
+            "fragment_name" : "fragment_price_rate",
+            "properties": {
+                "x":131,
+                "y":0
+            }
+        }
+    ]
+}

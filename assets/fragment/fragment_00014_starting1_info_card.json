@@ -1,0 +1,219 @@
+{
+    "name": "fragment_starting1_info_card",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "current_time_img_starting1",
+            "desc": "当前时间段图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 38,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_current-time"
+            }
+        },
+        {
+            "name": "current_time_label_starting1",
+            "desc": "当前时间段文本",
+            "type": "label",
+            "properties": {
+                "text": "Current Period",
+                "x_ofs": 30,
+                "y_ofs": 64,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_starting1",
+            "desc": "当前时间段",
+            "type": "label",
+            "properties": {
+                "text": "13:00-14:00",
+                "x_ofs": 30,
+                "y_ofs": 92,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_kwh_starting1",
+            "desc": "当前时间段kwh计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/Kwh",
+                "x_ofs": 150,
+                "y_ofs": 38,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_hr_starting1",
+            "desc": "当前时间段hr计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/hr",
+                "x_ofs": 150,
+                "y_ofs": 65,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_times_starting1",
+            "desc": "当前时间段times计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/times",
+                "x_ofs": 150,
+                "y_ofs": 92,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_circle_starting1",
+            "desc": "当前时间段小圆点",
+            "type": "flex",
+            "properties": {
+                "width": 6,
+                "height": 6,
+                "x_ofs": 19,
+                "y_ofs": 73,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-idle-curtime-circle"
+            }
+        },
+        {
+            "name": "split_line_starting1",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 203,
+                "height": 1,
+                "x_ofs": 0,
+                "y_ofs": 0,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "next_period_img_starting1",
+            "desc": "下一时间段图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 178,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_next-period"
+            }
+        },
+        {
+            "name": "next_period_label_starting1",
+            "desc": "下一时间段文本",
+            "type": "label",
+            "properties": {
+                "text": "Next Period",
+                "x_ofs": 30,
+                "y_ofs": 204,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "next_period_starting1",
+            "desc": "下一时间段",
+            "type": "label",
+            "properties": {
+                "text": "14:00-15:00",
+                "x_ofs": 30,
+                "y_ofs": 232,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "next_period_kwh_starting1",
+            "desc": "下一时间段kwh计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/Kwh",
+                "x_ofs": 150,
+                "y_ofs": 178,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "next_period_hr_starting1",
+            "desc": "下一时间段hr计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/hr",
+                "x_ofs": 150,
+                "y_ofs": 205,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "next_period_times_starting1",
+            "desc": "下一时间段times计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/times",
+                "x_ofs": 150,
+                "y_ofs": 232,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "next_period_circle_starting1",
+            "desc": "下一时间段小圆点",
+            "type": "flex",
+            "properties": {
+                "width": 6,
+                "height": 6,
+                "x_ofs": 19,
+                "y_ofs": 213,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-idle-netper-circle"
+            }
+        },
+        {
+            "name": "ocpp_price",
+            "desc": "ocpp价格",
+            "type": "label",
+            "properties": {
+                "text": "0.15 $/kWh, idle fee after charging: 1 $/hr",
+                "width": 243,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

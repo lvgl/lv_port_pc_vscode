@@ -1,0 +1,61 @@
+{
+    "name": "conn_top_info",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 70,
+        "style":"style-mid_container_top"
+    },
+    "children": [
+        {
+            "name": "conn_id",
+            "type": "fragment",
+            "fragment_name" : "fragment_conn_top_id",
+            "properties": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "name": "station_id",
+            "type": "label",
+            "properties": {
+                "text": "10012",
+                "x_ofs": 90,
+                "y_ofs": 42,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        },
+        {
+            "name": "conn_state",
+            "desc": "状态",
+            "type": "label",
+            "properties": {
+                "text": "Idle",
+                "x_ofs": 90,
+                "y_ofs": 13,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-idle-status",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_type_power",
+            "desc": "插枪类型和功率",
+            "type": "label",
+            "properties": {
+                "text": "CCS2(DC)-120.0kW",
+                "x_ofs": 554,
+                "y_ofs": 13,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-type_power",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

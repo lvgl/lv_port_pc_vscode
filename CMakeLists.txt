@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.12.4)
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_C_COMPILER "gcc" CACHE STRING "C compiler" FORCE)
 project(lvgl C CXX)
+set(CMAKE_BUILD_TYPE Debug)
 
 # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
 set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
 
-set(LVGL_PRO_PROJECT_DIR
-    ""
-    CACHE PATH "Path to LVGL Pro Project folder")
+unset(USE_FREERTOS CACHE)
 
 option(USE_FREERTOS "Enable FreeRTOS" OFF) # Turn this on to enable FreeRTOS
 
@@ -38,14 +38,18 @@ else()
 endif()
 
 # Main include files of the project
-include_directories(${PROJECT_SOURCE_DIR}/main/inc)
+include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_SOURCE_DIR}/i18n)
+include_directories(${PROJECT_SOURCE_DIR}/ioc)
+
 
 # Define options for LVGL with default values (OFF)
 option(LV_USE_DRAW_SDL "Use SDL draw unit" OFF)
 option(LV_USE_LIBPNG "Use libpng to decode PNG" OFF)
 option(LV_USE_LIBJPEG_TURBO "Use libjpeg turbo to decode JPEG" OFF)
 option(LV_USE_FFMPEG "Use libffmpeg to display video using lv_ffmpeg" OFF)
-option(LV_USE_FREETYPE "Use freetype library" OFF)
+option(LV_USE_FREETYPE "Use freetype library" ON)
 
 # Set C and C++ standards
 set(CMAKE_C_STANDARD 99)
@@ -73,6 +77,20 @@ set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
 set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
 
 # Create the main executable, depending on the FreeRTOS option
+file(GLOB_RECURSE SOURCES
+    "${PROJECT_SOURCE_DIR}/ioc/*.c"
+    "${PROJECT_SOURCE_DIR}/i18n/*.c"
+    "${PROJECT_SOURCE_DIR}/pages/*.c"
+    "${PROJECT_SOURCE_DIR}/pages_mngr.c"
+)
+
+# 排除 zlog 文件夹里的文件
+foreach(file ${SOURCES})
+    if(file MATCHES ".*/ioc/zlog/.*\\.c$")
+        list(REMOVE_ITEM SOURCES ${file})
+    endif()
+endforeach()
+
 if(USE_FREERTOS)
     list(APPEND MAIN_SOURCES src/freertos_main.c src/freertos/freertos_posix_port.c ${FREERTOS_SOURCES})
     list(APPEND MAIN_LIBS freertos_config freertos_kernel)
@@ -141,7 +159,7 @@ if(LVGL_PRO_PROJECT_DIR)
   endif()
 endif()
 
-add_executable(main ${MAIN_SOURCES})
+add_executable(main ${MAIN_SOURCES} ${SOURCES})
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main ${MAIN_LIBS})
 
@@ -153,6 +171,7 @@ if (WIN32)
     else()
         target_link_options(main PRIVATE "-mconsole")
     endif()
+    target_link_libraries(main ws2_32)
 endif()
 
 # Apply additional compile options if the build type is Debug

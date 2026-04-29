@@ -1,0 +1,229 @@
+{
+    "name": "pre_authorization",
+    "desc": "预授权弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 520,
+        "x": 70,
+        "y": 40,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "pre_auth_title",
+            "desc": "提示输入金额文本",
+            "type": "label",
+            "properties": {
+                "text": "Please enter the amount",
+                "x_ofs": 0,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label"
+            }
+        },
+        {
+            "name": "pre_auth_split_line",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 580,
+                "height": 1,
+                "x": 40,
+                "y": 64,
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "pre_auth_input_box",
+            "desc": "预授权输入框",
+            "type": "flex",
+            "properties": {
+                "x": 50,
+                "y": 117,
+                "width": 260,
+                "height": 60,
+                "style": "style-amount"
+            }
+        },
+        {
+            "name": "pre_amounut_currency",
+            "desc": "货币单位",
+            "type": "label",
+            "properties": {
+                "text": "CNY",
+                "x_ofs": 79,
+                "y_ofs": 137,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-quad-default-power-text"
+            }
+        },
+        {
+            "name": "pre_auth_val",
+            "desc": "预授权金额",
+            "type": "label",
+            "properties": {
+                "text": "0",
+                "x_ofs": 117,
+                "y_ofs": 134,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-estimated_cost"
+            }
+        },
+        {
+            "name": "pre_auth_shortcut1",
+            "desc": "预授权金额快捷按钮",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_shortcut1",
+            "properties": {
+                "x": 90,
+                "y": 227
+            }
+        },
+        {
+            "name": "pre_auth_shortcut2",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_shortcut2",
+            "properties": {
+                "x": 90,
+                "y": 287
+            }
+        },
+        {
+            "name": "pre_auth_shortcut3",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_shortcut3",
+            "properties": {
+                "x": 90,
+                "y": 347
+            }
+        },
+        {
+            "name": "num1",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "text": "1",
+                "x": 380,
+                "y": 117
+            }
+        },
+        {
+            "name": "num2",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 450,
+                "y": 117
+            }
+        },
+        {
+            "name": "num3",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 520,
+                "y": 117
+            }
+        },
+        {
+            "name": "num4",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 380,
+                "y": 187
+            }
+        },
+        {
+            "name": "num5",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 450,
+                "y": 187
+            }
+        },
+        {
+            "name": "num6",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 520,
+                "y": 187
+            }
+        },
+        {
+            "name": "num7",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 380,
+                "y": 257
+            }
+        },
+        {
+            "name": "num8",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 450,
+                "y": 257
+            }
+        },
+        {
+            "name": "num9",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 520,
+                "y": 257
+            }
+        },
+        {
+            "name": "char_drop",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 380,
+                "y": 327
+            }
+        },
+        {
+            "name": "num0",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad",
+            "properties": {
+                "x": 450,
+                "y": 327
+            }
+        },
+        {
+            "name": "char_delete",
+            "type": "fragment",
+            "fragment_name" : "fragment_pre_authorization_keypad_delete",
+            "properties": {
+                "x": 520,
+                "y": 327
+            }
+        },
+        {
+            "name": "pre_auth_close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 80,
+                "y": 450
+            }
+        },
+        {
+            "name": "pre_auth_confirm_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 380,
+                "y": 450
+            }
+        }
+    ]
+}

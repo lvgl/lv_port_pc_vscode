@@ -1,0 +1,23 @@
+{
+    "name": "start_error",
+    "desc": "起充失败界面",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "start_error",
+            "type": "fragment",
+            "fragment_name" : "fragment_charging_error",
+            "properties": {
+                "x":0,
+                "y":0
+            }
+        }
+    ]
+}

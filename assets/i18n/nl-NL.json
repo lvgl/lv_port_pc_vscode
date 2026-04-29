@@ -1,0 +1,527 @@
+{
+    "name": "nl-NL",
+    "label": "Nederlands",
+    "icon": "A:./assets/images/Netherlands.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Steek eerst in"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Steek eerst de stekker in uw voertuig voordat u een nieuwe sessie start."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Voor snelle oplading binnen handbereik, download dan de Ioc APP."
+        },
+        {
+            "name": "charger_station",
+            "value": "Lader-id: "
+        },
+        {
+            "name": "Idle",
+            "value": "Inactief"
+        },
+        {
+            "name": "Help",
+            "value": "Help"
+        },
+        {
+            "name": "conid",
+            "value": "Connector-id: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Huidige periode"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Volgende periode"
+        },
+        {
+            "name": "Starting",
+            "value": "Start"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Scan hier om te beginnen met laden."
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Toegang tot duizenden oplaadstations over het hele land. Gebruik één app om toegang te krijgen tot tientallen oplade-netwerken."
+        },
+        {
+            "name": "Charging",
+            "value": "Opladen"
+        },
+        {
+            "name": "Power",
+            "value": "Stroom"
+        },
+        {
+            "name": "SoC",
+            "value": "Ladevervang"
+        },
+        {
+            "name": "Energy",
+            "value": "Energie"
+        },
+        {
+            "name": "Duration",
+            "value": "Looptijd"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Geschatte kosten"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Uitgebreide gegevens"
+        },
+        {
+            "name": "State of charge",
+            "value": "Ladevervang"
+        },
+        {
+            "name": "Finished",
+            "value": "Voltooid"
+        },
+        {
+            "name": "Start_time",
+            "value": "Starttijd"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Wachttijd"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Verplaats alstublieft uw voertuig. De 10-minuten gratieperiode is verstreken."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Opladekosten"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Wachtvergoeding"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Totaalbedrag"
+        },
+        {
+            "name": "Reserved",
+            "value": "Gereserveerd"
+        },
+        {
+            "name": "Left",
+            "value": "Overgebleven"
+        },
+        {
+            "name": "left",
+            "value": "overgebleven"
+        },
+        {
+            "name": "Stopping",
+            "value": "Stoppen"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Oplade-sessie fout"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Foutcode: "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "De oplading is onderbroken, haal alstublieft de stekker eruit. Om een nieuwe oplade-sessie te starten, herverbind en druk op Verdergaan."
+        },
+        {
+            "name": "Continue",
+            "value": "Verdergaan"
+        },
+        {
+            "name": "Error",
+            "value": "Fout"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Oplade start fout"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Uw krediet is niet in rekening gebracht. Om een nieuwe oplade-sessie te starten, herverbind alstublieft."
+        },
+        {
+            "name": "Fault",
+            "value": "Storing"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Apparaatstoring"
+        },
+        {
+            "name": "Other_error",
+            "value": "Andere fout: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Fout bij vergrendelen"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "EV-communicatiefout"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Fout bij Aarden"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Hoge temperatuur"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Interne fout"
+        },
+        {
+            "name": "Over Current",
+            "value": "Over Stroom"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Over Spanning"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Meter Defect"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Defect stroomschakelaar"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Fout bij Inlezen"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Reset fout"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Onderspanning"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Zwak signaal"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Status: Noodsituatie Ingedrukt"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Verwisseling fout instellen Fase"
+        },
+        {
+            "name": "Other Error",
+            "value": "Andere fou."
+        },
+        {
+            "name": "Door Opened",
+            "value": "Deur geopend"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "MCCB geopend"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Neem alstublieft contact op met het onderhoudspersoneel."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Niet beschikb."
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Uit dienst"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Helaas is deze oplader niet beschikbaar. Controleer de Ioc-app om een andere oplader in de buurt te vinden of neem contact op met de klantenservice."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Plug & Charge"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "of Automatische oplading wordt gestart..."
+        },
+        {
+            "name": "Authorized",
+            "value": "Geautoriseerd"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "De oplading wordt gestopt"
+        },
+        {
+            "name": "Waiting",
+            "value": "Wachten"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Wachten in de rij"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Wachten op een andere aansluiting om stroom te delen, de oplading zal automatisch starten als er geen gebruik wordt gemaakt."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Opladetijd en kosten"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Geleverde energie en oplaadsnelheid"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Ladevervang"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Gebalanceerde opladers"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Gebruiksvoorwaarden"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Voor snelle oplading binnen handbereik, download dan de Ioc APP."
+        },
+        {
+            "name": "content_help2",
+            "value": "De oplading kon niet worden gestart. Controleer of uw voertuig correct is aangesloten. Uw krediet is niet in rekening gebracht. Om een nieuwe oplade-sessie te starten, herverbind alstublieft."
+        },
+        {
+            "name": "Close",
+            "value": "Sluiten"
+        },
+        {
+            "name": "Back",
+            "value": "Terug"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Autorisatie mislukt"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Reden voor mislukking"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Scannen voor factuur"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Scannen voor ontvangstbewijs"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Voer alstublieft het bedrag in"
+        },
+        {
+            "name": "Confirm",
+            "value": "Bevestigen"
+        },
+        {
+            "name": "Suspend",
+            "value": "Opschorten"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Oplading onderbroken"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Uitgebreide gegevens"
+        },
+        {
+            "name": "Run_State",
+            "value": "Uitvoeringsstatus"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Sub-status"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Foutcode"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Verbindgsstatus"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "SoC starten"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Aanvragen Voltage"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Aanvragen Stroom"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Aanbod Voltage"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Aanbod Stroom"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Uitgangslimiet"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Comp Groep"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Verbindings Temp."
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Uitgangs Voltage"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Uitgangsstroom"
+        },
+        {
+            "name": "Processing",
+            "value": "Bezig met verwerken"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Het kan enkele minuten duren"
+        },
+        {
+            "name": "Downloading",
+            "value": "Downloaden"
+        },
+        {
+            "name": "Installing",
+            "value": "Installeren"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Geen connector geselecteerd"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Opladen niet gestart"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Fout gevonden, stop opladen"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Begin alstublieft binnen 1 minuut met opladen voor connector 1."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Begin alstublieft binnen 1 minuut met opladen voor connector 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Begin alstublieft binnen 1 minuut met opladen voor connector 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Begin alstublieft binnen 1 minuut met opladen voor connector 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Begin alstublieft met opladen binnen 1 minuut."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Geen toestemming"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Veeg, steek of tik met uw kaart op de POS"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "pre-autorisatie mislukt"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Pre-autorisatie afgehandeld"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Betaling mislukt"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Betaling afgehandeld"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "POS verwerkt de aanvraag, een ogenblik geduld a.u.b."
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS is bezet, probeer het later nog eens"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "POS-fout, neem contact op met de service afdeling"
+        },
+        {
+            "name": "ERROR",
+            "value": "FOUT"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Autorisatie mislukt: Geblokkeerd"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Autorisatie mislukt: Verlopen"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Autorisatie mislukt: Ongeldig"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Autorisatie mislukt: Niet Gelijktijdig"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Autorisatie mislukt: Andere reden"
+        },
+        {
+            "name": "Language",
+            "value": "Taal"
+        }
+    ]
+}

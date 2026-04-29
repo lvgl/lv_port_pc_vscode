@@ -1,0 +1,63 @@
+{
+    "name": "cuestomer_info_charging",
+    "desc": "充电中客户信息卡片",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "x": 497,
+        "y": 140,
+        "style": "style-info_card"
+    },
+    "children": [
+        {
+            "name": "cuestomer_qrcode",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 85,
+                "y_ofs": 10,
+                "size": 94,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "customer_hint",
+            "desc": "二维码提示文本",
+            "type": "label",
+            "properties": {
+                "text": "Download Ioc APP for a faster experience.",
+                "width": 227,
+                "x_ofs": 18,
+                "y_ofs": 117,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "customer_charging_divider",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 203,
+                "height": 1,
+                "x_ofs": 30,
+                "y_ofs": 189,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "detailed_data",
+            "desc": "充电详细数据",
+            "type": "fragment",
+            "fragment_name": "fragment_detailed_data_charging_noprice",
+            "properties": {
+                "x_ofs" : 0,
+                "y_ofs" : 110,
+                "align": "LV_ALIGN_CENTER"
+            }
+        }
+    ]
+}

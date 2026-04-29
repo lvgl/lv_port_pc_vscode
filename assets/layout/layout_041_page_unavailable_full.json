@@ -1,0 +1,67 @@
+{
+    "name": "unavailable",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "unavailable_icon",
+            "type": "image",
+            "properties": {
+                "x_ofs": 316,
+                "y_ofs": 67,
+                "width": 130,
+                "height": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_charging-pile"
+            }
+        },
+        {
+            "name": "unavailable_symbol",
+            "desc": "X文本",
+            "type": "label",
+            "properties": {
+                "text": "X",
+                "x_ofs": 372,
+                "y_ofs": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-X_unavailable",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "unavailable_title",
+            "type": "label",
+            "properties": {
+                "text": "Out of service",
+                "x_ofs": 0,
+                "y_ofs": 200,
+                "width": 300,
+                "height": 30,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "unavailable_subtitle",
+            "type": "label",
+            "properties": {
+                "text": "Unfortunately, this charger is unavailable.Please check the Ioc app to find another charger near you or contact customer support.",
+                "x_ofs": 0,
+                "y_ofs": 240,
+                "width": 400,
+                "height": 80,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}
