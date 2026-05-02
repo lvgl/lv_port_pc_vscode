@@ -79,6 +79,25 @@ by enabling the same flag from the command line when bootstrapping `cmake`:
 cmake -B build -DUSE_FREERTOS=ON
 ```
 
+### Notes for enabling Windows backend
+
+> [!NOTE]
+> It's recommended to use this mode when you using Visual Studio (not Code)
+> CMake support.
+
+First, make sure turning off the SDL driver for CMake configuration by adding
+`-DLV_USE_SDL=OFF` flag when bootstrapping `cmake`:
+
+```
+cmake -B build -DLV_USE_SDL=OFF
+```
+
+Then, set following defines in `lv_conf.h`:
+
+- `#define LV_USE_OS   LV_OS_NONE` to `#define LV_USE_OS   LV_OS_WINDOWS`
+- `#define LV_USE_SDL              1` to `#define LV_USE_SDL              0`
+- `#define LV_USE_WINDOWS    0` to `#define LV_USE_WINDOWS    1`
+
 ### CMake
 
 This project uses CMake under the hood which can be used without Visula Studio Code too. Just type these in a Terminal when you are in the project's root folder:
