@@ -3,6 +3,7 @@ project(lvgl C CXX)
 
 # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
 set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+set(FREERTOS_HEAP "4" CACHE STRING "FreeRTOS heap implementation (1-5)")
 
 set(LVGL_PRO_PROJECT_DIR
     ""
@@ -17,6 +18,7 @@ if(USE_FREERTOS)
     add_library(freertos_config INTERFACE)
     target_include_directories(freertos_config SYSTEM INTERFACE ${PROJECT_SOURCE_DIR}/config)
     target_compile_definitions(freertos_config INTERFACE projCOVERAGE_TEST=0)
+    add_compile_definitions(LV_USE_OS=LV_OS_FREERTOS)
 
     # Add FreeRTOS as a subdirectory
     add_subdirectory(FreeRTOS)
@@ -25,16 +27,8 @@ if(USE_FREERTOS)
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
     include_directories(${PROJECT_SOURCE_DIR}/config)
-
-    # Add FreeRTOS sources
-    file(GLOB FREERTOS_SOURCES
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
-    )
 else()
     message(STATUS "FreeRTOS is disabled")
-    set(FREERTOS_SOURCES "")  # No FreeRTOS sources if FreeRTOS is disabled
 endif()
 
 # Main include files of the project
@@ -74,7 +68,7 @@ set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
 
 # Create the main executable, depending on the FreeRTOS option
 if(USE_FREERTOS)
-    list(APPEND MAIN_SOURCES src/freertos_main.c src/freertos/freertos_posix_port.c ${FREERTOS_SOURCES})
+    list(APPEND MAIN_SOURCES src/freertos_main.c src/freertos/freertos_posix_port.c)
     list(APPEND MAIN_LIBS freertos_config freertos_kernel)
 else()
     list(APPEND MAIN_SOURCES src/main.c)
