@@ -53,8 +53,6 @@ void ui_after_create_02_idle_plug_prompt(const char * name, lv_obj_t * obj)
     user_data->ui_json_update_cb = ui_idle_update_plug_prompt;
 }
 
-
-
 void ui_after_create_02_idle(const char * name, lv_obj_t * obj)
 {
     const char * idle_name = name + strlen(UI_NAME_02_IDLE);

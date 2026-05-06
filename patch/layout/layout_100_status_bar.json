@@ -1,0 +1,20 @@
+{
+    "name": "status_bar",
+    "desc": "顶部状态栏",
+    "children": [
+        {
+            "name": "logo",
+            "type": "image",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 20,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "logo"
+            }
+        },
+        {
+            "name": "help",
+            "deleted": true
+        }
+    ]
+}

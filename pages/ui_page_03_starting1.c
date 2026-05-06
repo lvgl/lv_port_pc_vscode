@@ -7,7 +7,6 @@
 #define UI_NAME_03_STARTING1_QR_CODE_LABEL                      ".starting1_title"
 #define UI_NAME_03_STARTING1_QR_CODE_PROMPT                     ".starting1_subtitle"
 
-
 typedef struct {
 
     lv_obj_t * page;

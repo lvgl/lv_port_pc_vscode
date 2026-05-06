@@ -1,6 +1,318 @@
 #include "ioc_app.h"
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 static lv_obj_t * s_ui_welcome = NULL;
+static const char * s_ui_visible_tree_json_name = "ui_visible_tree.json";
+static const char * s_ui_visible_obj_info_json_name = "ui_visible_obj_info.json";
+
+static bool ioc_app_get_executable_dir(char *dir_path, size_t dir_path_size)
+{
+    if ((dir_path == NULL) || (dir_path_size == 0))
+    {
+        return false;
+    }
+
+#ifdef _WIN32
+    DWORD path_len = GetModuleFileNameA(NULL, dir_path, (DWORD)dir_path_size);
+    if ((path_len == 0) || (path_len >= dir_path_size))
+    {
+        LV_LOG_ERROR("Failed to get executable path");
+        return false;
+    }
+
+    for (int i = (int)path_len - 1; i >= 0; i--)
+    {
+        if ((dir_path[i] == '\\') || (dir_path[i] == '/'))
+        {
+            dir_path[i] = '\0';
+            return true;
+        }
+    }
+#else
+    ssize_t path_len = readlink("/proc/self/exe", dir_path, dir_path_size - 1);
+    if ((path_len <= 0) || (path_len >= (ssize_t)dir_path_size))
+    {
+        LV_LOG_ERROR("Failed to get executable path: %s", strerror(errno));
+        return false;
+    }
+
+    dir_path[path_len] = '\0';
+    for (ssize_t i = path_len - 1; i >= 0; i--)
+    {
+        if (dir_path[i] == '/')
+        {
+            dir_path[i] = '\0';
+            return true;
+        }
+    }
+#endif
+
+    LV_LOG_ERROR("Failed to parse executable directory");
+    return false;
+}
+
+static const char *ioc_app_align_to_string(lv_align_t align)
+{
+    switch (align)
+    {
+        case LV_ALIGN_DEFAULT: return "LV_ALIGN_DEFAULT";
+        case LV_ALIGN_TOP_LEFT: return "LV_ALIGN_TOP_LEFT";
+        case LV_ALIGN_TOP_MID: return "LV_ALIGN_TOP_MID";
+        case LV_ALIGN_TOP_RIGHT: return "LV_ALIGN_TOP_RIGHT";
+        case LV_ALIGN_LEFT_MID: return "LV_ALIGN_LEFT_MID";
+        case LV_ALIGN_CENTER: return "LV_ALIGN_CENTER";
+        case LV_ALIGN_RIGHT_MID: return "LV_ALIGN_RIGHT_MID";
+        case LV_ALIGN_BOTTOM_LEFT: return "LV_ALIGN_BOTTOM_LEFT";
+        case LV_ALIGN_BOTTOM_MID: return "LV_ALIGN_BOTTOM_MID";
+        case LV_ALIGN_BOTTOM_RIGHT: return "LV_ALIGN_BOTTOM_RIGHT";
+        case LV_ALIGN_OUT_TOP_LEFT: return "LV_ALIGN_OUT_TOP_LEFT";
+        case LV_ALIGN_OUT_TOP_MID: return "LV_ALIGN_OUT_TOP_MID";
+        case LV_ALIGN_OUT_TOP_RIGHT: return "LV_ALIGN_OUT_TOP_RIGHT";
+        case LV_ALIGN_OUT_BOTTOM_LEFT: return "LV_ALIGN_OUT_BOTTOM_LEFT";
+        case LV_ALIGN_OUT_BOTTOM_MID: return "LV_ALIGN_OUT_BOTTOM_MID";
+        case LV_ALIGN_OUT_BOTTOM_RIGHT: return "LV_ALIGN_OUT_BOTTOM_RIGHT";
+        case LV_ALIGN_OUT_LEFT_TOP: return "LV_ALIGN_OUT_LEFT_TOP";
+        case LV_ALIGN_OUT_LEFT_MID: return "LV_ALIGN_OUT_LEFT_MID";
+        case LV_ALIGN_OUT_LEFT_BOTTOM: return "LV_ALIGN_OUT_LEFT_BOTTOM";
+        case LV_ALIGN_OUT_RIGHT_TOP: return "LV_ALIGN_OUT_RIGHT_TOP";
+        case LV_ALIGN_OUT_RIGHT_MID: return "LV_ALIGN_OUT_RIGHT_MID";
+        case LV_ALIGN_OUT_RIGHT_BOTTOM: return "LV_ALIGN_OUT_RIGHT_BOTTOM";
+        default: return "LV_ALIGN_UNKNOWN";
+    }
+}
+
+static const char *ioc_app_text_align_to_string(lv_text_align_t align)
+{
+    switch (align)
+    {
+        case LV_TEXT_ALIGN_AUTO: return "LV_TEXT_ALIGN_AUTO";
+        case LV_TEXT_ALIGN_LEFT: return "LV_TEXT_ALIGN_LEFT";
+        case LV_TEXT_ALIGN_CENTER: return "LV_TEXT_ALIGN_CENTER";
+        case LV_TEXT_ALIGN_RIGHT: return "LV_TEXT_ALIGN_RIGHT";
+        default: return "LV_TEXT_ALIGN_UNKNOWN";
+    }
+}
+
+static cJSON *ioc_app_build_visible_obj_tree(lv_obj_t *obj)
+{
+    if ((obj == NULL) || lv_obj_has_flag(obj, LV_OBJ_FLAG_HIDDEN))
+    {
+        return NULL;
+    }
+
+    cJSON *node = cJSON_CreateObject();
+    if (node == NULL)
+    {
+        return NULL;
+    }
+
+    const char *name = "lv_scr_act";
+    ioc_obj_user_data_t *user_data = (ioc_obj_user_data_t *)lv_obj_get_user_data(obj);
+    if ((user_data != NULL) && (user_data->name != NULL))
+    {
+        name = user_data->name;
+    }
+
+    cJSON_AddStringToObject(node, "name", name);
+
+    cJSON *children = cJSON_CreateArray();
+    if (children == NULL)
+    {
+        cJSON_Delete(node);
+        return NULL;
+    }
+    cJSON_AddItemToObject(node, "children", children);
+
+    int cnt = lv_obj_get_child_cnt(obj);
+    for (int i = 0; i < cnt; i++)
+    {
+        lv_obj_t *child = lv_obj_get_child(obj, i);
+        cJSON *child_node = ioc_app_build_visible_obj_tree(child);
+        if (child_node != NULL)
+        {
+            cJSON_AddItemToArray(children, child_node);
+        }
+    }
+
+    return node;
+}
+
+static void ioc_app_dump_visible_obj_tree_to_json_file(lv_obj_t *root, const char *file_name)
+{
+    cJSON *tree = ioc_app_build_visible_obj_tree(root);
+    if (tree == NULL)
+    {
+        LV_LOG_ERROR("Failed to build visible object tree");
+        return;
+    }
+
+    char *json_str = cJSON_Print(tree);
+    if (json_str == NULL)
+    {
+        LV_LOG_ERROR("Failed to serialize visible object tree");
+        cJSON_Delete(tree);
+        return;
+    }
+
+    char file_path[1024] = {0};
+    if (!ioc_app_get_executable_dir(file_path, sizeof(file_path)))
+    {
+        cJSON_free(json_str);
+        cJSON_Delete(tree);
+        return;
+    }
+
+    size_t path_len = strlen(file_path);
+    if ((path_len + 1 + strlen(file_name) + 1) >= sizeof(file_path))
+    {
+        LV_LOG_ERROR("Visible object tree path is too long");
+        cJSON_free(json_str);
+        cJSON_Delete(tree);
+        return;
+    }
+
+#ifdef _WIN32
+    snprintf(file_path + path_len, sizeof(file_path) - path_len, "\\%s", file_name);
+#else
+    snprintf(file_path + path_len, sizeof(file_path) - path_len, "/%s", file_name);
+#endif
+
+    FILE *fp = fopen(file_path, "w");
+    if (fp == NULL)
+    {
+        LV_LOG_ERROR("Failed to open %s: %s", file_path, strerror(errno));
+        cJSON_free(json_str);
+        cJSON_Delete(tree);
+        return;
+    }
+
+    fputs(json_str, fp);
+    fclose(fp);
+
+    LV_LOG_WARN("Visible object tree exported to %s", file_path);
+
+    cJSON_free(json_str);
+    cJSON_Delete(tree);
+}
+
+static cJSON *ioc_app_create_visible_obj_info_item(lv_obj_t *obj)
+{
+    if ((obj == NULL) || lv_obj_has_flag(obj, LV_OBJ_FLAG_HIDDEN))
+    {
+        return NULL;
+    }
+
+    cJSON *item = cJSON_CreateObject();
+    if (item == NULL)
+    {
+        return NULL;
+    }
+
+    const char *name = "lv_scr_act";
+    ioc_obj_user_data_t *user_data = (ioc_obj_user_data_t *)lv_obj_get_user_data(obj);
+    if (user_data != NULL)
+    {
+        if (user_data->name != NULL)
+        {
+            name = user_data->name;
+        }
+    }
+
+    cJSON_AddStringToObject(item, "name", name);
+    cJSON_AddNumberToObject(item, "x", lv_obj_get_x(obj));
+    cJSON_AddNumberToObject(item, "y", lv_obj_get_y(obj));
+    cJSON_AddNumberToObject(item, "width", lv_obj_get_width(obj));
+    cJSON_AddNumberToObject(item, "height", lv_obj_get_height(obj));
+    cJSON_AddStringToObject(item, "align", ioc_app_align_to_string(lv_obj_get_style_align(obj, LV_PART_MAIN)));
+    cJSON_AddNumberToObject(item, "x_ofs", lv_obj_get_style_x(obj, LV_PART_MAIN));
+    cJSON_AddNumberToObject(item, "y_ofs", lv_obj_get_style_y(obj, LV_PART_MAIN));
+    cJSON_AddStringToObject(item, "text_align", ioc_app_text_align_to_string(lv_obj_get_style_text_align(obj, LV_PART_MAIN)));
+
+    return item;
+}
+
+static void ioc_app_collect_visible_obj_info(lv_obj_t *obj, cJSON *array)
+{
+    if ((obj == NULL) || (array == NULL) || lv_obj_has_flag(obj, LV_OBJ_FLAG_HIDDEN))
+    {
+        return;
+    }
+
+    cJSON *item = ioc_app_create_visible_obj_info_item(obj);
+    if (item != NULL)
+    {
+        cJSON_AddItemToArray(array, item);
+    }
+
+    int cnt = lv_obj_get_child_cnt(obj);
+    for (int i = 0; i < cnt; i++)
+    {
+        ioc_app_collect_visible_obj_info(lv_obj_get_child(obj, i), array);
+    }
+}
+
+static void ioc_app_dump_visible_obj_info_to_json_file(lv_obj_t *root, const char *file_name)
+{
+    cJSON *array = cJSON_CreateArray();
+    if (array == NULL)
+    {
+        LV_LOG_ERROR("Failed to create visible object info array");
+        return;
+    }
+
+    ioc_app_collect_visible_obj_info(root, array);
+
+    char *json_str = cJSON_Print(array);
+    if (json_str == NULL)
+    {
+        LV_LOG_ERROR("Failed to serialize visible object info");
+        cJSON_Delete(array);
+        return;
+    }
+
+    char file_path[1024] = {0};
+    if (!ioc_app_get_executable_dir(file_path, sizeof(file_path)))
+    {
+        cJSON_free(json_str);
+        cJSON_Delete(array);
+        return;
+    }
+
+    size_t path_len = strlen(file_path);
+    if ((path_len + 1 + strlen(file_name) + 1) >= sizeof(file_path))
+    {
+        LV_LOG_ERROR("Visible object info path is too long");
+        cJSON_free(json_str);
+        cJSON_Delete(array);
+        return;
+    }
+
+#ifdef _WIN32
+    snprintf(file_path + path_len, sizeof(file_path) - path_len, "\\%s", file_name);
+#else
+    snprintf(file_path + path_len, sizeof(file_path) - path_len, "/%s", file_name);
+#endif
+
+    FILE *fp = fopen(file_path, "w");
+    if (fp == NULL)
+    {
+        LV_LOG_ERROR("Failed to open %s: %s", file_path, strerror(errno));
+        cJSON_free(json_str);
+        cJSON_Delete(array);
+        return;
+    }
+
+    fputs(json_str, fp);
+    fclose(fp);
+
+    LV_LOG_WARN("Visible object info exported to %s", file_path);
+
+    cJSON_free(json_str);
+    cJSON_Delete(array);
+}
 
 void ioc_app_ui_json_updated_widgets(lv_obj_t* parent)
 {
@@ -256,8 +568,10 @@ void ioc_app_step(void)
 
             // 强制刷新第一次内容
             ioc_app_ui_json_updated_widgets(lv_scr_act());
-
             ioc_ui_json_handle_over();
+
+            ioc_app_dump_visible_obj_tree_to_json_file(lv_scr_act(), s_ui_visible_tree_json_name);
+            ioc_app_dump_visible_obj_info_to_json_file(lv_scr_act(), s_ui_visible_obj_info_json_name);
 
             g_ui_json.isFirstUIjson = false;
         }
@@ -285,6 +599,8 @@ void ioc_app_step(void)
         ioc_app_ui_json_updated_widgets(lv_layer_top());
 
         ioc_ui_json_handle_over();
+        ioc_app_dump_visible_obj_tree_to_json_file(lv_scr_act(), s_ui_visible_tree_json_name);
+        ioc_app_dump_visible_obj_info_to_json_file(lv_scr_act(), s_ui_visible_obj_info_json_name);
     }
 
 

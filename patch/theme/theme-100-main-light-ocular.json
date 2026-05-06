@@ -1,0 +1,10 @@
+{
+    "name": "main-light",
+    "description": "main-light theme ocular",
+    "images": [
+        {
+            "name": "logo",
+            "path": "A:./patch/images/ocular_title.png"
+        }
+    ]
+}
