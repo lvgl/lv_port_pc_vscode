@@ -1,0 +1,20 @@
+{
+    "name": "fragment_session_error_continue",
+    "desc": "continue按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-continue_button_session_error"
+    },
+    "children": [
+        {
+            "name": "continue_label_session_error",
+            "type": "label",
+            "properties": {
+                "text": "Continue",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-continue_label_session_error",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

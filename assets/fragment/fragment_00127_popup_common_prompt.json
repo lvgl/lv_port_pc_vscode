@@ -1,0 +1,25 @@
+{
+    "name": "fragment_popup_common_prompt",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 450,
+        "height": 120,
+        "style":"style-mid_container_top"
+    },
+    "children": [
+        {
+            "name": "text",
+            "desc": "通用提示文本",
+            "type": "label",
+            "properties": {
+                "text": "downloading",
+                "width": 430,
+                "y_ofs": 0,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "name": "conn_card_trip",
+    "desc": "三枪的三个卡片组合默认状态",
+    "type": "flex",
+    "properties": {
+        "x": 0,
+        "y": 440,
+        "width": 800,
+        "height": 160,
+        "style": "style-background-primary"
+    },
+    "children": [
+        {
+            "name": "connector1",
+            "type": "fragment",
+            "fragment_name": "fragment_conn_card_trip_card",
+            "properties": {
+                "x_ofs": 20,
+                "align": "LV_ALIGN_LEFT_MID"
+            }
+        },
+        {
+            "name": "connector2",
+            "type": "fragment",
+            "fragment_name": "fragment_conn_card_trip_card",
+            "properties": {
+                "x_ofs": 276,
+                "align": "LV_ALIGN_LEFT_MID"
+            }
+        },
+        {
+            "name": "connector3",
+            "type": "fragment",
+            "fragment_name": "fragment_conn_card_trip_card",
+            "properties": {
+                "x_ofs": 532,
+                "align": "LV_ALIGN_LEFT_MID"
+            }
+        }
+    ]
+}

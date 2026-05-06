@@ -1,0 +1,68 @@
+{
+    "name": "help1",
+    "desc": "help1弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 434,
+        "x": 70,
+        "y": 40,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "help1_title",
+            "desc": "帮助文本",
+            "type": "label",
+            "properties": {
+                "text": "Help",
+                "x_ofs": 0,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label"
+            }
+        },
+        {
+            "name": "help1_split_line",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 582,
+                "height": 1,
+                "x": 40,
+                "y": 64,
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "help1_list",
+            "desc": "帮助信息列表",
+            "type": "list",
+            "properties": {
+                "x" : 44,
+                "y" : 89,
+                "width" : 372,
+                "height" : 260
+            }
+        },
+        {
+            "name": "help1_status_info",
+            "desc": "充电桩桩信息",
+            "type": "fragment",
+            "fragment_name": "fragment_popup_help1_status",
+            "properties": {
+                "x": 430,
+                "y": 74
+            }
+        },
+        {
+            "name": "help1_close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 230,
+                "y": 364
+            }
+        }
+    ]
+}

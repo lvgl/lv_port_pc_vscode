@@ -1,0 +1,95 @@
+{
+    "name": "fragment_label_combine_six",
+    "desc": "由六个label组合的组件,结束界面soc",
+    "type": "flex",
+    "properties": {
+        "width": 147,
+        "height": 109,
+        "style": "style-label_combine_bg"
+    },
+    "children": [
+        {
+            "name": "title",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "width": 147,
+                "height": 18,
+                "x_ofs": 0,
+                "y_ofs": 18,
+                "align" : "LV_ALIGN_TOP_MID",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "val_1",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "width": 35,
+                "height": 29,
+                "x_ofs": 20,
+                "y_ofs": 58,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_RIGHT"
+            }
+        },
+        {
+            "name": "unit_1",
+            "type": "label",
+            "properties": {
+                "text": "%",
+                "width": 10,
+                "height": 16,
+                "x_ofs": 58,
+                "y_ofs": 69,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_info_unit",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        },
+        {
+            "name": "separator",
+            "type": "label",
+            "properties": {
+                "text": "~",
+                "width": 8,
+                "height": 20,
+                "x_ofs": 75,
+                "y_ofs": 65,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_settle_unit",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        },
+        {
+            "name": "val_2",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "width": 35,
+                "height": 29,
+                "x_ofs": 85,
+                "y_ofs": 58,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_RIGHT"
+            }
+        },
+        {
+            "name": "unit_2",
+            "type": "label",
+            "properties": {
+                "text": "%",
+                "x_ofs": 123,
+                "y_ofs": 69,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_info_unit",
+                "text_align": "LV_TEXT_ALIGN_LEFT"
+            }
+        }
+
+    ]
+}

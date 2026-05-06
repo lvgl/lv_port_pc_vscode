@@ -1,0 +1,143 @@
+{
+    "name": "fragment_conn_card_trip_card",
+    "desc": "四枪的单个卡片",
+    "type": "button",
+    "properties": {
+        "style": "style-connector-trip-default",
+        "style_checked": "style-connector-trip-checked"
+    },
+    "children": [
+        {
+            "name": "No",
+            "type": "fragment",
+            "fragment_name" : "fragment_connector_no_trip",
+            "properties": {
+                "x": 14,
+                "y": 14
+            }
+        },
+        {
+            "name": "state",
+            "type": "label",
+            "properties": {
+                "text": "Idle",
+                "x_ofs": -14,
+                "y_ofs": 19,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-state-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "type",
+            "type": "label",
+            "properties": {
+                "text": "CCS2(DC)",
+                "x": 14,
+                "y": 65,
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "power_rated",
+            "type": "label",
+            "properties": {
+                "text": "120.0kW",
+                "x": 14,
+                "y": 89,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "type_icon",
+            "type": "image",
+            "properties": {
+                "src": "ccs2-dc",
+                "width": 47,
+                "height": 47,
+                "x_ofs": -14,
+                "y_ofs": -14,
+                "align": "LV_ALIGN_BOTTOM_RIGHT"
+            }
+        },
+        {
+            "name": "time_label",
+            "type": "label",
+            "properties": {
+                "text": "Idle time",
+                "x": 14,
+                "y": 65,
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "time",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x": 14,
+                "y": 89,
+                "hidden": true,
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "soc_bar",
+            "desc": "充电中SoC进度条",
+            "type": "bar",
+            "properties": {
+                "x_ofs": 14,
+                "y_ofs": 65,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_bar_bg_size",
+                "style_indic": "style-charging_bar_indic"
+            }
+        },
+        {
+            "name": "soc_label",
+            "desc": "充电中SoC值",
+            "type": "label",
+            "properties": {
+                "text": "12%",
+                "x_ofs": 14,
+                "y_ofs": 89,
+                "width": 50,
+                "height": 20,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "power_real",
+            "desc": "充电中实时功率, 右对齐",
+            "type": "label",
+            "properties": {
+                "text": "102.5kW",
+                "x_ofs": -14,
+                "y_ofs": 89,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "plug_gun_icon",
+            "desc" : "插枪提示的绿色图标",
+            "type": "image",
+            "properties": {
+                "src": "icon_connected",
+                "width": 20,
+                "height": 20,
+                "x": 212,
+                "y": 91
+            }
+        }
+    ]
+}

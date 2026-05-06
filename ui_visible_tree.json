@@ -1,0 +1,151 @@
+{
+	"name":	"lv_scr_act",
+	"children":	[{
+			"name":	"main",
+			"children":	[{
+					"name":	"main.status_bar",
+					"children":	[{
+							"name":	"main.status_bar.time",
+							"children":	[]
+						}, {
+							"name":	"main.status_bar.language",
+							"children":	[{
+									"name":	"main.status_bar.language.icon",
+									"children":	[]
+								}, {
+									"name":	"main.status_bar.language.label",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.status_bar.logo",
+							"children":	[]
+						}]
+				}, {
+					"name":	"main.conn_card_quad",
+					"children":	[{
+							"name":	"main.conn_card_quad.connector1",
+							"children":	[{
+									"name":	"main.conn_card_quad.connector1.conn_card_id",
+									"children":	[{
+											"name":	"main.conn_card_quad.connector1.conn_card_id.NoText",
+											"children":	[]
+										}]
+								}, {
+									"name":	"main.conn_card_quad.connector1.conn_card_state",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector1.conn_card_type",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector1.conn_card_power_rated",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector1.conn_card_type_icon",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector1.conn_card_plug_gun_icon",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.conn_card_quad.connector2",
+							"children":	[{
+									"name":	"main.conn_card_quad.connector2.conn_card_id",
+									"children":	[{
+											"name":	"main.conn_card_quad.connector2.conn_card_id.NoText",
+											"children":	[]
+										}]
+								}, {
+									"name":	"main.conn_card_quad.connector2.conn_card_state",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector2.conn_card_type",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector2.conn_card_power_rated",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector2.conn_card_type_icon",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.conn_card_quad.connector3",
+							"children":	[{
+									"name":	"main.conn_card_quad.connector3.conn_card_id",
+									"children":	[{
+											"name":	"main.conn_card_quad.connector3.conn_card_id.NoText",
+											"children":	[]
+										}]
+								}, {
+									"name":	"main.conn_card_quad.connector3.conn_card_state",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector3.conn_card_type",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector3.conn_card_power_rated",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector3.conn_card_type_icon",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.conn_card_quad.connector4",
+							"children":	[{
+									"name":	"main.conn_card_quad.connector4.conn_card_id",
+									"children":	[{
+											"name":	"main.conn_card_quad.connector4.conn_card_id.NoText",
+											"children":	[]
+										}]
+								}, {
+									"name":	"main.conn_card_quad.connector4.conn_card_state",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector4.conn_card_type",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector4.conn_card_power_rated",
+									"children":	[]
+								}, {
+									"name":	"main.conn_card_quad.connector4.conn_card_type_icon",
+									"children":	[]
+								}]
+						}]
+				}, {
+					"name":	"main.starting2",
+					"children":	[{
+							"name":	"main.starting2.starting2_qr",
+							"children":	[]
+						}, {
+							"name":	"main.starting2.starting2_pos_btn",
+							"children":	[{
+									"name":	"main.starting2.starting2_pos_btn.img",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.starting2.starting2_subtitle",
+							"children":	[]
+						}, {
+							"name":	"main.starting2.starting2_title",
+							"children":	[]
+						}]
+				}, {
+					"name":	"main.conn_top_info",
+					"children":	[{
+							"name":	"main.conn_top_info.conn_id",
+							"children":	[{
+									"name":	"main.conn_top_info.conn_id.conn_id_text",
+									"children":	[]
+								}]
+						}, {
+							"name":	"main.conn_top_info.station_id",
+							"children":	[]
+						}, {
+							"name":	"main.conn_top_info.conn_state",
+							"children":	[]
+						}, {
+							"name":	"main.conn_top_info.conn_type_power",
+							"children":	[]
+						}]
+				}]
+		}]
+}

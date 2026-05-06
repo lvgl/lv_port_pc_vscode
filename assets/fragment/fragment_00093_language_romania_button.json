@@ -1,0 +1,34 @@
+{
+    "name": "fragment_language_romania_button",
+    "desc": "语言选择按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-shortcut_button_pre_authorization"
+    },
+    "children": [
+        {
+            "name": "plug_idle",
+            "type": "image",
+            "properties": {
+                "x_ofs": 37,
+                "y_ofs": 4,
+                "width": 32,
+                "height": 32,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "romania"
+            }
+        },
+        {
+            "name": "romania_label_language",
+            "type": "label",
+            "properties": {
+                "text": "Romania",
+                "x_ofs": 73,
+                "y_ofs": 11,
+                "align" : "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

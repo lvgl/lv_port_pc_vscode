@@ -1,0 +1,54 @@
+{
+    "name": "suspend",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "suspend_draw_icon",
+            "desc": "绘制的圆，中间感叹号",
+            "type": "fragment",
+            "fragment_name":"fragment_suspend_draw_icon",
+            "properties": {
+                "x": 341,
+                "y": 120
+            }
+        },
+        {
+            "name": "suspend_label",
+            "desc": "充电暂停",
+            "type": "label",
+            "properties": {
+                "text": "Charging suspend",
+                "x_ofs": 0,
+                "y_ofs": 234,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "suspend_reason",
+            "desc": "充电暂停原因",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "x_ofs": 0,
+                "y_ofs": 260,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

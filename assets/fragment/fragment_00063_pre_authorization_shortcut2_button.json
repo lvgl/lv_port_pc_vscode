@@ -1,0 +1,20 @@
+{
+    "name": "fragment_pre_authorization_shortcut2",
+    "desc": "预授权快捷按钮2",
+    "type": "button",
+    "properties": {
+        "style": "style-shortcut_button_pre_authorization"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "50.00",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

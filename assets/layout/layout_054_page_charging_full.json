@@ -1,0 +1,71 @@
+{
+    "name": "charging_full",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "charging_car_icon",
+            "desc": "充电动态图",
+            "type": "fragment",
+            "fragment_name" : "fragment_charging_car_icon",
+            "properties": {
+                "x_ofs": 162,
+                "y_ofs": 80,
+                "width": 437,
+                "height": 260,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "charging_power",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_three",
+            "properties": {
+                "x_ofs": 162,
+                "y_ofs": 31,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "charging_energy",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_three",
+            "properties": {
+                "x_ofs": 452,
+                "y_ofs": 140,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "charging_soc",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_three",
+            "properties": {
+                "x_ofs": 452,
+                "y_ofs": 31,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "charging_duration",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_two",
+            "properties": {
+                "x_ofs": 290,
+                "y_ofs": 140,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        }
+    ]
+}

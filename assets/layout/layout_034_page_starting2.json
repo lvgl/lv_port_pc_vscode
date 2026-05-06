@@ -1,0 +1,68 @@
+{
+    "name": "starting2",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "starting2_qr",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 79,
+                "y_ofs": 92,
+                "size": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "starting2_pos_btn",
+            "type": "fragment",
+            "fragment_name" : "fragment_starting2_pos_btn",
+            "properties": {
+                "x": 269,
+                "y": 92,
+                "width": 130,
+                "height": 130,
+                "style": "style-info_card_half"
+            }
+        },
+        {
+            "name": "starting2_subtitle",
+            "desc": "插枪提示",
+            "type": "label",
+            "properties": {
+                "text": "Access thousands of chargers across multiple networks with one app. ",
+                "x_ofs": 31,
+                "y_ofs": 278,
+                "width": 416,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "starting2_title",
+            "desc": "二维码文本",
+            "type": "label",
+            "properties": {
+                "text": "Scan the code or swipe the card to start charging.",
+                "x_ofs": 10,
+                "y_ofs": -30,
+                "width": 500,
+                "height": 40,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_label",
+                "to_obj": "main.starting2.starting2_subtitle",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

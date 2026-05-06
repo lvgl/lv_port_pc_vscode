@@ -1,0 +1,527 @@
+{
+    "name": "en-US",
+    "label": "English",
+    "icon": "A:./assets/images/English.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Plug in first"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Please plug in the connector to you vehicle first before start a new session."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Download IoC APP for a faster experience."
+        },
+        {
+            "name": "charger_station",
+            "value": "charger id:"
+        },
+        {
+            "name": "Idle",
+            "value": "Idle"
+        },
+        {
+            "name": "Help",
+            "value": "Help"
+        },
+        {
+            "name": "conid",
+            "value": "Connector id:"
+        },
+        {
+            "name": "Current_Period",
+            "value": "Current Period"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Next Period"
+        },
+        {
+            "name": "Starting",
+            "value": "Starting"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Scan here to start charging"
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Access thousands of chargers across multiple networks with one app."
+        },
+        {
+            "name": "Charging",
+            "value": "Charging"
+        },
+        {
+            "name": "Power",
+            "value": "Power"
+        },
+        {
+            "name": "SoC",
+            "value": "SoC"
+        },
+        {
+            "name": "Energy",
+            "value": "Energy"
+        },
+        {
+            "name": "Duration",
+            "value": "Duration"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Estimated Cost"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Detailed data"
+        },
+        {
+            "name": "State of charge",
+            "value": "State of charge"
+        },
+        {
+            "name": "Finished",
+            "value": "Finished"
+        },
+        {
+            "name": "Start_time",
+            "value": "Start time"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Idle time"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Please move your vehicle.10mins grace period exceeded."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Charging cost"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Idle fee"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Total Amount"
+        },
+        {
+            "name": "Reserved",
+            "value": "Reserved"
+        },
+        {
+            "name": "Left",
+            "value": "Left"
+        },
+        {
+            "name": "left",
+            "value": "left"
+        },
+        {
+            "name": "Stopping",
+            "value": "Stopping"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Charging session error"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Error code:"
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "Charging has been interrupted, please unplug. To start a new charging session, reconnect and press Continue."
+        },
+        {
+            "name": "Continue",
+            "value": "Continue"
+        },
+        {
+            "name": "Error",
+            "value": "Error"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Charging start error"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Your credit has not been charged. To start a new charging session,please reconnect."
+        },
+        {
+            "name": "Fault",
+            "value": "Fault"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Equipment failure"
+        },
+        {
+            "name": "Other_error",
+            "value": "Other error:07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Lock Failure"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "EV Communication Error"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Ground Failure"
+        },
+        {
+            "name": "High Temperature",
+            "value": "High Temperature"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Internal Error"
+        },
+        {
+            "name": "Over Current",
+            "value": "Over Current"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Over Voltage"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Meter Failure"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Power Switch Failure"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Reader Failure"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Reset Failure"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Under Voltage"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Weak Signal"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Emergency Pushed"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "PhaseSwap Failure"
+        },
+        {
+            "name": "Other Error",
+            "value": "Other Error"
+        },
+        {
+            "name": "Door Opened",
+            "value": "Door Opened"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "MCCB Opened"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Please contact the maintenance staff."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Unavailable"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Out of service"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Unfortunately, this charger is unavailable.Please check the Ioc app to find another charger near you or contact customer support."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Plug & Charge"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "or AutoCharge starting…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Authorized"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "Charging is stopping"
+        },
+        {
+            "name": "Waiting",
+            "value": "Waiting"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Wait in line"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Waiting for another connector to share power,Charging will automatically start when idle."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Charging time and cost"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Energy delivered and charging rate"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "State of charge"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Balanced chargers"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Terms of use"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Download IoC APP for a faster experience."
+        },
+        {
+            "name": "content_help2",
+            "value": "Charging could not be initiated. Please ensure your vehicle is plugged in correctly. Your credit has not been charged. To start a new charging session, please reconnect."
+        },
+        {
+            "name": "Close",
+            "value": "Close"
+        },
+        {
+            "name": "Back",
+            "value": "Back"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Authorization failed"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Reason for failure"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Scan for bill"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Scan for receipt"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Please enter the amount"
+        },
+        {
+            "name": "Confirm",
+            "value": "Confirm"
+        },
+        {
+            "name": "Suspend",
+            "value": "Suspend"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Charging suspend"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Detailed data"
+        },
+        {
+            "name": "Run_State",
+            "value": "Run State"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Sub State"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Error Code"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Conn Status"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Start SoC"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Request Voltage"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Request Current"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Offer Voltage"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Offer Current"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Output Limit"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Comp Group"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Conn Temperature"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Output Voltage"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Output Current"
+        },
+        {
+            "name": "Processing",
+            "value": "Processing"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "it may takes few minutes"
+        },
+        {
+            "name": "Downloading",
+            "value": "Downloading"
+        },
+        {
+            "name": "Installing",
+            "value": "Installing"
+        },
+        {
+            "name": "No connector selected",
+            "value": "No connector selected"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Failed to start charging"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Fault found, Stop Charging"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Please start charging within 1 minutes for connector 1th"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Please start charging within 1 minutes for connector 2th"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Please start charging within 1 minutes for connector 3th"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Please start charging within 1 minutes for connector 4th"
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Please start charging within 1 minutes"
+        },
+        {
+            "name": "Not Permit",
+            "value": "Not Permit"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Swipe, insert or tap your card on the POS"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "pre-authorization failed"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Pre-Authorization Settled"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Payment failed"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Payment Settled"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "POS is processing the request, please wait"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS busy, please try again later"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "POS error, please contact the service"
+        },
+        {
+            "name": "ERROR",
+            "value": "ERROR"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Authorization Failed: Blocked"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Authorization Failed: Expired"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Authorization Failed: Invalid"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Authorization Failed: Concurrent TX"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Authorization Failed: Other Reason"
+        },
+        {
+            "name": "Language",
+            "value": "Language"
+        }
+    ]
+}

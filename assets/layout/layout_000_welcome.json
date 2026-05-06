@@ -1,0 +1,12 @@
+{
+    "name": "welcome",
+    "desc": "欢迎界面, 加载JSON成功前显示",
+    "type": "flex",
+    "properties": {
+        "width": 800,
+        "height": 600,
+        "style": "bg-white"
+    },
+    "children": [
+    ]
+}

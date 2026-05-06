@@ -1,0 +1,220 @@
+{
+    "name": "fragment_card_left_detailed_data",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "width": 280,
+        "height": 356,
+        "style":"style-help1_status_bar"
+    },
+    "children": [
+        {
+            "name": "run_state",
+            "desc": "运行状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Run State",
+                "x_ofs": 12,
+                "y_ofs": 10,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "run_state_value",
+            "desc": "运行状态值",
+            "type": "label",
+            "properties": {
+                "text": "CCS_CHARGING",
+                "x_ofs": 157,
+                "y_ofs": 10,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "sub_state",
+            "desc": "次级状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Sub State",
+                "x_ofs": 12,
+                "y_ofs": 54,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "sub_state_value",
+            "desc": "次级状态值",
+            "type": "label",
+            "properties": {
+                "text": "1",
+                "x_ofs": 157,
+                "y_ofs": 54,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "error_code",
+            "desc": "错误码文本",
+            "type": "label",
+            "properties": {
+                "text": "Error Code",
+                "x_ofs": 12,
+                "y_ofs": 98,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "error_code_value",
+            "desc": "错误码值",
+            "type": "label",
+            "properties": {
+                "text": "1",
+                "x_ofs": 157,
+                "y_ofs": 98,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_status",
+            "desc": "枪状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Conn Status",
+                "x_ofs": 12,
+                "y_ofs": 142,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_status_value",
+            "desc": "枪状态值",
+            "type": "label",
+            "properties": {
+                "text": "Charging",
+                "x_ofs": 157,
+                "y_ofs": 142,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "start_soc",
+            "desc": "起始电量文本",
+            "type": "label",
+            "properties": {
+                "text": "Start SoC",
+                "x_ofs": 12,
+                "y_ofs": 186,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "start_soc_value",
+            "desc": "起始电量值",
+            "type": "label",
+            "properties": {
+                "text": "5",
+                "x_ofs": 157,
+                "y_ofs": 186,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "request_voltage",
+            "desc": "需求电压文本",
+            "type": "label",
+            "properties": {
+                "text": "Request Voltage",
+                "x_ofs": 12,
+                "y_ofs": 230,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "request_voltage_value",
+            "desc": "需求电压值",
+            "type": "label",
+            "properties": {
+                "text": "400.0V",
+                "x_ofs": 157,
+                "y_ofs": 230,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "request_current",
+            "desc": "需求电流文本",
+            "type": "label",
+            "properties": {
+                "text": "Request Current",
+                "x_ofs": 12,
+                "y_ofs": 274,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "request_current_value",
+            "desc": "需求电流值",
+            "type": "label",
+            "properties": {
+                "text": "120.0A",
+                "x_ofs": 157,
+                "y_ofs": 274,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "offer_voltage",
+            "desc": "提供电压文本",
+            "type": "label",
+            "properties": {
+                "text": "Offer Voltage",
+                "x_ofs": 12,
+                "y_ofs": 318,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "offer_voltage_value",
+            "desc": "提供电压值",
+            "type": "label",
+            "properties": {
+                "text": "750.0V",
+                "x_ofs": 157,
+                "y_ofs": 318,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

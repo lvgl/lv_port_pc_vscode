@@ -1,0 +1,527 @@
+{
+    "name": "de-DE",
+    "label": "Deutsch",
+    "icon": "A:./assets/images/Germany.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Zuerst einstecken"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Bitte schließen Sie den Stecker zuerst an Ihr Fahrzeug an, bevor Sie eine neue Ladesitzung starten."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Für schnelles Laden jederzeit griffbereit laden Sie bitte die Ioc-App herunter."
+        },
+        {
+            "name": "charger_station",
+            "value": "Ladegerät-ID: "
+        },
+        {
+            "name": "Idle",
+            "value": "Leerlauf"
+        },
+        {
+            "name": "Help",
+            "value": "Hilfe"
+        },
+        {
+            "name": "conid",
+            "value": "Anschluss-ID: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Aktueller Zeitraum"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Nächster Zeitraum"
+        },
+        {
+            "name": "Starting",
+            "value": "Beginnend"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Hier scannen, um den Ladevorgang zu starten"
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Greifen Sie landesweit auf Tausende von Ladestationen zu. Mit nur einer App erhalten Sie Zugriff auf Dutzende von Ladenetzwerken."
+        },
+        {
+            "name": "Charging",
+            "value": "Aufladen"
+        },
+        {
+            "name": "Power",
+            "value": "Leistung"
+        },
+        {
+            "name": "SoC",
+            "value": "Ladezustand"
+        },
+        {
+            "name": "Energy",
+            "value": "Energie"
+        },
+        {
+            "name": "Duration",
+            "value": "Dauer"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Geschätzte Kosten"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Detaillierte Daten"
+        },
+        {
+            "name": "State of charge",
+            "value": "Ladezustand"
+        },
+        {
+            "name": "Finished",
+            "value": "Fertig"
+        },
+        {
+            "name": "Start_time",
+            "value": "Startzeit"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Leerlaufzeit"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Bitte bewegen Sie Ihr Fahrzeug. Die 10-minütige Karenzzeit wurde überschritten."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Ladekosten"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Leerlaufgebühr"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Gesamtbetrag"
+        },
+        {
+            "name": "Reserved",
+            "value": "Reserviert"
+        },
+        {
+            "name": "Left",
+            "value": "Links"
+        },
+        {
+            "name": "left",
+            "value": "links"
+        },
+        {
+            "name": "Stopping",
+            "value": "Anhalten"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Fehler bei der Ladesitzung"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Fehlercode: "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "Die Ladung wurde unterbrochen, bitte ziehen Sie den Stecker. Um eine neue Ladesitzung zu starten, verbinden Sie sich erneut und drücken Sie Weiter."
+        },
+        {
+            "name": "Continue",
+            "value": "Weiter"
+        },
+        {
+            "name": "Error",
+            "value": "Error"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Fehler beim Start der Ladeeinheit"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Ihr Guthaben wurde nicht belastet. Um eine neue Ladesitzung zu starten, bitte verbinden Sie sich erneut."
+        },
+        {
+            "name": "Fault",
+            "value": "Fehler"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Ausrüstungsfehler"
+        },
+        {
+            "name": "Other_error",
+            "value": "Andere Fehler: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Sperrfehler"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "EV-Kommunikationsfehler"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Erdschluss"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Hohe Temperatur"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Interner Fehler"
+        },
+        {
+            "name": "Over Current",
+            "value": "Überstrom"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Überspannung"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Zählerfehler"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Netzschalterfehler"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Leserfehler"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Fehler zurücksetzen"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Unterspannung"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Schwaches Signal"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Notfall gedrückt"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "PhaseSwap-Fehler"
+        },
+        {
+            "name": "Other Error",
+            "value": "Anderer Fehler"
+        },
+        {
+            "name": "Door Opened",
+            "value": "Tür ist offen"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "MCCB geöffnet"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Bitte kontaktieren Sie das Wartungspersonal."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Nicht verfügbar"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Außer Betrieb"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Leider ist dieser Ladepunkt nicht verfügbar. Bitte überprüfen Sie die Ioc-App, um einen anderen Ladepunkt in Ihrer Nähe zu finden oder kontaktieren Sie den Kundensupport."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Stecken & Laden"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "oder AutoCharge startet…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Autorisierter"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "Laden wird gestoppt"
+        },
+        {
+            "name": "Waiting",
+            "value": "Warten"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Warten Sie in der Warteschlange"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Warten auf einen anderen Anschluss, um Strom zu teilen. Das Laden beginnt automatisch, wenn der Anschluss im Leerlauf ist."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Ladezeit und Kosten"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Gelieferte Energie und Ladeleistung"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Ladezustand"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Ausgeglichene Ladegeräte"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Nutzungsbedingungen"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Für schnelles Laden auf Ihrem Smartphone, laden Sie bitte die Ioc-App herunter."
+        },
+        {
+            "name": "content_help2",
+            "value": "Das Laden konnte nicht gestartet werden. Bitte stellen Sie sicher, dass Ihr Fahrzeug korrekt angeschlossen ist. Ihr Guthaben wurde nicht belastet. Um eine neue Ladesitzung zu starten, verbinden Sie sich bitte erneut."
+        },
+        {
+            "name": "Close",
+            "value": "Schließen"
+        },
+        {
+            "name": "Back",
+            "value": "Zurück"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Autorisierung fehlgeschlagen"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Grund für den Fehler"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Scanner pour la facture"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Scan für den Beleg"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Bitte geben Sie den Betrag ein"
+        },
+        {
+            "name": "Confirm",
+            "value": "Bestätigen"
+        },
+        {
+            "name": "Suspend",
+            "value": "Suspendieren"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Ladevorgang pausiert"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Detaillierte Daten"
+        },
+        {
+            "name": "Run_State",
+            "value": "Status Ausführen"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Unterstaat"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Fehlercode"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Verbindungsstatus"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Starten Sie SoC"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Spannung Anfordern"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Strom Anfordern"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Spannung Angeboten"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Strom Angeboten"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Ausgang Sgrenze"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Modul Gruppe"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Stecker Temperatur"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Ausgangs Spannung"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Ausgangs Strom"
+        },
+        {
+            "name": "Processing",
+            "value": "Verarbeitung"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Dies kann einige Minuten dauern"
+        },
+        {
+            "name": "Downloading",
+            "value": "Wird Heruntergeladen"
+        },
+        {
+            "name": "Installing",
+            "value": "Installieren"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Kein Anschluss ausgewählt"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Ladevorgang fehlgeschlagen"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Fehler gefunden. Laden Sie nicht mehr auf"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Bitte beginnen Sie das Laden innerhalb von 1 Minute für Anschluss 1."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Bitte beginnen Sie das Laden innerhalb von 1 Minute für Anschluss 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Bitte beginnen Sie das Laden innerhalb von 1 Minute für Anschluss 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Bitte beginnen Sie das Laden innerhalb von 1 Minute für Anschluss 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Bitte beginnen Sie das Laden innerhalb von 1 Minute"
+        },
+        {
+            "name": "Not Permit",
+            "value": "Nicht erlauben"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Ziehen, stecken oder tippen Sie Ihre Karte am POS"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "Vorautorisierung fehlgeschlagen"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Vorautorisierung abgeschlossen"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Bezahlung fehlgeschlagen"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Zahlung erledigt"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "POS verarbeitet die Anfrage, bitte warten"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS beschäftigt, bitte versuchen Sie es später erneut"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "POS -Maschinenfehler, bitte wenden Sie sich an das Personal"
+        },
+        {
+            "name": "ERROR",
+            "value": "ERROR"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Autorisierung fehlgeschlagen: Blockiert"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Chyba autorizace: Opravneni ukonceno"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Autorisierung fehlgeschlagen: Abgelaufen"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Autorisierung fehlgeschlagen: Gleichzeitige Übertragung"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Autorisierung fehlgeschlagen: Anderer Grund"
+        },
+        {
+            "name": "Language",
+            "value": "Sprache"
+        }
+    ]
+}
