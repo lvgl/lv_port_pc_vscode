@@ -1,0 +1,57 @@
+{
+    "name": "idle_full",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "idle_plug_icon",
+            "type": "image",
+            "properties": {
+                "x_ofs": 306,
+                "y_ofs": 86,
+                "width": 150,
+                "height": 150,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "hint-map"
+            }
+        },
+        {
+            "name": "idle_plug_title",
+            "desc": "插枪文本",
+            "type": "label",
+            "properties": {
+                "text": "Plug in first",
+                "x_ofs": 0,
+                "y_ofs": 120,
+                "width": 300,
+                "height": 40,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_label",
+                "to_obj": "main.idle.plug_idle",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "idle_plug_subtitle",
+            "desc": "插枪提示",
+            "type": "label",
+            "properties": {
+                "text": "Please plug in the connector to you vehicle first before start a new session.",
+                "x_ofs": 0,
+                "y_ofs": 294,
+                "width": 416,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

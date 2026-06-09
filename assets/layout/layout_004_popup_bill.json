@@ -1,0 +1,79 @@
+{
+    "name": "bill",
+    "desc": "bill弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 460,
+        "x": 70,
+        "y": 70,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "bill_qr_code_bill",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 80,
+                "y_ofs": 30,
+                "size": 140,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "bill_scan_for_bill_title",
+            "desc": "扫描账单文本",
+            "type": "label",
+            "properties": {
+                "text": "Scan for bill",
+                "x_ofs": 108,
+                "y_ofs": 174,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-quad-default-type-text"
+            }
+        },
+        {
+            "name": "bill_qr_code_receipt",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 80,
+                "y_ofs": 202,
+                "size": 140,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "bill_scan_for_receipt_title",
+            "desc": "扫描收据文本",
+            "type": "label",
+            "properties": {
+                "text": "Scan for receipt",
+                "x_ofs": 92,
+                "y_ofs": 346,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-connector-quad-default-type-text"
+            }
+        },
+        {
+            "name": "bill_content",
+            "desc": "账单内容",
+            "type": "fragment",
+            "fragment_name": "fragment_popup_bill",
+            "properties": {
+                "x": 300,
+                "y": 30
+            }
+        },
+        {
+            "name": "bill_close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 230,
+                "y": 390
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "name": "price_finished_no_price",
+    "desc": "充电结束界面面板,没有价格信息，仅展示停充时间和提示文本",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "x": 497,
+        "y": 140,
+        "style": "style-info_card"
+    },
+    "children": [
+     {
+            "name": "price_finished_title",
+            "desc": "停充后的idele time 文本",
+            "type": "label",
+            "properties": {
+                "text": "Idle time",
+                "x_ofs": 0,
+                "y_ofs": -65,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_time",
+            "desc": "停充后的占位时间",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x_ofs": 0,
+                "y_ofs": -20,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_tip",
+            "desc": "拔枪剩余时间提醒",
+            "type": "label",
+            "properties": {
+                "text": "Please move your vehicle.10mins grace period exceeded.",
+                "x_ofs": 14,
+                "y_ofs": 35,
+                "width": 235,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

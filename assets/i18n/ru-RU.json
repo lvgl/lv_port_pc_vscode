@@ -1,0 +1,527 @@
+{
+    "name": "ru-RU",
+    "label": "Pусский",
+    "icon": "A:./assets/images/Russia.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Подключитесь сначала"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Пожалуйста, сначала подключите разъем к вашему транспортному средству перед началом новой сессии."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Для быстрой зарядки у вас под рукой, пожалуйста, скачайте приложение Ioc."
+        },
+        {
+            "name": "charger_station",
+            "value": "ID зарядного устройства: "
+        },
+        {
+            "name": "Idle",
+            "value": "Свободно"
+        },
+        {
+            "name": "Help",
+            "value": "Помощь"
+        },
+        {
+            "name": "conid",
+            "value": "Идентификатор разъема: "
+        },
+        {
+            "name": "Current_Period",
+            "value": "Текущий период"
+        },
+        {
+            "name": "Next_Period",
+            "value": "Следующий период"
+        },
+        {
+            "name": "Starting",
+            "value": "Запускается"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Отсканируйте здесь, чтобы начать зарядку."
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Получите доступ к тысячам зарядных станций по всей стране.Используйте одно приложение для доступа к десяткам сетей зарядки."
+        },
+        {
+            "name": "Charging",
+            "value": "Заряжается"
+        },
+        {
+            "name": "Power",
+            "value": "Мощность"
+        },
+        {
+            "name": "SoC",
+            "value": "Состояние заряда батареи"
+        },
+        {
+            "name": "Energy",
+            "value": "Эл.энергия"
+        },
+        {
+            "name": "Duration",
+            "value": "Время"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Предполагаемая стоимость"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Подробные данные"
+        },
+        {
+            "name": "State of charge",
+            "value": "Уровень заряда (аккумулятора)"
+        },
+        {
+            "name": "Finished",
+            "value": "Завершено"
+        },
+        {
+            "name": "Start_time",
+            "value": "Время начала"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Время простоя"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Пожалуйста, уберите ваш автомобиль. Превышен льготный период в 10 минут."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Стоимость зарядки"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Плата за простой"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Общая сумма"
+        },
+        {
+            "name": "Reserved",
+            "value": "Зарезервировано"
+        },
+        {
+            "name": "Left",
+            "value": "Осталось"
+        },
+        {
+            "name": "left",
+            "value": "осталось"
+        },
+        {
+            "name": "Stopping",
+            "value": "Останавливается"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Ошибка сессии зарядки"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Код ошибки: "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "Зарядка была прервана, пожалуйста, отключите разъем. Для начала новой сессии зарядки подключитесь заново и нажмите «Продолжить»."
+        },
+        {
+            "name": "Continue",
+            "value": "Продолжить"
+        },
+        {
+            "name": "Error",
+            "value": "Ошибка"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Ошибка запуска зарядки"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Ваши средства не были списаны. Чтобы начать новую сессию зарядки, пожалуйста, подключитесь снова.\n\n"
+        },
+        {
+            "name": "Fault",
+            "value": "Ошибка"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Неисправность оборудования"
+        },
+        {
+            "name": "Other_error",
+            "value": "Другая ошибка: 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Ошибка блокировки"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "Ошибка связи с авто"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Ошибка соединения с землёй"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Защита от высокой температуры"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Внутренняя ошибка"
+        },
+        {
+            "name": "Over Current",
+            "value": "Защита от высокого тока"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Защита от перенапряжения"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Ошибка измерителя"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Ошибка переключателя питания"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Ошибка считывателя"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Ошибка сброса"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Недостаточное напряжение"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Слабый сигнал"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Аварийный останов"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Нарушение чередования фаз"
+        },
+        {
+            "name": "Other Error",
+            "value": "Другая ошибка"
+        },
+        {
+            "name": "Door Opened",
+            "value": "дверь открыта"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "MCCB открыт"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Пожалуйста, свяжитесь с обслуживающим персоналом."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Недоступно"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Вне службы"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "К сожалению, это зарядное устройство недоступно. Пожалуйста, проверьте приложение Ioc, чтобы найти другое зарядное устройство рядом с вами, или свяжитесь со службой поддержки клиентов."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Подключи и заряжай"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "или начинается автоматическая зарядка…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Авторизован"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "Зарядка останавливается"
+        },
+        {
+            "name": "Waiting",
+            "value": "Ожидание"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Ждите в очереди"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "Ожидание другого разъема для совместного использования питания. Зарядка автоматически начнется, когда он освободится."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Время зарядки и стоимость"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Переданная энергия и скорость зарядки"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "Уровень заряда"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Балансировка зарядных устройств"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Условия использования"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Для быстрой зарядки у вас под рукой, пожалуйста, скачайте приложение Ioc."
+        },
+        {
+            "name": "content_help2",
+            "value": "Запуск зарядки невозможен. Пожалуйста, убедитесь, что ваш автомобиль правильно подключен. С вашего счета средства не списаны. Для начала новой сессии зарядки, пожалуйста, подключитесь заново.\n\n"
+        },
+        {
+            "name": "Close",
+            "value": "Закрыть"
+        },
+        {
+            "name": "Back",
+            "value": "Назад"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Ошибка авторизации"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Причина ошибки"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Сканируйте счет"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Сканируйте квитанцию"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Пожалуйста, введите сумму"
+        },
+        {
+            "name": "Confirm",
+            "value": "Подтвердить"
+        },
+        {
+            "name": "Suspend",
+            "value": "Приостановить"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Зарядка приостановлена"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Подробные данные"
+        },
+        {
+            "name": "Run_State",
+            "value": "Состояние"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Подпроцесс"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Код ошибки"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "Статус коннектора"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Уровень заряда"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Запрашиваемое напряжение"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Запрашиваемый ток"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Предлагаемое напряжение"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Предлагаемый ток"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Выходное ограничение"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Модуль"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Температура разъема"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Выходное напряжение"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Выходной ток"
+        },
+        {
+            "name": "Processing",
+            "value": "Обработка..."
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Это может занять несколько минут."
+        },
+        {
+            "name": "Downloading",
+            "value": "Загружается"
+        },
+        {
+            "name": "Installing",
+            "value": "Устанавливается"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Не выбран кабель зарядки"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Не удалость начать зарядку"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Обнаружена ошибка. Остановите зарядку"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Пожалуйста, начните зарядку в течение 1 минуты для разъема 1."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Пожалуйста, начните зарядку в течение 1 минуты для разъема 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Пожалуйста, начните зарядку в течение 1 минуты для разъема 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Пожалуйста, начните зарядку в течение 1 минуты для разъема 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Пожалуйста, начните зарядку в течение 1 минуты."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Не разрешено"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Проведите, вставьте или коснитесь карты на POS"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "предварительная авторизация не удалась"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Предварительная ауаутризация"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Платеж не прошел"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Оплата урегулирована"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "POS обрабатывает запрос, пожалуйста, подождите"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "POS занят, попробуйте еще раз позже"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "FOS -affect, пожалуйста, свяжитесь с персоналом"
+        },
+        {
+            "name": "ERROR",
+            "value": "ОШИБКА"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Ошибка авторизации: заблокировано"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Ошибка авторизации: срок действия истек"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Ошибка авторизации: неверные данные"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Ошибка авторизации: одновременная передача"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Ошибка авторизации: другая причина"
+        },
+        {
+            "name": "Language",
+            "value": "Язык"
+        }
+    ]
+}

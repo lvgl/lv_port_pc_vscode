@@ -1,0 +1,44 @@
+{
+    "name": "status_bar",
+    "desc": "顶部状态栏",
+    "type": "flex",
+    "properties": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 70,
+        "style":"style-background-primary"
+    },
+    "children": [
+        {
+            "name": "time",
+            "desc": "当前时间,小数位数由配置决定",
+            "type": "label",
+            "properties": {
+                "text": "12:00",
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-text-primary"
+            }
+        },
+        {
+            "name": "help",
+            "desc": "帮助按钮",
+            "type": "fragment",
+            "fragment_name": "fragment_btn_text",
+            "properties": {
+                "x_ofs": 500,
+                "align": "LV_ALIGN_LEFT_MID"
+            }
+        },
+        {
+            "name": "language",
+            "desc": "语言按钮",
+            "type": "fragment",
+            "fragment_name": "fragment_btn_language",
+            "properties": {
+                "x_ofs": 650,
+                "align": "LV_ALIGN_LEFT_MID"
+            }
+        }
+    ]
+}

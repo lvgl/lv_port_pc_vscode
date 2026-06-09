@@ -1,0 +1,82 @@
+{
+    "name": "fault",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "fault_icon",
+            "type": "image",
+            "properties": {
+                "x_ofs": 316,
+                "y_ofs": 67,
+                "width": 130,
+                "height": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_charging-pile"
+            }
+        },
+        {
+            "name": "fault_symbol",
+            "type": "label",
+            "properties": {
+                "text": "X",
+                "x_ofs": 372,
+                "y_ofs": 130,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-X_start",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "fault_title",
+            "type": "label",
+            "properties": {
+                "text": "Equipment failure",
+                "x_ofs": 0,
+                "y_ofs": 200,
+                "width": 300,
+                "height": 30,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "fault_code",
+            "desc": "错误码",
+            "type": "label",
+            "properties": {
+                "text": "Other error:07",
+                "x_ofs": 0,
+                "y_ofs": 237,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "fault_subtitle",
+            "desc": "错误提示",
+            "type": "label",
+            "properties": {
+                "text": "Please contact the maintenance staff.",
+                "x_ofs": 0,
+                "y_ofs": 260,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

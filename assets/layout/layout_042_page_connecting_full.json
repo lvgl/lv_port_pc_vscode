@@ -1,0 +1,55 @@
+{
+    "name": "connecting",
+    "desc": "链接授权状态",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "connecting_icon",
+            "type": "image",
+            "properties": {
+                "x_ofs": 280,
+                "y_ofs": 148,
+                "width": 200,
+                "height": 82,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "logo_plug&charge_2"
+            }
+        },
+        {
+            "name": "connecting_title",
+            "type": "label",
+            "properties": {
+                "text": "Plug & Charge",
+                "x_ofs": 0,
+                "y_ofs": 268,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "connecting_subtitle",
+            "desc": "连接车提示",
+            "type": "label",
+            "properties": {
+                "text": "or AutoCharge starting…",
+                "x_ofs": 0,
+                "y_ofs": 296,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "fragment_starting2_pos_btn",
+    "desc": "POS机按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-continue_button_session_error"
+    },
+    "children": [
+        {
+            "name": "img",
+            "type": "image",
+            "properties": {
+                "width": 130,
+                "height": 130,
+                "align": "LV_ALIGN_CENTER",
+                "src": "pic_pos"
+            }
+        }
+    ]
+}

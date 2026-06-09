@@ -1,0 +1,46 @@
+{
+    "name": "popup_common",
+    "desc": "通用弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 480,
+        "height": 300,
+        "x": 160,
+        "y": 150,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "circle_img",
+            "type": "image",
+            "properties": {
+                "x_ofs": 0,
+                "y_ofs": -70,
+                "width": 80,
+                "height": 80,
+                "align": "LV_ALIGN_CENTER",
+                "src": "icon_warning_2"
+            }
+        },
+        {
+            "name": "prompt",
+            "desc": "通用提示文本fragment",
+            "type": "fragment",
+            "fragment_name": "fragment_popup_common_prompt",
+            "properties": {
+                "x_ofs": 0,
+                "y_ofs": 20,
+                "align": "LV_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_common_close",
+            "properties": {
+                "x": 140,
+                "y": 230
+            }
+        }
+    ]
+}

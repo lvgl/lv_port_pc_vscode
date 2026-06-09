@@ -1,0 +1,150 @@
+{
+    "name": "price_finished",
+    "desc": "充电结束界面价格信息,包含占位时间和费用信息",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "x": 497,
+        "y": 140,
+        "style": "style-info_card"
+    },
+    "children": [
+     {
+            "name": "price_finished_title",
+            "desc": "停充后的idele time 文本",
+            "type": "label",
+            "properties": {
+                "text": "Idle time",
+                "x_ofs": 0,
+                "y_ofs": -100,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_time",
+            "desc": "停充后的占位时间",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x_ofs": 0,
+                "y_ofs": -60,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_tip",
+            "desc": "拔枪剩余时间提醒",
+            "type": "label",
+            "properties": {
+                "text": "Please move your vehicle.10mins grace period exceeded.",
+                "x_ofs": 14,
+                "y_ofs": 102,
+                "width": 235,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_divider",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 225,
+                "height": 2,
+                "x_ofs": 19,
+                "y_ofs": 162,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "price_finished_charging_title",
+            "desc": "充电花费金额文本",
+            "type": "label",
+            "properties": {
+                "text": "Charging cost",
+                "x_ofs": 20,
+                "y_ofs": 172,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_charging_val",
+            "desc": "充电花费金额",
+            "type": "label",
+            "properties": {
+                "text": "34.3$",
+                "x_ofs": 203,
+                "y_ofs": 172,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_idle_title",
+            "desc": "闲置费文本",
+            "type": "label",
+            "properties": {
+                "text": "Idle fee",
+                "x_ofs": 20,
+                "y_ofs": 200,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_idle_val",
+            "desc": "闲置费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$",
+                "x_ofs": 203,
+                "y_ofs": 200,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_total_title",
+            "desc": "总金额文本",
+            "type": "label",
+            "properties": {
+                "text": "Total Amount",
+                "x_ofs": 20,
+                "y_ofs": 240,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_finished_total_val",
+            "desc": "总金额",
+            "type": "label",
+            "properties": {
+                "text": "134.3$",
+                "x_ofs": 171,
+                "y_ofs": 240,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

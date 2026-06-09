@@ -1,0 +1,20 @@
+{
+    "name": "fragment_detailed_data_charging",
+    "desc": "充电详细信息",
+    "type": "button",
+    "properties": {
+        "style": "style-detailed_data_charging"
+    },
+    "children": [
+        {
+            "name": "label",
+            "type": "label",
+            "properties": {
+                "text": "Detailed Data",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,527 @@
+{
+    "name": "fr-FR",
+    "label": "Français",
+    "icon": "A:./assets/images/France.png",
+    "content": [
+        {
+            "name": "Plug_in_frist",
+            "value": "Branchez d'abord"
+        },
+        {
+            "name": "home_prompt",
+            "value": "Veuillez d'abord brancher le connecteur à votre véhicule avant de commencer une nouvelle session."
+        },
+        {
+            "name": "qr_code_prompt",
+            "value": "Pour une recharge rapide à portée de main, téléchargez l’application Ioc."
+        },
+        {
+            "name": "charger_station",
+            "value": "ID du chargeur : "
+        },
+        {
+            "name": "Idle",
+            "value": "Ralenti"
+        },
+        {
+            "name": "Help",
+            "value": "Aide"
+        },
+        {
+            "name": "conid",
+            "value": "Identifiant du connecteur : "
+        },
+        {
+            "name": "Current_Period",
+            "value": "période actuelle"
+        },
+        {
+            "name": "Next_Period",
+            "value": "période suivante"
+        },
+        {
+            "name": "Starting",
+            "value": "Départ"
+        },
+        {
+            "name": "Scan_here_to_start_charging",
+            "value": "Scannez ici pour commencer la recharge"
+        },
+        {
+            "name": "starting_prompt",
+            "value": "Accédez à des milliers de bornes de recharge à travers le pays.Utilisez une seule application pour accéder à des dizaines de réseaux de recharge."
+        },
+        {
+            "name": "Charging",
+            "value": "Mise en charge"
+        },
+        {
+            "name": "Power",
+            "value": "Puissance"
+        },
+        {
+            "name": "SoC",
+            "value": "État de charge"
+        },
+        {
+            "name": "Energy",
+            "value": "Énergie"
+        },
+        {
+            "name": "Duration",
+            "value": "Durée"
+        },
+        {
+            "name": "Estimated_Cost",
+            "value": "Coût estimé"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Données détaillées"
+        },
+        {
+            "name": "State of charge",
+            "value": "État de charge"
+        },
+        {
+            "name": "Finished",
+            "value": "Ukonceno"
+        },
+        {
+            "name": "Start_time",
+            "value": "Heure de début"
+        },
+        {
+            "name": "Idle_time",
+            "value": "Temps d'inactivité"
+        },
+        {
+            "name": "Idle_time_prompt",
+            "value": "Veuillez déplacer votre véhicule. La période de grâce de 10 minutes est dépassée."
+        },
+        {
+            "name": "Charging_cost",
+            "value": "Coût de la recharge"
+        },
+        {
+            "name": "Idle_fee",
+            "value": "Frais d'inactivité"
+        },
+        {
+            "name": "Total_Amount",
+            "value": "Montant total"
+        },
+        {
+            "name": "Reserved",
+            "value": "Réservé"
+        },
+        {
+            "name": "Left",
+            "value": "Gauche"
+        },
+        {
+            "name": "left",
+            "value": "rauche"
+        },
+        {
+            "name": "Stopping",
+            "value": "Arrêt"
+        },
+        {
+            "name": "Charging_session_error",
+            "value": "Erreur de session de recharge"
+        },
+        {
+            "name": "Error_code_session_error",
+            "value": "Code d'erreur : "
+        },
+        {
+            "name": "session_error_prompt",
+            "value": "La recharge a été interrompue, veuillez débrancher. Pour démarrer une nouvelle session de recharge, reconnectez et appuyez sur Continuer."
+        },
+        {
+            "name": "Continue",
+            "value": "Continuer"
+        },
+        {
+            "name": "Error",
+            "value": "Erreur"
+        },
+        {
+            "name": "Charging_start_error",
+            "value": "Erreur de démarrage de la recharge"
+        },
+        {
+            "name": "start_error_prompt",
+            "value": "Votre crédit n'a pas été débité. Pour démarrer une nouvelle session de recharge, veuillez reconnecter."
+        },
+        {
+            "name": "Fault",
+            "value": "Faute"
+        },
+        {
+            "name": "Equipment_failure",
+            "value": "Panne de l'équipement"
+        },
+        {
+            "name": "Other_error",
+            "value": "Autre erreur : 07"
+        },
+        {
+            "name": "Lock Failure",
+            "value": "Échec de verrouillage"
+        },
+        {
+            "name": "EV Communication Error",
+            "value": "Erreur de communication EV"
+        },
+        {
+            "name": "Ground Failure",
+            "value": "Défaillance à la terre"
+        },
+        {
+            "name": "High Temperature",
+            "value": "Haute température"
+        },
+        {
+            "name": "Internal Error",
+            "value": "Erreur interne"
+        },
+        {
+            "name": "Over Current",
+            "value": "Plus de courant"
+        },
+        {
+            "name": "Over Voltage",
+            "value": "Plus de Tension"
+        },
+        {
+            "name": "Meter Failure",
+            "value": "Panne du compteur"
+        },
+        {
+            "name": "Power Switch Failure",
+            "value": "Panne de l'interrupteur d'alimentation"
+        },
+        {
+            "name": "Reader Failure",
+            "value": "Échec du lecteur"
+        },
+        {
+            "name": "Reset Failure",
+            "value": "Échec de réinitialisation"
+        },
+        {
+            "name": "Under Voltage",
+            "value": "Sous tension"
+        },
+        {
+            "name": "Weak Signal",
+            "value": "Signal faible"
+        },
+        {
+            "name": "Emergency Pushed",
+            "value": "Urgence poussée"
+        },
+        {
+            "name": "PhaseSwap Failure",
+            "value": "Échec de PhaseSwap"
+        },
+        {
+            "name": "Other Error",
+            "value": "Autre erreur"
+        },
+        {
+            "name": "Door Opened",
+            "value": "la porte est ouverte"
+        },
+        {
+            "name": "MCCB Opened",
+            "value": "Interrupteur MCCB ouvert"
+        },
+        {
+            "name": "fault_prompt",
+            "value": "Veuillez contacter le personnel de maintenance."
+        },
+        {
+            "name": "Unavailable",
+            "value": "Indisponible"
+        },
+        {
+            "name": "Out_of_service",
+            "value": "Hors service"
+        },
+        {
+            "name": "unavailable_prompt",
+            "value": "Malheureusement, ce chargeur est indisponible. Veuillez consulter l'application Ioc pour trouver un autre chargeur près de chez vous ou contacter le support client."
+        },
+        {
+            "name": "Plug & Charge",
+            "value": "Brancher et charger"
+        },
+        {
+            "name": "connecting_prompt",
+            "value": "ou démarrage de l'AutoCharge…"
+        },
+        {
+            "name": "Authorized",
+            "value": "Autorisé"
+        },
+        {
+            "name": "Charging_is_stopping",
+            "value": "La recharge est en cours d'arrêt"
+        },
+        {
+            "name": "Waiting",
+            "value": "En attente"
+        },
+        {
+            "name": "Wait_in_line",
+            "value": "Attendez votre tour"
+        },
+        {
+            "name": "Wait_in_line_prompt",
+            "value": "En attente qu'un autre connecteur partage l'énergie, la recharge commencera automatiquement lorsqu'il sera inactif."
+        },
+        {
+            "name": "Charging_time_and_cost",
+            "value": "Temps de recharge et coût"
+        },
+        {
+            "name": "Energy_delivered_and_charging_rate",
+            "value": "Énergie délivrée et taux de recharge"
+        },
+        {
+            "name": "State_of_charge",
+            "value": "État de charge"
+        },
+        {
+            "name": "Balanced_chargers",
+            "value": "Chargeurs équilibrés"
+        },
+        {
+            "name": "Terms_of_use",
+            "value": "Conditions d'utilisation"
+        },
+        {
+            "name": "prompt_help1",
+            "value": "Pour une recharge rapide à portée de main, veuillez télécharger l'application Ioc."
+        },
+        {
+            "name": "content_help2",
+            "value": "La recharge n'a pas pu être lancée. Veuillez vous assurer que votre véhicule est correctement branché. Votre crédit n'a pas été débité. Pour démarrer une nouvelle session de recharge, veuillez reconnecter."
+        },
+        {
+            "name": "Close",
+            "value": "Fermer"
+        },
+        {
+            "name": "Back",
+            "value": "Retour"
+        },
+        {
+            "name": "Authorization_failed",
+            "value": "Échec de l'autorisation"
+        },
+        {
+            "name": "Reason_for_failure",
+            "value": "Raison de l'échec"
+        },
+        {
+            "name": "Scan_for_bill",
+            "value": "Scanner pour la facture"
+        },
+        {
+            "name": "Scan_for_receipt",
+            "value": "Scanner pour le reçu"
+        },
+        {
+            "name": "Please_enter_the_amount",
+            "value": "Veuillez saisir le montant"
+        },
+        {
+            "name": "Confirm",
+            "value": "Confirmer"
+        },
+        {
+            "name": "Suspend",
+            "value": "Suspendre"
+        },
+        {
+            "name": "Charging_suspend",
+            "value": "Recharge suspendue"
+        },
+        {
+            "name": "Detailed_data",
+            "value": "Données détaillées"
+        },
+        {
+            "name": "Run_State",
+            "value": "État d'exécution"
+        },
+        {
+            "name": "Sub_State",
+            "value": "Sous-état"
+        },
+        {
+            "name": "Error_Code",
+            "value": "Code d'erreur"
+        },
+        {
+            "name": "Conn_Status",
+            "value": "État du connecteur"
+        },
+        {
+            "name": "Start_SoC",
+            "value": "Démarrez SoC"
+        },
+        {
+            "name": "Request_Voltage",
+            "value": "Demande de tension"
+        },
+        {
+            "name": "Request_Current",
+            "value": "Demande de courant"
+        },
+        {
+            "name": "Offer_Voltage",
+            "value": "Tension d'offre"
+        },
+        {
+            "name": "Offer_Current",
+            "value": "Courant d'offre"
+        },
+        {
+            "name": "Output_Limit",
+            "value": "Limite de sortie"
+        },
+        {
+            "name": "Comp_Group",
+            "value": "Groupe de modules"
+        },
+        {
+            "name": "Conn_Temperature",
+            "value": "Température du connecteur"
+        },
+        {
+            "name": "Output_Voltage",
+            "value": "Tension de sortie"
+        },
+        {
+            "name": "Output_Current",
+            "value": "Courant de sortie"
+        },
+        {
+            "name": "Processing",
+            "value": "Traitement en cours"
+        },
+        {
+            "name": "Processing_prompt",
+            "value": "Cela peut prendre quelques minutes"
+        },
+        {
+            "name": "Downloading",
+            "value": "Téléchargement"
+        },
+        {
+            "name": "Installing",
+            "value": "Installation"
+        },
+        {
+            "name": "No connector selected",
+            "value": "Aucun connecteur sélectionné"
+        },
+        {
+            "name": "Failed to start charging",
+            "value": "Échec du démarrage de la charge"
+        },
+        {
+            "name": "Fault found, Stop Charging",
+            "value": "Erreur détectée. Arrêter de charger"
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 1th",
+            "value": "Veuillez commencer la charge dans 1 minute pour le connecteur 1."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 2th",
+            "value": "Veuillez commencer la charge dans 1 minute pour le connecteur 2."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 3th",
+            "value": "Veuillez commencer la charge dans 1 minute pour le connecteur 3."
+        },
+        {
+            "name": "Please start charging within 1 minutes for connector 4th",
+            "value": "Veuillez commencer la charge dans 1 minute pour le connecteur 4."
+        },
+        {
+            "name": "Please start charging within 1 minutes",
+            "value": "Veuillez commencer la charge dans 1 minute."
+        },
+        {
+            "name": "Not Permit",
+            "value": "Pas permis"
+        },
+        {
+            "name": "Swipe, insert or tap your card on the POS",
+            "value": "Glissez, insérez ou tapez votre carte sur le point de ven"
+        },
+        {
+            "name": "pre-authorization failed",
+            "value": "la pré-autorisation a échoué"
+        },
+        {
+            "name": "Pre-Authorization Settled",
+            "value": "Pré-autorisation réglée"
+        },
+        {
+            "name": "Payment failed",
+            "value": "Paiement échoué"
+        },
+        {
+            "name": "Payment Settled",
+            "value": "Paiement réglé"
+        },
+        {
+            "name": "POS is processing the request, please wait",
+            "value": "Le point de vente traite la demande, veuillez patienter"
+        },
+        {
+            "name": "POS busy, please try again later",
+            "value": "La machine POS est occupée, veuillez réessayer plus tard"
+        },
+        {
+            "name": "POS error, please contact the service",
+            "value": "Échec de la machine POS, veuillez contacter le personnel"
+        },
+        {
+            "name": "ERROR",
+            "value": "ERREUR"
+        },
+        {
+            "name": "Authorization Failed: Blocked",
+            "value": "Échec de l'autorisation: bloqué"
+        },
+        {
+            "name": "Authorization Failed: Expired",
+            "value": "Échec de l'autorisation: expiré"
+        },
+        {
+            "name": "Authorization Failed: Invalid",
+            "value": "Échec de l'autorisation: non valide"
+        },
+        {
+            "name": "Authorization Failed: Concurrent TX",
+            "value": "Échec de l'autorisation: émission simultanée"
+        },
+        {
+            "name": "Authorization Failed: Other Reason",
+            "value": "Échec de l'autorisation: autre raison"
+        },
+        {
+            "name": "Language",
+            "value": "Langue"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "fragment_ocpp_price",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 140,
+        "style":"style-info_card_half"
+    },
+    "children": [
+        {
+            "name": "label",
+            "desc": "ocpp价格",
+            "type": "label",
+            "properties": {
+                "text": "0.15 $/kWh, idle fee after charging: 1 $/hr",
+                "width": 243,
+                "y_ofs": 0,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

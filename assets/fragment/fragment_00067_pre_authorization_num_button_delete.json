@@ -1,0 +1,20 @@
+{
+    "name": "fragment_pre_authorization_keypad_delete",
+    "desc": "预授权软键盘的回撤按钮,因为回撤按钮的←字库不支持,所以单独成一个fragment",
+    "type": "button",
+    "properties": {
+        "style": "style-num_button_pre_authorization"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "←",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-pre_authorization_delete_btn",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

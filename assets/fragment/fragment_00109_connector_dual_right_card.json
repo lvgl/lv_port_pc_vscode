@@ -1,0 +1,145 @@
+{
+    "name": "fragment_conn_card_dual_right_card",
+    "desc": "双枪的单个卡片",
+    "type": "button",
+    "properties": {
+        "style": "style-connector-dual-default",
+        "style_checked": "style-connector-dual-checked"
+    },
+    "children": [
+        {
+            "name": "conn_card_id",
+            "type": "fragment",
+            "fragment_name" : "fragment_conn_id_dual_right",
+            "properties": {
+                "x": 252,
+                "y": 0
+            }
+        },
+        {
+            "name": "conn_card_state",
+            "type": "label",
+            "properties": {
+                "text": "Idle",
+                "x_ofs": -144,
+                "y_ofs": 20,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-state-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_type",
+            "type": "label",
+            "properties": {
+                "text": "CCS2(DC)",
+                "x_ofs": -144,
+                "y_ofs": 61,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_power_rated",
+            "type": "label",
+            "properties": {
+                "text": "120.0kW",
+                "x_ofs": -144,
+                "y_ofs": 83,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_type_icon",
+            "type": "image",
+            "properties": {
+                "src": "ccs2-dc_2connect",
+                "x_ofs": 20,
+                "y_ofs": 26,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "conn_card_time_title",
+            "type": "label",
+            "properties": {
+                "text": "Idle time",
+                "x_ofs": -146,
+                "y_ofs": 61,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_time",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x_ofs": -146,
+                "y_ofs": 85,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "hidden": true,
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_soc_bar",
+            "desc": "充电中SoC进度条",
+            "type": "bar",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 59,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_bar_bg_size2",
+                "style_indic": "style-charging_bar_indic"
+            }
+        },
+        {
+            "name": "conn_card_soc",
+            "desc": "充电中SoC值",
+            "type": "label",
+            "properties": {
+                "text": "12%",
+                "x_ofs": 15,
+                "y_ofs": 89,
+                "width": 50,
+                "height": 20,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_power_real",
+            "desc": "充电中实时功率, 右对齐",
+            "type": "label",
+            "properties": {
+                "text": "102.5kW",
+                "x_ofs": -144,
+                "y_ofs": 89,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_plug_gun_icon",
+            "desc" : "插枪提示的绿色图标",
+            "type": "image",
+            "properties": {
+                "src": "icon_connected",
+                "width": 20,
+                "height": 20,
+                "x": 23,
+                "y": 80
+            }
+        }
+    ]
+}

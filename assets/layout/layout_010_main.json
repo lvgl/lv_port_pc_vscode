@@ -1,0 +1,12 @@
+{
+    "name": "main",
+    "desc": "主界面(2/3/4枪)",
+    "type": "flex",
+    "properties": {
+        "width": 800,
+        "height": 600,
+        "style": "style-background-primary"
+    },
+    "children": [
+    ]
+}

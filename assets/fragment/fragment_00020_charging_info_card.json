@@ -1,0 +1,100 @@
+{
+    "name": "fragment_charging_info_card",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "current_time_kwh_charging",
+            "desc": "当前时间段kwh计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/Kwh",
+                "x_ofs": 30,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_hr_charging",
+            "desc": "当前时间段hr计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/hr",
+                "x_ofs": 30,
+                "y_ofs": 57,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "current_time_times_charging",
+            "desc": "当前时间段times计费",
+            "type": "label",
+            "properties": {
+                "text": "34.3$/times",
+                "x_ofs": 30,
+                "y_ofs": 84,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "split_line_charging",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 203,
+                "height": 1,
+                "x_ofs": 30,
+                "y_ofs": 118,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "estimated_cost_prompt_charging",
+            "desc": "预估金额提示",
+            "type": "label",
+            "properties": {
+                "text": "Estimated Cost",
+                "x_ofs": 30,
+                "y_ofs": 133,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "estimated_cost_charging",
+            "desc": "预估金额",
+            "type": "label",
+            "properties": {
+                "text": "34.3$",
+                "x_ofs": 30,
+                "y_ofs": 166,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "btn",
+            "desc": "充电详细数据",
+            "type": "fragment",
+            "fragment_name": "fragment_detailed_data_charging",
+            "properties": {
+                "x" : 32,
+                "y" : 210
+            }
+        }
+    ]
+}
