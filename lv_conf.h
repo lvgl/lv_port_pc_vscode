@@ -246,6 +246,10 @@
      */
     #define LV_USE_NEMA_LIB LV_NEMA_LIB_NONE
 
+    /** Control of the cache support within NEMA GFX */
+    #define LV_NEMA_USE_CACHE 0
+    #define LV_NEMA_CACHE_HAL_INCLUDE <stm32u5xx_hal.h>
+
     /** Select which NemaGFX HAL to use. Possible options:
      * - LV_NEMA_HAL_CUSTOM
      * - LV_NEMA_HAL_STM32 */
@@ -547,13 +551,13 @@
 /** If enabled, LV_CHECK_OBJ will also verify that the object has the expected class.
  * When disabled the class check is skipped even if the class argument is supplied.
  * Requires LV_USE_CHECK_ARG to be enabled. */
-#define LV_USE_CHECK_OBJ_CLASSTYPE 1
+#define LV_USE_CHECK_OBJ_CLASSTYPE 0
 
 /** If enabled, LV_CHECK_OBJ will also verify that the object is still part of the
  * widget tree (lv_obj_is_valid). When disabled the validity check is skipped even
  * if the associated argument is supplied.
  * Requires LV_USE_CHECK_ARG to be enabled. */
-#define LV_USE_CHECK_OBJ_VALIDITY 1
+#define LV_USE_CHECK_OBJ_VALIDITY 0
 
 /*-------------
  * Debug
