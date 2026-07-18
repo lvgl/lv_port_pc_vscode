@@ -1,0 +1,20 @@
+{
+    "name": "fragment_session_error_circle",
+    "desc": "感叹号",
+    "type": "flex",
+    "properties": {
+        "style": "style-session_error-circle"
+    },
+    "children": [
+        {
+            "name": "!_session_error",
+            "type": "label",
+            "properties": {
+                "text": "!",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-draw_icon_symbol",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

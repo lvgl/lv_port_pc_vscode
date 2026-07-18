@@ -1,0 +1,38 @@
+{
+    "name": "fragment_charging_car_icon",
+    "desc": "充电中的汽车图标,由汽车背景图和中间电池动图组成",
+    "type": "flex",
+    "properties": {
+        "width": 437,
+        "height": 260,
+        "style":"style-primary_bg"
+    },
+    "children": [
+        {
+            "name": "charging_car_bg",
+            "desc": "车背景图",
+            "type": "image",
+            "properties": {
+                "x_ofs": 0,
+                "y_ofs": 0,
+                "width": 437,
+                "height": 260,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "bg_data-display_charging"
+            }
+        },
+        {
+            "name": "charging_car_gif",
+            "desc": "充电动态图",
+            "type": "gif",
+            "properties": {
+                "x_ofs": 183,
+                "y_ofs": 123,
+                "width": 68,
+                "height": 71,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "charging"
+            }
+        }
+    ]
+}

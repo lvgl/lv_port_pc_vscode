@@ -1,0 +1,57 @@
+{
+    "name": "language",
+    "desc": "language弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 520,
+        "x": 70,
+        "y": 40,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "language_title",
+            "desc": "标题",
+            "type": "label",
+            "properties": {
+                "text": "Language",
+                "x_ofs": 282,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label"
+            }
+        },
+        {
+            "name": "language_split_line",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 580,
+                "height": 1,
+                "x": 40,
+                "y": 64,
+                "style": "style-split"
+            }
+        },
+
+        {
+            "name": "language_close_btn",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 80,
+                "y": 450
+            }
+        },
+        {
+            "name": "language_confirm_btn",
+            "type": "fragment",
+            "fragment_name" : "fragment_btn_primary",
+            "properties": {
+                "x": 380,
+                "y": 450
+            }
+        }
+    ]
+}

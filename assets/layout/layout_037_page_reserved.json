@@ -1,0 +1,27 @@
+{
+    "name": "reserved",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "reserved_car_icon",
+            "desc": "充电预约图",
+            "type": "image",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 77,
+                "width": 437,
+                "height": 283,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "parking-diagram"
+            }
+        }
+    ]
+}

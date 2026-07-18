@@ -1,0 +1,71 @@
+{
+    "name": "finished",
+    "desc": "充电完成界面",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "finished_car_icon",
+            "desc": "",
+            "type": "image",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 80,
+                "width": 437,
+                "height": 260,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "bg_data-display_finished"
+            }
+        },
+        {
+            "name": "finished_start_time",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_two",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 111,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "finished_energy",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_three",
+            "properties": {
+                "x_ofs": 20,
+                "y_ofs": 220,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "finished_duration",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_two",
+            "properties": {
+                "x_ofs": 310,
+                "y_ofs": 111,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        },
+        {
+            "name": "finished_soc",
+            "desc": "",
+            "type": "fragment",
+            "fragment_name": "fragment_label_combine_six",
+            "properties": {
+                "x_ofs": 310,
+                "y_ofs": 220,
+                "align": "LV_ALIGN_TOP_LEFT"
+            }
+        }
+    ]
+}

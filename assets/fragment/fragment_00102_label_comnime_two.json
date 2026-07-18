@@ -1,0 +1,39 @@
+{
+    "name": "fragment_label_combine_two",
+    "desc": "由两个label组合的组件,包含一个标题,一个数值",
+    "type": "flex",
+    "properties": {
+        "width": 147,
+        "height": 109,
+        "style": "style-label_combine_bg"
+    },
+    "children": [
+        {
+            "name": "title",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "width": 147,
+                "height": 18,
+                "x_ofs": 0,
+                "y_ofs": 18,
+                "align" : "LV_ALIGN_TOP_MID",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "val",
+            "type": "label",
+            "properties": {
+                "width": 147,
+                "height": 29,
+                "x_ofs": 0,
+                "y_ofs": 58,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

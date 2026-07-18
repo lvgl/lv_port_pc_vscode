@@ -1,0 +1,71 @@
+{
+    "name": "fragment_charging_error",
+    "desc": "充电失败界面",
+    "type": "flex",
+    "properties": {
+        "width": 760,
+        "height": 370,
+        "style": "style-checkbox"
+    },
+    "children": [
+        {
+            "name": "charging_error_draw_icon",
+            "desc": "充电错误图标",
+            "type": "fragment",
+            "fragment_name":"fragment_charging_error_draw_icon",
+            "properties": {
+                "x": 351,
+                "y": 84
+            }
+        },
+        {
+            "name": "charging_error_title",
+            "type": "label",
+            "properties": {
+                "text": "Charging start error",
+                "x_ofs": 0,
+                "y_ofs": 168,
+                "width": 400,
+                "height": 30,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "charging_error_code",
+            "desc": "错误码文本和值",
+            "type": "fragment",
+            "fragment_name": "fragment_start_error_code",
+            "properties": {
+                "x_ofs": 0,
+                "y_ofs": 190,
+                "align": "LV_ALIGN_TOP_MID"
+            }
+        },
+        {
+            "name": "charging_error_subtitle",
+            "desc": "错误提示",
+            "type": "label",
+            "properties": {
+                "text": "Your credit has not been charged. To start a new charging session,please reconnect.",
+                "x_ofs": 0,
+                "y_ofs": 220,
+                "width": 416,
+                "height": 60,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "charging_error_continue_btn",
+            "type": "fragment",
+            "fragment_name" : "fragment_continue_btn",
+            "properties": {
+                "x": 281,
+                "y": 290
+            }
+        }
+    ]
+}

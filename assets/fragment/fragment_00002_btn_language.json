@@ -1,0 +1,35 @@
+{
+    "name": "fragment_btn_language",
+    "desc": "语言按钮, 包含一个图标和一个文字",
+    "type": "button",
+    "properties": {
+        "style": "style-button-help-language"
+    },
+    "children": [
+        {
+            "name": "icon",
+            "desc": "图标",
+            "type": "image",
+            "properties": {
+                "x_ofs":22,
+                "width": 32,
+                "height": 32,
+                "align": "LV_ALIGN_LEFT_MID",
+                "src": "english",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "label",
+            "desc": "文字",
+            "type": "label",
+            "properties": {
+                "text": "English",
+                "x_ofs":56,
+                "align": "LV_ALIGN_LEFT_MID",
+                "style": "style-text-primary",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

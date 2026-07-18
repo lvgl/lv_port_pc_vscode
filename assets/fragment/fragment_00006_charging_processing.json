@@ -1,0 +1,50 @@
+{
+    "name": "fragment_charging_process",
+    "desc": "充电开始前处理阶段",
+    "type": "flex",
+    "properties": {
+        "style": "style-checkbox"
+    },
+    "children": [
+        {
+            "name": "charging_process_gif",
+            "type": "gif",
+            "properties": {
+                "x_ofs": 318,
+                "y_ofs": 102,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "processing"
+            }
+        },
+        {
+            "name": "charging_process_title",
+            "desc": "",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "x_ofs": 0,
+                "y_ofs": 260,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_label",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "charging_process_subtitle",
+            "desc": "",
+            "type": "label",
+            "properties": {
+                "text": "it may takes few minutes.",
+                "x_ofs": 0,
+                "y_ofs": 296,
+                "width": 400,
+                "height": 40,
+                "align": "LV_ALIGN_TOP_MID",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

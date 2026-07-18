@@ -1,0 +1,20 @@
+{
+    "name": "fragment_pre_authorization_character<",
+    "desc": "删除按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-num_button_pre_authorization"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "←",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-pre_authorization_delete_btn",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "name": "price_reserved",
+    "desc": "预约界面价格信息,包含预约时间和当前时间段价格,以及ocpp价格",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "x": 497,
+        "y": 140,
+        "style": "style-info_card"
+    },
+    "children": [
+        {
+            "name": "price_reserved_title",
+            "desc": "预约剩余时间文本",
+            "type": "label",
+            "properties": {
+                "text": "Left",
+                "x_ofs": 0,
+                "y_ofs": -100,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_reserved_time",
+            "desc": "拔枪剩余时间",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x_ofs": 0,
+                "y_ofs": -60,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-estimated_cost",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_reserved_tip",
+            "desc": "",
+            "type": "label",
+            "properties": {
+                "text": "Plug in first",
+                "x_ofs": 0,
+                "y_ofs": -15,
+                "width": 200,
+                "height": 30,
+                "align": "LV_ALIGN_CENTER",
+                "style": "style-finished~",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "price_reserved_divider",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 203,
+                "height": 1,
+                "x_ofs": 30,
+                "y_ofs": 139,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "price_reserved_current",
+            "type": "fragment",
+            "fragment_name" : "fragment_price_current",
+            "properties": {
+                "x":20,
+                "y":168
+            }
+        },
+        {
+            "name": "ocpp_price",
+            "desc": "ocpp价格",
+            "type": "fragment",
+            "fragment_name": "fragment_ocpp_price",
+            "properties": {
+                "x": 0,
+                "y": 140
+            }
+        }
+    ]
+}

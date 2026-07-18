@@ -1,0 +1,46 @@
+[
+    {
+        "title": "How to use the app",
+        "content": "This app allows you to create and manage your tasks efficiently. You can add, edit, and delete tasks as needed. To get started, click on the 'Add Task' button and fill in the details."
+    },
+    {
+        "title": "Task Management",
+        "content": "The app provides a task management system where you can add, edit, and delete tasks. You can also mark tasks as completed or pending."
+    },
+    {
+        "title": "Task Prioritization",
+        "content": "The app allows you to prioritize tasks based on their importance. You can set the priority level for each task and sort them accordingly."
+    },
+    {
+        "title": "Task Reminders",
+        "content": "The app provides task reminders to help you stay on track. You can set reminders for specific tasks and receive notifications when they are due."
+    },
+    {
+        "title": "User Settings",
+        "content": "You can customize your user settings in the app. This includes changing your password, updating your profile information, and managing notification preferences."
+    },
+    {
+        "title": "Feedback and Support",
+        "content": "If you have any feedback or need support, please reach out to us through the 'Contact Us' section in the app. We value your input and are here to help."
+    },
+    {
+        "title": "Privacy Policy",
+        "content": "We take your privacy seriously. Our app complies with all relevant data protection regulations and ensures the confidentiality of your personal information."
+    },
+    {
+        "title": "Terms of Service",
+        "content": "By using this app, you agree to our terms of service. Please read them carefully to understand your rights and responsibilities."
+    },
+    {
+        "title": "Frequently Asked Questions",
+        "content": "For common questions and answers, please refer to the FAQ section in the app. If you have further questions, feel free to contact us."
+    },
+    {
+        "title": "App Updates",
+        "content": "We regularly update the app to improve performance and add new features. Make sure to keep your app updated to enjoy the latest enhancements."
+    },
+    {
+        "title": "Contact Us",
+        "content": "If you need assistance, please contact our support team through the 'Contact Us' section in the app. We are here to help you with any issues you may encounter."
+    }
+]

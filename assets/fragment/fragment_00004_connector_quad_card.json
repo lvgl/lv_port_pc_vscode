@@ -1,0 +1,153 @@
+{
+    "name": "fragment_connector_card_quad",
+    "desc": "四枪的单个卡片, 有 Idle/Starting/Charging/Suspend/Finished/Reserved/Fault/Unavailable",
+    "type": "button",
+    "properties": {
+        "style": "style-connector-quad-default",
+        "width": 184,
+        "height": 123,
+        "style_checked": "style-connector-quad-checked"
+    },
+    "children": [
+        {
+            "name": "conn_card_id",
+            "desc": "枪号带背景",
+            "type": "fragment",
+            "fragment_name" : "fragment_conn_card_id",
+
+            "properties": {
+                "x": 14,
+                "y": 14
+            }
+        },
+        {
+            "name": "conn_card_state",
+            "desc" : "当前状态, 右对齐, 注意不同语言越界",
+            "type": "label",
+            "properties": {
+                "text": "Idle",
+                "x_ofs": -14,
+                "y_ofs": 19,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-state-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_type",
+            "desc": "充电枪类型, 左对齐, Idle/Suspend/Fault/Starting/Stopping/Error/Fault/Unavailable",
+            "type": "label",
+            "properties": {
+                "text": "CCS2(DC)",
+                "x": 14,
+                "y": 65,
+                "style": "style-connector-quad-default-type-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_power_rated",
+            "desc": "额定功率, 左对齐, Idle/Suspend/Fault/Starting/Stopping/Error/Fault/Unavailable",
+            "type": "label",
+            "properties": {
+                "text": "120.0kW",
+                "x": 14,
+                "y": 89,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_type_icon",
+            "desc" : "充电枪类型图标, Idle/Suspend/Fault/Starting/Stopping/Error/Fault/Unavailable",
+            "type": "image",
+            "properties": {
+                "src": "ccs2-dc",
+                "width": 47,
+                "height": 47,
+                "x_ofs": -14,
+                "y_ofs": -14,
+                "align": "LV_ALIGN_BOTTOM_RIGHT"
+            }
+        },
+        {
+            "name": "conn_card_time_title",
+            "desc": "计时时间提示信息, Reserved为剩余时间,  Finished为占位时间",
+            "type": "label",
+            "properties": {
+                "text": "Idle time",
+                "x": 14,
+                "y": 65,
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_time",
+            "desc": "计时时间值, Reserved为剩余时间,  Finished为占位时间",
+            "type": "label",
+            "properties": {
+                "text": "04:24",
+                "x": 14,
+                "y": 89,
+                "hidden": true,
+                "style": "style-current_time",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_soc_bar",
+            "desc": "充电中SoC进度条",
+            "type": "bar",
+            "properties": {
+                "x_ofs": 14,
+                "y_ofs": 65,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-charging_bar_bg_size",
+                "style_indic": "style-charging_bar_indic"
+            }
+        },
+        {
+            "name": "conn_card_soc",
+            "desc": "充电中SoC值",
+            "type": "label",
+            "properties": {
+                "text": "12%",
+                "x_ofs": 14,
+                "y_ofs": 89,
+                "width": 50,
+                "height": 20,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "hidden": true,
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_power_real",
+            "desc": "充电中实时功率, 右对齐",
+            "type": "label",
+            "properties": {
+                "text": "102.5kW",
+                "x_ofs": -14,
+                "y_ofs": 89,
+                "align": "LV_ALIGN_TOP_RIGHT",
+                "style": "style-connector-quad-default-power-text",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "conn_card_plug_gun_icon",
+            "desc" : "插枪提示的绿色图标",
+            "type": "image",
+            "properties": {
+                "src": "icon_connected",
+                "width": 20,
+                "height": 20,
+                "x": 148,
+                "y": 91
+            }
+        }
+    ]
+}

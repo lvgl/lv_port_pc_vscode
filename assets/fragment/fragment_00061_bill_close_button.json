@@ -1,0 +1,31 @@
+{
+    "name": "fragment_bill_close",
+    "desc": "close按钮",
+    "type": "button",
+    "properties": {
+        "style": "style-continue_button_session_error"
+    },
+    "children": [
+        {
+            "name": "text",
+            "type": "label",
+            "properties": {
+                "text": "Close",
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-continue_label_session_error",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "seconds",
+            "type": "label",
+            "properties": {
+                "text": "",
+                "x_ofs": 40,
+                "align" : "LV_ALIGN_CENTER",
+                "style": "style-continue_label_session_error",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}

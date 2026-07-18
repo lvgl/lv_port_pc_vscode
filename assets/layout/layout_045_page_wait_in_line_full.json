@@ -1,0 +1,23 @@
+{
+    "name": "wait_in_line",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "x": 20,
+        "y": 70,
+        "width": 760,
+        "height": 370,
+        "style":"style-checkbox"
+    },
+    "children": [
+        {
+            "name": "wait_in_line",
+            "type": "fragment",
+            "fragment_name" : "fragment_charging_process",
+            "properties": {
+                "width": 760,
+                "height": 370
+            }
+        }
+    ]
+}

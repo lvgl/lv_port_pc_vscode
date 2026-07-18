@@ -1,0 +1,401 @@
+{
+    "name": "main-light",
+    "version": "0.0.1",
+    "description": "main-light theme",
+    "colors" :[
+        {"name": "primary", "value": "#005350"},
+        {"name": "state_idle_success", "value": "#52C41A"},
+        {"name": "state_charging", "value": "#32D9D1"},
+        {"name": "state_reserve", "value": "#1677ff"},
+        {"name": "state_warn_suspend", "value": "#FAAD14"},
+        {"name": "state_fault", "value": "#FA4D4F"},
+        {"name": "state_unavaliable", "value": "#8C9AA4"},
+        {"name": "text_primary", "value": "#333333"},
+        {"name": "text_secondary", "value": "#999999"},
+        {"name": "split", "value": "#E7E7E7"},
+        {"name": "background_primary", "value": "#FFFFFF"},
+        {"name": "background_secondary", "value": "#F3F3F3"},
+        {"name": "background_prompt", "value": "#000000"},
+        {"name": "error", "value": "#FF4D4F"}
+    ],
+    "fonts": [
+        {"name": "title", "family": "./assets/fonts/calibrib.ttf", "size": 24, "bold": true},
+        {"name": "button", "family": "./assets/fonts/calibrib.ttf", "size": 18, "bold": true},
+        {"name": "primary", "family": "./assets/fonts/calibri.ttf", "size": 18, "bold": false},
+        {"name": "primary12", "family": "./assets/fonts/calibri.ttf", "size": 12, "bold": false},
+        {"name": "primary24", "family": "./assets/fonts/calibri.ttf", "size": 24, "bold": false},
+        {"name": "primary30", "family": "./assets/fonts/calibrib.ttf", "size": 30, "bold": true},
+        {"name": "primary40", "family": "./assets/fonts/calibrib.ttf", "size": 40, "bold": true},
+        {"name": "primary50", "family": "./assets/fonts/calibrib.ttf", "size": 50, "bold": true},
+        {"name": "text_secondary", "family": "./assets/fonts/calibri.ttf", "size": 18, "bold": false},
+        {"name": "num_notice", "family": "./assets/fonts/D-DIN-PRO-600-SemiBold.otf", "size": 28, "bold": true},
+        {"name": "num_primary", "family": "./assets/fonts/D-DIN-PRO-600-SemiBold.otf", "size": 18, "bold": true},
+        {"name": "num_primary_40", "family": "./assets/fonts/D-DIN-PRO-600-SemiBold.otf", "size": 40, "bold": true}
+    ],
+       "images": [
+        {
+            "name": "sever_on",
+            "path": "A:./assets/images/sever_on.png"
+        },
+        {
+            "name": "portugal",
+            "path": "A:./assets/images/Portugal.png"
+        },
+        {
+            "name": "europe_2connect",
+            "path": "A:./assets/images/Europe_2connect.png"
+        },
+        {
+            "name": "bg_data-display_finished",
+            "path": "A:./assets/images/bg_data display_finished.png"
+        },
+        {
+            "name": "ccs2-dc_2connect",
+            "path": "A:./assets/images/CCS2-DC_2connect.png"
+        },
+        {
+            "name": "icon_authorized",
+            "path": "A:./assets/images/icon_Authorized.png"
+        },
+        {
+            "name": "turkey",
+            "path": "A:./assets/images/Turkey.png"
+        },
+        {
+            "name": "france",
+            "path": "A:./assets/images/France.png"
+        },
+        {
+            "name": "icon_error",
+            "path": "A:./assets/images/icon_error.png"
+        },
+        {
+            "name": "italy",
+            "path": "A:./assets/images/Italy.png"
+        },
+        {
+            "name": "j1772_2connect",
+            "path": "A:./assets/images/J1772_2connect.png"
+        },
+        {
+            "name": "battery4",
+            "path": "A:./assets/images/battery4.png"
+        },
+        {
+            "name": "icon_stopping",
+            "path": "A:./assets/images/icon_stopping.png"
+        },
+        {
+            "name": "poland",
+            "path": "A:./assets/images/Poland.png"
+        },
+        {
+            "name": "wifi_err",
+            "path": "A:./assets/images/wifi_err.png"
+        },
+        {
+            "name": "icon_inmation",
+            "path": "A:./assets/images/icon_inmation.png"
+        },
+        {
+            "name": "logo_plug&charge_2",
+            "path": "A:./assets/images/LOGO_plug&charge_2.png"
+        },
+        {
+            "name": "english",
+            "path": "A:./assets/images/English.png"
+        },
+        {
+            "name": "rf_err",
+            "path": "A:./assets/images/rf_err.png"
+        },
+        {
+            "name": "sever_off",
+            "path": "A:./assets/images/sever_off.png"
+        },
+        {
+            "name": "rf_on",
+            "path": "A:./assets/images/rf_on.png"
+        },
+        {
+            "name": "btn_virtual-keyboard_delete",
+            "path": "A:./assets/images/btn_Virtual keyboard_delete.png"
+        },
+        {
+            "name": "gb-ac_2connect",
+            "path": "A:./assets/images/GB-AC_2connect.png"
+        },
+        {
+            "name": "icon_telephone",
+            "path": "A:./assets/images/icon_Telephone.png"
+        },
+        {
+            "name": "gb-t-ac_1connect",
+            "path": "A:./assets/images/GB-T-AC_1connect.png"
+        },
+        {
+            "name": "ccs2-dc",
+            "path": "A:./assets/images/CCS2-DC.png"
+        },
+        {
+            "name": "germany",
+            "path": "A:./assets/images/Germany.png"
+        },
+        {
+            "name": "icon_right-connector",
+            "path": "A:./assets/images/icon_right connector.png"
+        },
+        {
+            "name": "icon_url",
+            "path": "A:./assets/images/icon_URL.png"
+        },
+        {
+            "name": "gb-dc_1connect",
+            "path": "A:./assets/images/GB-DC_1connect.png"
+        },
+        {
+            "name": "hong-kong",
+            "path": "A:./assets/images/Hong Kong.png"
+        },
+        {
+            "name": "chademo",
+            "path": "A:./assets/images/CHADEMO.png"
+        },
+        {
+            "name": "thailand",
+            "path": "A:./assets/images/Thailand.png"
+        },
+        {
+            "name": "logo",
+            "path": "A:./assets/images/LOGO.png"
+        },
+        {
+            "name": "romania",
+            "path": "A:./assets/images/Romania.png"
+        },
+        {
+            "name": "bg_data-display_charging",
+            "path": "A:./assets/images/bg_data display_Charging.png"
+        },
+        {
+            "name": "parking-diagram",
+            "path": "A:./assets/images/Parking diagram.png"
+        },
+        {
+            "name": "meter_off",
+            "path": "A:./assets/images/meter_off.png"
+        },
+        {
+            "name": "car2",
+            "path": "A:./assets/images/car2.png"
+        },
+        {
+            "name": "europe",
+            "path": "A:./assets/images/Europe.png"
+        },
+        {
+            "name": "battery1",
+            "path": "A:./assets/images/battery1.png"
+        },
+        {
+            "name": "lang_china",
+            "path": "A:./assets/images/lang_China.png"
+        },
+        {
+            "name": "4g_err",
+            "path": "A:./assets/images/4g_err.png"
+        },
+        {
+            "name": "chademo_2connect",
+            "path": "A:./assets/images/CHADEMO_2connect.png"
+        },
+        {
+            "name": "icon_current-time",
+            "path": "A:./assets/images/icon_Current time.png"
+        },
+        {
+            "name": "icon_charging-station",
+            "path": "A:./assets/images/icon_Charging station.png"
+        },
+        {
+            "name": "car",
+            "path": "A:./assets/images/car.png"
+        },
+        {
+            "name": "icon_loading",
+            "path": "A:./assets/images/icon_Loading.png"
+        },
+        {
+            "name": "gb-t-ac",
+            "path": "A:./assets/images/GB-T-AC.png"
+        },
+        {
+            "name": "battery2",
+            "path": "A:./assets/images/battery2.png"
+        },
+        {
+            "name": "gb-t-ac_2connect",
+            "path": "A:./assets/images/GB-T-AC_2connect.png"
+        },
+        {
+            "name": "rf_off",
+            "path": "A:./assets/images/rf_off.png"
+        },
+        {
+            "name": "icon_left-connector",
+            "path": "A:./assets/images/icon_left connector.png"
+        },
+        {
+            "name": "wifi_off",
+            "path": "A:./assets/images/wifi_off.png"
+        },
+        {
+            "name": "wifi_on",
+            "path": "A:./assets/images/wifi_on.png"
+        },
+        {
+            "name": "pic_pos",
+            "path": "A:./assets/images/pic_pos.png"
+        },
+        {
+            "name": "j1772",
+            "path": "A:./assets/images/J1772.png"
+        },
+        {
+            "name": "net_err",
+            "path": "A:./assets/images/net_err.png"
+        },
+        {
+            "name": "gb-ac_1connect",
+            "path": "A:./assets/images/GB-AC_1connect.png"
+        },
+        {
+            "name": "hint-map",
+            "path": "A:./assets/images/hint map.png"
+        },
+        {
+            "name": "j1772_1connect",
+            "path": "A:./assets/images/J1772_1connect.png"
+        },
+        {
+            "name": "gb-ac",
+            "path": "A:./assets/images/GB-AC.png"
+        },
+        {
+            "name": "icon_connected",
+            "path": "A:./assets/images/icon_Connected.png"
+        },
+        {
+            "name": "meter_err",
+            "path": "A:./assets/images/meter_err.png"
+        },
+        {
+            "name": "meter_on",
+            "path": "A:./assets/images/meter_on.png"
+        },
+        {
+            "name": "ccs2-dc_1connect",
+            "path": "A:./assets/images/CCS2-DC_1connect.png"
+        },
+        {
+            "name": "4g_on",
+            "path": "A:./assets/images/4g_on.png"
+        },
+        {
+            "name": "battery3",
+            "path": "A:./assets/images/battery3.png"
+        },
+        {
+            "name": "net_off",
+            "path": "A:./assets/images/net_off.png"
+        },
+        {
+            "name": "icon_warning_1",
+            "path": "A:./assets/images/icon_warning_1.png"
+        },
+        {
+            "name": "sever_err",
+            "path": "A:./assets/images/sever_err.png"
+        },
+        {
+            "name": "netherlands",
+            "path": "A:./assets/images/Netherlands.png"
+        },
+        {
+            "name": "lang_arab",
+            "path": "A:./assets/images/lang_Arab.png"
+        },
+        {
+            "name": "finland",
+            "path": "A:./assets/images/Finland.png"
+        },
+        {
+            "name": "icon_next-period",
+            "path": "A:./assets/images/icon_Next period.png"
+        },
+        {
+            "name": "gb-dc_2connect",
+            "path": "A:./assets/images/GB-DC_2connect.png"
+        },
+        {
+            "name": "chademo_1connect",
+            "path": "A:./assets/images/CHADEMO_1connect.png"
+        },
+        {
+            "name": "net_on",
+            "path": "A:./assets/images/net_on.png"
+        },
+        {
+            "name": "icon_contact",
+            "path": "A:./assets/images/icon_contact.png"
+        },
+        {
+            "name": "lang_albania",
+            "path": "A:./assets/images/lang_Albania.png"
+        },
+        {
+            "name": "spain",
+            "path": "A:./assets/images/Spain.png"
+        },
+        {
+            "name": "icon_charging-pile",
+            "path": "A:./assets/images/icon_Charging pile.png"
+        },
+        {
+            "name": "russia",
+            "path": "A:./assets/images/Russia.png"
+        },
+        {
+            "name": "czech-republic",
+            "path": "A:./assets/images/Czech Republic.png"
+        },
+        {
+            "name": "europe_1connect",
+            "path": "A:./assets/images/Europe_1connect.png"
+        },
+        {
+            "name": "car1",
+            "path": "A:./assets/images/car1.png"
+        },
+        {
+            "name": "icon_warning_2",
+            "path": "A:./assets/images/icon_warning_2.png"
+        },
+        {
+            "name": "gb-dc",
+            "path": "A:./assets/images/GB-DC.png"
+        },
+        {
+            "name": "4g_off",
+            "path": "A:./assets/images/4g_off.png"
+        },
+        {
+            "name": "charging",
+            "path": "A:./assets/images/charging.gif"
+        },
+        {
+            "name": "processing",
+            "path": "A:./assets/images/processing.gif"
+        }
+    ]
+}

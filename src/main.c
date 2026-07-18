@@ -26,6 +26,8 @@
 
 #include "hal/hal.h"
 
+#include "../ioc/ioc_app.h"
+
 /*********************
  *      DEFINES
  *********************/
@@ -61,7 +63,9 @@ int main(int argc, char **argv)
   lv_init();
 
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
-  sdl_hal_init(320, 480);
+  sdl_hal_init(800, 600);
+
+  ioc_app_main();
 
   /* Run the default demo */
   /* To try a different demo or example, replace this with one of: */
@@ -69,7 +73,7 @@ int main(int argc, char **argv)
   /* - lv_demo_stress(); */
   /* - lv_example_label_1(); */
   /* - etc. */
-  lv_demo_widgets();
+  // lv_demo_widgets();
 
   while(1) {
     /* Periodically call the lv_task handler.
@@ -82,6 +86,7 @@ int main(int argc, char **argv)
     Sleep(sleep_time_ms);
 #else
     usleep(sleep_time_ms * 1000);
+    ioc_app_step();
 #endif
   }
 
@@ -94,4 +99,3 @@ int main(int argc, char **argv)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
-

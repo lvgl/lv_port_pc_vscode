@@ -1,0 +1,65 @@
+{
+    "name": "detailed_data",
+    "desc": "detailed_data弹窗",
+    "type": "flex",
+    "properties": {
+        "width": 660,
+        "height": 520,
+        "x": 70,
+        "y": 40,
+        "style": "style-help1-background"
+    },
+    "children": [
+        {
+            "name": "detailed_data",
+            "desc": "详细数据",
+            "type": "label",
+            "properties": {
+                "text": "Detailed data",
+                "x_ofs": 40,
+                "y_ofs": 30,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_label"
+            }
+        },
+        {
+            "name": "split_line_detailed_data",
+            "desc": "分割线",
+            "type": "flex",
+            "properties": {
+                "width": 580,
+                "height": 1,
+                "x": 40,
+                "y": 64,
+                "style": "style-split"
+            }
+        },
+        {
+            "name": "card_left",
+            "type": "fragment",
+            "fragment_name" : "fragment_card_left_detailed_data",
+            "properties": {
+                "x": 40,
+                "y": 74
+            }
+        },
+        {
+            "name": "card_right",
+            "type": "fragment",
+            "fragment_name" : "fragment_card_right_detailed_data",
+            "properties": {
+                "x": 341,
+                "y": 74
+            }
+        },
+        {
+            "name": "close_button",
+            "type": "fragment",
+            "fragment_name" : "fragment_detailed_data_close",
+            "properties": {
+                "x": 230,
+                "y": 450
+            }
+        }
+    ]
+}

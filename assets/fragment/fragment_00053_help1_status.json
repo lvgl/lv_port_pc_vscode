@@ -1,0 +1,104 @@
+{
+    "name": "fragment_popup_help1_status",
+    "desc": "中间部分",
+    "type": "flex",
+    "properties": {
+        "width": 190,
+        "height": 290,
+        "style":"style-help1_status_bar"
+    },
+    "children": [
+            {
+                "name": "info_RF_img",
+                "desc": "RF状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 49,
+                    "y_ofs": 41,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "rf_err"
+                }
+            },
+            {
+                "name": "info_4G_img",
+                "desc": "4G状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 109,
+                    "y_ofs": 41,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "4g_off"
+                }
+            },
+            {
+                "name": "info_sever_img",
+                "desc": "sever状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 49,
+                    "y_ofs": 96,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "sever_err"
+                }
+            },
+            {
+                "name": "info_net_img",
+                "desc": "net状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 109,
+                    "y_ofs": 96,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "net_off"
+                }
+            },
+            {
+                "name": "info_wifi_img",
+                "desc": "wifi状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 49,
+                    "y_ofs": 151,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "wifi_off"
+                }
+            },
+            {
+                "name": "info_meter_img",
+                "desc": "meter状态图片",
+                "type": "image",
+                "properties": {
+                    "x_ofs": 109,
+                    "y_ofs": 151,
+                    "width": 35,
+                    "height": 35,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "src": "meter_err"
+                }
+            },
+            {
+                "name": "IP_lable",
+                "desc": "ip文本",
+                "type": "label",
+                "properties": {
+                    "text": "IP:",
+                    "width": 190,
+                    "x_ofs": 0,
+                    "y_ofs": 212,
+                    "align": "LV_ALIGN_TOP_LEFT",
+                    "style": "style-finished~",
+                    "text_align": "LV_ALIGN_CENTER"
+                }
+            }
+        ]
+}

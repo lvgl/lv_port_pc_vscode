@@ -1,0 +1,141 @@
+{
+    "name": "fragment_start_error_info_card",
+    "desc": "中间卡片部分",
+    "type": "flex",
+    "properties": {
+        "width": 263,
+        "height": 280,
+        "style":"style-info_card"
+    },
+    "children": [
+        {
+            "name": "qr_code_start_error",
+            "type": "qr",
+            "properties": {
+                "x_ofs": 85,
+                "y_ofs": 20,
+                "size": 94,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "qr_code_data":"https://www.iocharger.com/"
+            }
+        },
+        {
+            "name": "qr_code_prompt_start_error",
+            "desc": "二维码提示文本",
+            "type": "label",
+            "properties": {
+                "text": "Download Ioc APP for a faster experience.",
+                "width": 227,
+                "x_ofs": 18,
+                "y_ofs": 127,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "charger_station_img_start_error",
+            "desc": "充电桩状态图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 174,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_charging-station"
+            }
+        },
+        {
+            "name": "charger_station_label_start_error",
+            "desc": "充电桩状态文本",
+            "type": "label",
+            "properties": {
+                "text": "Charger id:",
+                "x_ofs": 65,
+                "y_ofs": 175,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "contact_img_start_error",
+            "desc": "联系图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 198,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_contact"
+            }
+        },
+        {
+            "name": "contact_label_start_error",
+            "desc": "联系文本",
+            "type": "label",
+            "properties": {
+                "text": "0878-1058-4499",
+                "x_ofs": 65,
+                "y_ofs": 199,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "telephone_img_start_error",
+            "desc": "移动电话图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 222,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_telephone"
+            }
+        },
+        {
+            "name": "telephone_label_start_error",
+            "desc": "移动电话文本",
+            "type": "label",
+            "properties": {
+                "text": "(021)5088-6428",
+                "x_ofs": 65,
+                "y_ofs": 223,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        },
+        {
+            "name": "url_img_start_error",
+            "desc": "网址图片",
+            "type": "image",
+            "properties": {
+                "x_ofs": 30,
+                "y_ofs": 246,
+                "width": 24,
+                "height": 24,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "src": "icon_url"
+            }
+        },
+        {
+            "name": "url_label_start_error",
+            "desc": "网址文本",
+            "type": "label",
+            "properties": {
+                "text": "Ioc.id",
+                "x_ofs": 65,
+                "y_ofs": 247,
+                "align": "LV_ALIGN_TOP_LEFT",
+                "style": "style-plug_prompt",
+                "text_align": "LV_TEXT_ALIGN_CENTER"
+            }
+        }
+    ]
+}
