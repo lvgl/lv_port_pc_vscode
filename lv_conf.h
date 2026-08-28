@@ -100,7 +100,11 @@
  *  - LV_OS_SDL2
  *  - LV_OS_CUSTOM
  */
-#define LV_USE_OS LV_OS_NONE
+#ifdef INC_FREERTOS_H
+    #define LV_USE_OS   LV_OS_FREERTOS
+#else
+    #define LV_USE_OS   LV_OS_NONE
+#endif
 
 #if LV_USE_OS == LV_OS_CUSTOM
 /** Custom OS include header */
@@ -139,30 +143,7 @@
 #define LV_COLOR_MIX_ROUND_OFS 0
 
 /** Default display refresh, input device read and animation step period. */
-#define LV_DEF_REFR_PERIOD  33      /**< [ms] */
-
-/** Default Dots Per Inch. Used to initialize default sizes such as widgets sized, style paddings.
- * (Not so important, you can adjust it to modify default sizes and spaces.) */
-#define LV_DPI_DEF 130              /**< [px/inch] */
-
-/*=================
- * OPERATING SYSTEM
- *=================*/
-/** Select operating system to use. Possible options:
- * - LV_OS_NONE
- * - LV_OS_PTHREAD
- * - LV_OS_FREERTOS
- * - LV_OS_CMSIS_RTOS2
- * - LV_OS_RTTHREAD
- * - LV_OS_WINDOWS
- * - LV_OS_MQX
- * - LV_OS_SDL2
- * - LV_OS_CUSTOM */
-#ifdef INC_FREERTOS_H
-    #define LV_USE_OS   LV_OS_FREERTOS
-#else
-    #define LV_USE_OS   LV_OS_NONE
-#endif
+#define LV_DEF_REFR_PERIOD  33
 
 /** Used to initialize default sizes such as widget sizes and style paddings. */
 #define LV_DPI_DEF 130
