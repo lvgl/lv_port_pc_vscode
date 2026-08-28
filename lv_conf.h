@@ -143,7 +143,7 @@
 #define LV_COLOR_MIX_ROUND_OFS 0
 
 /** Default display refresh, input device read and animation step period. */
-#define LV_DEF_REFR_PERIOD  33
+#define LV_DEF_REFR_PERIOD 33
 
 /** Used to initialize default sizes such as widget sizes and style paddings. */
 #define LV_DPI_DEF 130
@@ -1739,9 +1739,6 @@
 /** Exit when all windows are closed */
 #define LV_SDL_DIRECT_EXIT 1
 
-/** Enable ThorVG (vector graphics library) from the src/libs folder.
- *  Requires LV_USE_VECTOR_GRAPHIC */
-#define LV_USE_THORVG_INTERNAL 1
 /** SDL mousewheel mode
  *  Possible values:
  *  - LV_SDL_MOUSEWHEEL_MODE_ENCODER: Encoder input device
