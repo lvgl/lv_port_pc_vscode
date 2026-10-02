@@ -1,8 +1,31 @@
 cmake_minimum_required(VERSION 3.12.4)
 project(lvgl C CXX)
 
-# Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
-set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+if(DEFINED ENV{VSCODE_CWD} OR DEFINED ENV{VSCODE_PID})
+    message(STATUS "Detected VS Code environment")
+    set(IS_VSCODE TRUE)
+
+    set(CMAKE_COLOR_MAKEFILE OFF)
+
+    set(CMAKE_COLOR_DIAGNOSTICS OFF)
+endif()
+
+if(WIN32)
+    if("$ENV{MSYSTEM}" STREQUAL "UCRT64")
+        message(STATUS "Detected Environment: UCRT64")
+    elseif("$ENV{MSYSTEM}" STREQUAL "MINGW64")
+        message(STATUS "Detected Environment: MinGW64 (MSVCRT)")
+    elseif("$ENV{MSYSTEM}" STREQUAL "MINGW32")
+        message(STATUS "Detected Environment: MinGW32")
+    else()
+        message(STATUS "Windows, but not an MSYS2 environment (likely MSVC or vanilla MinGW)")
+    endif()
+
+    set(FREERTOS_PORT MSVC_MINGW)
+else()
+    # Set the correct FreeRTOS port for your system (e.g., Posix for WSL)
+    set(FREERTOS_PORT GCC_POSIX CACHE STRING "Port for FreeRTOS on Posix environment")
+endif()
 
 set(LVGL_PRO_PROJECT_DIR
     ""
@@ -23,14 +46,20 @@ if(USE_FREERTOS)
 
     # FreeRTOS-specific include directories
     include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/include)
-    include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+    if(WIN32)
+        include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MSVC-MingW)
+        set(FREERTOS_PORT_PATH "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MSVC-MingW/*.c")
+    else()
+        include_directories(${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix)
+        set(FREERTOS_PORT_PATH "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c")
+    endif()
     include_directories(${PROJECT_SOURCE_DIR}/config)
 
     # Add FreeRTOS sources
     file(GLOB FREERTOS_SOURCES
         "${PROJECT_SOURCE_DIR}/FreeRTOS/*.c"
         "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_4.c"
-        "${PROJECT_SOURCE_DIR}/FreeRTOS/portable/ThirdParty/GCC/Posix/*.c"
+        ${FREERTOS_PORT_PATH}
     )
 else()
     message(STATUS "FreeRTOS is disabled")
@@ -70,7 +99,7 @@ add_subdirectory(lvgl)
 target_include_directories(lvgl PUBLIC ${PROJECT_SOURCE_DIR} ${SDL2_INCLUDE_DIRS})
 
 set(MAIN_SOURCES src/mouse_cursor_icon.c src/hal/hal.c)
-set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg ${SDL2_LIBRARIES})
+set(MAIN_LIBS lvgl lvgl::examples lvgl::demos lvgl::thorvg SDL2::SDL2)
 
 # Create the main executable, depending on the FreeRTOS option
 if(USE_FREERTOS)

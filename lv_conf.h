@@ -100,7 +100,11 @@
  *  - LV_OS_SDL2
  *  - LV_OS_CUSTOM
  */
-#define LV_USE_OS LV_OS_NONE
+#ifdef INC_FREERTOS_H
+    #define LV_USE_OS   LV_OS_FREERTOS
+#else
+    #define LV_USE_OS   LV_OS_NONE
+#endif
 
 #if LV_USE_OS == LV_OS_CUSTOM
 /** Custom OS include header */
