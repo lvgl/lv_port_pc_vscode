@@ -144,6 +144,8 @@ endif()
 add_executable(main ${MAIN_SOURCES})
 target_compile_definitions(main PRIVATE LV_CONF_INCLUDE_SIMPLE)
 target_link_libraries(main ${MAIN_LIBS})
+target_sources(main PRIVATE ${CMAKE_SOURCE_DIR}/../ui/ui.c)
+target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/../ui)
 
 # On Windows, GUI applications do not show a console by default,
 # which hides log output. This ensures a console is available for logging.

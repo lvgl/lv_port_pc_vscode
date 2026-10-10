@@ -1,3 +1,5 @@
+// Initialise LVGL puis appelle ui_init()
+
 /**
  * @file main.c
  *
@@ -25,6 +27,8 @@
 #include <SDL.h>
 
 #include "hal/hal.h"
+
+#include "ui.h"
 
 /*********************
  *      DEFINES
@@ -61,7 +65,9 @@ int main(int argc, char **argv)
   lv_init();
 
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
-  sdl_hal_init(320, 480);
+  /*Il faut une fenêtre de 800x480 pour être compatible avec la Waveshare ESP32-S3-Touch-LCD-7*/
+  lv_display_t *disp = sdl_hal_init(LARGEUR_CARTE, HAUTEUR_CARTE);
+  lv_sdl_window_set_resizeable(disp, false);
 
   /* Run the default demo */
   /* To try a different demo or example, replace this with one of: */
@@ -69,7 +75,24 @@ int main(int argc, char **argv)
   /* - lv_demo_stress(); */
   /* - lv_example_label_1(); */
   /* - etc. */
-  lv_demo_widgets();
+  // lv_demo_widgets();
+
+  /**
+
+#if LV_BUILD_EXAMPLES
+
+/**
+ * @title Hello world label
+ * @brief Paint the screen background and center a label on it.
+ *
+ * The view sets its own `style_bg_color` to a dark teal and `style_text_color`
+ * to white. The label sets no color of its own — it inherits white from the
+ * view — and `align="center"` places it in the middle of the display.
+ */
+
+    ui_init();
+
+
 
   while(1) {
     /* Periodically call the lv_task handler.
