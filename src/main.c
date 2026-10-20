@@ -3,6 +3,8 @@
  *
  */
 
+#if LV_USE_OS != LV_OS_FREERTOS
+
 /*********************
  *      INCLUDES
  *********************/
@@ -50,8 +52,6 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-#if LV_USE_OS != LV_OS_FREERTOS
-
 int main(int argc, char **argv)
 {
   (void)argc; /*Unused*/
@@ -94,4 +94,3 @@ int main(int argc, char **argv)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
-

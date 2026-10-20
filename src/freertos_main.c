@@ -6,15 +6,18 @@
  * @license MIT License
  */
 
-#include "lvgl/lvgl.h"
+#if LV_USE_OS == LV_OS_FREERTOS
 
 #include "FreeRTOS.h"
 #include "task.h"
 
-#if LV_USE_OS == LV_OS_FREERTOS
+#include <stdio.h>
+
+#include "lvgl/lvgl.h"
+#include "lvgl/examples/lv_examples.h"
+#include "lvgl/demos/lv_demos.h"
 
 #include "hal/hal.h"
-#include <stdio.h>
 
 // ........................................................................................................
 /**
