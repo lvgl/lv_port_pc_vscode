@@ -663,6 +663,26 @@
 
 #endif /*LV_USE_DRAW_OPENGLES*/
 
+/** Accelerate rendering with the GD32 IPA peripheral. */
+#define LV_USE_DRAW_IPA 0
+
+#if LV_USE_DRAW_IPA
+/** Header that provides the IPA peripheral definitions for the target
+ *  GD32 family. Use gd32h7xx.h for GD32H7 devices, or the corresponding
+ *  device header for another supported GD32 family.
+ */
+#define LV_DRAW_IPA_HAL_INCLUDE "gd32h7xx.h"
+
+#if LV_USE_OS == LV_OS_FREERTOS
+/** Use FreeRTOS synchronization for IPA transfers.
+ *  Call lv_draw_ipa_transfer_complete_interrupt_handler()
+ *  from the IPA interrupt handler.
+ */
+#define LV_USE_DRAW_IPA_INTERRUPT 0
+
+#endif /*LV_USE_OS == LV_OS_FREERTOS*/
+#endif /*LV_USE_DRAW_IPA*/
+
 /** Render with the SDL renderer API, caching widgets and images as SDL textures.
  *
  *  Enable: LV_USE_DRAW_SW
@@ -1453,9 +1473,6 @@
 /** Line */
 #define LV_USE_LINE 1
 
-/** List */
-#define LV_USE_LIST 1
-
 #if LV_USE_THORVG
 /** Plays Lottie JSON animations using the ThorVG Lottie parser.
  *
@@ -1464,9 +1481,6 @@
 #define LV_USE_LOTTIE 1
 
 #endif /*LV_USE_THORVG*/
-
-/** Menu */
-#define LV_USE_MENU 1
 
 /** Message box
  *
@@ -1479,9 +1493,6 @@
  *  Enable: LV_USE_CANVAS
  */
 #define LV_USE_QRCODE 1
-
-/** Legacy rlottie binding, kept for compatibility. Use LV_USE_LOTTIE instead. */
-#define LV_USE_RLOTTIE 0
 
 /** Roller
  *
@@ -1537,9 +1548,6 @@
 /** Tileview */
 #define LV_USE_TILEVIEW 1
 
-/** Window */
-#define LV_USE_WIN 1
-
 
 
 /*============================================================================
@@ -1550,12 +1558,6 @@
 #define LV_USE_LINUX_DRM 0
 
 #if LV_USE_LINUX_DRM
-/** Legacy behavior, slated for removal: the backend is inferred from
- *  LV_USE_OPENGLES (EGL when it is enabled). Disable this and pick a backend
- *  explicitly in the "Rendering backend" choice.
- */
-#define LV_LINUX_DRM_AUTO_BACKEND 1
-
 /** Select how the Linux DRM driver presents rendered frames.
  *  Possible values:
  *  - LV_LINUX_DRM_BACKEND_FBDEV: Dumb buffers (no GPU)
@@ -1806,12 +1808,6 @@
 #if LV_USE_SDL
 /** SDL include path */
 #define LV_SDL_INCLUDE_PATH "SDL2/SDL.h"
-
-/** Legacy behavior, slated for removal: EGL is inferred the legacy way
- *  (LV_USE_OPENGLES with an OpenGL draw unit). Disable this and pick a backend
- *  explicitly in the "Rendering backend" choice.
- */
-#define LV_SDL_AUTO_BACKEND 1
 
 /** Select how the SDL driver presents rendered frames.
  *  Possible values:
@@ -2288,31 +2284,6 @@
 
 
 /*============================================================================
- * OTHERS
- *============================================================================*/
-
-/** Manage a widget subtree with its own lifecycle and back stack, similar to Android fragments. */
-#define LV_USE_FRAGMENT 0
-
-/** File explorer
- *
- *  Enable: LV_USE_TABLE
- */
-#define LV_USE_FILE_EXPLORER 0
-
-#if LV_USE_FILE_EXPLORER
-/** Maximum path length (bytes) */
-#define LV_FILE_EXPLORER_PATH_MAX_LEN 128
-
-/** Add a sidebar with shortcuts to common places. It can be hidden by clicking the
- *  button at the top left corner of the browsing area, which is useful on small screens.
- */
-#define LV_FILE_EXPLORER_QUICK_ACCESS 1
-
-#endif /*LV_USE_FILE_EXPLORER*/
-
-
-/*============================================================================
  * BUILD
  *============================================================================*/
 
@@ -2370,29 +2341,13 @@
 /** LV_ASSERT_NULL */
 #define LV_USE_ASSERT_NULL 0
 
-/** LV_ASSERT_STYLE */
+/** Add a sentinel field to lv_style_t so a corrupted or uninitialized
+ *  style can be detected. LV_STYLE_SENTINEL_OK() reads it.
+ */
 #define LV_USE_ASSERT_STYLE 1
 
 /** LV_ASSERT_MEM_INTEGRITY */
 #define LV_USE_ASSERT_MEM_INTEGRITY 1
-
-/** LV_ASSERT_OBJ */
-#define LV_USE_ASSERT_OBJ 1
-
-/** Disable warning saying `LV_ASSERT_HANDLER_INCLUDE` is deprecated.
- *  This setting allows you to keep using old LVGL versions which rely on
- *  LV_ASSERT_HANDLER_INCLUDE without triggering a compiler warning.
- *
- *  LV_ASSERT_HANDLER_INCLUDE has been deprecated in favor of the new approach:
- *  define LV_ASSERT_CUSTOM_INCLUDE with the header path, and place the
- *  LV_ASSERT_HANDLER macro definition inside that header instead.
- *
- *  Only enable this if you are maintaining compatibility with existing code
- *  that uses LV_ASSERT_HANDLER_INCLUDE and cannot migrate immediately.
- *  New projects should use LV_ASSERT_CUSTOM_INCLUDE and LV_ASSERT_HANDLER
- *  directly.
- */
-#define LV_DISABLE_ASSERT_HANDLER_INCLUDE_WARNING 0
 
 /** Include the header given by LV_ASSERT_CUSTOM_INCLUDE, which must define
  *  a custom LV_ASSERT_HANDLER.
