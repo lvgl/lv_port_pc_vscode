@@ -54,7 +54,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set the output path for the executable
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
 # Find and include SDL2 library
 find_package(SDL2 REQUIRED)
@@ -86,7 +85,12 @@ if(NOT MSVC)
 endif()
 
 # Custom target to run the executable
-add_custom_target(run COMMAND ${EXECUTABLE_OUTPUT_PATH}/main DEPENDS main)
+add_custom_target(run
+    COMMAND $<TARGET_FILE:main>
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    DEPENDS main
+    VERBATIM
+)
 
 # Conditionally include and link SDL2_image if LV_USE_DRAW_SDL is enabled
 if(LV_USE_DRAW_SDL)
