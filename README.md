@@ -27,6 +27,51 @@ git clone --recursive https://github.com/lvgl/lv_port_pc_vscode
 
 ## Usage
 
+### Windows with MSYS2 UCRT64
+
+Use the [MSYS2 UCRT64](https://www.msys2.org/docs/environments/) terminal to install a matching compiler, debugger,
+build tools and SDL2 library:
+
+```bash
+pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-ninja mingw-w64-ucrt-x86_64-SDL2
+```
+
+Before building, check the vector-renderer settings in `lv_conf.h`. If
+`LV_USE_VECTOR_GRAPHIC` is `1` but `LV_USE_THORVG` is `0`, set
+`LV_USE_THORVG` to `1` in `lv_conf.h` and add `LV_USE_THORVG 1` to
+`lv_conf.defaults`. The software vector renderer requires this backend;
+updating both files preserves the setting when the header is regenerated.
+This prerequisite is tracked in [#115](https://github.com/lvgl/lv_port_pc_vscode/pull/115).
+
+From the project root in the UCRT64 terminal, configure and build the simulator:
+
+```bash
+cmake -S . -B build-ucrt64 -G Ninja -DCMAKE_BUILD_TYPE=Debug -DASAN=OFF
+cmake --build build-ucrt64
+./bin/main.exe
+```
+
+Keeping the compiler and SDL2 in the same MSYS2 environment lets CMake find
+the matching SDL2 package. A vcpkg installation uses its own [CMake toolchain](https://learn.microsoft.com/en-us/vcpkg/users/buildsystems/cmake-integration)
+and target triplet; installing SDL2 with vcpkg alone does not make it
+available to an unrelated MinGW toolchain.
+
+For VS Code debugging, edit the `Debug LVGL demo with gdb` launch
+configuration in `simulator.code-workspace`: set `program` to
+`"${workspaceFolder}/bin/main.exe"` and `windows.miDebuggerPath` to the
+UCRT64 debugger. With the default MSYS2 installation directory, the
+debugger's JSON value is `"C:\\msys64\\ucrt64\\bin\\gdb.exe"`.
+Open VS Code from the UCRT64 terminal so it inherits the tool and DLL paths:
+
+```bash
+code simulator.code-workspace
+```
+
+Select the UCRT64 GCC kit in CMake Tools. In the workspace settings, set
+`cmake.generator` to `Ninja` and `cmake.buildDirectory` to
+`${workspaceFolder}/build-ucrt64` to reuse the command-line build directory.
+Use a separate build directory when switching compilers or generators.
+
 ### Visual Studio Code
 
 1. Be sure you have installed [SDL and the build tools](#install-sdl-and-the-build-tools)
