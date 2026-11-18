@@ -16,6 +16,19 @@
 #ifndef LV_CONF_H
 #define LV_CONF_H
 
+/* This is a PC simulator; ESP_PLATFORM is never defined. LVGL's lv_freertos.c
+ * references ESP_IDF_VERSION_VAL() in an #if expression that the preprocessor
+ * still macro-expands even when ESP_PLATFORM is undefined, causing a build
+ * error. Provide a fallback so non-ESP builds work.
+ */
+#if defined(__APPLE__)
+    #ifndef ESP_PLATFORM
+        #ifndef ESP_IDF_VERSION_VAL
+            #define ESP_IDF_VERSION_VAL(a, b, c) 0
+        #endif
+    #endif
+#endif
+
 /* If you need to include anything here, do it inside the `__ASSEMBLY__` guard */
 #if 0 && defined(__ASSEMBLY__)
 #include "my_include.h"
@@ -218,7 +231,7 @@
 
 #if LV_USE_THORVG
 /** Build the ThorVG copy shipped with LVGL instead of linking an external one. */
-#define LV_USE_THORVG_INTERNAL 1 
+#define LV_USE_THORVG_INTERNAL 1
 
 #endif /*LV_USE_THORVG*/
 

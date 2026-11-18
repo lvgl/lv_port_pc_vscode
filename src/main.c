@@ -75,8 +75,8 @@ int main(int argc, char **argv)
     /* Periodically call the lv_task handler.
      * It could be done in a timer interrupt or an OS task too.*/
     uint32_t sleep_time_ms = lv_timer_handler();
-    if(sleep_time_ms == LV_NO_TIMER_READY){
-	sleep_time_ms =  LV_DEF_REFR_PERIOD;
+    if(sleep_time_ms == LV_NO_TIMER_READY) {
+	    sleep_time_ms = LV_DEF_REFR_PERIOD;
     }
 #ifdef _MSC_VER
     Sleep(sleep_time_ms);
@@ -94,4 +94,3 @@ int main(int argc, char **argv)
 /**********************
  *   STATIC FUNCTIONS
  **********************/
-

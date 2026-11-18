@@ -111,6 +111,118 @@ void create_hello_world_screen()
 }
 
 // ........................................................................................................
+#if defined(__APPLE__)
+
+/* macOS/iOS: SDL's video init + event polling MUST run on the main thread
+ * (Cocoa constraint). The FreeRTOS POSIX port normally occupies the main
+ * thread as the scheduler, so we invert that: put the scheduler on a
+ * background pthread and keep the main thread for SDL/LVGL.
+ */
+#include <pthread.h>
+#include <unistd.h>
+
+/* =========================================================================
+ * macOS path
+ *
+ * Main thread  -> lv_init + sdl_hal_init + lv_timer_handler loop
+ * Bg pthread   -> vTaskStartScheduler
+ * FreeRTOS     -> another_task (proves scheduler runs)
+ * ========================================================================= */
+
+/**
+ * @brief   Entry point for the background scheduler pthread.
+ *
+ * Keeps the main thread free for SDL/Cocoa.
+ */
+static void *scheduler_thread(void *pvParameters)
+{
+    (void)pvParameters;
+    vTaskStartScheduler();
+    return NULL;
+}
+
+/**
+ * @brief   LVGL task placeholder (unused on macOS)
+ *
+ * On macOS the LVGL rendering loop runs on the main thread directly from
+ * main() to satisfy the Cocoa threading constraint. This function exists
+ * only to keep the original task naming for cross-platform clarity.
+ */
+void lvgl_task(void *pvParameters)
+{
+    (void)pvParameters;
+}
+
+/**
+ * @brief   Another task — runs under the scheduler.
+ *
+ * Periodically prints to prove the scheduler is working concurrently with
+ * the main-thread LVGL loop.
+ */
+void another_task(void *pvParameters)
+{
+    (void)pvParameters;
+    while (true) {
+        printf("Second Task is running :)\n");
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+
+/**
+ * @brief   Entry point (macOS path)
+ */
+int main(int argc, char **argv)
+{
+    LV_UNUSED(argc);
+    LV_UNUSED(argv);
+
+    /* Unbuffered so prints from main thread and scheduler threads interleave cleanly. */
+    setvbuf(stdout, NULL, _IONBF, 0);
+
+    /* Initialize LVGL (no SDL yet). */
+    lv_init();
+
+    /* Create the FreeRTOS task. xTaskCreate triggers the POSIX port's
+     * prvSetupSignalsAndSchedulerPolicy(), which sets the caller's signal
+     * mask and installs SIGALRM handler for tick generation. Any SDL call
+     * must happen *after* this — SDL_Init mutates the process signal mask
+     * and would otherwise break the tick mechanism
+     */
+    if (xTaskCreate(another_task, "Another Task", 1024, NULL, 1, NULL) != pdPASS) {
+        printf("Error creating another task\n");
+    }
+
+    /* Start the scheduler on a background pthread so the main thread stays
+     * available for SDL video init + event polling (Cocoa requires these on
+     * the main thread).
+     */
+    pthread_t sched;
+    if (pthread_create(&sched, NULL, scheduler_thread, NULL) != 0) {
+        printf("Error creating scheduler thread\n");
+        return 1;
+    }
+
+    /* SDL init must be on the main thread (Cocoa constraint). Do it AFTER
+     * xTaskCreate + pthread_create so it cannot perturb FreeRTOS internals.
+     */
+    sdl_hal_init(320, 480);
+    create_hello_world_screen();
+
+    /* Main thread: LVGL rendering loop + SDL event pump. */
+    while (true) {
+        uint32_t sleep_time_ms = lv_timer_handler();
+        if (sleep_time_ms == LV_NO_TIMER_READY) {
+            sleep_time_ms = LV_DEF_REFR_PERIOD;
+        }
+        usleep(sleep_time_ms * 1000);
+    }
+
+    return 0;
+}
+
+#else /* !__APPLE__ — Linux / Windows / ESP / other POSIX RTOS backends */
+
+// ........................................................................................................
 /**
  * @brief   LVGL task
  *
@@ -187,4 +299,6 @@ int main(int argc, char **argv)
     vTaskStartScheduler();
 }
 
-#endif
+#endif /* __APPLE__ */
+
+#endif /* LV_USE_OS == LV_OS_FREERTOS */
