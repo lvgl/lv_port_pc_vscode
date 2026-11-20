@@ -4,69 +4,41 @@
     "hostOperatingsystem": [
         "Linux",
         "Windows",
-        "MacOS"
+        "macOS"
     ],
     "environment": [
         "VSCode",
+        "CMake",
         "SDL"
     ],
     "description": "LVGL is written mainly for microcontrollers and embedded systems, however you can run the library on your PC as well without any embedded hardware. The code written on PC can be simply copied when you are using an embedded system. The project can use SDL but it can be easily replaced by any other built-in LVGL drivers.",
     "shortDescription": "VSCode-based project to run LVGL on PC.",
+    "getStartedInstructions": "## Install SDL and the build tools\n\n- **macOS:** `brew install sdl2 cmake make`\n- **Debian/Ubuntu:** `sudo apt install build-essential cmake libsdl2-dev`\n- **Windows:** `vcpkg install sdl2`, plus a compiler and `cmake`\n\n## Build and run with your UI\n\n```bash\ngit submodule update --init --recursive\ncmake -B build -DLVGL_PRO_PROJECT_DIR=ui\ncmake --build build\n./bin/main\n```\n\nOr open `simulator.code-workspace` in VSCode and run `Debug LVGL demo with gdb`.",
     "urlToClone": "https://github.com/lvgl/lv_port_pc_vscode",
     "logos": [
         "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/vscode/logo.svg"
     ],
     "image": "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/vscode/logo.svg",
-    "branches": [
-        "release/v9.2"
-    ],
-    "settings": [
-        {
-            "type": "dropdown",
-            "label": "Color Depth",
-            "options": [
-                {
-                    "name": "16 (RGB565)",
-                    "value": "16"
-                },
-                {
-                    "name": "24 (RGB565)",
-                    "value": "24"
-                },
-                {
-                    "name": "32 (RGB565)",
-                    "value": "32"
-                }
-            ],
-            "actions": [
-                {
-                    "toReplace": "#define LV_COLOR_DEPTH \\d+",
-                    "newContent": "#define LV_COLOR_DEPTH {value}",
-                    "filePath": "lv_conf.h"
-                }
-            ]
-        },
-        {
-            "type": "dropdown",
-            "label": "Show performance monitor",
-            "options": [
-                {
-                    "name": "Yes",
-                    "value": "1",
-                    "default": "true"
-                },
-                {
-                    "name": "No",
-                    "value": "0"
-                }
-            ],
-            "actions": [
-                {
-                    "toReplace": "#define LV_USE_PERF_MONITOR .*",
-                    "newContent": "#define LV_USE_PERF_MONITOR {value}",
-                    "filePath": "lv_conf.h"
-                }
-            ]
-        }
-    ]
+    "lvglVersion": "9.6.0",
+    "uiFolderPath": "ui",
+    "display": {
+        "width": 320,
+        "height": 480
+    },
+    "colorFormat": "xrgb8888",
+    "config": {
+        "useBundledLvglKconfig": true,
+        "outputType": "lv_conf",
+        "outputPath": "lv_conf.h",
+        "defconfigs": [
+            {
+                "path": "configs/base.defconfig",
+                "description": "Base simulator configuration: SDL, fonts, image decoders, ThorVG and demos"
+            },
+            {
+                "path": "configs/monitors.defconfig",
+                "description": "Show the performance (CPU/FPS) and memory monitors on screen"
+            }
+        ]
+    }
 }

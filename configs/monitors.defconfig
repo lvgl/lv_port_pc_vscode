@@ -1,0 +1,4 @@
+# Show the performance (CPU/FPS) and memory monitors on screen.
+CONFIG_LV_USE_SYSMON=y
+CONFIG_LV_USE_PERF_MONITOR=y
+CONFIG_LV_USE_MEM_MONITOR=y
